@@ -5050,41 +5050,46 @@ var menuItems = [{
   icon: 'ri-building-4-line',
   link: '/company'
 }, {
-  id: 4874387,
-  label: 'menuitems.companyModule.text',
-  icon: 'ri-hotel-line',
-  link: '/company-module'
-}, {
+  id: 4,
+  label: 'menuitems.module.text',
+  icon: 'fab fa-medium-m',
+  link: '/module'
+},
+// {
+//     id: 3220,
+//     label: 'general.folder',
+//     icon: 'ri-stack-line',
+//     link: '/folder'
+// },
+// {
+//     id: 3330,
+//     label: 'general.menu',
+//     icon: 'ri-stack-line',
+//     link: '/menus'
+// },
+// {
+//     id: 3220,
+//     label: 'general.subMenu',
+//     icon: 'ri-stack-line',
+//     link: '/sub-menu'
+// },
+// {
+//     id: 112206,
+//     label: 'general.screens',
+//     icon: 'fe-monitor',
+//     link: '/screens'
+// },
+{
   id: 7,
   label: 'menuitems.DocumentType.text',
   icon: 'ri-stack-line',
   link: '/document-types'
 }, {
-  id: 4,
-  label: 'menuitems.module.text',
-  icon: 'fab fa-medium-m',
-  link: '/module'
-}, {
-  id: 3220,
-  label: 'general.folder',
-  icon: 'ri-stack-line',
-  link: '/folder'
-}, {
-  id: 3330,
-  label: 'general.menu',
-  icon: 'ri-stack-line',
-  link: '/menus'
-}, {
-  id: 3220,
-  label: 'general.subMenu',
-  icon: 'ri-stack-line',
-  link: '/sub-menu'
-}, {
-  id: 112206,
-  label: 'general.screens',
-  icon: 'fe-monitor',
-  link: '/screens'
-},
+  id: 4874387,
+  label: 'menuitems.Workflow.text',
+  icon: 'ri-hotel-line',
+  link: '/company-module'
+}
 // {
 //     id: 6,
 //     label: 'menuitems.HotFields.text',
@@ -5104,12 +5109,12 @@ var menuItems = [{
 //     icon: 'ri-markup-line',
 //     link: '/buttons'
 // },
-{
-  id: 8,
-  label: 'menuitems.Workflow.text',
-  icon: 'ri-share-line',
-  link: '/workflows'
-}
+// {
+//     id: 8,
+//     label: 'menuitems.Workflow.text',
+//     icon: 'ri-share-line',
+//     link: '/workflows'
+// },
 // {
 //     id: 1115,
 //     label: "menuitems.dashboard.text",
