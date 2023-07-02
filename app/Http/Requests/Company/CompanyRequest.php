@@ -22,7 +22,7 @@ class CompanyRequest extends FormRequest
             'name_e' => 'sometimes|string|max:255|unique:companies,name_e,' . ($this->method() == 'PUT' ?  $this->id : ''),
             'phone' => 'sometimes|string|max:20|unique:companies,phone,' . ($this->method() == 'PUT' ?   $this->id : ''),
             "partner_id" => "exists:partners,id",
-            "url" => "sometimes|url|string|max:200|unique:companies,url" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            "url" => "nullable",
             "address" => "string|max:200",
             "cr" => "sometimes|string|unique:companies,cr" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
             "tax_id" => "numeric|digits_between:1,10",

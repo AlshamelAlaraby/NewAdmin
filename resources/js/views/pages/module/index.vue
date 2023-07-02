@@ -1056,7 +1056,7 @@ export default {
             modules: this.modules_ids,
           })
           .then((res) => {
-            this.current_id=res.data.id;
+            this.current_id = res.data.id;
             this.modules_ids = [];
             this.getData();
             this.is_disabled = true;
@@ -1107,6 +1107,10 @@ export default {
         adminApi
           .post(`/modules`, this.create)
           .then((res) => {
+            if (this.create.is_module) {
+              this.getAllModules();
+            }
+
             this.getData();
             this.is_disabled = true;
             this.getRootNodes();
@@ -1147,7 +1151,7 @@ export default {
             modules: this.modules_ids,
           })
           .then((res) => {
-            this.current_id=res.data.id;
+            this.current_id = res.data.id;
 
             this.modules_ids = [];
             this.getData();
@@ -2524,8 +2528,7 @@ export default {
                               <div class="row">
                                 <div class="col-8">
                                   <TreeBrowser
-                          :secondNodeNotChoosed="true"
-
+                                    :secondNodeNotChoosed="true"
                                     @deleteClicked="
                                       deleteModule($event.id, true)
                                     "

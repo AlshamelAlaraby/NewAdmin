@@ -122,29 +122,4 @@ class CompanyController extends Controller
         }
         return responseJson (200,'',ModuleResource::collection($Programs));
     }
-
-    public function everything_about_the_company($id)
-    {
-        $company = Company::query()->find($id);
-        if (!$company) {
-            return responseJson(404, __('message.data not found'));
-        }
-
-
-        $company->document_company_module = @$company->company_modules()->with('document_types.documentRelateds')->get();
-        $company->program = @$company->company_modules()->with(['module'=>function($q){
-            $q->with(['children','programFolders'=>function($q){
-                $q->with(['folder'=>function($q){
-                    $q->with(['subMenus'=>function($q){
-                        $q->with('screens');
-
-                    }]);
-                }]);
-            }]);
-        }])->get();
-
-
-        return responseJson(200, __(''), $company);
-    }
-
 }

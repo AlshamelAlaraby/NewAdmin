@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\CheckIfValidTokenController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Branch\BranchController;
 use App\Http\Controllers\Button\ButtonController;
 use App\Http\Controllers\CompanyModule\CompanyModuleController;
 use App\Http\Controllers\Company\CompanyController;
@@ -16,7 +17,9 @@ use App\Http\Controllers\ScreenDocumentType\ScreenDocumentTypeController;
 use App\Http\Controllers\ScreenHelpfile\ScreenHelpfileController;
 use App\Http\Controllers\Screen\ScreenController;
 use App\Http\Controllers\SettingScreen\SettingScreenController;
+use App\Http\Controllers\Store\StoreController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\WorkflowTree\WorkflowTreeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,7 +69,16 @@ Route::group(['prefix' => 'companies'], function () {
 
 Route::post('/companyModules/{id}', [CompanyController::class, "companyModules"]);
 
+Route::group(['prefix' => 'stores'], function () {
+    Route::get('', [StoreController::class, "index"])->name('stores.index');
+    Route::get('logs/{id}', [StoreController::class, "logs"])->name('stores.logs');
+    Route::get('/{id}', [StoreController::class, "show"])->name('stores.show');
 
+    Route::post('', [StoreController::class, "store"])->name('stores.store');
+    Route::post('/{id}', [StoreController::class, "update"])->name('stores.update');
+    Route::delete('/{id}', [StoreController::class, "destroy"])->name('stores.delete');
+    Route::post('bulk-delete', [StoreController::class, 'bulkDelete']);
+});
 
 Route::group(['prefix' => 'modules'], function () {
     Route::controller(\App\Http\Controllers\Module\ModuleController::class)->group(function () {
@@ -201,7 +213,25 @@ Route::group(['prefix' => 'hotfields'], function () {
     });
 });
 
+// api of WorkflowTree
+Route::group(['prefix' => 'workflow-trees'], function () {
+    Route::controller(WorkflowTreeController::class)->group(function () {
+        Route::get('menuTree-screens','getMenuTreeScreens');
 
+        Route::get('/', 'all')->name('WorkflowTree.index');
+        Route::get('/root-nodes', 'getRootNodes')->name('workflow.root-nodes');
+        Route::get('/child-nodes/{parentId}', 'getChildNodes')->name('workflow.child-nodes');
+        Route::get("lookup", "getWorkflowLookup");
+        Route::get('/{id}', 'find');
+        Route::post('/', 'store')->name('WorkflowTree.store');
+        Route::put('/{id}', 'update')->name('WorkflowTree.update');
+        Route::delete('/{id}', 'delete')->name('WorkflowTree.destroy');
+        Route::get('logs/{id}', 'logs')->name('WorkflowTree.logs');
+        Route::post('bulk-delete', 'bulkDelete');
+        Route::get("company-workflows/{company_id}", "getCompanyWorkflows");
+        Route::get('module-screens/{module_id}','getModuleScreens');
+    });
+});
 
 // // api op serials
 //     Route::group(['prefix' => 'serials'], function () {
@@ -227,7 +257,16 @@ Route::group(['prefix' => 'buttons'], function () {
     });
 });
 
-
+Route::group(['prefix' => 'branches'], function () {
+    Route::controller(BranchController::class)->group(function () {
+        Route::get('/', 'all')->name('branches.index');
+        Route::get('logs/{id}', 'logs')->name('branches.logs');
+        Route::get('/{id}', 'find');
+        Route::post('/', 'create')->name('branches.create');
+        Route::put('/{id}', 'update')->name('branches.update');
+        Route::delete('/{id}', 'delete')->name('branches.destroy');
+    });
+});
 
 Route::group(['prefix' => 'settingScreen'], function () {
     Route::controller(SettingScreenController::class)->group(function () {
@@ -260,6 +299,47 @@ Route::group(['prefix' => 'screenDocumentType'], function () {
 });
 
 
+Route::group(['prefix' => 'menu'], function () {
+    Route::controller(\App\Http\Controllers\Menu\MenuController::class)->group(function () {
+        Route::get('/', 'all')->name('menus.index');
+        Route::get('logs/{id}', 'logs')->name('menus.logs');
+        Route::get('/{id}', 'find');
+        Route::post('/', 'create')->name('menus.create');
+        Route::put('/{id}', 'update')->name('menus.update');
+        Route::delete('/{id}', 'delete')->name('menus.destroy');
+        Route::post('bulk-delete', 'bulkDelete');
+
+        Route::get('module-menu/{company_id}/{module_id}','getModuleMenus');
+
+    });
+});
+
+Route::group(['prefix' => 'menu-tree'], function () {
+    Route::controller(\App\Http\Controllers\MenuTree\MenuTreeController::class)->group(function () {
+        Route::get('/', 'all')->name('menu_tree.index');
+        Route::get('/menu-root-nodes/{menuId}', 'getMenuRootNodes')->name('modules.root-nodes');
+        Route::get('/module-root-nodes/{companyId}/{moduleId}', 'getModuleRootNodes')->name('modules.root-nodes');
+        Route::get('/child-nodes/{parentId}', 'getChildNodes')->name('modules.child-nodes');
+        Route::get('logs/{id}', 'logs')->name('menu_tree.logs');
+        Route::get('/{id}', 'find');
+        Route::post('/', 'create')->name('menu_tree.create');
+        Route::put('/{id}', 'update')->name('menu_tree.update');
+        Route::delete('/{id}', 'delete')->name('menu_tree.destroy');
+        Route::post('bulk-delete', 'bulkDelete');
+    });
+});
+
+Route::group(['prefix' => 'menu-workflow'], function () {
+    Route::controller(\App\Http\Controllers\MenuWorkFlow\MenuWorkFlowController::class)->group(function () {
+        Route::post('/', 'create')->name('menu_workflow.create');
+        Route::put('/{workflow_id}/{company_id}', 'update')->name('menu_workflow.update');
+        Route::get('logs/{id}', 'logs')->name('menu_workflow.logs');
+        Route::get('/{id}', 'find');
+        Route::delete('/{id}', 'delete')->name('menu_workflow.destroy');
+        Route::post('bulk-delete', 'bulkDelete');
+
+    });
+});
 
 Route::group(['prefix' => 'sub-menus'], function () {
     Route::controller(\App\Http\Controllers\SubMenuController::class)->group(function () {
@@ -306,7 +386,8 @@ Route::group(['prefix' => 'program-folder'], function () {
 
 
 //----------------------------------------------milad routes ------------------------------
-Route::get('everything_about_the_company/{company_id}', [CompanyController::class, 'everything_about_the_company']);
+Route::get('everything_about_the_company/{company_id}', [WorkflowTreeController::class, 'everything_about_the_company']);
+Route::post('companyId/{company_id}', [WorkflowTreeController::class, 'companyId']);
 Route::resource('screen-document-type', ScreenDocumentTypeController::class)->except('create', 'edit');
 Route::get('screen-document-type/logs/{id}', [ScreenDocumentTypeController::class, 'logs']);
 Route::post('screen-document-type/bulk-delete', [ScreenDocumentTypeController::class, 'bulkDelete']);

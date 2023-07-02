@@ -134,7 +134,7 @@ export default {
       phone: { required, integer },
       tax_id: { required, minLength: minLength(1), maxLength: maxLength(10), integer },
       vat_no: { required, minLength: minLength(1), maxLength: maxLength(10), integer },
-      url: { required, url, minLength: minLength(10), maxLength: maxLength(200) },
+      // url: { required, url, minLength: minLength(10), maxLength: maxLength(200) },
       website: { required, url, minLength: minLength(10), maxLength: maxLength(200) },
       cr: { required, minLength: minLength(3), maxLength: maxLength(100) },
       address: { required, minLength: minLength(10), maxLength: maxLength(200) },
@@ -148,7 +148,7 @@ export default {
       phone: { required, integer },
       tax_id: { required, minLength: minLength(1), maxLength: maxLength(10), integer },
       vat_no: { required, minLength: minLength(1), maxLength: maxLength(10), integer },
-      url: { required, url, minLength: minLength(10), maxLength: maxLength(200) },
+      // url: { required, url, minLength: minLength(10), maxLength: maxLength(200) },
       website: { required, url, minLength: minLength(10), maxLength: maxLength(200) },
       cr: { required, minLength: minLength(3), maxLength: maxLength(100) },
       address: { required, minLength: minLength(10), maxLength: maxLength(200) },
@@ -1058,9 +1058,9 @@ export default {
                     <b-form-checkbox v-model="setting.website" class="mb-1">
                       {{ $t("general.website") }}
                     </b-form-checkbox>
-                    <b-form-checkbox v-model="setting.url" class="mb-1">
+                    <!-- <b-form-checkbox v-model="setting.url" class="mb-1">
                       {{ $t("general.companysystempath") }}
-                    </b-form-checkbox>
+                    </b-form-checkbox> -->
                     <div class="d-flex justify-content-end">
                       <a href="javascript:void(0)" class="btn btn-primary btn-sm"
                         >Apply</a
@@ -1548,7 +1548,7 @@ export default {
                                 </template>
                               </div>
                             </div>
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                               <div class="form-group">
                                 <label for="field-10" class="control-label">
                                   {{ $t("general.companysystempath") }}
@@ -1591,7 +1591,7 @@ export default {
                                   >
                                 </template>
                               </div>
-                            </div>
+                            </div> -->
                             <div class="col-md-6">
                               <div class="form-group">
                                 <label
@@ -2505,7 +2505,7 @@ export default {
                                         </template>
                                       </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <!-- <div class="col-md-6">
                                       <div class="form-group">
                                         <label for="edit-10" class="control-label">
                                           {{ $t("general.companysystempath") }}
@@ -2553,7 +2553,7 @@ export default {
                                           >
                                         </template>
                                       </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col-md-6">
                                       <div class="form-group">
                                         <label
