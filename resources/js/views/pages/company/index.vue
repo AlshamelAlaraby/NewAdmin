@@ -516,7 +516,7 @@ export default {
         }
 
         adminApi
-          .post(`/companies`, this.create)
+          .post(`/companies`, {...this.create,url:this.create.website})
           .then((res) => {
             this.company_id = res.data.data.id;
             this.getData();
@@ -568,7 +568,7 @@ export default {
         this.errors = {};
 
         adminApi
-          .put(`/companies/${id}`, this.edit)
+          .put(`/companies/${id}`, {...this.edit,url:this.edit.website})
           .then((res) => {
             this.getData();
             this.$bvModal.hide(`modal-edit-${id}`);
@@ -1941,7 +1941,7 @@ export default {
                       </div>
                     </th>
                     <th v-if="setting.website">{{ $t("general.website") }}</th>
-                    <th v-if="setting.url">{{ $t("general.url") }}</th>
+                    <!-- <th v-if="setting.url">{{ $t("general.url") }}</th> -->
                     <th v-if="setting.is_active">{{ $t("general.Status") }}</th>
                     <th class="do-not-print" v-if="enabled3">{{ $t("general.Action") }}</th>
                     <th class="do-not-print" v-if="enabled3"><i class="fas fa-ellipsis-v"></i></th>
@@ -1996,9 +1996,9 @@ export default {
                     <td v-if="setting.website">
                       {{ data.website }}
                     </td>
-                    <td v-if="setting.url">
+                    <!-- <td v-if="setting.url">
                       {{ data.url }}
-                    </td>
+                    </td> -->
                     <td v-if="setting.is_active">
                       <span
                         :class="[
