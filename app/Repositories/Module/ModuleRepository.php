@@ -15,16 +15,16 @@ class ModuleRepository implements ModuleInterface
     public function all($request)
     {
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
-        if ($request->child == "true") {
-            $models->where("parent_id", "<>", 0);
+        if ($request->child=="true") {
+            $models->where("parent_id","<>",0);
         }
 
         if ($request->program_parent) {
-            $models->where("parent_id", 0)->where('is_module', 0);
+            $models->where("parent_id",0)->where('is_module',0);
         }
 
         if ($request->module_child) {
-            $models->where("parent_id", 0)->where('is_module', 1);
+            $models->where("parent_id",0)->where('is_module',1);
         }
 
         if ($request->per_page) {
@@ -36,7 +36,7 @@ class ModuleRepository implements ModuleInterface
 
     public function getRootNodes()
     {
-        return $this->model->where("parent_id", 0)->where("is_module", 0)->get();
+        return $this->model->where("parent_id", 0)->where("is_module",0)->get();
     }
     public function getChildNodes($parentId)
     {
@@ -50,7 +50,7 @@ class ModuleRepository implements ModuleInterface
     public function create($request)
     {
         return DB::transaction(function () use ($request) {
-            return $this->model->create($request->all());
+           return $this->model->create($request->all());
             // cacheForget("modules");
         });
     }
@@ -91,16 +91,15 @@ class ModuleRepository implements ModuleInterface
 
     public function createProgramChildren($request)
     {
-        foreach ($request['modules'] as $index => $module_id) {
+        foreach ($request['modules'] as $module_id){
             $model_create =  $this->model->find($module_id);
-            $model_exists  =  $this->model->where('name', $model_create['name'])->where('name_e', $model_create['name_e'])->where('parent_id', $request['program_id'])->first();
-            if (!$model_exists) {
-                $model =  $this->model->create(collect($model_create)->except(['id', 'created_at', 'updated_at'])->all());
-                $model->update(['parent_id' => $request['program_id'], 'is_module' => 0, 'module_id' => $model_create['id']]);
-            }
-            if ($index == count($request["modules"]) - 1) {
-                return $model;
-            }
+           $model_exists  =  $this->model->where('name',$model_create['name'])->where('name_e',$model_create['name_e'])->where('parent_id',$request['program_id'])->first();
+           if(!$model_exists){
+               $model =  $this->model->create( collect($model_create)->except(['id','created_at','updated_at'])->all());
+               $model->update([ 'parent_id'=>$request['program_id'] ,'is_module' =>0 ,'module_id'=>$model_create['id']]);
+           }
+
+
         }
     }
 

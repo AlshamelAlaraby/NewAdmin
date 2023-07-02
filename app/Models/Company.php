@@ -61,10 +61,6 @@ class Company extends Model implements \Spatie\MediaLibrary\HasMedia
         return $this->hasMany(WorkflowTree::class);
     }
 
-    public function branches()
-    {
-        return $this->hasMany(Branch::class);
-    }
 
     public function hasChildren()
     {

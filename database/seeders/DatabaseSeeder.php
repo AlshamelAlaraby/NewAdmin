@@ -26,7 +26,6 @@ class DatabaseSeeder extends Seeder
          $this->call(PartnerSeeder::class);
          $this->call(CompanySeeder::class);
          $this->call(ProjectProgramModuleSeeder::class);
-         $this->call(workflowTreeSeeder::class);
          $this->call(ScreenSeeder::class);
 
         //  \App\Models\Partner::factory(100)->create();

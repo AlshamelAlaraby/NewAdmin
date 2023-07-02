@@ -123,7 +123,8 @@ class ModuleController extends Controller
 
     public function createProgramChildren(CreateProgramChildrenRequest $request)
     {
-        return $this->modelInterface->createProgramChildren($request);
+        $this->modelInterface->createProgramChildren($request);
+        return responseJson(200, 'success');
     }
 
     public function allProgramModuleId(Request $request)
