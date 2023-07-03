@@ -1060,9 +1060,6 @@ export default {
           .then((res) => {
             this.current_id = res.data.id;
             this.modules_ids = [];
-            this.moduleName =
-              this.$i18n.locale == "ar" ? res.data.name : res.data.name_e;
-
             this.getData();
             this.is_disabled = true;
             this.getRootNodes();
@@ -1260,7 +1257,8 @@ export default {
 
       await this.getMenus();
       let module = this.modules.find((e) => id == e.id);
-      this.moduleName = this.$i18n.locale == "ar" ? module.name : module.name_e;
+      this.moduleName = this.$i18n.locale == "ar" ? `${module.name} ${module.parent?`->${module.parent.name}`:''}` : 
+      `${module.name_e} ${module.parent?`->${module.parent.name_e}`:''}`;
       this.edit.name = module.name;
       this.edit.name_e = module.name_e;
       this.edit.is_active = module.is_active;
@@ -1590,7 +1588,7 @@ export default {
             <b-modal
               dialog-class="modal-full-width"
               id="create"
-              :title="`${$t('general.addProgram')} (${moduleName})`"
+              :title="`${$t('general.addProgram')}`"
               title-class="font-18"
               body-class="p-4 "
               :hide-footer="true"
