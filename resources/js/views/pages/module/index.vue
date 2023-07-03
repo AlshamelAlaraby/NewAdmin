@@ -88,6 +88,7 @@ export default {
       allSubMenus: [],
       allModules: [],
       modules_ids: [],
+      moduleName: "",
       create: {
         name: "",
         name_e: "",
@@ -961,7 +962,7 @@ export default {
      */
     resetModalHidden() {
       this.modules_ids = [];
-
+      this.moduleName="";
       this.create = {
         name: "",
         name_e: "",
@@ -990,6 +991,7 @@ export default {
      *  hidden Modal (create)
      */
     async resetModal() {
+      this.moduleName="";
       this.modules_ids = [];
       await this.getRootNodes();
       await this.getAllSubMenus();
@@ -1023,7 +1025,7 @@ export default {
      */
     resetForm() {
       this.modules_ids = [];
-
+      this.moduleName="";
       this.create = {
         name: "",
         name_e: "",
@@ -1058,6 +1060,9 @@ export default {
           .then((res) => {
             this.current_id = res.data.id;
             this.modules_ids = [];
+            this.moduleName =
+              this.$i18n.locale == "ar" ? res.data.name : res.data.name_e;
+
             this.getData();
             this.is_disabled = true;
             this.getRootNodes();
@@ -1110,7 +1115,6 @@ export default {
             if (this.create.is_module) {
               this.getAllModules();
             }
-
             this.getData();
             this.is_disabled = true;
             this.getRootNodes();
@@ -1256,6 +1260,7 @@ export default {
 
       await this.getMenus();
       let module = this.modules.find((e) => id == e.id);
+      this.moduleName = this.$i18n.locale == "ar" ? module.name : module.name_e;
       this.edit.name = module.name;
       this.edit.name_e = module.name_e;
       this.edit.is_active = module.is_active;
@@ -1271,7 +1276,7 @@ export default {
      */
     resetModalHiddenEdit(id) {
       this.modules_ids = [];
-
+      this.moduleName="";
       this.menu_id = null;
       this.sub_menu_id = null;
       this.all_sub_menu_id = null;
@@ -1585,7 +1590,7 @@ export default {
             <b-modal
               dialog-class="modal-full-width"
               id="create"
-              :title="$t('general.addProgram')"
+              :title="`${$t('general.addProgram')} (${moduleName})`"
               title-class="font-18"
               body-class="p-4 "
               :hide-footer="true"
@@ -2478,7 +2483,7 @@ export default {
                       <b-modal
                         dialog-class="modal-full-width"
                         :id="`modal-edit-${data.id}`"
-                        :title="$t('general.editProgram')"
+                        :title="`${$t('general.editProgram')} (${moduleName})`"
                         title-class="font-18"
                         body-class="p-4"
                         size="lg"

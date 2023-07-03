@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\Company\CompanyResource;
 use App\Models\Company;
 use App\Models\File;
-use App\Models\Module;
+use App\Models\ProgramFolder as Module ;
 use App\Models\Partner;
 use Illuminate\Http\Request;
 use App\Models\UserSettingScreen;

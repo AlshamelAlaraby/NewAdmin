@@ -5500,7 +5500,7 @@ var render = function render() {
   }), 0), _vm._v(" "), _c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "col-xl-8"
+    staticClass: "col-xl-12"
   }, [_c("LastCompanies", {
     attrs: {
       companies: _vm.latestCompanies
