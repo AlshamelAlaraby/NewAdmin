@@ -22,12 +22,16 @@ class DocumentType extends Model
     /*** return relation with documentRelateds */
     public function documentRelateds()
     {
-        return $this->belongsToMany(DocumentType::class, 'document_related', 'document_type_id', 'document_related_id','id','id');
+        return $this->belongsToMany(DocumentType::class, 'document_related', 'document_type_id', 'document_related_id', 'id', 'id');
     }
 
     /*** return relation with Screens */
     public function screens()
     {
-        return $this->belongsToMany(Screen::class, 'screen_document_types', 'documentType_id', 'screen_id', 'id', 'id');
+        return $this->belongsToMany(Screen::class, 'screen_document_types', 'document_type_id', 'screen_id', 'id', 'id');
+    }
+    public function hasChildren()
+    {
+        return $this->screens()->count() > 0 || $this->companyProjectProgramModules()->count() > 0 || $this->documentRelateds()->count() > 0;
     }
 }

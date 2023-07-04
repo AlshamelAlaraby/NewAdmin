@@ -652,7 +652,7 @@ export default {
     },
     async getSubMenus(id) {
       await adminApi
-        .get(`/sub-menus?menu_id=${this.menu_id}`)
+        .get(`/sub-menus?program_folder_menu_id=${this.menu_id}`)
         .then((res) => {
           this.subMenus = res.data.data;
         })
@@ -666,7 +666,7 @@ export default {
     },
     async getAllSubMenus(id) {
       await adminApi
-        .get(`/sub-menus/all-sub-menus?menu_id=0`)
+        .get(`/sub-menus/all-sub-menus?program_folder_menu_id=0`)
         .then((res) => {
           this.allSubMenus = res.data.data;
         })
@@ -680,7 +680,7 @@ export default {
     },
     async getAllModules(id) {
       await adminApi
-        .get(`/modules?module_child=1`)
+        .get(`/project-program-modules?module_child=1`)
         .then((res) => {
           this.allModules = res.data.data;
         })
@@ -707,7 +707,7 @@ export default {
         });
     },
     setChildNodes(result) {
-      adminApi.get(`/modules/child-nodes/${result.node.id}`).then((res) => {
+      adminApi.get(`/project-program-modules/child-nodes/${result.node.id}`).then((res) => {
         this.isLoader = false;
         result.node.children = res.data.map((el) => {
           return {
@@ -764,7 +764,7 @@ export default {
         this.Tooltip = "";
         this.mouseEnter = id;
         adminApi
-          .get(`/modules/logs/${id}`)
+          .get(`/project-program-modules/logs/${id}`)
           .then((res) => {
             let l = res.data.data;
             l.forEach((e) => {
@@ -798,7 +798,7 @@ export default {
 
       adminApi
         .get(
-          `/modules?page=${page}&per_page=${this.per_page}&search=${this.search}&${filter}`
+          `/project-program-modules?page=${page}&per_page=${this.per_page}&search=${this.search}&${filter}`
         )
         .then((res) => {
           let l = res.data;
@@ -831,7 +831,7 @@ export default {
 
         adminApi
           .get(
-            `/modules?page=${this.current_page}&per_page=${this.per_page}&search=${this.search}&${filter}`
+            `/project-program-modules?page=${this.current_page}&per_page=${this.per_page}&search=${this.search}&${filter}`
           )
           .then((res) => {
             let l = res.data;
@@ -870,7 +870,7 @@ export default {
           if (result.value) {
             this.isLoader = true;
             adminApi
-              .post(`/modules/bulk-delete`, { ids: id })
+              .post(`/project-program-modules/bulk-delete`, { ids: id })
               .then((res) => {
                 this.checkAll = [];
                 this.getData();
@@ -919,7 +919,7 @@ export default {
             this.isLoader = true;
 
             adminApi
-              .delete(`/modules/${id}`)
+              .delete(`/project-program-modules/${id}`)
               .then((res) => {
                 this.checkAll = [];
                 this.getData();
@@ -1103,11 +1103,8 @@ export default {
         this.isLoader = true;
         this.errors = {};
         this.is_disabled = false;
-        if (this.create.parent_id == null) {
-          this.create.parent_id = 0;
-        }
         adminApi
-          .post(`/modules`, this.create)
+          .post(`/project-program-modules`, this.create)
           .then((res) => {
             if (this.create.is_module) {
               this.getAllModules();
@@ -1147,13 +1144,12 @@ export default {
       if (this.edit.parent_id) {
         this.isLoader = true;
         adminApi
-          .post(`modules/create-program-children`, {
+          .post(`project-program-modules/create-program-children`, {
             program_id: this.edit.parent_id,
             modules: this.modules_ids,
           })
           .then((res) => {
             this.current_id = res.data.id;
-
             this.modules_ids = [];
             this.getData();
             this.is_disabled = true;
@@ -1193,12 +1189,9 @@ export default {
       } else {
         this.isLoader = true;
         this.errors = {};
-        if (!this.edit.parent_id) {
-          this.edit.parent_id = 0;
-        }
         let { name, name_e, parent_id, is_active } = this.edit;
         adminApi
-          .put(`/modules/${id}`, { ...this.edit, search: undefined })
+          .put(`/project-program-modules/${id}`, { ...this.edit, search: undefined })
           .then((res) => {
             this.$bvModal.hide(`modal-edit-${id}`);
             this.getData();
@@ -1229,7 +1222,7 @@ export default {
     },
     async getRootNodes() {
       await adminApi
-        .get(`/modules/root-nodes`)
+        .get(`/project-program-modules/root-nodes`)
         .then((res) => {
           console.log(this.rootNodes);
           this.rootNodes = res.data;
@@ -1257,8 +1250,8 @@ export default {
 
       await this.getMenus();
       let module = this.modules.find((e) => id == e.id);
-      this.moduleName = this.$i18n.locale == "ar" ? `${module.name} ${module.parent?`->${module.parent.name}`:''}` : 
-      `${module.name_e} ${module.parent?`->${module.parent.name_e}`:''}`;
+      this.moduleName = this.$i18n.locale == "ar" ? `${module.parent?`${module.parent.name}->${module.name}`:module.name}` : 
+      `${module.parent?`${module.parent.name_e}->${module.name_e}`:module.name_e}`;
       this.edit.name = module.name;
       this.edit.name_e = module.name_e;
       this.edit.is_active = module.is_active;

@@ -18,7 +18,7 @@ class CompanyRequest extends FormRequest
 
             'name'         => 'sometimes|string|max:255|unique:companies,name' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
             'name_e'       => 'sometimes|string|max:255|unique:companies,name_e,' . ($this->method() == 'PUT' ?  $this->id : ''),
-            "url"          => "required|url|unique:companies,url" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            "url"          => "sometimes|url|unique:companies,url" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
             "address"      => "sometimes|string|max:200",
             'phone'        => 'sometimes|string|max:20|unique:companies,phone,' . ($this->method() == 'PUT' ?   $this->id : ''),
             "cr"           => "sometimes|string|unique:companies,cr" . ($this->method() == 'PUT' ? ',' . $this->id : ''),

@@ -18,27 +18,25 @@ class SubMenu extends Model
     /*** return  relation  ProgramFolder */
     public function programFolder()
     {
-        return $this->belongsTo(ProgramFolder::class,'program_folder_menu_id','id');
-
+        return $this->belongsTo(ProgramFolder::class, 'program_folder_menu_id', 'id');
     }
 
     /*** return  relation  Screens */
     public function screens()
     {
-        return $this->hasMany(Screen::class,'sub_menu_id','id');
-
+        return $this->hasMany(Screen::class, 'sub_menu_id', 'id');
     }
 
     /*** return count relation  hasMany */
     public function hasChildren()
     {
-        return $this->screens()->count() > 0 ;
+        return $this->screens()->count() > 0;
     }
 
     /*** return CompanyId */
     public function getCompanyIdAttribute($key)
     {
-        return  $this->programFolder()->first()->company_id;
+        return  $this->programFolder()->first()->company_id ?? null;
     }
 
     public function getActivitylogOptions(): LogOptions
@@ -50,6 +48,4 @@ class SubMenu extends Model
             ->useLogName('sub menu')
             ->setDescriptionForEvent(fn (string $eventName) => "This model has been {$eventName} by ($user)");
     }
-
-
 }

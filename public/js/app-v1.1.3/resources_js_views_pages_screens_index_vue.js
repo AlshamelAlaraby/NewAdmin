@@ -1676,10 +1676,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.is_disabled = false;
         _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].post("/program-folder", {
           menu_folder: this.create.menu_folder,
-          project_program_module_id: this.current_id,
-          sort: this.create.sort
+          project_program_module_id: this.current_id
         }).then(function (res) {
-          // this.menu_id = res.data.data.id;
+          _this14.menu_id = res.data.data.id;
           _this14.$emit("created");
           _this14.is_disabled = true;
           setTimeout(function () {
@@ -6613,42 +6612,7 @@ var render = function render() {
     return _c("ErrorMessage", {
       key: index
     }, [_vm._v(_vm._s(errorMessage))]);
-  }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
-    staticClass: "form-group"
-  }, [_c("label", {
-    staticClass: "control-label",
-    attrs: {
-      "for": "field-2"
-    }
-  }, [_vm._v("\n            " + _vm._s(_vm.$t("general.IdSort")) + "\n          ")]), _vm._v(" "), _c("div", [_c("input", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.create.sort,
-      expression: "create.sort"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      type: "number",
-      "data-create": "2",
-      id: "field-2"
-    },
-    domProps: {
-      value: _vm.create.sort
-    },
-    on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-        _vm.$set(_vm.create, "sort", $event.target.value);
-      }
-    }
-  }), _vm._v(" "), _vm.errors.sort ? _vm._l(_vm.errors.sort, function (errorMessage, index) {
-    return _c("ErrorMessage", {
-      key: index
-    }, [_vm._v(_vm._s(_vm.$t(errorMessage)) + "\n                                  ")]);
-  }) : _vm._e()], 2)])])])])]);
+  }) : _vm._e()], 2)])])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

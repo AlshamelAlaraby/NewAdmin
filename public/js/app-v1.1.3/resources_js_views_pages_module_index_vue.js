@@ -1676,10 +1676,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.is_disabled = false;
         _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].post("/program-folder", {
           menu_folder: this.create.menu_folder,
-          project_program_module_id: this.current_id,
-          sort: this.create.sort
+          project_program_module_id: this.current_id
         }).then(function (res) {
-          // this.menu_id = res.data.data.id;
+          _this14.menu_id = res.data.data.id;
           _this14.$emit("created");
           _this14.is_disabled = true;
           setTimeout(function () {
@@ -4288,9 +4287,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         this.isLoader = true;
         this.errors = {};
         this.is_disabled = false;
-        if (this.create.parent_id == null) {
-          this.create.parent_id = 0;
-        }
         _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].post("/sub-menus", _objectSpread({}, this.create)).then(function (res) {
           _this12.is_disabled = true;
           _this12.current_id = res.data.data.id;
@@ -4333,9 +4329,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       } else {
         this.isLoader = true;
         this.errors = {};
-        if (this.edit.parent_id == null) {
-          this.edit.parent_id = 0;
-        }
         _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].put("/sub-menus/".concat(id), this.edit).then(function (res) {
           _this13.$bvModal.hide("modal-edit-".concat(id));
           _this13.getData();
@@ -5718,7 +5711,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/sub-menus?menu_id=".concat(_this10.menu_id)).then(function (res) {
+                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/sub-menus?program_folder_menu_id=".concat(_this10.menu_id)).then(function (res) {
                   _this10.subMenus = res.data.data;
                 })["catch"](function (err) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire({
@@ -5743,7 +5736,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context4.prev = _context4.next) {
               case 0:
                 _context4.next = 2;
-                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/sub-menus/all-sub-menus?menu_id=0").then(function (res) {
+                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/sub-menus/all-sub-menus?program_folder_menu_id=0").then(function (res) {
                   _this11.allSubMenus = res.data.data;
                 })["catch"](function (err) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire({
@@ -5768,7 +5761,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context5.prev = _context5.next) {
               case 0:
                 _context5.next = 2;
-                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/modules?module_child=1").then(function (res) {
+                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/project-program-modules?module_child=1").then(function (res) {
                   _this12.allModules = res.data.data;
                 })["catch"](function (err) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire({
@@ -5812,7 +5805,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     setChildNodes: function setChildNodes(result) {
       var _this14 = this;
-      _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/modules/child-nodes/".concat(result.node.id)).then(function (res) {
+      _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/project-program-modules/child-nodes/".concat(result.node.id)).then(function (res) {
         _this14.isLoader = false;
         result.node.children = res.data.map(function (el) {
           return _objectSpread(_objectSpread({}, el), {}, {
@@ -5868,7 +5861,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       if (this.mouseEnter != id) {
         this.Tooltip = "";
         this.mouseEnter = id;
-        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/modules/logs/".concat(id)).then(function (res) {
+        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/project-program-modules/logs/".concat(id)).then(function (res) {
           var l = res.data.data;
           l.forEach(function (e) {
             _this15.Tooltip += "Created By: ".concat(e.causer_type, "; Event: ").concat(e.event, "; Description: ").concat(e.description, " ;Created At: ").concat(_this15.formatDate(e.created_at), " \n");
@@ -5893,7 +5886,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       for (var i = 0; i < this.filterSetting.length; i++) {
         filter += "columns[".concat(i, "]=").concat(this.filterSetting[i], "&");
       }
-      _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/modules?page=".concat(page, "&per_page=").concat(this.per_page, "&search=").concat(this.search, "&").concat(filter)).then(function (res) {
+      _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/project-program-modules?page=".concat(page, "&per_page=").concat(this.per_page, "&search=").concat(this.search, "&").concat(filter)).then(function (res) {
         var l = res.data;
         _this16.modules = l.data;
         _this16.modulesPagination = l.pagination;
@@ -5916,7 +5909,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         for (var i = 0; i < this.filterSetting.length; i++) {
           filter += "columns[".concat(i, "]=").concat(this.filterSetting[i], "&");
         }
-        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/modules?page=".concat(this.current_page, "&per_page=").concat(this.per_page, "&search=").concat(this.search, "&").concat(filter)).then(function (res) {
+        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/project-program-modules?page=".concat(this.current_page, "&per_page=").concat(this.per_page, "&search=").concat(this.search, "&").concat(filter)).then(function (res) {
           var l = res.data;
           _this17.modules = l.data;
           _this17.modulesPagination = l.pagination;
@@ -5952,7 +5945,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }).then(function (result) {
           if (result.value) {
             _this18.isLoader = true;
-            _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].post("/modules/bulk-delete", {
+            _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].post("/project-program-modules/bulk-delete", {
               ids: id
             }).then(function (res) {
               _this18.checkAll = [];
@@ -5998,7 +5991,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }).then(function (result) {
           if (result.value) {
             _this18.isLoader = true;
-            _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"]["delete"]("/modules/".concat(id)).then(function (res) {
+            _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"]["delete"]("/project-program-modules/".concat(id)).then(function (res) {
               _this18.checkAll = [];
               _this18.getData();
               if (tree) {
@@ -6189,10 +6182,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.isLoader = true;
         this.errors = {};
         this.is_disabled = false;
-        if (this.create.parent_id == null) {
-          this.create.parent_id = 0;
-        }
-        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].post("/modules", this.create).then(function (res) {
+        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].post("/project-program-modules", this.create).then(function (res) {
           if (_this22.create.is_module) {
             _this22.getAllModules();
           }
@@ -6229,7 +6219,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this23 = this;
       if (this.edit.parent_id) {
         this.isLoader = true;
-        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].post("modules/create-program-children", {
+        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].post("project-program-modules/create-program-children", {
           program_id: this.edit.parent_id,
           modules: this.modules_ids
         }).then(function (res) {
@@ -6271,15 +6261,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       } else {
         this.isLoader = true;
         this.errors = {};
-        if (!this.edit.parent_id) {
-          this.edit.parent_id = 0;
-        }
         var _this$edit = this.edit,
           name = _this$edit.name,
           name_e = _this$edit.name_e,
           parent_id = _this$edit.parent_id,
           is_active = _this$edit.is_active;
-        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].put("/modules/".concat(id), _objectSpread(_objectSpread({}, this.edit), {}, {
+        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].put("/project-program-modules/".concat(id), _objectSpread(_objectSpread({}, this.edit), {}, {
           search: undefined
         })).then(function (res) {
           _this23.$bvModal.hide("modal-edit-".concat(id));
@@ -6315,7 +6302,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context8.prev = _context8.next) {
               case 0:
                 _context8.next = 2;
-                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/modules/root-nodes").then(function (res) {
+                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/project-program-modules/root-nodes").then(function (res) {
                   console.log(_this24.rootNodes);
                   _this24.rootNodes = res.data;
                 })["catch"](function (err) {
@@ -6362,7 +6349,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 module = _this25.modules.find(function (e) {
                   return id == e.id;
                 });
-                _this25.moduleName = _this25.$i18n.locale == "ar" ? "".concat(module.name, " ").concat(module.parent ? "->".concat(module.parent.name) : '') : "".concat(module.name_e, " ").concat(module.parent ? "->".concat(module.parent.name_e) : '');
+                _this25.moduleName = _this25.$i18n.locale == "ar" ? "".concat(module.parent ? "".concat(module.parent.name, "->").concat(module.name) : module.name) : "".concat(module.parent ? "".concat(module.parent.name_e, "->").concat(module.name_e) : module.name_e);
                 _this25.edit.name = module.name;
                 _this25.edit.name_e = module.name_e;
                 _this25.edit.is_active = module.is_active;
@@ -9365,42 +9352,7 @@ var render = function render() {
     return _c("ErrorMessage", {
       key: index
     }, [_vm._v(_vm._s(errorMessage))]);
-  }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
-    staticClass: "form-group"
-  }, [_c("label", {
-    staticClass: "control-label",
-    attrs: {
-      "for": "field-2"
-    }
-  }, [_vm._v("\n            " + _vm._s(_vm.$t("general.IdSort")) + "\n          ")]), _vm._v(" "), _c("div", [_c("input", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.create.sort,
-      expression: "create.sort"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      type: "number",
-      "data-create": "2",
-      id: "field-2"
-    },
-    domProps: {
-      value: _vm.create.sort
-    },
-    on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-        _vm.$set(_vm.create, "sort", $event.target.value);
-      }
-    }
-  }), _vm._v(" "), _vm.errors.sort ? _vm._l(_vm.errors.sort, function (errorMessage, index) {
-    return _c("ErrorMessage", {
-      key: index
-    }, [_vm._v(_vm._s(_vm.$t(errorMessage)) + "\n                                  ")]);
-  }) : _vm._e()], 2)])])])])]);
+  }) : _vm._e()], 2)])])])]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

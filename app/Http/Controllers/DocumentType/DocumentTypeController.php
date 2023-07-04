@@ -19,7 +19,7 @@ class DocumentTypeController extends Controller
     {
         $model = $this->modelInterface->find($id);
         if (!$model) {
-           return responseJson(404, 'data not found');
+            return responseJson(404, 'data not found');
         }
         return responseJson(200, 'success', new DocumentTypeResource($model));
     }
@@ -32,8 +32,8 @@ class DocumentTypeController extends Controller
 
     public function create(DocumentTypeRequest $request)
     {
-         $this->modelInterface->create($request);
-         return responseJson(200, 'success');
+        $model = $this->modelInterface->create($request);
+        return responseJson(200, 'success', new DocumentTypeResource($model));
     }
 
     public function update(DocumentTypeRequest $request, $id)
@@ -52,6 +52,9 @@ class DocumentTypeController extends Controller
         if (!$model) {
             return responseJson(404, 'data not found');
         }
+        if ($model->hasChildren()) {
+            return responseJson(400, __('message.parent have children'));
+        }
         $this->modelInterface->delete($id);
 
         return responseJson(200, 'success');
@@ -60,11 +63,13 @@ class DocumentTypeController extends Controller
     public function bulkDelete(Request $request)
     {
         foreach ($request->ids as $id) {
-            $this->modelInterface->delete($id);
+            $model = $this->modelInterface->find($id);
+            if (!$model->hasChildren()) {
+                $this->modelInterface->delete($id);
+            }
         }
         return responseJson(200, __('Done'));
     }
-
     public function logs($id)
     {
         $model = $this->modelInterface->find($id);

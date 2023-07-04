@@ -1916,7 +1916,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
           is_default: this.create.is_default == "active" ? 1 : 0
         })).then(function (res) {
           _this13.getData();
-          _this13.document_id = res.data.id;
+          _this13.document_id = res.data.data.id;
           _this13.is_disabled = true;
           setTimeout(function () {
             sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire({

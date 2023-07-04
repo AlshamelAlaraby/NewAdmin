@@ -30,22 +30,22 @@ class ProjectProgramModuleRequest extends FormRequest
             'name' => [
                 'sometimes',
                 Rule::unique('project_program_modules')->ignore($this->id)->where(function ($query) use($request) {
-                    return $query->where('parent_id', $request->parent_id);
-                }),
+                    return $query->where('is_module', $request->is_module);
+                })->where('parent_id', $request->parent_id),
             ],
             'name_e' => [
                 'sometimes',
                 Rule::unique('project_program_modules')->ignore($this->id)->where(function ($query) use($request) {
-                    return $query->where('parent_id', $request->parent_id);
-                }),
+                    return $query->where('is_module', $request->is_module);
+                })->where('parent_id', $request->parent_id),
             ],
             'sort' => [
                 'sometimes',
                 'integer',
                 'min:0',
                 Rule::unique('project_program_modules')->ignore($this->id)->where(function ($query) use($request) {
-                    return $query->where('parent_id', $request->parent_id);
-                }),
+                    return $query->where('is_module', $request->is_module);
+                })->where('parent_id', $request->parent_id),
             ],
             "is_active"          => "nullable|in:active,inactive",
             "is_add_on"          => "nullable||in:0,1",

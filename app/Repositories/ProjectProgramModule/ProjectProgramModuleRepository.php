@@ -16,15 +16,15 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
     {
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
         if ($request->child == "true") {
-            $models->where("parent_id", "<>", 0);
+            $models->whereNotNull("parent_id");
         }
 
         if ($request->program_parent) {
-            $models->where("parent_id", 0)->where('is_module', 0);
+            $models->whereNull("parent_id")->where('is_module', 0);
         }
 
         if ($request->module_child) {
-            $models->where("parent_id", 0)->where('is_module', 1);
+            $models->whereNull("parent_id")->where('is_module', 1);
         }
 
         if ($request->per_page) {
@@ -36,7 +36,7 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
 
     public function getRootNodes()
     {
-        return $this->model->where("parent_id", 0)->where("is_module", 0)->get();
+        return $this->model->whereNull("parent_id")->where("is_module", 0)->get();
     }
     public function getChildNodes($parentId)
     {

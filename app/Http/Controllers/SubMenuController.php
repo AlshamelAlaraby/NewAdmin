@@ -33,12 +33,12 @@ class SubMenuController extends Controller
     public function all(AllRequest $request)
     {
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
-        if ($request->menu_id == 0){
-            $models->where("menu_id",null);
+        if ($request->program_folder_menu_id == "0"){
+            $models->where("program_folder_menu_id",null);
 
         }
-        if($request->menu_id){
-            $models->where("menu_id",$request->menu_id);
+        if($request->program_folder_menu_id){
+            $models->where("program_folder_menu_id",$request->program_folder_menu_id);
         }
         if ($request->per_page) {
             $models = ['data' => $models->paginate($request->per_page), 'paginate' => true];
@@ -117,7 +117,7 @@ class SubMenuController extends Controller
         $model_exists = $this->model->where('name',$model_create->name)->where('program_folder_menu_id',$request['menu_id'])->first();
         if (!$model_exists){
             $model = $this->model->create($collect->all());
-            $model->update(['menu_id'=> $request['menu_id']]);
+            $model->update(['program_folder_menu_id'=> $request['menu_id']]);
 
             $model_screens = Screen::where('sub_menu_id',$request['sub_menu_id'])->where('company_id',null)->get();
             foreach ($model_screens as $screen){
@@ -137,11 +137,11 @@ class SubMenuController extends Controller
     {
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
 
-        if ($request->menu_id == "0"){
+        if ($request->program_folder_menu_id == "0"){
             $models->where("program_folder_menu_id",null);
         }
-        if($request->menu_id){
-            $models->where("program_folder_menu_id",$request->menu_id);
+        if($request->program_folder_menu_id){
+            $models->where("program_folder_menu_id",$request->program_folder_menu_id);
         }
         if ($request->per_page) {
             $models = ['data' => $models->paginate($request->per_page), 'paginate' => true];

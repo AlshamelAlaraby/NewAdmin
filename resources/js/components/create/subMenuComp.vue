@@ -618,9 +618,6 @@ export default {
         this.isLoader = true;
         this.errors = {};
         this.is_disabled = false;
-        if (this.create.parent_id == null) {
-          this.create.parent_id = 0;
-        }
         adminApi
           .post(`/sub-menus`, { ...this.create })
           .then((res) => {
@@ -666,9 +663,6 @@ export default {
       } else {
         this.isLoader = true;
         this.errors = {};
-        if (this.edit.parent_id == null) {
-          this.edit.parent_id = 0;
-        }
         adminApi
           .put(`/sub-menus/${id}`, this.edit)
           .then((res) => {

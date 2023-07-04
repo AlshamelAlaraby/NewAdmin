@@ -516,7 +516,7 @@ export default {
         }
 
         adminApi
-          .post(`/companies`, {...this.create,url:this.create.website})
+          .post(`/companies`, {...this.create,url:this.create.website,website:undefined})
           .then((res) => {
             this.company_id = res.data.data.id;
             this.getData();
@@ -566,9 +566,8 @@ export default {
       } else {
         this.isLoader = true;
         this.errors = {};
-
         adminApi
-          .put(`/companies/${id}`, {...this.edit,url:this.edit.website})
+          .put(`/companies/${id}`, {...this.edit,url:this.edit.website,website:undefined})
           .then((res) => {
             this.getData();
             this.$bvModal.hide(`modal-edit-${id}`);
@@ -632,8 +631,7 @@ export default {
       this.edit.cr = company.cr;
       this.edit.partner_id = company.partner.id;
       this.edit.tax_id = company.tax_id;
-      this.edit.url = company.url;
-      this.edit.website = company.website;
+      this.edit.website = company.url;
       this.edit.vat_no = company.vat_no;
       this.edit.phone = company.phone;
       this.errors = {};
@@ -735,7 +733,7 @@ export default {
               res.data.data.forEach((e) => new_media.push(e.id));
 
               adminApi
-                .post(`/companies/${this.company_id}`, { old_media, media: new_media })
+                .put(`/companies/${this.company_id}`, { old_media, media: new_media })
                 .then((res) => {
                   this.images = res.data.data.media;
                   this.showPhoto = this.images[this.images.length - 1].webp;
@@ -788,7 +786,7 @@ export default {
                   res.data.data.forEach((e) => new_media.push(e.id));
 
                   adminApi
-                    .post(`/companies/${this.company_id}`, {
+                    .put(`/companies/${this.company_id}`, {
                       old_media,
                       media: new_media,
                     })
@@ -1994,7 +1992,7 @@ export default {
                       {{ data.address }}
                     </td>
                     <td v-if="setting.website">
-                      {{ data.website }}
+                      {{ data.url }}
                     </td>
                     <!-- <td v-if="setting.url">
                       {{ data.url }}
