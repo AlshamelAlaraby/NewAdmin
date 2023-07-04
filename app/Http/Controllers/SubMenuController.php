@@ -111,39 +111,20 @@ class SubMenuController extends Controller
 
     public function createSubMenuAndMenu(CreateSubMenuAndMenuRequest $request)
     {
-
         $model_create = $this->model->where('id',$request['sub_menu_id'])->first();
+        $collect =  collect($model_create)->except(['created_at','updated_at','id']);
 
-        $model_exists = $this->model->where('name',$model_create->name)->where('menu_id',$request['menu_id'])->first();
-
+        $model_exists = $this->model->where('name',$model_create->name)->where('program_folder_menu_id',$request['menu_id'])->first();
         if (!$model_exists){
-            $model = $this->model->create([
-                'name'              => $model_create->name ,
-                'name_e'            => $model_create->name_e ,
-                'is_add_on'         => $model_create->is_add_on ,
-                'menu_id'           => $request['menu_id'] ,
-                'sort'              => $model_create->sort ,
-                'is_menu_collapsed' => $model_create->is_menu_collapsed ,
-
-            ]);
-
+            $model = $this->model->create($collect->all());
+            $model->update(['menu_id'=> $request['menu_id']]);
 
             $model_screens = Screen::where('sub_menu_id',$request['sub_menu_id'])->where('company_id',null)->get();
             foreach ($model_screens as $screen){
-                Screen::create([
-                    "name"            => $screen->name,
-                    "name_e"          => $screen->name_e,
-                    "title"           => $screen->title,
-                    "title_e"         => $screen->title_e,
-                    "sort"            => $screen->sort,
-                    "is_implementor"  => $screen->is_implementor,
-                    "is_add_on"       => $screen->is_add_on,
-                    "url"             => $screen->url,
-                    "serial_id"       => $screen->serial_id,
-                    "sub_menu_id"     => $model->id,
-                ]);
+                $collect =  collect($screen)->except(['created_at','deleted_at','updated_at','id','sub_menu_id']);
+                $collect_screen = Screen::create($collect->all());
+                $collect_screen->update(["sub_menu_id"     => $model->id]);
             }
-
             return responseJson(200, 'success',  new SubMenuResource($model));
         }
 
@@ -156,12 +137,11 @@ class SubMenuController extends Controller
     {
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
 
-
         if ($request->menu_id == "0"){
-            $models->where("menu_id",null);
+            $models->where("program_folder_menu_id",null);
         }
         if($request->menu_id){
-            $models->where("menu_id",$request->menu_id);
+            $models->where("program_folder_menu_id",$request->menu_id);
         }
         if ($request->per_page) {
             $models = ['data' => $models->paginate($request->per_page), 'paginate' => true];

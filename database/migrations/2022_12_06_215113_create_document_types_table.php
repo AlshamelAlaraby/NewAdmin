@@ -16,11 +16,9 @@ class CreateDocumentTypesTable extends Migration
         Schema::create('document_types', function (Blueprint $table) {
             $table->id();
             $table->string('name')->comment("Name Arabic")->nullable();
-            $table->string('name_e')->comment("Name Arabic")->nullable();
+            $table->string('name_e')->comment("Name English");
             $table->integer('is_default')->default(1);
             $table->json('attributes')->nullable();
-            $table->integer('branche_id')->nullable();
-            $table->integer('serial_id')->nullable();
             $table->timestamps();
         });
     }

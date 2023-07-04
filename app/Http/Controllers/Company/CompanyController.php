@@ -22,29 +22,16 @@ class CompanyController extends Controller
 
     public function find($id)
     {
-        // $model = cacheGet('companies_' . $id);
-        // if (!$model) {
-            $model = $this->modelInterface->find($id);
-            if (!$model) {
-                return responseJson(404, __('message.data not found'));
-            // } else {
-            //     cachePut('companies_' . $id, $model);
-            // }
+        $model = $this->modelInterface->find($id);
+        if (!$model) {
+            return responseJson(404, __('message.data not found'));
         }
         return responseJson(200, 'success', new CompanyResource($model));
     }
 
     public function all(Request $request)
     {
-        // if (count($_GET) == 0) {
-        //     $models = cacheGet('companies');
-        //     if (!$models) {
-        //         $models = $this->modelInterface->all($request);
-        //         cachePut('companies', $models);
-        //     }
-        // } else {
-            $models = $this->modelInterface->all($request);
-        // }
+        $models = $this->modelInterface->all($request);
         return responseJson(200, 'success', CompanyResource::collection($models['data']), $models['paginate'] ? getPaginates($models['data']) : null);
     }
 
@@ -62,7 +49,6 @@ class CompanyController extends Controller
         if (!$model) {
             return responseJson(404, __('message.data not found'));
         }
-
         $model->refresh();
         $this->modelInterface->update($request, $id);
         return responseJson(200, 'success', new CompanyResource($model));
@@ -103,7 +89,7 @@ class CompanyController extends Controller
             return responseJson(404, __('message.data not found'));
         }
 
-        if ($model->modules()->count() > 0 || $model->stores()->count() > 0 || $model->branches()->count() > 0) {
+        if ($model->hasChildren()) {
             return responseJson(400, __('message.can not delete this data'));
         }
 
@@ -129,21 +115,7 @@ class CompanyController extends Controller
         if (!$company) {
             return responseJson(404, __('message.data not found'));
         }
-
-
-        $company->document_company_module = @$company->company_modules()->with('document_types.documentRelateds')->get();
-        $company->program = @$company->company_modules()->with(['module'=>function($q){
-            $q->with(['children','programFolders'=>function($q){
-                $q->with(['folder'=>function($q){
-                    $q->with(['subMenus'=>function($q){
-                        $q->with('screens');
-
-                    }]);
-                }]);
-            }]);
-        }])->get();
-
-
+        $company->document_company_module = @$company->company_modules()->with('documentTypes.documentRelateds')->get();
         return responseJson(200, __(''), $company);
     }
 

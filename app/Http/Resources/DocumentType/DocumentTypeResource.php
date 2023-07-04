@@ -11,17 +11,11 @@ class DocumentTypeResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'=>$this->id,
-            'name' => $this->name,
-            'name_e' => $this->name_e,
-            'branch_id' => $this->branch_id,
-            'serial_id' => $this->serial_id,
-            'is_default' => $this->is_default,
-            'branche_id' => $this->branche_id,
-            'serial_id' => $this->serial_id,
-            'attributes' => $this->attributes,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'id'                => $this->id,
+            'name'              => $this->name,
+            'name_e'            => $this->name_e,
+            'is_default'        => $this->is_default,
+            'attributes'        => $this->attributes,
             'document_relateds' => $this->documentRelateds,
         ];
     }

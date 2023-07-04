@@ -17,12 +17,16 @@ return new class extends Migration
 
         Schema::create('screens', function (Blueprint $table) {
             $table->id();
-            $table->string("name", 100)->unique()->comment("Name Arabic");
-            $table->string("name_e", 100)->unique()->comment("Name English");
-            $table->string("title", 100)->unique()->comment("title Arabic");
-            $table->string("title_e", 100)->unique()->comment("title English");
-            $table->unsignedBigInteger('serial_id')->nullable();
-            $table->unsignedInteger('module_id')->nullable();
+            $table->string("name", 100)->comment("Name Arabic");
+            $table->string("name_e", 100)->comment("Name English");
+            $table->string("title", 100)->comment("title Arabic");
+            $table->string("title_e", 100)->comment("title English");
+            $table->boolean('is_add_on')->default(0);
+            $table->text("url")->nullable();
+            $table->boolean('is_implementor')->default(0);
+            $table->bigInteger('sort')->default('0');
+            $table->unsignedBigInteger('sub_menu_id')->nullable()->comment("References Table sub_menus");
+            $table->unsignedBigInteger('company_id')->nullable()->comment("References Table companies");
             $table->softDeletes();
             $table->timestamps();
         });

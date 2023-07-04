@@ -11,16 +11,35 @@ class SubMenu extends Model
 {
     use HasFactory, LogTrait;
 
-    protected $fillable = [
-        'name',
-        'name_e',
-        'is_add_on',
-        'menu_id',
-        'sort',
-        'is_menu_collapsed',
-    ];
+    protected $guarded = ['id'];
     protected $appends = ['company_id'];
+    protected $table = 'sub_menus';
 
+    /*** return  relation  ProgramFolder */
+    public function programFolder()
+    {
+        return $this->belongsTo(ProgramFolder::class,'program_folder_menu_id','id');
+
+    }
+
+    /*** return  relation  Screens */
+    public function screens()
+    {
+        return $this->hasMany(Screen::class,'sub_menu_id','id');
+
+    }
+
+    /*** return count relation  hasMany */
+    public function hasChildren()
+    {
+        return $this->screens()->count() > 0 ;
+    }
+
+    /*** return CompanyId */
+    public function getCompanyIdAttribute($key)
+    {
+        return  $this->programFolder()->first()->company_id;
+    }
 
     public function getActivitylogOptions(): LogOptions
     {
@@ -30,36 +49,6 @@ class SubMenu extends Model
             ->logAll()
             ->useLogName('sub menu')
             ->setDescriptionForEvent(fn (string $eventName) => "This model has been {$eventName} by ($user)");
-    }
-
-    public function programFolder()
-    {
-        return $this->belongsTo(ProgramFolder::class,'menu_id','id');
-
-    }
-
-
-
-    public function screens()
-    {
-        return $this->hasMany(Screen::class,'sub_menu_id','id');
-
-    }
-
-
-
-//    public function menu()
-//    {
-//        return $this->belongsTo(Menu::class,'menu_id ','id');
-//    }
-
-    public function hasChildren()
-    {
-        return $this->screens()->count() > 0 ;
-    }
-    public function getCompanyIdAttribute($key)
-    {
-        return  $this->programFolder()->first()->company_id;
     }
 
 

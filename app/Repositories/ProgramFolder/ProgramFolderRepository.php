@@ -50,9 +50,7 @@ class ProgramFolderRepository implements ProgramFolderInterface
         return DB::transaction(function () use ($id, $request) {
             $this->model->where("id", $id)->update($request);
         });
-
         $model = $this->model->find($id);
-
         return $model;
     }
     public function updateArray($request)
@@ -72,7 +70,6 @@ class ProgramFolderRepository implements ProgramFolderInterface
 
     public function logs($id)
     {
-
         return $this->model->find($id)->activities()->orderBy('created_at', 'DESC')->get();
     }
 

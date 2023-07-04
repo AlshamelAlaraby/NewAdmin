@@ -15,26 +15,23 @@ class CompanyRequest extends FormRequest
     public function rules()
     {
         return [
-//            ,'. ($this->method() == 'PUT' ?  $this->currency : ''),
-//            'name' => 'nullable|unique:general_currencies,name,'. ($this->method() == 'PUT' ?  $this->currency : ''),
 
-            'name' => 'sometimes|string|max:255|unique:companies,name' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            'name_e' => 'sometimes|string|max:255|unique:companies,name_e,' . ($this->method() == 'PUT' ?  $this->id : ''),
-            'phone' => 'sometimes|string|max:20|unique:companies,phone,' . ($this->method() == 'PUT' ?   $this->id : ''),
-            "partner_id" => "exists:partners,id",
-            "url" => "sometimes|url|string|max:200|unique:companies,url" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            "address" => "string|max:200",
-            "cr" => "sometimes|string|unique:companies,cr" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            "tax_id" => "numeric|digits_between:1,10",
-            "vat_no" => "numeric|digits_between:1,10",
-            "email" => "sometimes|email|unique:companies,email" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            "website" => "string|max:200",
-            "is_active" => "in:active,inactive",
-            "phone_code" => "sometimes|numeric|digits_between:0,10",
-            "country_code" => "sometimes|string",
-            "media" => "nullable|array",
-            "media.*" => ["nullable", "exists:media,id", new \App\Rules\MediaRule()],
-            'old_media.*' => ['exists:media,id', new \App\Rules\MediaRule("App\Models\Company")],
+            'name'         => 'sometimes|string|max:255|unique:companies,name' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            'name_e'       => 'sometimes|string|max:255|unique:companies,name_e,' . ($this->method() == 'PUT' ?  $this->id : ''),
+            "url"          => "required|url|unique:companies,url" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            "address"      => "sometimes|string|max:200",
+            'phone'        => 'sometimes|string|max:20|unique:companies,phone,' . ($this->method() == 'PUT' ?   $this->id : ''),
+            "cr"           => "sometimes|string|unique:companies,cr" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            "tax_id"       => "sometimes|numeric|digits_between:1,10",
+            "vat_no"       => "sometimes|numeric|digits_between:1,10",
+            "email"        => "sometimes|email|unique:companies,email" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            "is_active"    => "nullable|in:active,inactive",
+            "partner_id"   => "nullable|exists:partners,id",
+            "phone_code"   => "sometimes|numeric|digits_between:0,10",
+            "country_code" => "nullable|string",
+            "media"        => "nullable|array",
+            "media.*"      => ["nullable", "exists:media,id", new \App\Rules\MediaRule()],
+            'old_media.*'  => ['exists:media,id', new \App\Rules\MediaRule("App\Models\Company")],
         ];
     }
 

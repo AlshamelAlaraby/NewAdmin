@@ -22,32 +22,18 @@ class ButtonController extends Controller
 
     public function all(Request $request)
     {
-        // if (count($_GET) == 0) {
-        //     $models = cacheGet('Buttons');
-        //     if (!$models) {
-        //         $models = $this->repository->getAllButtons($request);
-        //         cachePut('Buttons', $models);
-        //     }
-        // } else {
 
-            $models = $this->repository->getAllButtons($request);
-        // }
-
+        $models = $this->repository->getAllButtons($request);
         return responseJson(200, 'success', ButtonResource::collection($models['data']), $models['paginate'] ? getPaginates($models['data']) : null);
     }
 
     public function find($id)
     {
 
-        // $model = cacheGet('Buttons_' . $id);
 
-        // if (!$model) {
-            $model = $this->repository->find($id);
-            if (!$model) {
-                return responseJson(404, __('message.data not found'));
-            // } else {
-            //     cachePut('Buttons_' . $id, $model);
-            // }
+        $model = $this->repository->find($id);
+        if (!$model) {
+            return responseJson(404, __('message.data not found'));
         }
         return responseJson(200, __('Done'), new ButtonResource($model));
     }
@@ -85,12 +71,13 @@ class ButtonController extends Controller
 
     public function delete($id)
     {
-
         $model = $this->repository->find($id);
         if (!$model) {
             return responseJson(404, __('message.data not found'));
         }
-
+        if ($model->hasChildren()) {
+            return responseJson(400, __('message.data has relation cant delete'));
+        }
         $this->repository->delete($id);
         return responseJson(200, __('Done'));
     }
@@ -98,7 +85,10 @@ class ButtonController extends Controller
     public function bulkDelete(Request $request)
     {
         foreach ($request->ids as $id) {
-            $this->repository->delete($id);
+            $model = $this->repository->find($id);
+            if (!$model->hasChildren()) {
+                $this->repository->delete($id);
+            }
         }
         return responseJson(200, __('Done'));
     }

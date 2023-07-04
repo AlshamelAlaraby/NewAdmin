@@ -15,7 +15,7 @@ class CreateUserSettingScreensTable extends Migration
     {
         Schema::create('user_setting_screens', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('admin_id');
+            $table->unsignedBigInteger('admin_id')->comment("References Table admins");
             $table->string('name_screen');
             $table->json('data_json');
             $table->timestamps();

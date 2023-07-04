@@ -3,6 +3,7 @@
 namespace App\Http\Resources\PartnerLogin;
 
 use App\Http\Resources\Module\ModuleChildrenResource;
+use App\Http\Resources\ProjectProgramModule\ProjectProgramModuleChildrenResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProgramLoginResource extends JsonResource
@@ -16,17 +17,17 @@ class ProgramLoginResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'name_e' => $this->name_e,
-            'parent_id' => $this->parent_id,
-            'company_id' => $this->company_id,
-            'sort' => $this->sort,
-            'icon' => $this->icon,
+            'id'                => $this->id,
+            'name'              => $this->name,
+            'name_e'            => $this->name_e,
+            'parent_id'         => $this->parent_id,
+            'company_id'        => $this->company_id,
+            'sort'              => $this->sort,
+            'icon'              => $this->icon,
             'is_menu_collapsed' => $this->is_menu_collapsed,
-            "children" => ModuleChildrenResource::collection($this->children),
-            "Parent" => new ParentProgramLoginResource($this->parent),
-            "programFolders"=>  programFoldersLoginResource::collection($this->programFolders)
+            "children"          => ProjectProgramModuleChildrenResource::collection($this->children),
+            "Parent"            => new ParentProgramLoginResource($this->parent),
+            "programFolders"    =>  programFoldersLoginResource::collection($this->programFolders)
 
 
 

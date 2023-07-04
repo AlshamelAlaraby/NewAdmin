@@ -17,30 +17,16 @@ class DocumentTypeController extends Controller
 
     public function find($id)
     {
-        // $model = cacheGet('DocumentType_' . $id);
-        // if (!$model) {
-            $model = $this->modelInterface->find($id);
-            if (!$model) {
-                return responseJson(404, 'data not found');
-            // } else {
-            //     cachePut('DocumentType_' . $id, $model);
-            // }
+        $model = $this->modelInterface->find($id);
+        if (!$model) {
+           return responseJson(404, 'data not found');
         }
         return responseJson(200, 'success', new DocumentTypeResource($model));
     }
 
     public function all(Request $request)
     {
-        // if (count($_GET) == 0) {
-        //     $models = cacheGet('DocumentType');
-        //     if (!$models) {
-        //         $models = $this->modelInterface->all($request);
-        //         cachePut('DocumentType', $models);
-        //     }
-        // } else {
-            $models = $this->modelInterface->all($request);
-        // }
-
+        $models = $this->modelInterface->all($request);
         return responseJson(200, 'success', DocumentTypeResource::collection($models['data']), $models['paginate'] ? getPaginates($models['data']) : null);
     }
 
@@ -85,7 +71,6 @@ class DocumentTypeController extends Controller
         if (!$model) {
             return responseJson(404, __('message.data not found'));
         }
-
         $logs = $this->modelInterface->logs($id);
         return responseJson(200, 'success', \App\Http\Resources\Log\LogResource::collection($logs));
     }

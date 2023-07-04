@@ -15,9 +15,10 @@ class HelpfileRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'       =>  ($this->method == 'PUT' ? 'nullable|' : 'required|') .'string|max:100',
-            'name_e'     =>  ($this->method == 'PUT' ? 'required|' : 'required|') .'string|max:100',
-            'url'        =>  ($this->method == 'PUT' ? 'required|' : 'required|') .'string|max:200'
+            'name'        => 'sometimes|string|max:100|unique:helpfiles,name' . ($this->method() == 'POST' ? ',' . $this->id : ''),
+            'name_e'      => 'sometimes|string|max:100|unique:helpfiles,name_e' . ($this->method() == 'POST' ? ',' . $this->id : ''),
+            'url'         => 'sometimes|url|unique:helpfiles,url' . ($this->method() == 'POST' ? ',' . $this->id : ''),
+
         ];
     }
 

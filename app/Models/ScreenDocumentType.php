@@ -10,9 +10,7 @@ class ScreenDocumentType extends Model
 {
     use HasFactory,LogTrait;
 
-    protected $fillable = [
-        'screen_id',
-        'document_type_id',
-    ];
+    protected $guarded = ["id"];
+
 
 }

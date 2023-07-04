@@ -42,14 +42,6 @@ class ScreenRequest extends FormRequest
                     return $query->where('company_id', $request->company_id);
                 })->whereNull("deleted_at"),
             ],
-            'sort' => [
-                'required',
-                'integer',
-                'min:0',
-                Rule::unique('screens')->ignore($this->id)->where(function ($query) use($request) {
-                    return $query->where('company_id', $request->company_id);
-                })->whereNull("deleted_at"),
-            ],
             'title' => [
                 'required',
                 Rule::unique('screens')->ignore($this->id)->where(function ($query) use($request) {
@@ -62,23 +54,24 @@ class ScreenRequest extends FormRequest
                     return $query->where('company_id', $request->company_id);
                 })->whereNull("deleted_at"),
             ],
+            'sort' => [
+                'required',
+                'integer',
+                'min:0',
+                Rule::unique('screens')->ignore($this->id)->where(function ($query) use($request) {
+                    return $query->where('company_id', $request->company_id);
+                })->whereNull("deleted_at"),
+            ],
             'url' => [
                 'nullable',
                 Rule::unique('screens')->ignore($this->id)->where(function ($query) use($request) {
                     return $query->where('company_id', $request->company_id);
                 })->whereNull("deleted_at"),
             ],
-
-
-            'serial_id'  => 'nullable',
-            'sub_menu_id'  => 'nullable|exists:sub_menus,id',
+            "is_add_on"       => "nullable||in:1,0",
             'is_implementor'  => 'nullable|in:1,0',
-//            'sort'       => 'nullable|integer|min:0|unique:screens,sort' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            'module_id'  => 'nullable|exists:modules,id',
-            'attributes' => 'nullable|array',
-            "is_add_on" => "nullable|boolean",
-            'company_id'  => 'nullable|exists:companies,id',
-
+            'sub_menu_id'     => 'nullable|exists:sub_menus,id',
+            'company_id'      => 'nullable|exists:companies,id',
         ];
     }
 

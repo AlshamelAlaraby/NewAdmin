@@ -35,7 +35,6 @@ class ScreenHelpfileRepository implements ScreenHelpfileRepositoryInterface
         DB::transaction(function () use ($request) {
 
             $this->model->create($request);
-            // cacheForget("ScreenHelpfiles");
         });
     }
 
@@ -43,8 +42,6 @@ class ScreenHelpfileRepository implements ScreenHelpfileRepositoryInterface
     {
         DB::transaction(function () use ($id, $request) {
             $this->model->where("id", $id)->update($request);
-            // $this->forget($id);
-
         });
 
     }
@@ -57,19 +54,8 @@ class ScreenHelpfileRepository implements ScreenHelpfileRepositoryInterface
     public function delete($id)
     {
         $model = $this->find($id);
-        // $this->forget($id);
         $model->delete();
     }
 
-    // private function forget($id)
-    // {
-    //     $keys = [
-    //         "ScreenHelpfiles",
-    //         "ScreenHelpfiles_" . $id,
-    //     ];
-    //     foreach ($keys as $key) {
-    //         cacheForget($key);
-    //     }
 
-    // }
 }

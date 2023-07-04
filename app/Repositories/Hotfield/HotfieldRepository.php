@@ -40,9 +40,7 @@ class HotfieldRepository implements HotfieldRepositoryInterface
     public function create($request)
     {
         DB::transaction(function () use ($request) {
-
             $this->model->create($request);
-            // cacheForget("Hotfields");
         });
     }
 
@@ -50,8 +48,6 @@ class HotfieldRepository implements HotfieldRepositoryInterface
     {
         DB::transaction(function () use ($id, $request) {
             $this->model->where("id", $id)->update($request);
-            // $this->forget($id);
-
         });
 
     }
@@ -68,15 +64,4 @@ class HotfieldRepository implements HotfieldRepositoryInterface
         return $this->model->find($id)->activities()->orderBy('created_at', 'DESC')->get();
     }
 
-    // private function forget($id)
-    // {
-    //     $keys = [
-    //         "Hotfields",
-    //         "Hotfields_" . $id,
-    //     ];
-    //     foreach ($keys as $key) {
-    //         cacheForget($key);
-    //     }
-
-    // }
 }

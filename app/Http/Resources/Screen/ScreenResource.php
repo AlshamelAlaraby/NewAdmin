@@ -17,24 +17,19 @@ class ScreenResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'name_e' => $this->name_e,
-            'title' => $this->title,
-            'title_e' => $this->title_e,
-            'url'     => $this->url,
-            'serial_id ' => $this->serial_id == null ? 'no serial' : $this->serial_id, //optional( $this->serial)->name,
+            'id'             => $this->id,
+            'name'           => $this->name,
+            'name_e'         => $this->name_e,
+            'title'          => $this->title,
+            'title_e'        => $this->title_e,
+            'is_add_on'      => $this->is_add_on,
+            'url'            => $this->url,
             'is_implementor' => $this->is_implementor,
-            'sort'       => $this->sort,
-            'company_id'  => $this->company_id,
-            'deleted_at' => $this->deleted_at,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-            "module_id" => $this->module_id,
-            'company'  => new  CompanyResource($this->company),
-       
-            // "module" => $this->module,
-           'sub_menu' => new SubMenuResource($this->subMenu),
+            'sort'           => $this->sort,
+            "sub_menu_id"    => $this->sub_menu_id,
+            'company_id'     => $this->company_id,
+            'company'        => new  CompanyResource($this->company),
+            'sub_menu'       => new SubMenuResource($this->subMenu),
 
         ];
     }

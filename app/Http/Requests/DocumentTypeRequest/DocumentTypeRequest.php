@@ -27,14 +27,11 @@ class DocumentTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'   => 'sometimes|string|max:255|unique:document_types,name' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            'name_e' => 'sometimes|string|max:255|unique:document_types,name_e' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            'is_default' => ['nullable','integer'],
-            'attributes' => "nullable|array",
-            'branche_id' => "nullable|exists:branches,id",
-            'serial_id' => "nullable|integer",
-            'document_relateds.*' => "nullable|integer",
-
+            'name'                => 'sometimes|string|max:255|unique:document_types,name' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            'name_e'              => 'sometimes|string|max:255|unique:document_types,name_e' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            'is_default'          => ['nullable','int:0,1'],
+            'attributes'          => "nullable|array",
+            'document_relateds.*' => "nullable|exists:document_types,id",
         ];
     }
 

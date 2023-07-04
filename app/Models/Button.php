@@ -13,12 +13,19 @@ class Button extends Model implements \Spatie\MediaLibrary\HasMedia
 {
     use SoftDeletes, LogTrait, MediaTrait;
 
-    protected $guarded = [];
+    protected $guarded = ['id'];
     protected $table = 'buttons';
 
+    /*** return relation with Screens */
     public function screens()
     {
         return $this->belongsToMany(Screen::class, 'screens_buttons', 'button_id', 'screen_id');
+    }
+
+    /*** return count relation  hasMany */
+    public function hasChildren()
+    {
+        return $this->screens()->count() > 0;
     }
 
     public function getActivitylogOptions(): LogOptions

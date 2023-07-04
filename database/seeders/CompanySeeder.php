@@ -24,7 +24,6 @@ class CompanySeeder extends Seeder
             "tax_id" => "23425",
             "vat_no" => "345345",
             "email" => "test@test.com",
-            "website" => "https://alshamelalaraby.com/company",
             "is_active" => "active",
             "partner_id" => 1,
         ]);

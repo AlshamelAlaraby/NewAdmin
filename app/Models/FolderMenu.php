@@ -14,16 +14,24 @@ class FolderMenu extends Model
     use SoftDeletes, LogTrait;
 
     protected $guarded = ["id"];
-    protected $table   = "folders_menu";
+    protected $table   = "folder_menus";
 
+    /*** return relation with Programs */
     public function programs()
     {
-        return $this->belongsToMany(ProjectProgramModule::class, 'program_folder_menu', 'menu_folder_id', 'project_program_module_id');
+        return $this->belongsToMany(ProjectProgramModule::class, 'program_folder_menus', 'menu_folder_id', 'project_program_module_id');
     }
+
+    /*** return relation with SubMenus */
     public function subMenus()
     {
-        return $this->hasMany(SubMenu::class,'menu_id','id');
+        return $this->hasMany(SubMenu::class,'program_folder_menu_id','id');
+    }
 
+    /*** return relation with SubMenus */
+    public function hasChildren()
+    {
+        return $this->programs()->count() ;
     }
     public function getActivitylogOptions(): LogOptions
     {
@@ -35,8 +43,4 @@ class FolderMenu extends Model
             ->setDescriptionForEvent(fn(string $eventName) => "This model has been {$eventName} by ($user)");
     }
 
-    public function hasChildren()
-    {
-        return $this->programs()->count() ;
-    }
 }

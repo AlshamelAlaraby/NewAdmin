@@ -22,22 +22,43 @@ class Company extends Model implements \Spatie\MediaLibrary\HasMedia
         'is_active' => 'App\Enums\IsActive',
     ];
 
-    // relations
+    /*** return relation  with  partner */
     public function partner()
     {
         return $this->belongsTo(Partner::class);
     }
 
-    public function modules()
+    /*** return relation  with  ProjectProgramModules */
+    public function projectProgramModules()
     {
-        return $this->belongsToMany(ProjectProgramModule::class, 'company_modules', 'company_id', 'module_id');
+        return $this->belongsToMany(ProjectProgramModule::class, 'company_project_program_modules', 'company_id', 'project_program_module_id');
     }
 
+    /*** return relation  with  Screens */
+    public function screens()
+    {
+        return $this->hasMany(Screen::class);
+    }
+
+    /*** return relation  with  ProjectProgramModules */
+    public function company_modules()
+    {
+        return $this->hasMany(CompanyProjectProgramModule::class, 'company_id', 'id');
+    }
+
+    /*** return count relation  hasMany */
+    public function hasChildren()
+    {
+        $hasChildren = $this->projectProgramModules()->count() > 0 || $this->screens()->count() > 0 ;
+        return $hasChildren;
+    }
+
+    /*** return relation  with  CompanyProjectProgramModule */
     public function get_modules(){
-        $modules = $this->modules;
+        $modules = $this->projectProgramModules;
         $arr = [];
         foreach ($modules as $module){
-            $piv = CompanyModule::query ()->where ('company_id',$this->id)->where ('module_id',$module->id)->first ();
+            $piv = CompanyProjectProgramModule::query ()->where ('company_id',$this->id)->where ('project_program_module_id',$module->id)->first ();
             $module->expire_state = 'not_expired';
             $module->allowed_users_no = $piv->allowed_users_no;
             if (Carbon::now () > $piv->end_date){
@@ -47,30 +68,6 @@ class Company extends Model implements \Spatie\MediaLibrary\HasMedia
         }
         return $arr;
 
-    }
-
-
-
-    public function stores()
-    {
-        return $this->hasMany(Store::class);
-    }
-
-    public function workFlows()
-    {
-        return $this->hasMany(WorkflowTree::class);
-    }
-
-
-    public function hasChildren()
-    {
-        $hasChildren = $this->branches()->count() > 0 || $this->workFlows()->count() > 0 || $this->stores()->count() > 0;
-        return $hasChildren;
-    }
-
-    public function company_modules()
-    {
-        return $this->hasMany(CompanyModule::class, 'company_id', 'id');
     }
 
     public function getActivitylogOptions(): LogOptions

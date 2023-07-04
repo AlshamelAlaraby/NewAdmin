@@ -15,8 +15,8 @@ class CreateScreenDocumentTypesTable extends Migration
     {
         Schema::create('screen_document_types', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('screen_id');
-            $table->foreignId('document_type_id');
+            $table->foreignId('screen_id')->constrained('screens')->references("id");
+            $table->foreignId('document_type_id')->constrained('document_types')->references("id");
             $table->timestamps();
         });
     }

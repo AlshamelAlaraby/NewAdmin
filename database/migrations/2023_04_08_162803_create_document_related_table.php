@@ -15,9 +15,8 @@ class CreateDocumentRelatedTable extends Migration
     {
         Schema::create('document_related', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('document_type_id');
-            $table->unsignedBigInteger('document_related_id');
-//            $table->foreignId('document_types_id')->constrained('document_types')->references("id");
+            $table->foreignId('document_type_id')->constrained('document_types')->references("id");
+            $table->foreignId('document_related_id')->constrained('document_types')->references("id");
             $table->timestamps();
         });
     }

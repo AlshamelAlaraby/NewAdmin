@@ -11,9 +11,9 @@ class ScreenButton extends Model
     use SoftDeletes, LogTrait;
 
     protected $table = 'screens_buttons';
-
     protected $guarded = ["id"];
 
+    /*** return relation with Screens */
     public function screens()
     {
         return Screen::query()->whereHas('buttons')->with('buttons')->get();

@@ -24,7 +24,7 @@ class CreateSubMenuAndMenuRequest extends FormRequest
     public function rules()
     {
         return [
-            'menu_id' => 'required|exists:program_folder_menu,id',
+            'menu_id' => 'required|exists:program_folder_menus,id',
             'sub_menu_id' => 'required|exists:sub_menus,id',
 
         ];

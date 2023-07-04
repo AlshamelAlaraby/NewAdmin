@@ -40,7 +40,6 @@ class ScreenDocumentTypeRepository implements ScreenDocumentTypeRepositoryInterf
         DB::transaction(function () use ($request) {
             $data = $request;
             $this->model->create($data);
-            // cacheForget("ScreenDocumentType");
         });
 
         return $this->successResponse([], __('Done'));
@@ -51,14 +50,12 @@ class ScreenDocumentTypeRepository implements ScreenDocumentTypeRepositoryInterf
         DB::transaction(function () use ($id, $request) {
             $data = $request;
             $this->model->where("id", $id)->update($data);
-            // $this->forget($id);
         });
     }
 
     public function delete($id)
     {
         $model = $this->find($id);
-        // $this->forget($id);
         $model->delete();
     }
 
@@ -68,14 +65,5 @@ class ScreenDocumentTypeRepository implements ScreenDocumentTypeRepositoryInterf
     }
 
 
-    // private function forget($id)
-    // {
-    //     $keys = [
-    //         "ScreenDocumentType",
-    //         "ScreenDocumentType_" . $id,
-    //     ];
-    //     foreach ($keys as $key) {
-    //         cacheForget($key);
-    //     }
-    // }
+
 }

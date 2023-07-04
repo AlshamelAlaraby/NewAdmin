@@ -23,46 +23,28 @@ class HelpfileController extends Controller
 
     public function all(Request $request)
     {
-        // if (count($_GET) == 0) {
-        //     $models = cacheGet('Helpfiles');
 
-        //     if (!$models) {
-        //         $models = $this->repository->getAllHelpfiles($request);
-        //         cachePut('Helpfiles', $models);
-        //     }
-        // } else {
 
-            $models = $this->repository->getAllHelpfiles($request);
-        // }
-
+        $models = $this->repository->getAllHelpfiles($request);
         return responseJson(200, 'success', HelpfileResource::collection($models['data']), $models['paginate'] ? getPaginates($models['data']) : null);
     }
 
     public function find($id)
     {
-
-        // $model = cacheGet('Helpfiles_' . $id);
-
-        // if (!$model) {
-            $model = $this->repository->find($id);
-            if (!$model) {
-                return responseJson(404, __('message.data not found'));
-            // } else {
-            //     cachePut('Helpfiles_' . $id, $model);
-            // }
+       $model = $this->repository->find($id);
+        if (!$model) {
+          return responseJson(404, __('message.data not found'));
         }
         return responseJson(200, __('Done'), new HelpfileResource($model));
     }
 
     public function store(HelpfileRequest $request)
     {
-
         return responseJson(200, __('Done'), $this->repository->create($request->validated()));
     }
 
     public function update(HelpfileRequest $request, $id)
     {
-
         $model = $this->repository->find($id);
         if (!$model) {
             return responseJson(404, __('message.data not found'));

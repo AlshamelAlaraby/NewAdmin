@@ -18,17 +18,14 @@ class SubMenuResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'name_e' => $this->name_e,
-            'is_add_on' => $this->is_add_on,
-            'menu_id' => $this->menu_id,
-            'sort' => $this->sort,
-            'is_menu_collapsed' => $this->is_menu_collapsed,
-            'menu' => new ProgramFolderResource($this->programFolder),
-            // 'screens' =>  ScreenResource::collection($this->screens),
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'id'                     => $this->id,
+            'name'                   => $this->name,
+            'name_e'                 => $this->name_e,
+            'is_add_on'              => $this->is_add_on,
+            'program_folder_menu_id' => $this->program_folder_menu_id,
+            'sort'                   => $this->sort,
+            'is_menu_collapsed'      => $this->is_menu_collapsed,
+            'program_folder_menus'   => new ProgramFolderResource($this->programFolder),
         ];
     }
 }

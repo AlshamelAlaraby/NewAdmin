@@ -13,11 +13,17 @@ class Helpfile extends Model
 
     protected $guarded = ["id"];
 
+    /*** return relation with Screens */
     public function screens()
     {
         return $this->belongsToMany(Screen::class, 'screens_helpfiles', 'helpfile_id', 'screen_id');
     }
 
+    /*** return count relation  hasMany */
+    public function hasChildren()
+    {
+        return $this->screens()->count() > 0;
+    }
 
     public function getActivitylogOptions(): LogOptions
     {
@@ -29,8 +35,4 @@ class Helpfile extends Model
             ->setDescriptionForEvent(fn (string $eventName) => "This model has been {$eventName} by ($user)");
     }
 
-    public function hasChildren()
-    {
-        return $this->screens()->count() > 0;
-    }
 }

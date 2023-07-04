@@ -27,9 +27,7 @@ class DocumentTypeRepository implements DocumentTypeInterface
 
     public function create($request)
     {
-//       return $request ;
         return DB::transaction(function () use ($request) {
-            // cacheForget("documentTypes");
             $model = $this->model->create($request->all());
             $model->documentRelateds()->attach($request->document_relateds);
             return $model;
@@ -62,17 +60,6 @@ class DocumentTypeRepository implements DocumentTypeInterface
          return $this->model->find($id)->activities()->orderBy('created_at', 'DESC')->get();
     }
 
-
-    // private function forget($id)
-    // {
-    //     $keys = [
-    //         "documentTypes",
-    //         "documentTypes_" . $id,
-    //     ];
-    //     foreach ($keys as $key) {
-    //         cacheForget($key);
-    //     }
-    // }
 
 
 

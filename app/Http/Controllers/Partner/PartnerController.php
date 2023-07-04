@@ -19,7 +19,6 @@ class PartnerController extends Controller
 {
 
     protected $repository;
-    protected $resource = PartnerResource::class;
 
     public function __construct(PartnerRepositoryInterface $repository)
     {
@@ -28,54 +27,35 @@ class PartnerController extends Controller
 
     public function all(Request $request)
     {
-        // if (count($_GET) == 0) {
-        //     $models = cacheGet('Partners');
-
-        //     if (!$models) {
-        //         $models = $this->repository->getAllPartners($request);
-
-        //         cachePut('Partners', $models);
-        //     }
-        // } else {
-
-            $models = $this->repository->getAllPartners($request);
-        // }
-
-        return responseJson(200, 'success', ($this->resource)::collection($models['data']), $models['paginate'] ? getPaginates($models['data']) : null);
+        $models = $this->repository->getAllPartners($request);
+        return responseJson(200, 'success', PartnerResource::collection($models['data']), $models['paginate'] ? getPaginates($models['data']) : null);
     }
 
     public function find($id)
     {
-
-        // $model = cacheGet('Partners_' . $id);
-
-        // if (!$model) {
-            $model = $this->repository->find($id);
-            if (!$model) {
-                return responseJson(404, __('message.data not found'));
-            // } else {
-            //     cachePut('Partners_' . $id, $model);
-            // }
+        $model = $this->repository->find($id);
+        if (!$model) {
+            return responseJson(404, __('message.data not found'));
         }
-        return responseJson(200, __('Done'), new PartnerResource($model),);
+        return responseJson(200, __('Done'), new PartnerResource($model));
     }
 
     public function store(PartnerRequest $request)
     {
-
-        return responseJson(200, __('Done'), $this->repository->create($request->validated()));
+        $model = $this->repository->create($request->validated());
+        $model->refresh();
+        return responseJson(200, __('Done'),new PartnerResource($model) );
     }
 
     public function update(PartnerRequest $request, $id)
     {
-
         $model = $this->repository->find($id);
         if (!$model) {
             return responseJson(404, __('message.data not found'));
         }
         $model = $this->repository->update($request->validated(), $id);
-
-        return responseJson(200, __('Done'));
+        $model->refresh();
+        return responseJson(200, __('Done'),new PartnerResource($model));
     }
 
     public function delete($id)

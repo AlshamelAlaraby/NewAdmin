@@ -15,8 +15,8 @@ class CreateScreenAttributesTable extends Migration
     {
         Schema::create('screen_attributes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('screen_id')->constrained('screens')->references("id");
-            $table->unsignedInteger('module_id')->constrained('modules')->references("id");
+            $table->foreignId('screen_id')->constrained('screens')->references("id");
+            $table->foreignId('project_program_module_id')->constrained('project_program_modules')->references("id");
             $table->json('attributes')->nullable();
             $table->timestamps();
         });

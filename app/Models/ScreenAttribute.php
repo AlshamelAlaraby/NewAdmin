@@ -13,9 +13,7 @@ class ScreenAttribute extends Model
     use HasFactory, LogTrait;
 
     protected $table = "screen_attributes";
-
-    protected $guarded = [];
-
+    protected $guarded = ['id'];
     protected $casts = ["attributes" => "json"];
 
     public function getActivitylogOptions(): LogOptions

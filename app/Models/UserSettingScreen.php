@@ -14,7 +14,7 @@ class UserSettingScreen extends Model
     protected $table = "user_setting_screens";
     protected $casts = ["data_json" => "json"];
 
-
+    /*** return relation with Admin */
     public function admin()
     {
         return $this->belongsTo(Admin::class, 'admin_id', 'id');

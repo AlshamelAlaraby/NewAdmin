@@ -50,10 +50,8 @@ class ScreenButtonRepository implements ScreenButtonRepositoryInterface
                         ]
                     );
                 }
-                // cacheForget("ScreenButtons");
             } else {
                 $this->model->create($request->input());
-                // cacheForget("ScreenButtons");
             }
         });
     }
@@ -89,14 +87,5 @@ class ScreenButtonRepository implements ScreenButtonRepositoryInterface
         return $this->model->find($id)->activities()->orderBy('created_at', 'DESC')->get();
     }
 
-    // private function forget($id)
-    // {
-    //     $keys = [
-    //         "ScreenButtons",
-    //         "ScreenButtons_" . $id,
-    //     ];
-    //     foreach ($keys as $key) {
-    //         cacheForget($key);
-    //     }
-    // }
+
 }

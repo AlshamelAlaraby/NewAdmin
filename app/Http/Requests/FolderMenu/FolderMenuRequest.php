@@ -24,9 +24,9 @@ class FolderMenuRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'required|string|max:255|unique:folders_menu,name' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            'name_e'    => 'required|string|max:255|unique:folders_menu,name_e' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            'sort'      => 'nullable|integer|min:0|unique:folders_menu,sort' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            'name'      => 'required|string|max:255|unique:folder_menus,name' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            'name_e'    => 'required|string|max:255|unique:folder_menus,name_e' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            'sort'      => 'nullable|integer|min:0|unique:folder_menus,sort' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
             'is_menu_collapsed' => 'nullable|in:0,1',
 
         ];

@@ -27,16 +27,31 @@ class SubMenuRequest extends FormRequest
         $request =  request();
 
         return [
-            'name' => 'required|string|max:255',
-            'name_e' => 'required|string|max:255',
-            'is_add_on' => 'nullable|boolean',
-            'is_menu_collapsed' => 'nullable|in:0,1',
-            'menu_id' => 'nullable|exists:program_folder_menu,id',
+
+            'is_add_on'              => 'nullable|boolean',
+            'is_menu_collapsed'      => 'nullable|in:0,1',
+            'program_folder_menu_id' => 'nullable|exists:program_folder_menus,id',
+            'name' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('sub_menus')->ignore($this->id)->where(function ($query) use($request) {
+                    return $query->where('program_folder_menu_id', $request->program_folder_menu_id);
+                }),
+            ],
+            'name_e' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('sub_menus')->ignore($this->id)->where(function ($query) use($request) {
+                    return $query->where('program_folder_menu_id', $request->program_folder_menu_id);
+                }),
+            ],
 
             'sort' => [
                 'nullable',
                 Rule::unique('sub_menus')->ignore($this->id)->where(function ($query) use($request) {
-                    return $query->where('menu_id', $request->menu_id);
+                    return $query->where('program_folder_menu_id', $request->program_folder_menu_id);
                 }),
             ],
 

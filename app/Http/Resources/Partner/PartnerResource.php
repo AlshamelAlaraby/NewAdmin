@@ -17,13 +17,15 @@ class PartnerResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'name_e' => $this->name_e,
-            "is_active" => $this->is_active,
-            'email' => $this->email,
-            'mobile_no' => $this->mobile_no,
-//            "companies" => CompanyResource::collection($this->companies),
+            'id'           => $this->id,
+            'name'         => $this->name,
+            'name_e'       => $this->name_e,
+            "is_active"    => $this->is_active,
+            'email'        => $this->email,
+            'mobile_no'    => $this->mobile_no,
+            'phone_code'   => $this->phone_code,
+            'country_code' => $this->country_code,
+
             "companies" => CompanyLoginResource::collection($this->companies),
         ];
     }

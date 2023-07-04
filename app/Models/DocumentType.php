@@ -10,26 +10,22 @@ class DocumentType extends Model
 {
     use HasFactory, LogTrait;
 
-    protected $fillable = [
-        'name',
-        'name_e',
-        'is_default',
-        "attributes"
-    ];
+    protected $guarded = ['id'];
     protected $casts = ["attributes" => "json"];
 
-    public function company_modules()
+    /*** return relation with CompanyProjectProgramModules */
+    public function companyProjectProgramModules()
     {
-        return $this->belongsToMany(CompanyModule::class, 'document_company_modules', 'document_type_id', 'company_module_id');
+        return $this->belongsToMany(CompanyProjectProgramModule::class, 'document_company_project_program_modules', 'document_type_id', 'company_project_program_module_id');
     }
 
-
+    /*** return relation with documentRelateds */
     public function documentRelateds()
     {
         return $this->belongsToMany(DocumentType::class, 'document_related', 'document_type_id', 'document_related_id','id','id');
     }
 
-
+    /*** return relation with Screens */
     public function screens()
     {
         return $this->belongsToMany(Screen::class, 'screen_document_types', 'documentType_id', 'screen_id', 'id', 'id');

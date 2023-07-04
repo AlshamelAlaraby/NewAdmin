@@ -27,13 +27,13 @@ class PartnerRequest extends FormRequest
     {
         return [
 
-            'name' => 'sometimes|string|max:255|unique:partners,name' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            'name_e' => 'sometimes|string|max:255|unique:partners,name_e' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            "is_active" => "nullable|in:active,inactive",
-            'email' => 'sometimes|email|max:191|unique:partners,email' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            "password" => "sometimes|string",
-            'mobile_no' => 'sometimes|string|max:20|unique:partners,mobile_no' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            "phone_code" => "sometimes|numeric|digits_between:0,10",
+            'name'         => 'sometimes|string|max:255|unique:partners,name' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            'name_e'       => 'sometimes|string|max:255|unique:partners,name_e' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            "is_active"    => "nullable|in:active,inactive",
+            'email'        => 'sometimes|email|max:191|unique:partners,email' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            "password"     => "sometimes|string",
+            'mobile_no'    => 'sometimes|string|max:20|unique:partners,mobile_no' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            "phone_code"   => "sometimes|numeric|digits_between:0,10",
             "country_code" => "sometimes|string",
         ];
 

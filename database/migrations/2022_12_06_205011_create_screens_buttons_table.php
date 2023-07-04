@@ -16,8 +16,8 @@ return new class extends Migration
     {
         Schema::create('screens_buttons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('screen_id');
-            $table->foreignId('button_id');
+            $table->foreignId('screen_id')->constrained('screens')->references("id");
+            $table->foreignId('button_id')->constrained('buttons')->references("id");
             $table->softDeletes();
             $table->timestamps();
         });

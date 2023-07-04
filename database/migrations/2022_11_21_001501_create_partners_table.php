@@ -19,9 +19,11 @@ return new class extends Migration
             $table->string("name", 100)->comment("Name Arabic");
             $table->string("name_e", 100)->comment("Name English");
             $table->string('is_active')->default(0);
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('password');
             $table->string('mobile_no')->nullable();
+            $table->string('phone_code')->nullable();
+            $table->string('country_code')->default('+2');
             $table->softDeletes();
             $table->timestamps();
         });

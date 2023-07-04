@@ -25,10 +25,10 @@ class ButtonRequest extends FormRequest
     public function rules(Request $request)
     {
         return [
-            'name' => 'sometimes|string|max:100|unique:buttons,name' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            'name_e' => 'sometimes|string|max:100|unique:buttons,name_e' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            "media" => "nullable|array",
-            "media.*" => ["nullable", "exists:media,id", new \App\Rules\MediaRule()],
+            'name'        => 'sometimes|string|max:100|unique:buttons,name' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            'name_e'      => 'sometimes|string|max:100|unique:buttons,name_e' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
+            "media"       => "nullable|array",
+            "media.*"     => ["nullable", "exists:media,id", new \App\Rules\MediaRule()],
             'old_media.*' => ['exists:media,id', new \App\Rules\MediaRule("App\Models\Button")],
         ];
     }

@@ -41,7 +41,6 @@ class HelpfileRepository implements HelpfileRepositoryInterface
         DB::transaction(function () use ($request) {
 
             $this->model->create($request);
-            // cacheForget("Helpfiles");
         });
     }
 
@@ -49,7 +48,6 @@ class HelpfileRepository implements HelpfileRepositoryInterface
     {
         DB::transaction(function () use ($id, $request) {
             $this->model->where("id", $id)->update($request);
-            // $this->forget($id);
 
         });
 
@@ -67,15 +65,4 @@ class HelpfileRepository implements HelpfileRepositoryInterface
         return $this->model->find($id)->activities()->orderBy('created_at', 'DESC')->get();
     }
 
-    // private function forget($id)
-    // {
-    //     $keys = [
-    //         "Helpfiles",
-    //         "Helpfiles_" . $id,
-    //     ];
-    //     foreach ($keys as $key) {
-    //         cacheForget($key);
-    //     }
-
-    // }
 }

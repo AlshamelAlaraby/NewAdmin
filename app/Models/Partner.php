@@ -20,22 +20,19 @@ class Partner extends Authenticatable
     public const ACTIVE = 'active';
     public const INACTIVE = 'inactive';
 
-    protected $fillable = [
-        'name',
-        'name_e',
-        'is_active',
-        'email',
-        'password',
-        'mobile_no',
-        'phone_code',
-        'country_code',
-    ];
+    protected $guarded = ['id'];
 
-    // public function setPhoneNumberAttribute($value)
-    // {
-    //     $this->attributes['mobile_no'] = str_replace(' ', '', $value);
-    // }
+    /*** return relation  with  companies */
+    public function companies(): HasMany
+    {
+        return $this->hasMany(Company::class);
+    }
 
+    /*** return count relation  hasMany */
+    public function hasChildren()
+    {
+        return $this->companies()->count() > 0  ;
+    }
 
     public function getActivitylogOptions(): LogOptions
     {
@@ -45,37 +42,5 @@ class Partner extends Authenticatable
             ->logAll()
             ->useLogName('Partner')
             ->setDescriptionForEvent(fn(string $eventName) => "This model has been {$eventName} by ($user)");
-    }
-
-    public function companies(): HasMany
-    {
-        return $this->hasMany(Company::class);
-    }
-
-    public function company()
-    {
-        return $this->hasOne(Company::class);
-    }
-
-    public function workFlows()
-    {
-        return $this->hasMany(WorkflowTree::class);
-    }
-
-    public function hasChildren()
-    {
-        return $this->companies()->count() > 0 || $this->workFlows()->count() > 0;
-
-    }
-
-    public function everything_about_the_company()
-    {
-        $company = $this->company;
-        if ($company) {
-            $wf = WorkflowTree::query()->where('is_active', 1)->where('company_id', $company->id)->get();
-            $company->work_flow_trees = WorkflowTreeResource1::collection($wf);
-            return $company;
-        }
-        return [];
     }
 }

@@ -49,8 +49,6 @@ class ScreenRepository implements ScreenRepositoryInterface
         }
     }
 
-
-
     public function find($id)
     {
         return $this->model->find($id);
@@ -58,14 +56,8 @@ class ScreenRepository implements ScreenRepositoryInterface
 
     public function create($request)
     {
-
-
         return DB::transaction(function () use ($request) {
             $model = $this->model->create($request);
-            //screens_attributes--
-            // if ($request['module_id'] && $request['attributes']) {
-            //     $model->modules()->attach($request['module_id'], ['attributes' => json_encode($request['attributes'])]);
-            // }
             return $model;
         });
     }
@@ -78,9 +70,6 @@ class ScreenRepository implements ScreenRepositoryInterface
             if ($model->modules) {
                 ScreenAttribute::where('screen_id', $id)->delete();
             }
-            // if ($request['module_id'] && $request['attributes']) {
-            //     $model->modules()->attach($request['module_id'], ['attributes' => json_encode($request['attributes'])]);
-            // }
             return $model;
         });
     }
@@ -137,36 +126,24 @@ class ScreenRepository implements ScreenRepositoryInterface
                 $this->model->create(array_merge($screen,['sub_menu_id'=>$request['sub_menu_id']]));
             endif;
         endforeach;
-
     }
 
     public function createCompanyScreen($request)
     {
         foreach ($request['screens'] as $screen ):
             $model_create = $this->model->where('id',$screen)->first();
+            $collect =  collect($model_create)->except(['created_at','deleted_at','updated_at','id']);
 
             $model_exist = $this->model->where('name',$model_create->name)
             ->where('sub_menu_id',$request['sub_menu_id'])
             ->where('company_id',$request['company_id'])->first();
 
             if (!$model_exist){
-                $this->model->create([
-                    "name"            => $model_create->name,
-                    "name_e"          => $model_create->name_e,
-                    "title"           => $model_create->title,
-                    "title_e"         => $model_create->title_e,
-                    "sort"            => $model_create->sort,
-                    "is_implementor"  => $model_create->is_implementor,
-                    "is_add_on"       => $model_create->is_add_on,
-                    "url"             => $model_create->url,
-                    "serial_id"       => $model_create->serial_id,
-                    "company_id"      => $request['company_id'],
-                    "sub_menu_id"     => $request['sub_menu_id'],
-                ]);
+                $model = $this->model->create($collect->all());
+                $model->update([ "company_id" => $request['company_id'] , "sub_menu_id"=> $request['sub_menu_id']]);
             }
 
         endforeach;
-
     }
 
     public function getAllCompanyScreen($request)
@@ -176,17 +153,12 @@ class ScreenRepository implements ScreenRepositoryInterface
         if ($request->sub_menu_id) {
             $models->where('sub_menu_id', $request->sub_menu_id);
         }
-
         if ($request->company_id == 0) {
             $models->where('company_id', null);
         }
-
-
         if ($request->company_id) {
             $models->where('company_id', $request->company_id);
         }
-
-
         if ($request->per_page) {
             return ['data' => $models->paginate($request->per_page), 'paginate' => true];
         } else {

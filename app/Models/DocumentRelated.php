@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 class DocumentRelated extends Model
 {
     use HasFactory, LogTrait;
+
     protected $guarded = ['id'];
     protected $table = "document_related";
-
 
     public function getActivitylogOptions(): \Spatie\Activitylog\LogOptions
     {

@@ -125,7 +125,6 @@ class ScreenController extends ResponseController
 
     public function removeScreenFromDocumentType($screen_id, $documentType_id)
     {
-
         $this->repository->removeScreenFromDocumentType($screen_id, $documentType_id);
         return responseJson(200, 'deleted successfully');
     }
@@ -134,11 +133,9 @@ class ScreenController extends ResponseController
     {
             $this->repository->createCompanyScreen($request->validated());
             return responseJson(200, 'success');
-
     }
     public function allCompanyScreen(Request $request)
     {
-
         $models = $this->repository->getAllCompanyScreen($request);
         return responseJson(200, 'success', CompanyScreensResource::collection($models['data']), $models['paginate'] ? getPaginates($models['data']) : null);
     }
@@ -147,7 +144,6 @@ class ScreenController extends ResponseController
     {
 
         $models = $this->repository->createSubMenuScreen($request);
-//        return  $models;
         return responseJson(200, 'success');
     }
 

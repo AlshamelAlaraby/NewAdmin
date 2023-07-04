@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Button\ButtonController;
 use App\Http\Controllers\CompanyModule\CompanyModuleController;
 use App\Http\Controllers\Company\CompanyController;
+use App\Http\Controllers\CompanyProjectProgramModule\CompanyProjectProgramModuleController;
 use App\Http\Controllers\DocumentType\DocumentTypeController;
 use App\Http\Controllers\Helpfile\HelpfileController;
 use App\Http\Controllers\Hotfield\HotfieldController;
@@ -68,19 +69,19 @@ Route::post('/companyModules/{id}', [CompanyController::class, "companyModules"]
 
 
 
-Route::group(['prefix' => 'modules'], function () {
-    Route::controller(\App\Http\Controllers\Module\ModuleController::class)->group(function () {
+Route::group(['prefix' => 'project-program-modules'], function () {
+    Route::controller(\App\Http\Controllers\ProjectProgramModule\ProjectProgramModuleController::class)->group(function () {
         Route::get('all-program-modules', 'allProgramModuleId');
-        Route::get('/', 'all')->name('modules.index');
-        Route::get('/root-nodes', 'getRootNodes')->name('modules.root-nodes');
-        Route::get('/child-nodes/{parentId}', 'getChildNodes')->name('modules.child-nodes');
-        Route::get('logs/{id}', 'logs')->name('modules.logs');
+        Route::get('/', 'all')->name('project-program-modules.index');
+        Route::get('/root-nodes', 'getRootNodes')->name('project-program-modules.root-nodes');
+        Route::get('/child-nodes/{parentId}', 'getChildNodes')->name('project-program-modules.child-nodes');
+        Route::get('logs/{id}', 'logs')->name('project-program-modules.logs');
         Route::get('/{id}', 'find');
-        Route::post('/', 'create')->name('modules.create');
-        Route::put('/{id}', 'update')->name('modules.update');
+        Route::post('/', 'create')->name('project-program-modules.create');
+        Route::put('/{id}', 'update')->name('project-program-modules.update');
         Route::delete('/{id}', 'delete')->name('modules.destroy');
-        Route::post('/company', 'addModuleToCompany')->name('modules.company.add');
-        Route::get('/{module_id}/company/{company_id}', 'removeModuleFromCompany')->name('modules.company.remove');
+        Route::post('/company', 'addModuleToCompany')->name('project-program-modules.company.add');
+        Route::get('/{module_id}/company/{company_id}', 'removeModuleFromCompany')->name('project-program-modules.company.remove');
         Route::post('bulk-delete', 'bulkDelete');
         Route::post('create-program-children', 'createProgramChildren');
     });
@@ -135,14 +136,14 @@ Route::group(['prefix' => 'screens'], function () {
 });
 
 // api of company_modules
-Route::group(['prefix' => 'company-modules'], function () {
-    Route::controller(CompanyModuleController::class)->group(function () {
-        Route::get('/', 'all')->name('company_modules.index');
+Route::group(['prefix' => 'company-project-program-modules'], function () {
+    Route::controller(CompanyProjectProgramModuleController::class)->group(function () {
+        Route::get('/', 'all')->name('company_project_program_modules.index');
         Route::get('/{id}', 'find');
-        Route::post('/', 'store')->name('company_modules.store');
-        Route::put('/{id}', 'update')->name('company_modules.update');
-        Route::delete('/{id}', 'delete')->name('company_modules.destroy');
-        Route::get('logs/{id}', 'logs')->name('company_modules.logs');
+        Route::post('/', 'store')->name('company_project_program_modules.store');
+        Route::put('/{id}', 'update')->name('company_project_program_modules.update');
+        Route::delete('/{id}', 'delete')->name('company_project_program_modules.destroy');
+        Route::get('logs/{id}', 'logs')->name('company_project_program_modules.logs');
         Route::post('bulk-delete', 'bulkDelete');
 
     });
@@ -200,19 +201,6 @@ Route::group(['prefix' => 'hotfields'], function () {
         Route::post('bulk-delete', 'bulkDelete');
     });
 });
-
-
-
-// // api op serials
-//     Route::group(['prefix' => 'serials'], function () {
-//         Route::controller(SerialController::class)->group(function () {
-//             Route::get('/', 'all')->name('serials.index');
-//             Route::get('/show/{id}', 'find');
-//             Route::post('/store', 'store')->name('serials.store');
-//             Route::put('/update/{id}', 'update')->name('serials.update');
-//             Route::delete('/delete/{id}', 'delete')->name('serials.destroy');
-//         });
-//     });
 
 // api op serials
 Route::group(['prefix' => 'buttons'], function () {

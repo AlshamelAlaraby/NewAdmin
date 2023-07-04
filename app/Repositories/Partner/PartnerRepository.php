@@ -12,7 +12,6 @@ class PartnerRepository implements PartnerRepositoryInterface
 {
 
     use ApiResponser;
-
     private $model;
     public function __construct(Partner $model)
     {
@@ -37,56 +36,34 @@ class PartnerRepository implements PartnerRepositoryInterface
 
     public function create($request)
     {
-
-        DB::transaction(function () use ($request) {
+        return DB::transaction(function () use ($request) {
             $data = $request;
             $data['password'] = Hash::make($data['password']);
-            $this->model->create($data);
-            // cacheForget("Partners");
+            return $this->model->create($data);
         });
-
-        return $this->successResponse([],__('Done'));
     }
 
     public function update($request, $id)
     {
-        DB::transaction(function () use ($id, $request) {
+       return DB::transaction(function () use ($id, $request) {
             $data = $request;
             if (isset($data['password'])) {
                 $data['password'] = Hash::make($data['password']);
             }
             $this->model->where("id", $id)->update($data);
-            // $this->forget($id);
-
+            return $this->model->where("id", $id)->first();
         });
-
     }
 
     public function delete($id)
     {
         $model = $this->find($id);
-        // $this->forget($id);
         $model->delete();
     }
-
-
-
 
     public function logs($id)
     {
         return $this->model->find($id)->activities()->orderBy('created_at', 'DESC')->get();
     }
 
-
-    // private function forget($id)
-    // {
-    //     $keys = [
-    //         "Partners",
-    //         "Partners_" . $id,
-    //     ];
-    //     foreach ($keys as $key) {
-    //         cacheForget($key);
-    //     }
-
-    // }
 }
