@@ -168,7 +168,7 @@ export default {
         this.Tooltip = "";
         this.mouseEnter = id;
         adminApi
-          .get(`/company-modules/logs/${id}`)
+          .get(`/company-project-program-modules/logs/${id}`)
           .then((res) => {
             let l = res.data.data;
             l.forEach((e) => {
@@ -201,7 +201,7 @@ export default {
 
       adminApi
         .get(
-          `/company-modules?page=${page}&per_page=${this.per_page}&search=${this.search}&${filter}`
+          `/company-project-program-modules?page=${page}&per_page=${this.per_page}&search=${this.search}&${filter}`
         )
         .then((res) => {
           let l = res.data;
@@ -234,7 +234,7 @@ export default {
 
         adminApi
           .get(
-            `/company-modules?page=${this.current_page}&per_page=${this.per_page}&search=${this.search}&${filter}`
+            `/company-project-program-modules?page=${this.current_page}&per_page=${this.per_page}&search=${this.search}&${filter}`
           )
           .then((res) => {
             let l = res.data;
@@ -274,7 +274,7 @@ export default {
           if (result.value) {
             this.isLoader = true;
             adminApi
-              .post(`/company-modules/bulk-delete`, { ids: id })
+              .post(`/company-project-program-modules/bulk-delete`, { ids: id })
               .then((res) => {
                 this.checkAll = [];
                 this.getData();
@@ -323,7 +323,7 @@ export default {
             this.isLoader = true;
 
             adminApi
-              .delete(`/company-modules/${id}`)
+              .delete(`/company-project-program-modules/${id}`)
               .then((res) => {
                 this.checkAll = [];
                 this.getData();
@@ -436,7 +436,11 @@ export default {
         this.errors = {};
 
         adminApi
-          .post(`/company-modules`, this.create)
+          .post(`/company-project-program-modules`, {
+            ...this.create,
+            module_id: undefined,
+            project_program_module_id: this.create.module_id,
+          })
           .then((res) => {
             this.getData();
             this.is_disabled = true;
@@ -477,7 +481,11 @@ export default {
         this.isLoader = true;
         this.errors = {};
         adminApi
-          .put(`/company-modules/${id}`, this.edit)
+          .put(`/company-project-program-modules/${id}`, {
+            ...this.edit,
+            module_id: undefined,
+            project_program_module_id: this.edit.module_id,
+          })
           .then((res) => {
             this.$bvModal.hide(`modal-edit-${id}`);
             this.getData();
@@ -515,7 +523,7 @@ export default {
       await this.getAllModules();
       await this.docType();
       this.edit.company_id = companyModule.company.id;
-      this.edit.module_id = companyModule.module.id;
+      this.edit.module_id = companyModule.project_program_module.id;
       this.edit.allowed_users_no = companyModule.allowed_users_no;
       this.edit.custom_date_start = new Date(companyModule.start_date);
       this.edit.custom_date_end = companyModule.end_date
@@ -609,7 +617,7 @@ export default {
     },
     async getAllModules(id) {
       await adminApi
-        .get(`/modules/all-program-modules`)
+        .get(`/project-program-modules/all-program-modules`)
         .then((res) => {
           this.modules = res.data.data;
         })
@@ -690,7 +698,9 @@ export default {
                     <b-form-checkbox
                       v-model="filterSetting"
                       :value="
-                        $i18n.locale == 'ar' ? 'module.name' : 'module.name_e'
+                        $i18n.locale == 'ar'
+                          ? 'project_program_module.name'
+                          : 'project_program_module.name_e'
                       "
                       class="mb-1"
                       >{{ $t("module.module") }}</b-form-checkbox
@@ -1267,18 +1277,22 @@ export default {
                       </div>
                     </td>
                     <td v-if="setting.company_id">
-                      {{
-                        $i18n.locale == "ar"
-                          ? data.company.name
-                          : data.company.name_e
-                      }}
+                      <template v-if="data.company">
+                        {{
+                          $i18n.locale == "ar"
+                            ? data.company.name
+                            : data.company.name_e
+                        }}
+                      </template>
                     </td>
                     <td v-if="setting.module_id">
-                      {{
-                        $i18n.locale == "ar"
-                          ? data.module.name
-                          : data.module.name_e
-                      }}
+                      <template v-if="data.project_program_module">
+                        {{
+                          $i18n.locale == "ar"
+                            ? data.project_program_module.name
+                            : data.project_program_module.name_e
+                        }}
+                      </template>
                     </td>
                     <td v-if="setting.allowed_users_no">
                       {{ data.allowed_users_no }}

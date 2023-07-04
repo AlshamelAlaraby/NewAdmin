@@ -19,7 +19,7 @@ class DocumentTypeController extends Controller
     {
         $model = $this->modelInterface->find($id);
         if (!$model) {
-           return responseJson(404, 'data not found');
+            return responseJson(404, 'data not found');
         }
         return responseJson(200, 'success', new DocumentTypeResource($model));
     }
@@ -32,8 +32,8 @@ class DocumentTypeController extends Controller
 
     public function create(DocumentTypeRequest $request)
     {
-         $this->modelInterface->create($request);
-         return responseJson(200, 'success');
+        $model = $this->modelInterface->create($request);
+        return responseJson(200, 'success', new DocumentTypeResource($model));
     }
 
     public function update(DocumentTypeRequest $request, $id)
@@ -70,8 +70,6 @@ class DocumentTypeController extends Controller
         }
         return responseJson(200, __('Done'));
     }
-
-
 
     public function logs($id)
     {

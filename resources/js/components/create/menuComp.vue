@@ -704,10 +704,9 @@ export default {
           .post(`/program-folder`, {
             menu_folder: this.create.menu_folder,
             project_program_module_id: this.current_id,
-            sort:this.create.sort
           })
           .then((res) => {
-            // this.menu_id = res.data.data.id;
+            this.menu_id = res.data.data.id;
             this.$emit("created");
             this.is_disabled = true;
             setTimeout(() => {
@@ -951,7 +950,7 @@ export default {
             </template>
           </div>
         </div>
-        <div class="col-md-12">
+        <!-- <div class="col-md-12">
           <div class="form-group">
             <label for="field-2" class="control-label">
               {{ $t("general.IdSort") }}
@@ -975,7 +974,7 @@ export default {
                                   </template>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <!-- <b-tabs nav-class="nav-tabs nav-bordered">
                     <b-tab :title="$t('general.DataEntry')" active>

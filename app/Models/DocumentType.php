@@ -22,7 +22,7 @@ class DocumentType extends Model
     /*** return relation with documentRelateds */
     public function documentRelateds()
     {
-        return $this->belongsToMany(DocumentType::class, 'document_related', 'document_type_id', 'document_related_id','id','id');
+        return $this->belongsToMany(DocumentType::class, 'document_related', 'document_type_id', 'document_related_id', 'id', 'id');
     }
 
     /*** return relation with Screens */
@@ -35,5 +35,6 @@ class DocumentType extends Model
     public function hasChildren()
     {
         return $this->screens()->count() > 0 || $this->companyProjectProgramModules()->count() > 0 || $this->documentRelateds()->count() > 0 ;
+
     }
 }

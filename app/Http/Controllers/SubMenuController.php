@@ -141,7 +141,8 @@ class SubMenuController extends Controller
             $models->where("program_folder_menu_id",null);
         }
         if($request->program_folder_menu_id){
-            $models->where("program_folder_menu_id",$request->menu_id);
+
+            $models->where("program_folder_menu_id",$request->program_folder_menu_id);
         }
         if ($request->per_page) {
             $models = ['data' => $models->paginate($request->per_page), 'paginate' => true];

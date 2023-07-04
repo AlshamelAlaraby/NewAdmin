@@ -548,7 +548,7 @@ export default {
           })
           .then((res) => {
             this.getData();
-            this.document_id = res.data.id;
+            this.document_id = res.data.data.id;
             this.is_disabled = true;
             setTimeout(() => {
               Swal.fire({
