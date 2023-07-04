@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\CheckIfValidTokenController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Branch\BranchController;
 use App\Http\Controllers\Button\ButtonController;
 use App\Http\Controllers\CompanyModule\CompanyModuleController;
 use App\Http\Controllers\Company\CompanyController;
@@ -17,7 +18,9 @@ use App\Http\Controllers\ScreenDocumentType\ScreenDocumentTypeController;
 use App\Http\Controllers\ScreenHelpfile\ScreenHelpfileController;
 use App\Http\Controllers\Screen\ScreenController;
 use App\Http\Controllers\SettingScreen\SettingScreenController;
+use App\Http\Controllers\Store\StoreController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\WorkflowTree\WorkflowTreeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -202,6 +205,7 @@ Route::group(['prefix' => 'hotfields'], function () {
     });
 });
 
+
 // api op serials
 Route::group(['prefix' => 'buttons'], function () {
     Route::controller(ButtonController::class)->group(function () {
@@ -246,6 +250,24 @@ Route::group(['prefix' => 'screenDocumentType'], function () {
     Route::delete('/remove/{screen_id}/{documentType_id}', [ScreenController::class, 'removeScreenFromDocumentType']);
     Route::get('logs/{id}', [ScreenController::class, 'logs'])->name('screenDocumentType.logs');
 });
+
+
+Route::group(['prefix' => 'menu'], function () {
+    Route::controller(\App\Http\Controllers\Menu\MenuController::class)->group(function () {
+        Route::get('/', 'all')->name('menus.index');
+        Route::get('logs/{id}', 'logs')->name('menus.logs');
+        Route::get('/{id}', 'find');
+        Route::post('/', 'create')->name('menus.create');
+        Route::put('/{id}', 'update')->name('menus.update');
+        Route::delete('/{id}', 'delete')->name('menus.destroy');
+        Route::post('bulk-delete', 'bulkDelete');
+
+        Route::get('module-menu/{company_id}/{module_id}','getModuleMenus');
+
+    });
+});
+
+
 
 
 

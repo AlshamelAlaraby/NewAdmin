@@ -70,6 +70,7 @@ class Company extends Model implements \Spatie\MediaLibrary\HasMedia
 
     }
 
+
     public function getActivitylogOptions(): LogOptions
     {
         $user = auth()->user()->id ?? "system";

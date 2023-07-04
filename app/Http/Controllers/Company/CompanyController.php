@@ -119,4 +119,5 @@ class CompanyController extends Controller
         return responseJson(200, __(''), $company);
     }
 
+
 }

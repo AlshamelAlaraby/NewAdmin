@@ -261,7 +261,7 @@ export default {
 <!--    </div>-->
     <!-- end row -->
     <div class="row">
-      <div class="col-xl-8">
+      <div class="col-xl-12">
         <LastCompanies :companies="latestCompanies" />
       </div>
       <!-- end col -->

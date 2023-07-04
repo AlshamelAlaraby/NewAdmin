@@ -669,7 +669,7 @@ export default {
         <div class="card">
           <div class="card-body">
             <div class="row justify-content-between align-items-center mb-2">
-              <h4 class="header-title">{{ $t("companyModule.table") }}</h4>
+              <h4 class="header-title">{{ $t("menuitems.Workflow.text") }}</h4>
               <div class="col-xs-10 col-md-9 col-lg-7" style="font-weight: 500">
                 <div class="d-inline-block" style="width: 22.2%">
                   <!-- Basic dropdown -->
@@ -881,7 +881,7 @@ export default {
             <!--  create   -->
             <b-modal
               id="create"
-              :title="$t('companyModule.add')"
+              :title="$t('menuitems.Workflow.text')"
               title-class="font-18"
               body-class="p-4"
               :hide-footer="true"
@@ -1333,7 +1333,7 @@ export default {
                       <!--  edit   -->
                       <b-modal
                         :id="`modal-edit-${data.id}`"
-                        :title="$t('companyModule.edit')"
+                        :title="$t('menuitems.Workflow.text')"
                         title-class="font-18"
                         body-class="p-4"
                         :ref="`edit-${data.id}`"

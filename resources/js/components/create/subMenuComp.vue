@@ -74,6 +74,7 @@ export default {
           search: "",
           url: "",
           is_implementor: 0,
+          is_add_on: 0,
           sort: 0,
         },
       ],
@@ -138,6 +139,7 @@ export default {
         },
         url: { required },
         is_implementor: {},
+        is_add_on: {},
       },
     },
     edit: {
@@ -558,6 +560,7 @@ export default {
           url: "",
           is_implementor: 0,
           sort: 0,
+          is_add_on: 0,
         },
       ];
       this.is_disabled = false;
@@ -588,6 +591,7 @@ export default {
           serial_id: "",
           search: "",
           url: "",
+          is_add_on: 0,
           is_implementor: 0,
           sort: 0,
         },
@@ -1213,7 +1217,8 @@ export default {
                     v-model="$v.createScreens.$each[index].title_e.$model"
                     :class="{
                       'is-invalid':
-                        $v.createScreens.$each[index].title_e.$error || errors.title_e,
+                        $v.createScreens.$each[index].title_e.$error ||
+                        errors.title_e,
                       'is-valid':
                         !$v.createScreens.$each[index].title_e.$invalid &&
                         !errors.title_e,
@@ -1347,6 +1352,46 @@ export default {
                 <template v-if="errors.is_implementor">
                   <ErrorMessage
                     v-for="(errorMessage, index) in errors.is_implementor"
+                    :key="index"
+                    >{{ $t(errorMessage) }}
+                  </ErrorMessage>
+                </template>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label class="mr-2 mb-2">
+                  {{ $t("general.addOn") }}
+                  <span class="text-danger">*</span>
+                </label>
+                <b-form-group
+                  :class="{
+                    'is-invalid':
+                      $v.createScreens.$each[index].is_add_on.$error ||
+                      errors.is_add_on,
+                    'is-valid':
+                      !$v.createScreens.$each[index].is_add_on.$invalid &&
+                      !errors.is_add_on,
+                  }"
+                >
+                  <b-form-radio
+                    class="d-inline-block"
+                    v-model="$v.createScreens.$each[index].is_add_on.$model"
+                    name="add-on-some-radios"
+                    :value="1"
+                    >{{ $t("general.Yes") }}</b-form-radio
+                  >
+                  <b-form-radio
+                    class="d-inline-block m-1"
+                    v-model="$v.createScreens.$each[index].is_add_on.$model"
+                    name="add-on-some-radios"
+                    :value="0"
+                    >{{ $t("general.No") }}</b-form-radio
+                  >
+                </b-form-group>
+                <template v-if="errors.is_add_on">
+                  <ErrorMessage
+                    v-for="(errorMessage, index) in errors.is_add_on"
                     :key="index"
                     >{{ $t(errorMessage) }}
                   </ErrorMessage>

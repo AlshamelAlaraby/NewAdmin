@@ -34,8 +34,6 @@ use App\Repositories\Screen\ScreenRepository;
 use App\Repositories\Screen\ScreenRepositoryInterface;
 use App\Repositories\ScreenAttribute\ScreenAttributeInterface;
 use App\Repositories\ScreenAttribute\ScreenAttributeRepository;
-use App\Repositories\Serial\SerialRepository;
-use App\Repositories\Serial\SerialRepositoryInterface;
 use App\Repositories\SettingScreen\SettingScreenInterface;
 use App\Repositories\SettingScreen\SettingScreenRepository;
 use App\Repositories\User\UserRepository;
@@ -58,9 +56,9 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(HelpfileRepositoryInterface::class, HelpfileRepository::class);
         $this->app->bind(CompanyProjectProgramModuleInterface::class, CompanyProjectProgramModuleRepository::class);
-        $this->app->bind(SerialRepositoryInterface::class, SerialRepository::class);
         $this->app->bind(CompanyInterface::class, CompanyRepository::class);
         $this->app->bind(ProjectProgramModuleInterface::class, ProjectProgramModuleRepository::class);
+
         $this->app->bind(ButtonRepositoryInterface::class, ButtonRepository::class);
         $this->app->bind(ScreenHelpfileRepositoryInterface::class, ScreenHelpfileRepository::class);
         $this->app->bind(DocumentTypeInterface::class, DocumentTypeRepository::class);
@@ -68,7 +66,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(HotfieldRepositoryInterface::class, HotfieldRepository::class);
         $this->app->bind(ScreenDocumentTypeRepositoryInterface::class, ScreenDocumentTypeRepository::class);
         $this->app->bind(SettingScreenInterface::class, SettingScreenRepository::class);
-
 
         $this->app->bind(ScreenAttributeInterface::class, ScreenAttributeRepository::class);
         $this->app->bind(FolderMenuInterface::class, FolderMenuRepository::class);

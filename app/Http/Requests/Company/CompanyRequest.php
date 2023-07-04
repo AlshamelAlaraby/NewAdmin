@@ -32,6 +32,7 @@ class CompanyRequest extends FormRequest
             "media"        => "nullable|array",
             "media.*"      => ["nullable", "exists:media,id", new \App\Rules\MediaRule()],
             'old_media.*'  => ['exists:media,id', new \App\Rules\MediaRule("App\Models\Company")],
+
         ];
     }
 
