@@ -38,7 +38,7 @@ class SubMenu extends Model
     /*** return CompanyId */
     public function getCompanyIdAttribute($key)
     {
-        return  $this->programFolder()->first()->company_id;
+        return  $this->programFolder()->first()->company_id ?? null;
     }
 
     public function getActivitylogOptions(): LogOptions

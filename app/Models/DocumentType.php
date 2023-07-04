@@ -28,6 +28,12 @@ class DocumentType extends Model
     /*** return relation with Screens */
     public function screens()
     {
-        return $this->belongsToMany(Screen::class, 'screen_document_types', 'documentType_id', 'screen_id', 'id', 'id');
+        return $this->belongsToMany(Screen::class, 'screen_document_types', 'document_type_id', 'screen_id', 'id', 'id');
+    }
+
+    /*** return count relation  hasMany */
+    public function hasChildren()
+    {
+        return $this->screens()->count() > 0 || $this->companyProjectProgramModules()->count() > 0 || $this->documentRelateds()->count() > 0 ;
     }
 }

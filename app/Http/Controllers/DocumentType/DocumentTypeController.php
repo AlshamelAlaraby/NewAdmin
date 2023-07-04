@@ -52,6 +52,9 @@ class DocumentTypeController extends Controller
         if (!$model) {
             return responseJson(404, 'data not found');
         }
+        if ($model->hasChildren()) {
+            return responseJson(400, __('message.parent have children'));
+        }
         $this->modelInterface->delete($id);
 
         return responseJson(200, 'success');
@@ -60,10 +63,15 @@ class DocumentTypeController extends Controller
     public function bulkDelete(Request $request)
     {
         foreach ($request->ids as $id) {
-            $this->modelInterface->delete($id);
+            $model = $this->modelInterface->find($id);
+            if (!$model->hasChildren()) {
+                $this->modelInterface->delete($id);
+            }
         }
         return responseJson(200, __('Done'));
     }
+
+
 
     public function logs($id)
     {

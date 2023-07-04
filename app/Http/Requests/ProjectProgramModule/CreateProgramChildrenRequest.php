@@ -26,9 +26,9 @@ class CreateProgramChildrenRequest extends FormRequest
     {
         return [
 
-            'program_id' => 'required|exists:projects_programs_modules,id',
+            'program_id' => 'required|exists:project_program_modules,id',
             'modules' => 'required|array',
-            'modules.*' => 'required|exists:projects_programs_modules,id',
+            'modules.*' => 'required|exists:project_program_modules,id',
 
         ];
     }

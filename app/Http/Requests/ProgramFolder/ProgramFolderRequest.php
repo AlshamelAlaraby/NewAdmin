@@ -24,7 +24,7 @@ class ProgramFolderRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_program_module_id'  => 'required|exists:projects_programs_modules,id',
+            'project_program_module_id'  => 'required|exists:project_program_modules,id',
             'menu_folder'                => 'required|array',
             'menu_folder.*'              => 'exists:folder_menus,id',
 
