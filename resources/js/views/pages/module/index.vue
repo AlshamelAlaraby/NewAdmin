@@ -801,7 +801,7 @@ export default {
 
       adminApi
         .get(
-          `/project-program-modules?page=${page}&per_page=${this.per_page}&search=${this.search}&${filter}`
+          `project-program-modules?program_modules=1&page=${page}&per_page=${this.per_page}&search=${this.search}&${filter}`
         )
         .then((res) => {
           let l = res.data;
@@ -834,7 +834,7 @@ export default {
 
         adminApi
           .get(
-            `/project-program-modules?page=${this.current_page}&per_page=${this.per_page}&search=${this.search}&${filter}`
+            `project-program-modules?program_modules=1&page=${this.current_page}&per_page=${this.per_page}&search=${this.search}&${filter}`
           )
           .then((res) => {
             let l = res.data;
@@ -1538,7 +1538,7 @@ export default {
                     <b-form-checkbox v-model="setting.type" class="mb-1">
                       {{ $t("general.Type") }}
                     </b-form-checkbox>
-                    
+
                     <div class="d-flex justify-content-end">
                       <a
                         href="javascript:void(0)"
