@@ -6139,7 +6139,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this22 = this;
       if (this.create.parent_id) {
         this.isLoader = true;
-        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].post("modules/create-program-children", {
+        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].post("project-program-modules/create-program-children", {
           program_id: this.create.parent_id,
           modules: this.modules_ids
         }).then(function (res) {

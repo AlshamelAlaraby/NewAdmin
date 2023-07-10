@@ -27,7 +27,7 @@ class CompanyRequest extends FormRequest
             "email"        => "sometimes|email|unique:companies,email" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
             "is_active"    => "nullable|in:active,inactive",
             "partner_id"   => "nullable|exists:partners,id",
-            "phone_code"   => "sometimes|numeric|digits_between:0,10",
+            "phone_code"   => "sometimes",
             "country_code" => "nullable|string",
             "media"        => "nullable|array",
             "media.*"      => ["nullable", "exists:media,id", new \App\Rules\MediaRule()],

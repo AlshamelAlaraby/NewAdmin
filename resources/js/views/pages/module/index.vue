@@ -1053,7 +1053,7 @@ export default {
       if (this.create.parent_id) {
         this.isLoader = true;
         adminApi
-          .post(`modules/create-program-children`, {
+          .post(`project-program-modules/create-program-children`, {
             program_id: this.create.parent_id,
             modules: this.modules_ids,
           })
