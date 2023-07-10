@@ -121,7 +121,7 @@ class ScreenRepository implements ScreenRepositoryInterface
     public function createSubMenuScreen($request)
     {
         foreach ($request['screens'] as $screen):
-            $model_exists = $this->model->where('name',$screen['name'])->where('sub_menu_id',$request['sub_menu_id'])->where('company_id',null)->first();
+            $model_exists = $this->model->where('name',$screen['name'])->where('sub_menu_id',$request['sub_menu_id'])->where('company_id',null)->delete();
             if (!$model_exists):
                 $this->model->create(array_merge($screen,['sub_menu_id'=>$request['sub_menu_id']]));
             endif;
