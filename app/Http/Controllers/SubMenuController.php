@@ -55,7 +55,7 @@ class SubMenuController extends Controller
         $model->refresh();
 
         return responseJson(200, 'created', new SubMenuResource($model));
-    }
+    }   
 
     public function update($id, SubMenuRequest $request)
     {
