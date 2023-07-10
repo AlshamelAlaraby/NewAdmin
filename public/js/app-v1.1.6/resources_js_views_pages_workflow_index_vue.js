@@ -2190,7 +2190,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           menu_folder: this.create.menu_folder,
           project_program_module_id: this.current_id
         }).then(function (res) {
-          _this14.menu_id = res.data.data.id;
           _this14.$emit("created");
           _this14.is_disabled = true;
           setTimeout(function () {

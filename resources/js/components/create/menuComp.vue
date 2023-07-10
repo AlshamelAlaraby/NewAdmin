@@ -706,7 +706,6 @@ export default {
             project_program_module_id: this.current_id,
           })
           .then((res) => {
-            this.menu_id = res.data.data.id;
             this.$emit("created");
             this.is_disabled = true;
             setTimeout(() => {
