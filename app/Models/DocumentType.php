@@ -30,8 +30,11 @@ class DocumentType extends Model
     {
         return $this->belongsToMany(Screen::class, 'screen_document_types', 'document_type_id', 'screen_id', 'id', 'id');
     }
+
+    /*** return count relation  hasMany */
     public function hasChildren()
     {
-        return $this->screens()->count() > 0 || $this->companyProjectProgramModules()->count() > 0 || $this->documentRelateds()->count() > 0;
+        return $this->screens()->count() > 0 || $this->companyProjectProgramModules()->count() > 0 || $this->documentRelateds()->count() > 0 ;
+
     }
 }

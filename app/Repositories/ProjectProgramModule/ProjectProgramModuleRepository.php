@@ -14,7 +14,14 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
 
     public function all($request)
     {
+        $modules = $this->model->whereHas('modules')->get()->pluck('id')->toArray();
+
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
+
+        if ($request->program_modules == 1) {
+            $models->whereNotIn("id",$modules);
+        }
+
         if ($request->child == "true") {
             $models->whereNotNull("parent_id");
         }

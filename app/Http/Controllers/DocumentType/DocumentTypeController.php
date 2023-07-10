@@ -70,6 +70,7 @@ class DocumentTypeController extends Controller
         }
         return responseJson(200, __('Done'));
     }
+
     public function logs($id)
     {
         $model = $this->modelInterface->find($id);

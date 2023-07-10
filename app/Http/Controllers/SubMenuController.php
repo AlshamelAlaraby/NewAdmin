@@ -30,7 +30,7 @@ class SubMenuController extends Controller
         return responseJson(200, 'success', new SubMenuResource($model));
     }
 
-    public function all(AllRequest $request)
+    public function all(Request $request)
     {
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
         if ($request->program_folder_menu_id == "0"){
@@ -141,6 +141,7 @@ class SubMenuController extends Controller
             $models->where("program_folder_menu_id",null);
         }
         if($request->program_folder_menu_id){
+
             $models->where("program_folder_menu_id",$request->program_folder_menu_id);
         }
         if ($request->per_page) {
