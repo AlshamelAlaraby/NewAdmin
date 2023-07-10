@@ -13,6 +13,7 @@ import loader from "../../components/loader";
 import { dynamicSortString } from "../../helper/tableSort";
 import Multiselect from "vue-multiselect";
 import { formatDateOnly } from "../../helper/startDate";
+import TreeBrowser from "../../components/tree.vue";
 
 import { arabicValue, englishValue } from "../../helper/langTransform";
 
@@ -26,6 +27,7 @@ export default {
   },
   props: ["menu_id"],
   components: {
+    TreeBrowser,
     Switches,
     ErrorMessage,
     loader,
@@ -78,6 +80,7 @@ export default {
           sort: 0,
         },
       ],
+      subMenus: [],
       create: {
         name: "",
         name_e: "",
@@ -149,7 +152,6 @@ export default {
         minLength: minLength(3),
         maxLength: maxLength(100),
       },
-      menu_id: { required },
       is_add_on: { required },
     },
   },
@@ -186,6 +188,43 @@ export default {
   },
   mounted() {},
   methods: {
+    setCreateCurrentNode(node) {
+      if (this.current_id != node.id) {
+        this.current_id = node.id;
+      } else {
+        this.current_id = null;
+      }
+      if (this.current_id) {
+        this.create.name = node.name;
+        this.create.name_e = node.name_e;
+        this.create.is_add_on = node.is_add_on;
+        this.create.sort = node.sort;
+        this.getScreens();
+      } else {
+        this.create = {
+          name: "",
+          name_e: "",
+          parent_id: null,
+          is_add_on: 1,
+          menu_id: null,
+          sort: 0,
+        };
+        this.createScreens = [
+          {
+            name: "",
+            name_e: "",
+            title: "",
+            title_e: "",
+            serial_id: "",
+            search: "",
+            url: "",
+            is_implementor: 0,
+            is_add_on: 0,
+            sort: 0,
+          },
+        ];
+      }
+    },
     arabicValueTitle(txt, index) {
       this.createScreens[index].title = arabicValue(txt);
     },
@@ -266,13 +305,6 @@ export default {
         });
         result.expanded.push(result.node);
       });
-    },
-    setCreateCurrentNode(node) {
-      if (this.create.parent_id != node.id) {
-        this.create.parent_id = node.id;
-      } else {
-        this.create.parent_id = null;
-      }
     },
     setUpdateCurrentNode(node) {
       let parents = [];
@@ -471,8 +503,31 @@ export default {
               .delete(`/sub-menus/${id}`)
               .then((res) => {
                 this.checkAll = [];
-                this.getData();
                 if (tree) {
+                  this.getSubMenus();
+                  this.current_id = null;
+                  this.create = {
+                    name: "",
+                    name_e: "",
+                    parent_id: null,
+                    is_add_on: 1,
+                    menu_id: null,
+                    sort: 0,
+                  };
+                  this.createScreens = [
+                    {
+                      name: "",
+                      name_e: "",
+                      title: "",
+                      title_e: "",
+                      serial_id: "",
+                      search: "",
+                      url: "",
+                      is_implementor: 0,
+                      is_add_on: 0,
+                      sort: 0,
+                    },
+                  ];
                 }
                 Swal.fire({
                   icon: "success",
@@ -540,7 +595,7 @@ export default {
      *  hidden Modal (create)
      */
     async resetModal() {
-      await this.getMenus();
+      await this.getSubMenus();
       this.create = {
         name: "",
         name_e: "",
@@ -559,10 +614,11 @@ export default {
           search: "",
           url: "",
           is_implementor: 0,
-          sort: 0,
           is_add_on: 0,
+          sort: 0,
         },
       ];
+
       this.is_disabled = false;
       this.$nextTick(() => {
         this.$v.$reset();
@@ -591,11 +647,12 @@ export default {
           serial_id: "",
           search: "",
           url: "",
-          is_add_on: 0,
           is_implementor: 0,
+          is_add_on: 0,
           sort: 0,
         },
       ];
+
       this.is_disabled = false;
       this.$nextTick(() => {
         this.$v.$reset();
@@ -603,6 +660,10 @@ export default {
       this.current_id = null;
     },
     AddSubmit() {
+      if (this.current_id) {
+        this.editSubmit(this.current_id);
+        return;
+      }
       if (this.create.name || this.create.name_e) {
         this.create.name = this.create.name
           ? this.create.name
@@ -624,6 +685,7 @@ export default {
             this.is_disabled = true;
             this.current_id = res.data.data.id;
             this.$emit("created");
+            this.getSubMenus();
             setTimeout(() => {
               Swal.fire({
                 icon: "success",
@@ -653,21 +715,24 @@ export default {
      *  edit module
      */
     editSubmit(id) {
-      if (this.edit.name || this.edit.name_e) {
-        this.edit.name = this.edit.name ? this.edit.name : this.edit.name_e;
-        this.edit.name_e = this.edit.name_e ? this.edit.name_e : this.edit.name;
+      if (this.create.name || this.create.name_e) {
+        this.create.name = this.create.name
+          ? this.create.name
+          : this.create.name_e;
+        this.create.name_e = this.create.name_e
+          ? this.create.name_e
+          : this.create.name;
       }
-      this.$v.edit.$touch();
-      if (this.$v.edit.$invalid) {
+      this.$v.create.$touch();
+      if (this.$v.create.$invalid) {
         return;
       } else {
         this.isLoader = true;
         this.errors = {};
         adminApi
-          .put(`/sub-menus/${id}`, this.edit)
+          .put(`/sub-menus/${id}`, this.create)
           .then((res) => {
-            this.$bvModal.hide(`modal-edit-${id}`);
-            this.getData();
+            this.getSubMenus();
             setTimeout(() => {
               Swal.fire({
                 icon: "success",
@@ -693,11 +758,55 @@ export default {
           });
       }
     },
-    async getMenus() {
+    async getSubMenus() {
       await adminApi
-        .get(`/program-folder`)
+        .get(`/sub-menus?program_folder_menu_id=0`)
         .then((res) => {
-          this.menus = res.data.data;
+          this.subMenus = res.data.data;
+        })
+        .catch((err) => {
+          Swal.fire({
+            icon: "error",
+            title: `${this.$t("general.Error")}`,
+            text: `${this.$t("general.Thereisanerrorinthesystem")}`,
+          });
+        });
+    },
+    async getScreens() {
+      await adminApi
+        .get(`/screens?sub_menu_id=${this.current_id}`)
+        .then((res) => {
+          if (res.data.data.length) {
+            let screens = [];
+            res.data.data.forEach((screen) => {
+              screens.push({
+                name: screen.name,
+                name_e: screen.name_e,
+                title: screen.title,
+                title_e: screen.title_e,
+                url: screen.url,
+                is_implementor: screen.is_implementor,
+                is_add_on: screen.is_add_on,
+                sort: screen.sort,
+              });
+            });
+            this.createScreens = screens;
+          } else {
+            this.createScreens = [
+              {
+                name: "",
+                name_e: "",
+                title: "",
+                title_e: "",
+                serial_id: "",
+                search: "",
+                url: "",
+                is_implementor: 0,
+                is_add_on: 0,
+                sort: 0,
+              },
+            ];
+          }
         })
         .catch((err) => {
           Swal.fire({
@@ -873,151 +982,162 @@ export default {
       </div>
       <b-tabs nav-class="nav-tabs nav-bordered">
         <b-tab :title="$t('general.DataEntry')" active>
-          <div class="col-5">
-            <div class="row">
-              <div class="col-12 direction" dir="rtl">
-                <div class="form-group">
-                  <label for="field-1" class="control-label">
-                    {{ $t("general.Name") }}
-                    <span class="text-danger">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control arabicInput"
-                    v-model="$v.create.name.$model"
-                    :class="{
-                      'is-invalid': $v.create.name.$error || errors.name,
-                      'is-valid': !$v.create.name.$invalid && !errors.name,
-                    }"
-                    @keyup="arabicValue(create.name)"
-                    id="field-1"
-                  />
-                  <div
-                    v-if="!$v.create.name.minLength"
-                    class="invalid-feedback"
-                  >
-                    {{ $t("general.Itmustbeatleast") }}
-                    {{ $v.create.name.$params.minLength.min }}
-                    {{ $t("general.letters") }}
-                  </div>
-                  <div
-                    v-if="!$v.create.name.maxLength"
-                    class="invalid-feedback"
-                  >
-                    {{ $t("general.Itmustbeatmost") }}
-                    {{ $v.create.name.$params.maxLength.max }}
-                    {{ $t("general.letters") }}
-                  </div>
-                  <template v-if="errors.name">
-                    <ErrorMessage
-                      v-for="(errorMessage, index) in errors.name"
-                      :key="index"
-                      >{{ $t(errorMessage) }}
-                    </ErrorMessage>
-                  </template>
-                </div>
-              </div>
-              <div class="col-12 direction-ltr" dir="ltr">
-                <div class="form-group">
-                  <label for="field-2" class="control-label">
-                    {{ $t("general.Name_en") }}
-                    <span class="text-danger">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control englishInput"
-                    v-model="$v.create.name_e.$model"
-                    :class="{
-                      'is-invalid': $v.create.name_e.$error || errors.name_e,
-                      'is-valid': !$v.create.name_e.$invalid && !errors.name_e,
-                    }"
-                    @keyup="englishValue(create.name_e)"
-                    id="field-2"
-                  />
-                  <div
-                    v-if="!$v.create.name_e.minLength"
-                    class="invalid-feedback"
-                  >
-                    {{ $t("general.Itmustbeatleast") }}
-                    {{ $v.create.name_e.$params.minLength.min }}
-                    {{ $t("general.letters") }}
-                  </div>
-                  <div
-                    v-if="!$v.create.name_e.maxLength"
-                    class="invalid-feedback"
-                  >
-                    {{ $t("general.Itmustbeatmost") }}
-                    {{ $v.create.name_e.$params.maxLength.max }}
-                    {{ $t("general.letters") }}
-                  </div>
-                  <template v-if="errors.name_e">
-                    <ErrorMessage
-                      v-for="(errorMessage, index) in errors.name_e"
-                      :key="index"
-                      >{{ $t(errorMessage) }}</ErrorMessage
-                    >
-                  </template>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="field-2" class="control-label">
-                    {{ $t("general.IdSort") }}
-                  </label>
-                  <div>
+          <div class="row">
+            <div class="col-6">
+              <TreeBrowser
+                @deleteClicked="deleteModule($event.id, true)"
+                :currentNodeId="this.current_id"
+                @onClick="setCreateCurrentNode"
+                :nodes="subMenus"
+              />
+            </div>
+            <div class="col-6">
+              <div class="row">
+                <div class="col-12 direction" dir="rtl">
+                  <div class="form-group">
+                    <label for="field-1" class="control-label">
+                      {{ $t("general.Name") }}
+                      <span class="text-danger">*</span>
+                    </label>
                     <input
-                      type="number"
-                      class="form-control"
-                      data-create="2"
-                      v-model="create.sort"
-                      id="field-2"
+                      type="text"
+                      class="form-control arabicInput"
+                      v-model="$v.create.name.$model"
+                      :class="{
+                        'is-invalid': $v.create.name.$error || errors.name,
+                        'is-valid': !$v.create.name.$invalid && !errors.name,
+                      }"
+                      @keyup="arabicValue(create.name)"
+                      id="field-1"
                     />
-                    <template v-if="errors.sort">
+                    <div
+                      v-if="!$v.create.name.minLength"
+                      class="invalid-feedback"
+                    >
+                      {{ $t("general.Itmustbeatleast") }}
+                      {{ $v.create.name.$params.minLength.min }}
+                      {{ $t("general.letters") }}
+                    </div>
+                    <div
+                      v-if="!$v.create.name.maxLength"
+                      class="invalid-feedback"
+                    >
+                      {{ $t("general.Itmustbeatmost") }}
+                      {{ $v.create.name.$params.maxLength.max }}
+                      {{ $t("general.letters") }}
+                    </div>
+                    <template v-if="errors.name">
                       <ErrorMessage
-                        v-for="(errorMessage, index) in errors.sort"
+                        v-for="(errorMessage, index) in errors.name"
                         :key="index"
                         >{{ $t(errorMessage) }}
                       </ErrorMessage>
                     </template>
                   </div>
                 </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label class="mr-2 mb-2">
-                    {{ $t("general.addOn") }}
-                    <span class="text-danger">*</span>
-                  </label>
-                  <b-form-group
-                    :class="{
-                      'is-invalid':
-                        $v.create.is_add_on.$error || errors.is_add_on,
-                      'is-valid':
-                        !$v.create.is_add_on.$invalid && !errors.is_add_on,
-                    }"
-                  >
-                    <b-form-radio
-                      class="d-inline-block"
-                      v-model="$v.create.is_add_on.$model"
-                      name="some-radios"
-                      :value="1"
-                      >{{ $t("general.Yes") }}</b-form-radio
+                <div class="col-12 direction-ltr" dir="ltr">
+                  <div class="form-group">
+                    <label for="field-2" class="control-label">
+                      {{ $t("general.Name_en") }}
+                      <span class="text-danger">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control englishInput"
+                      v-model="$v.create.name_e.$model"
+                      :class="{
+                        'is-invalid': $v.create.name_e.$error || errors.name_e,
+                        'is-valid':
+                          !$v.create.name_e.$invalid && !errors.name_e,
+                      }"
+                      @keyup="englishValue(create.name_e)"
+                      id="field-2"
+                    />
+                    <div
+                      v-if="!$v.create.name_e.minLength"
+                      class="invalid-feedback"
                     >
-                    <b-form-radio
-                      class="d-inline-block m-1"
-                      v-model="$v.create.is_add_on.$model"
-                      name="some-radios"
-                      :value="0"
-                      >{{ $t("general.No") }}</b-form-radio
+                      {{ $t("general.Itmustbeatleast") }}
+                      {{ $v.create.name_e.$params.minLength.min }}
+                      {{ $t("general.letters") }}
+                    </div>
+                    <div
+                      v-if="!$v.create.name_e.maxLength"
+                      class="invalid-feedback"
                     >
-                  </b-form-group>
-                  <template v-if="errors.is_add_on">
-                    <ErrorMessage
-                      v-for="(errorMessage, index) in errors.is_add_on"
-                      :key="index"
-                      >{{ $t(errorMessage) }}
-                    </ErrorMessage>
-                  </template>
+                      {{ $t("general.Itmustbeatmost") }}
+                      {{ $v.create.name_e.$params.maxLength.max }}
+                      {{ $t("general.letters") }}
+                    </div>
+                    <template v-if="errors.name_e">
+                      <ErrorMessage
+                        v-for="(errorMessage, index) in errors.name_e"
+                        :key="index"
+                        >{{ $t(errorMessage) }}</ErrorMessage
+                      >
+                    </template>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="field-2" class="control-label">
+                      {{ $t("general.IdSort") }}
+                    </label>
+                    <div>
+                      <input
+                        type="number"
+                        class="form-control"
+                        data-create="2"
+                        v-model="create.sort"
+                        id="field-2"
+                      />
+                      <template v-if="errors.sort">
+                        <ErrorMessage
+                          v-for="(errorMessage, index) in errors.sort"
+                          :key="index"
+                          >{{ $t(errorMessage) }}
+                        </ErrorMessage>
+                      </template>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label class="mr-2 mb-2">
+                      {{ $t("general.addOn") }}
+                      <span class="text-danger">*</span>
+                    </label>
+                    <b-form-group
+                      :class="{
+                        'is-invalid':
+                          $v.create.is_add_on.$error || errors.is_add_on,
+                        'is-valid':
+                          !$v.create.is_add_on.$invalid && !errors.is_add_on,
+                      }"
+                    >
+                      <b-form-radio
+                        class="d-inline-block"
+                        v-model="$v.create.is_add_on.$model"
+                        name="some-radios"
+                        :value="1"
+                        >{{ $t("general.Yes") }}</b-form-radio
+                      >
+                      <b-form-radio
+                        class="d-inline-block m-1"
+                        v-model="$v.create.is_add_on.$model"
+                        name="some-radios"
+                        :value="0"
+                        >{{ $t("general.No") }}</b-form-radio
+                      >
+                    </b-form-group>
+                    <template v-if="errors.is_add_on">
+                      <ErrorMessage
+                        v-for="(errorMessage, index) in errors.is_add_on"
+                        :key="index"
+                        >{{ $t(errorMessage) }}
+                      </ErrorMessage>
+                    </template>
+                  </div>
                 </div>
               </div>
             </div>

@@ -120,27 +120,25 @@ class ScreenRepository implements ScreenRepositoryInterface
 
     public function createSubMenuScreen($request)
     {
-        foreach ($request['screens'] as $screen):
-            $model_exists = $this->model->where('name',$screen['name'])->where('sub_menu_id',$request['sub_menu_id'])->where('company_id',null)->first();
-            if (!$model_exists):
-                $this->model->create(array_merge($screen,['sub_menu_id'=>$request['sub_menu_id']]));
-            endif;
+        $model_exists = $this->model->where('sub_menu_id', $request['sub_menu_id'])->where('company_id', null)->delete();
+        foreach ($request['screens'] as $screen) :
+            $this->model->create(array_merge($screen, ['sub_menu_id' => $request['sub_menu_id']]));
         endforeach;
     }
 
     public function createCompanyScreen($request)
     {
-        foreach ($request['screens'] as $screen ):
-            $model_create = $this->model->where('id',$screen)->first();
-            $collect =  collect($model_create)->except(['created_at','deleted_at','updated_at','id']);
+        foreach ($request['screens'] as $screen) :
+            $model_create = $this->model->where('id', $screen)->first();
+            $collect =  collect($model_create)->except(['created_at', 'deleted_at', 'updated_at', 'id']);
 
-            $model_exist = $this->model->where('name',$model_create->name)
-            ->where('sub_menu_id',$request['sub_menu_id'])
-            ->where('company_id',$request['company_id'])->first();
+            $model_exist = $this->model->where('name', $model_create->name)
+                ->where('sub_menu_id', $request['sub_menu_id'])
+                ->where('company_id', $request['company_id'])->first();
 
-            if (!$model_exist){
+            if (!$model_exist) {
                 $model = $this->model->create($collect->all());
-                $model->update([ "company_id" => $request['company_id'] , "sub_menu_id"=> $request['sub_menu_id']]);
+                $model->update(["company_id" => $request['company_id'], "sub_menu_id" => $request['sub_menu_id']]);
             }
 
         endforeach;

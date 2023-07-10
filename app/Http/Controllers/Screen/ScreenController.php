@@ -32,7 +32,6 @@ class ScreenController extends ResponseController
         return responseJson(200, 'success', ScreenResource::collection($models['data']), $models['paginate'] ? getPaginates($models['data']) : null);
     }
 
-
     public function getScreenDocumentTypes($screen_id)
     {
         return $this->repository->getScreenDocumentTypes($screen_id);
@@ -44,8 +43,6 @@ class ScreenController extends ResponseController
 
     public function find($id)
     {
-
-
         $model = $this->repository->find($id);
         if (!$model) {
             return responseJson(404, __('message.data not found'));
@@ -131,8 +128,8 @@ class ScreenController extends ResponseController
 
     public function getCreateCompanyScreen(CompanyScreensRequest $request)
     {
-            $this->repository->createCompanyScreen($request->validated());
-            return responseJson(200, 'success');
+        $this->repository->createCompanyScreen($request->validated());
+        return responseJson(200, 'success');
     }
     public function allCompanyScreen(Request $request)
     {
@@ -146,6 +143,4 @@ class ScreenController extends ResponseController
         $models = $this->repository->createSubMenuScreen($request);
         return responseJson(200, 'success');
     }
-
-
 }

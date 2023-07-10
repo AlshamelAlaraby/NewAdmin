@@ -31,7 +31,7 @@ class CreateSubMenuScreenRequest extends FormRequest
             'screens'              => 'array',
             'screens.*.name'       => 'required|string',
             'screens.*.name_e'     => 'required|string',
-            'screens.*.sort'       => 'required|string',
+            'screens.*.sort'       => 'required',
             'screens.*.title'      => 'required|string',
             'screens.*.title_e'    => 'required|string',
             'screens.*.url'        => 'required|string',

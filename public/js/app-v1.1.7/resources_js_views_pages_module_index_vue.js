@@ -3646,7 +3646,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../api/adminAxios */ "./resources/js/api/adminAxios.js");
 /* harmony import */ var vue_switches__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-switches */ "./node_modules/vue-switches/src/switches.vue");
-/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vuelidate/lib/validators */ "./node_modules/vuelidate/lib/validators/index.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_widgets_errorMessage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/widgets/errorMessage */ "./resources/js/components/widgets/errorMessage.vue");
@@ -3655,7 +3655,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_multiselect__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-multiselect */ "./node_modules/vue-multiselect/dist/vue-multiselect.min.js");
 /* harmony import */ var vue_multiselect__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_multiselect__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _helper_startDate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../helper/startDate */ "./resources/js/helper/startDate.js");
-/* harmony import */ var _helper_langTransform__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../helper/langTransform */ "./resources/js/helper/langTransform.js");
+/* harmony import */ var _components_tree_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/tree.vue */ "./resources/js/components/tree.vue");
+/* harmony import */ var _helper_langTransform__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../helper/langTransform */ "./resources/js/helper/langTransform.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -3682,6 +3683,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 
 
 
+
 /**
  * Advanced Table component
  */
@@ -3695,6 +3697,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
   },
   props: ["menu_id"],
   components: {
+    TreeBrowser: _components_tree_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
     Switches: vue_switches__WEBPACK_IMPORTED_MODULE_1__["default"],
     ErrorMessage: _components_widgets_errorMessage__WEBPACK_IMPORTED_MODULE_3__["default"],
     loader: _components_loader__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -3745,6 +3748,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         is_add_on: 0,
         sort: 0
       }],
+      subMenus: [],
       create: {
         name: "",
         name_e: "",
@@ -3783,43 +3787,43 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
   validations: {
     create: {
       name: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required,
-        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.minLength)(3),
-        maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.maxLength)(100)
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
+        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minLength)(3),
+        maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.maxLength)(100)
       },
       name_e: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required,
-        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.minLength)(3),
-        maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.maxLength)(100)
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
+        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minLength)(3),
+        maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.maxLength)(100)
       },
       is_add_on: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required
       }
     },
     createScreens: {
       $each: {
         name: {
-          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required,
-          minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.minLength)(3),
-          maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.maxLength)(100)
+          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
+          minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minLength)(3),
+          maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.maxLength)(100)
         },
         name_e: {
-          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required,
-          minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.minLength)(3),
-          maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.maxLength)(100)
+          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
+          minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minLength)(3),
+          maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.maxLength)(100)
         },
         title: {
-          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required,
-          minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.minLength)(3),
-          maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.maxLength)(100)
+          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
+          minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minLength)(3),
+          maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.maxLength)(100)
         },
         title_e: {
-          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required,
-          minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.minLength)(3),
-          maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.maxLength)(100)
+          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
+          minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minLength)(3),
+          maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.maxLength)(100)
         },
         url: {
-          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required
+          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required
         },
         is_implementor: {},
         is_add_on: {}
@@ -3827,20 +3831,17 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     },
     edit: {
       name: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required,
-        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.minLength)(3),
-        maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.maxLength)(100)
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
+        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minLength)(3),
+        maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.maxLength)(100)
       },
       name_e: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required,
-        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.minLength)(3),
-        maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.maxLength)(100)
-      },
-      menu_id: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
+        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minLength)(3),
+        maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.maxLength)(100)
       },
       is_add_on: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required
       }
     }
   },
@@ -3879,17 +3880,52 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
   },
   mounted: function mounted() {},
   methods: {
+    setCreateCurrentNode: function setCreateCurrentNode(node) {
+      if (this.current_id != node.id) {
+        this.current_id = node.id;
+      } else {
+        this.current_id = null;
+      }
+      if (this.current_id) {
+        this.create.name = node.name;
+        this.create.name_e = node.name_e;
+        this.create.is_add_on = node.is_add_on;
+        this.create.sort = node.sort;
+        this.getScreens();
+      } else {
+        this.create = {
+          name: "",
+          name_e: "",
+          parent_id: null,
+          is_add_on: 1,
+          menu_id: null,
+          sort: 0
+        };
+        this.createScreens = [{
+          name: "",
+          name_e: "",
+          title: "",
+          title_e: "",
+          serial_id: "",
+          search: "",
+          url: "",
+          is_implementor: 0,
+          is_add_on: 0,
+          sort: 0
+        }];
+      }
+    },
     arabicValueTitle: function arabicValueTitle(txt, index) {
-      this.createScreens[index].title = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_8__.arabicValue)(txt);
+      this.createScreens[index].title = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_9__.arabicValue)(txt);
     },
     englishValueTitle: function englishValueTitle(txt, index) {
-      this.createScreens[index].title_e = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_8__.englishValue)(txt);
+      this.createScreens[index].title_e = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_9__.englishValue)(txt);
     },
     arabicValueIndex: function arabicValueIndex(txt, index) {
-      this.createScreens[index].name = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_8__.arabicValue)(txt);
+      this.createScreens[index].name = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_9__.arabicValue)(txt);
     },
     englishValueIndex: function englishValueIndex(txt, index) {
-      this.createScreens[index].name_e = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_8__.englishValue)(txt);
+      this.createScreens[index].name_e = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_9__.englishValue)(txt);
     },
     AddScreens: function AddScreens() {
       var _this3 = this;
@@ -3955,13 +3991,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         });
         result.expanded.push(result.node);
       });
-    },
-    setCreateCurrentNode: function setCreateCurrentNode(node) {
-      if (this.create.parent_id != node.id) {
-        this.create.parent_id = node.id;
-      } else {
-        this.create.parent_id = null;
-      }
     },
     setUpdateCurrentNode: function setUpdateCurrentNode(node) {
       var parents = [];
@@ -4135,8 +4164,30 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
             _this8.isLoader = true;
             _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"]["delete"]("/sub-menus/".concat(id)).then(function (res) {
               _this8.checkAll = [];
-              _this8.getData();
-              if (tree) {}
+              if (tree) {
+                _this8.getSubMenus();
+                _this8.current_id = null;
+                _this8.create = {
+                  name: "",
+                  name_e: "",
+                  parent_id: null,
+                  is_add_on: 1,
+                  menu_id: null,
+                  sort: 0
+                };
+                _this8.createScreens = [{
+                  name: "",
+                  name_e: "",
+                  title: "",
+                  title_e: "",
+                  serial_id: "",
+                  search: "",
+                  url: "",
+                  is_implementor: 0,
+                  is_add_on: 0,
+                  sort: 0
+                }];
+              }
               sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                 icon: "success",
                 title: "".concat(_this8.$t("general.Deleted")),
@@ -4206,7 +4257,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this10.getMenus();
+                return _this10.getSubMenus();
               case 2:
                 _this10.create = {
                   name: "",
@@ -4225,8 +4276,8 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
                   search: "",
                   url: "",
                   is_implementor: 0,
-                  sort: 0,
-                  is_add_on: 0
+                  is_add_on: 0,
+                  sort: 0
                 }];
                 _this10.is_disabled = false;
                 _this10.$nextTick(function () {
@@ -4263,8 +4314,8 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         serial_id: "",
         search: "",
         url: "",
-        is_add_on: 0,
         is_implementor: 0,
+        is_add_on: 0,
         sort: 0
       }];
       this.is_disabled = false;
@@ -4275,6 +4326,10 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     },
     AddSubmit: function AddSubmit() {
       var _this12 = this;
+      if (this.current_id) {
+        this.editSubmit(this.current_id);
+        return;
+      }
       if (this.create.name || this.create.name_e) {
         this.create.name = this.create.name ? this.create.name : this.create.name_e;
         this.create.name_e = this.create.name_e ? this.create.name_e : this.create.name;
@@ -4290,6 +4345,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
           _this12.is_disabled = true;
           _this12.current_id = res.data.data.id;
           _this12.$emit("created");
+          _this12.getSubMenus();
           setTimeout(function () {
             sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
               icon: "success",
@@ -4318,19 +4374,18 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      */
     editSubmit: function editSubmit(id) {
       var _this13 = this;
-      if (this.edit.name || this.edit.name_e) {
-        this.edit.name = this.edit.name ? this.edit.name : this.edit.name_e;
-        this.edit.name_e = this.edit.name_e ? this.edit.name_e : this.edit.name;
+      if (this.create.name || this.create.name_e) {
+        this.create.name = this.create.name ? this.create.name : this.create.name_e;
+        this.create.name_e = this.create.name_e ? this.create.name_e : this.create.name;
       }
-      this.$v.edit.$touch();
-      if (this.$v.edit.$invalid) {
+      this.$v.create.$touch();
+      if (this.$v.create.$invalid) {
         return;
       } else {
         this.isLoader = true;
         this.errors = {};
-        _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].put("/sub-menus/".concat(id), this.edit).then(function (res) {
-          _this13.$bvModal.hide("modal-edit-".concat(id));
-          _this13.getData();
+        _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].put("/sub-menus/".concat(id), this.create).then(function (res) {
+          _this13.getSubMenus();
           setTimeout(function () {
             sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
               icon: "success",
@@ -4354,7 +4409,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         });
       }
     },
-    getMenus: function getMenus() {
+    getSubMenus: function getSubMenus() {
       var _this14 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
         return _regeneratorRuntime().wrap(function _callee2$(_context2) {
@@ -4362,8 +4417,8 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].get("/program-folder").then(function (res) {
-                  _this14.menus = res.data.data;
+                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].get("/sub-menus?program_folder_menu_id=0").then(function (res) {
+                  _this14.subMenus = res.data.data;
                 })["catch"](function (err) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                     icon: "error",
@@ -4379,36 +4434,89 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         }, _callee2);
       }))();
     },
-    /**
-     *   show Modal (edit)
-     */
-    resetModalEdit: function resetModalEdit(id) {
+    getScreens: function getScreens() {
       var _this15 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-        var module;
         return _regeneratorRuntime().wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return _this15.getMenus();
-              case 2:
-                module = _this15.menuTrees.find(function (e) {
-                  return id == e.id;
+                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].get("/screens?sub_menu_id=".concat(_this15.current_id)).then(function (res) {
+                  if (res.data.data.length) {
+                    var screens = [];
+                    res.data.data.forEach(function (screen) {
+                      screens.push({
+                        name: screen.name,
+                        name_e: screen.name_e,
+                        title: screen.title,
+                        title_e: screen.title_e,
+                        url: screen.url,
+                        is_implementor: screen.is_implementor,
+                        is_add_on: screen.is_add_on,
+                        sort: screen.sort
+                      });
+                    });
+                    _this15.createScreens = screens;
+                  } else {
+                    _this15.createScreens = [{
+                      name: "",
+                      name_e: "",
+                      title: "",
+                      title_e: "",
+                      serial_id: "",
+                      search: "",
+                      url: "",
+                      is_implementor: 0,
+                      is_add_on: 0,
+                      sort: 0
+                    }];
+                  }
+                })["catch"](function (err) {
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
+                    icon: "error",
+                    title: "".concat(_this15.$t("general.Error")),
+                    text: "".concat(_this15.$t("general.Thereisanerrorinthesystem"))
+                  });
                 });
-                _this15.edit.name = module.name;
-                _this15.edit.name_e = module.name_e;
-                _this15.edit.is_add_on = module.is_add_on;
-                _this15.edit.menu_id = module.menu_id;
-                _this15.edit.sort = module.sort;
-                _this15.errors = {};
-                _this15.current_id = id;
-              case 10:
+              case 2:
               case "end":
                 return _context3.stop();
             }
           }
         }, _callee3);
+      }))();
+    },
+    /**
+     *   show Modal (edit)
+     */
+    resetModalEdit: function resetModalEdit(id) {
+      var _this16 = this;
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
+        var module;
+        return _regeneratorRuntime().wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return _this16.getMenus();
+              case 2:
+                module = _this16.menuTrees.find(function (e) {
+                  return id == e.id;
+                });
+                _this16.edit.name = module.name;
+                _this16.edit.name_e = module.name_e;
+                _this16.edit.is_add_on = module.is_add_on;
+                _this16.edit.menu_id = module.menu_id;
+                _this16.edit.sort = module.sort;
+                _this16.errors = {};
+                _this16.current_id = id;
+              case 10:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
       }))();
     },
     /**
@@ -4483,10 +4591,10 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
      *   Export Excel
      */
     ExportExcel: function ExportExcel(type, fn, dl) {
-      var _this16 = this;
+      var _this17 = this;
       this.enabled3 = false;
       setTimeout(function () {
-        var elt = _this16.$refs.exportable_table;
+        var elt = _this17.$refs.exportable_table;
         var wb = XLSX.utils.table_to_book(elt, {
           sheet: "Sheet JS"
         });
@@ -4499,16 +4607,16 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         } else {
           XLSX.writeFile(wb, fn || ("Module" + "." || 0) + (type || "xlsx"));
         }
-        _this16.enabled3 = true;
+        _this17.enabled3 = true;
       }, 100);
     },
     arabicValue: function arabicValue(txt) {
-      this.create.name = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_8__.arabicValue)(txt);
-      this.edit.name = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_8__.arabicValue)(txt);
+      this.create.name = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_9__.arabicValue)(txt);
+      this.edit.name = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_9__.arabicValue)(txt);
     },
     englishValue: function englishValue(txt) {
-      this.create.name_e = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_8__.englishValue)(txt);
-      this.edit.name_e = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_8__.englishValue)(txt);
+      this.create.name_e = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_9__.englishValue)(txt);
+      this.edit.name_e = (0,_helper_langTransform__WEBPACK_IMPORTED_MODULE_9__.englishValue)(txt);
     }
   }
 });
@@ -10192,7 +10300,22 @@ var render = function render() {
       active: ""
     }
   }, [_c("div", {
-    staticClass: "col-5"
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-6"
+  }, [_c("TreeBrowser", {
+    attrs: {
+      currentNodeId: this.current_id,
+      nodes: _vm.subMenus
+    },
+    on: {
+      deleteClicked: function deleteClicked($event) {
+        return _vm.deleteModule($event.id, true);
+      },
+      onClick: _vm.setCreateCurrentNode
+    }
+  })], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-6"
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
@@ -10207,7 +10330,7 @@ var render = function render() {
     attrs: {
       "for": "field-1"
     }
-  }, [_vm._v("\n                  " + _vm._s(_vm.$t("general.Name")) + "\n                  "), _c("span", {
+  }, [_vm._v("\n                    " + _vm._s(_vm.$t("general.Name")) + "\n                    "), _c("span", {
     staticClass: "text-danger"
   }, [_vm._v("*")])]), _vm._v(" "), _c("input", {
     directives: [{
@@ -10239,12 +10362,12 @@ var render = function render() {
     }
   }), _vm._v(" "), !_vm.$v.create.name.minLength ? _c("div", {
     staticClass: "invalid-feedback"
-  }, [_vm._v("\n                  " + _vm._s(_vm.$t("general.Itmustbeatleast")) + "\n                  " + _vm._s(_vm.$v.create.name.$params.minLength.min) + "\n                  " + _vm._s(_vm.$t("general.letters")) + "\n                ")]) : _vm._e(), _vm._v(" "), !_vm.$v.create.name.maxLength ? _c("div", {
+  }, [_vm._v("\n                    " + _vm._s(_vm.$t("general.Itmustbeatleast")) + "\n                    " + _vm._s(_vm.$v.create.name.$params.minLength.min) + "\n                    " + _vm._s(_vm.$t("general.letters")) + "\n                  ")]) : _vm._e(), _vm._v(" "), !_vm.$v.create.name.maxLength ? _c("div", {
     staticClass: "invalid-feedback"
-  }, [_vm._v("\n                  " + _vm._s(_vm.$t("general.Itmustbeatmost")) + "\n                  " + _vm._s(_vm.$v.create.name.$params.maxLength.max) + "\n                  " + _vm._s(_vm.$t("general.letters")) + "\n                ")]) : _vm._e(), _vm._v(" "), _vm.errors.name ? _vm._l(_vm.errors.name, function (errorMessage, index) {
+  }, [_vm._v("\n                    " + _vm._s(_vm.$t("general.Itmustbeatmost")) + "\n                    " + _vm._s(_vm.$v.create.name.$params.maxLength.max) + "\n                    " + _vm._s(_vm.$t("general.letters")) + "\n                  ")]) : _vm._e(), _vm._v(" "), _vm.errors.name ? _vm._l(_vm.errors.name, function (errorMessage, index) {
     return _c("ErrorMessage", {
       key: index
-    }, [_vm._v(_vm._s(_vm.$t(errorMessage)) + "\n                  ")]);
+    }, [_vm._v(_vm._s(_vm.$t(errorMessage)) + "\n                    ")]);
   }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
     staticClass: "col-12 direction-ltr",
     attrs: {
@@ -10257,7 +10380,7 @@ var render = function render() {
     attrs: {
       "for": "field-2"
     }
-  }, [_vm._v("\n                  " + _vm._s(_vm.$t("general.Name_en")) + "\n                  "), _c("span", {
+  }, [_vm._v("\n                    " + _vm._s(_vm.$t("general.Name_en")) + "\n                    "), _c("span", {
     staticClass: "text-danger"
   }, [_vm._v("*")])]), _vm._v(" "), _c("input", {
     directives: [{
@@ -10289,9 +10412,9 @@ var render = function render() {
     }
   }), _vm._v(" "), !_vm.$v.create.name_e.minLength ? _c("div", {
     staticClass: "invalid-feedback"
-  }, [_vm._v("\n                  " + _vm._s(_vm.$t("general.Itmustbeatleast")) + "\n                  " + _vm._s(_vm.$v.create.name_e.$params.minLength.min) + "\n                  " + _vm._s(_vm.$t("general.letters")) + "\n                ")]) : _vm._e(), _vm._v(" "), !_vm.$v.create.name_e.maxLength ? _c("div", {
+  }, [_vm._v("\n                    " + _vm._s(_vm.$t("general.Itmustbeatleast")) + "\n                    " + _vm._s(_vm.$v.create.name_e.$params.minLength.min) + "\n                    " + _vm._s(_vm.$t("general.letters")) + "\n                  ")]) : _vm._e(), _vm._v(" "), !_vm.$v.create.name_e.maxLength ? _c("div", {
     staticClass: "invalid-feedback"
-  }, [_vm._v("\n                  " + _vm._s(_vm.$t("general.Itmustbeatmost")) + "\n                  " + _vm._s(_vm.$v.create.name_e.$params.maxLength.max) + "\n                  " + _vm._s(_vm.$t("general.letters")) + "\n                ")]) : _vm._e(), _vm._v(" "), _vm.errors.name_e ? _vm._l(_vm.errors.name_e, function (errorMessage, index) {
+  }, [_vm._v("\n                    " + _vm._s(_vm.$t("general.Itmustbeatmost")) + "\n                    " + _vm._s(_vm.$v.create.name_e.$params.maxLength.max) + "\n                    " + _vm._s(_vm.$t("general.letters")) + "\n                  ")]) : _vm._e(), _vm._v(" "), _vm.errors.name_e ? _vm._l(_vm.errors.name_e, function (errorMessage, index) {
     return _c("ErrorMessage", {
       key: index
     }, [_vm._v(_vm._s(_vm.$t(errorMessage)))]);
@@ -10304,7 +10427,7 @@ var render = function render() {
     attrs: {
       "for": "field-2"
     }
-  }, [_vm._v("\n                  " + _vm._s(_vm.$t("general.IdSort")) + "\n                ")]), _vm._v(" "), _c("div", [_c("input", {
+  }, [_vm._v("\n                    " + _vm._s(_vm.$t("general.IdSort")) + "\n                  ")]), _vm._v(" "), _c("div", [_c("input", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -10329,14 +10452,14 @@ var render = function render() {
   }), _vm._v(" "), _vm.errors.sort ? _vm._l(_vm.errors.sort, function (errorMessage, index) {
     return _c("ErrorMessage", {
       key: index
-    }, [_vm._v(_vm._s(_vm.$t(errorMessage)) + "\n                    ")]);
+    }, [_vm._v(_vm._s(_vm.$t(errorMessage)) + "\n                      ")]);
   }) : _vm._e()], 2)])]), _vm._v(" "), _c("div", {
     staticClass: "col-12"
   }, [_c("div", {
     staticClass: "form-group"
   }, [_c("label", {
     staticClass: "mr-2 mb-2"
-  }, [_vm._v("\n                  " + _vm._s(_vm.$t("general.addOn")) + "\n                  "), _c("span", {
+  }, [_vm._v("\n                    " + _vm._s(_vm.$t("general.addOn")) + "\n                    "), _c("span", {
     staticClass: "text-danger"
   }, [_vm._v("*")])]), _vm._v(" "), _c("b-form-group", {
     "class": {
@@ -10372,8 +10495,8 @@ var render = function render() {
   }, [_vm._v(_vm._s(_vm.$t("general.No")))])], 1), _vm._v(" "), _vm.errors.is_add_on ? _vm._l(_vm.errors.is_add_on, function (errorMessage, index) {
     return _c("ErrorMessage", {
       key: index
-    }, [_vm._v(_vm._s(_vm.$t(errorMessage)) + "\n                  ")]);
-  }) : _vm._e()], 2)])])])]), _vm._v(" "), _c("b-tab", {
+    }, [_vm._v(_vm._s(_vm.$t(errorMessage)) + "\n                    ")]);
+  }) : _vm._e()], 2)])])])])]), _vm._v(" "), _c("b-tab", {
     attrs: {
       disabled: !_vm.current_id,
       title: _vm.$t("general.screen")
