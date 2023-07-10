@@ -114,6 +114,7 @@ export default {
         name_e: true,
         is_active: true,
         parent_id: true,
+        type: true,
       },
       filterSetting: ["name", "name_e"],
       errors: {},
@@ -707,16 +708,18 @@ export default {
         });
     },
     setChildNodes(result) {
-      adminApi.get(`/project-program-modules/child-nodes/${result.node.id}`).then((res) => {
-        this.isLoader = false;
-        result.node.children = res.data.map((el) => {
-          return {
-            ...el,
-            parent: result.node,
-          };
+      adminApi
+        .get(`/project-program-modules/child-nodes/${result.node.id}`)
+        .then((res) => {
+          this.isLoader = false;
+          result.node.children = res.data.map((el) => {
+            return {
+              ...el,
+              parent: result.node,
+            };
+          });
+          result.expanded.push(result.node);
         });
-        result.expanded.push(result.node);
-      });
     },
     setCreateCurrentNode(node) {
       if (this.create.parent_id != node.id) {
@@ -962,7 +965,7 @@ export default {
      */
     resetModalHidden() {
       this.modules_ids = [];
-      this.moduleName="";
+      this.moduleName = "";
       this.create = {
         name: "",
         name_e: "",
@@ -991,7 +994,7 @@ export default {
      *  hidden Modal (create)
      */
     async resetModal() {
-      this.moduleName="";
+      this.moduleName = "";
       this.modules_ids = [];
       await this.getRootNodes();
       await this.getAllSubMenus();
@@ -1025,7 +1028,7 @@ export default {
      */
     resetForm() {
       this.modules_ids = [];
-      this.moduleName="";
+      this.moduleName = "";
       this.create = {
         name: "",
         name_e: "",
@@ -1191,7 +1194,10 @@ export default {
         this.errors = {};
         let { name, name_e, parent_id, is_active } = this.edit;
         adminApi
-          .put(`/project-program-modules/${id}`, { ...this.edit, search: undefined })
+          .put(`/project-program-modules/${id}`, {
+            ...this.edit,
+            search: undefined,
+          })
           .then((res) => {
             this.$bvModal.hide(`modal-edit-${id}`);
             this.getData();
@@ -1250,8 +1256,18 @@ export default {
 
       await this.getMenus();
       let module = this.modules.find((e) => id == e.id);
-      this.moduleName = this.$i18n.locale == "ar" ? `${module.parent?`${module.parent.name}->${module.name}`:module.name}` : 
-      `${module.parent?`${module.parent.name_e}->${module.name_e}`:module.name_e}`;
+      this.moduleName =
+        this.$i18n.locale == "ar"
+          ? `${
+              module.parent
+                ? `${module.parent.name}->${module.name}`
+                : module.name
+            }`
+          : `${
+              module.parent
+                ? `${module.parent.name_e}->${module.name_e}`
+                : module.name_e
+            }`;
       this.edit.name = module.name;
       this.edit.name_e = module.name_e;
       this.edit.is_active = module.is_active;
@@ -1267,7 +1283,7 @@ export default {
      */
     resetModalHiddenEdit(id) {
       this.modules_ids = [];
-      this.moduleName="";
+      this.moduleName = "";
       this.menu_id = null;
       this.sub_menu_id = null;
       this.all_sub_menu_id = null;
@@ -1519,6 +1535,10 @@ export default {
                     <b-form-checkbox v-model="setting.parent_id" class="mb-1">
                       {{ $t("general.parent") }}
                     </b-form-checkbox>
+                    <b-form-checkbox v-model="setting.type" class="mb-1">
+                      {{ $t("general.Type") }}
+                    </b-form-checkbox>
+                    
                     <div class="d-flex justify-content-end">
                       <a
                         href="javascript:void(0)"
@@ -2368,6 +2388,21 @@ export default {
                         </div>
                       </div>
                     </th>
+                    <th v-if="setting.type">
+                      <div class="d-flex justify-content-center">
+                        <span>{{ $t("general.Type") }}</span>
+                        <div class="arrow-sort">
+                          <i
+                            class="fas fa-arrow-up"
+                            @click="modules.sort(sortString('name_e'))"
+                          ></i>
+                          <i
+                            class="fas fa-arrow-down"
+                            @click="modules.sort(sortString('-name_e'))"
+                          ></i>
+                        </div>
+                      </div>
+                    </th>
                     <th v-if="enabled3" class="do-not-print">
                       {{ $t("general.Action") }}
                     </th>
@@ -2428,6 +2463,13 @@ export default {
                             : data.parent.name_e
                         }}
                       </template>
+                    </td>
+                    <td v-if="setting.type">
+                      {{
+                        data.parent
+                          ? $t("general.Module")
+                          : $t("general.program")
+                      }}
                     </td>
                     <td v-if="enabled3" class="do-not-print">
                       <div class="btn-group">

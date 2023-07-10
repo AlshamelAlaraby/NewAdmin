@@ -431,6 +431,8 @@
         }
     },
     "general": {
+        "Type":"النوع",
+
         "icon":"ايقون",
         "screen":"الشاشة",
         "isImplementor": "منفذ",
