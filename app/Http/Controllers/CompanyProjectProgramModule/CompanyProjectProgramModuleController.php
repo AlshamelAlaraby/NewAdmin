@@ -5,6 +5,7 @@ namespace App\Http\Controllers\CompanyProjectProgramModule;
 use App\Http\Controllers\ResponseController;
 use App\Http\Requests\CompanyProjectProgramModule\CompanyProjectProgramModuleRequest;
 use App\Http\Resources\CompanyProjectProgramModule\CompanyProjectProgramModuleResource;
+use App\Models\DocumentCompanyModule;
 use App\Repositories\CompanyProjectProgramModule\CompanyProjectProgramModuleInterface;
 use Illuminate\Http\Request;
 
@@ -64,8 +65,13 @@ class CompanyProjectProgramModuleController extends ResponseController
             return responseJson(404, __('message.data not found'));
         }
         if ($model->hasChildren()) {
-            return responseJson(400, __('message.data has relation cant delete'));
+           foreach ($model->documentTypes as $document):
+               $document['pivot']->delete();
+           endforeach;
         }
+//        if ($model->hasChildren()) {
+//            return responseJson(400, __('message.data has relation cant delete'));
+//        }
         $this->repository->delete($id);
         return responseJson(200, __('Done'));
     }
@@ -73,6 +79,12 @@ class CompanyProjectProgramModuleController extends ResponseController
     public function bulkDelete(Request $request)
     {
         foreach ($request->ids as $id) {
+            $model = $this->repository->find($id);
+            if ($model->hasChildren()) {
+                foreach ($model->documentTypes as $document):
+                    $document['pivot']->delete();
+                endforeach;
+            }
             $this->repository->delete($id);
         }
         return responseJson(200, __('Done'));

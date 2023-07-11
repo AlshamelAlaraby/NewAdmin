@@ -28,7 +28,7 @@ class CompanyProjectProgramModule extends Model
     /*** return relation  with  DocumentTypes */
     public function documentTypes()
     {
-        return $this->belongsToMany(DocumentType::class, 'document_company_project_program_modules', 'company_project_program_module_id', 'document_type_id');
+        return $this->belongsToMany(DocumentType::class, 'document_company_project_program_modules', 'company_project_program_module_id', 'document_type_id')->withPivot('id');
     }
 
     /*** return relation  with  partner */

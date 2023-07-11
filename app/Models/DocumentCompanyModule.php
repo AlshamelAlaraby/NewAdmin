@@ -12,7 +12,7 @@ class DocumentCompanyModule extends Model
     use HasFactory, LogTrait;
 
     protected $guarded = ['id'];
-    protected $table = ['document_company_modules'];
+    protected $table = ['document_company_project_program_modules'];
 
     public function getActivitylogOptions(): LogOptions
     {

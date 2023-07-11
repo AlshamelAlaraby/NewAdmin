@@ -55,7 +55,7 @@ class SubMenuController extends Controller
         $model->refresh();
 
         return responseJson(200, 'created', new SubMenuResource($model));
-    }   
+    }
 
     public function update($id, SubMenuRequest $request)
     {
@@ -87,11 +87,16 @@ class SubMenuController extends Controller
         if (!$model) {
             return responseJson(404, 'not found');
         }
-        if ($model->hasChildren()) {
-            return responseJson(400, __('message.parent have children'));
+        if ($model->hasChildren()){
+            foreach ($model->screens as $screen):
+                $screen->delete();
+            endforeach;
         }
+//        if ($model->hasChildren()) {
+//            return responseJson(400, __('message.parent have children'));
+//        }
+//
         $model->delete();
-
         return responseJson(200, 'deleted');
     }
 
@@ -101,9 +106,12 @@ class SubMenuController extends Controller
         $ids = request()->ids;
         foreach ($ids as $id) {
             $model = $this->model->find($id);
-            if (!$model->hasChildren()) {
-                    $model->delete();
+            if ($model->hasChildren()) {
+                    foreach ($model->screens as $screen):
+                        $screen->delete();
+                    endforeach;
             }
+            $model->delete();
         }
 
         return responseJson(200, 'deleted');

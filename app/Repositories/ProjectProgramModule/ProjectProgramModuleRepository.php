@@ -18,7 +18,7 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
 
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
 
-        if ($request->program_modules == 1) {
+        if ($request->program_modules) {
             $models->whereNotIn("id",$modules);
         }
 
