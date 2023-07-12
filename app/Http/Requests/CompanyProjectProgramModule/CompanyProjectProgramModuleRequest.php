@@ -32,8 +32,8 @@ class CompanyProjectProgramModuleRequest extends FormRequest
             'end_date'                          => 'required|date|after_or_equal:start_date',
             "document_types"                    => 'nullable',
             'document_types.*'                  => 'nullable|exists:document_types,id',
-
-
+            "allowed_employee"                  => "nullable|min:0|integer",
+            "out_site"                          => "nullable|min:0|integer",
         ];
     }
 

@@ -26,6 +26,8 @@ class CompanyProjectProgramModuleResource extends JsonResource
             "start_date"             => $this->start_date,
             "end_date"               => $this->end_date,
             "allowed_users_no"       => $this->allowed_users_no,
+            "allowed_employee"       => $this->allowed_employee,
+            "out_site"               => $this->out_site,
             "document_types"         => DocumentTypeResource::collection($this->documentTypes),
 
         ];
