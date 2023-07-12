@@ -431,8 +431,9 @@
         }
     },
     "general": {
+        "out_site":"عدد العملاء الخارجين",
         "Type":"النوع",
-
+        "allowed_employee":"عدد الموظفين المسموحين",
         "icon":"ايقون",
         "screen":"الشاشة",
         "isImplementor": "منفذ",
