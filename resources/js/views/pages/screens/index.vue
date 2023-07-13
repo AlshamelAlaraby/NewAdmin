@@ -104,7 +104,7 @@ export default {
       name_e: { required, minLength: minLength(3), maxLength: maxLength(100) },
       title: { required, minLength: minLength(3), maxLength: maxLength(100) },
       title_e: { required, minLength: minLength(3), maxLength: maxLength(100) },
-      sub_menu_id: { required },
+      sub_menu_id: {  },
       url: { required },
       is_implementor: {},
     },
@@ -113,7 +113,7 @@ export default {
       name_e: { required, minLength: minLength(3), maxLength: maxLength(100) },
       title: { required, minLength: minLength(3), maxLength: maxLength(100) },
       title_e: { required, minLength: minLength(3), maxLength: maxLength(100) },
-      sub_menu_id: { required },
+      sub_menu_id: {  },
       url: { required },
       is_implementor: {},
     },
@@ -398,7 +398,7 @@ export default {
 
       adminApi
         .get(
-          `/screens?page=${page}&per_page=${this.per_page}&search=${this.search}&${filter}`
+          `/screens?screens_null=1&page=${page}&per_page=${this.per_page}&search=${this.search}&${filter}`
         )
         .then((res) => {
           let l = res.data;
@@ -431,7 +431,7 @@ export default {
 
         adminApi
           .get(
-            `/screens?page=${this.current_page}&per_page=${this.per_page}&search=${this.search}&${filter}`
+            `/screens?screens_null=1&page=${this.current_page}&per_page=${this.per_page}&search=${this.search}&${filter}`
           )
           .then((res) => {
             let l = res.data;
@@ -796,7 +796,6 @@ export default {
       this.edit.title = module.title;
       this.edit.title_e = module.title_e;
       this.edit.serial_id = module.serial_id;
-      this.edit.sub_menu_id = module.sub_menu.id;
       this.edit.url = module.url;
       this.edit.sort = module.sort;
       this.screen_id = module.id;
@@ -1179,7 +1178,7 @@ export default {
                             <!--                                    </div>-->
                             <!--                                    <div class="col-md-6"></div>-->
                             <div class="row">
-                              <div class="col-md-12 position-relative">
+                              <!-- <div class="col-md-12 position-relative">
                                 <div class="form-group">
                                   <label class="my-1 mr-2">{{
                                     $t("general.subMenu")
@@ -1219,7 +1218,7 @@ export default {
                                     >
                                   </template>
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="col-md-6 direction">
                                 <div class="form-group">
                                   <label for="field-1" class="control-label">
@@ -2022,7 +2021,7 @@ export default {
                                         <!--
                                                                                                                                                             <div class="col-md-6"></div>-->
 
-                                        <div
+                                        <!-- <div
                                           class="col-md-12 position-relative"
                                         >
                                           <div class="form-group">
@@ -2072,7 +2071,7 @@ export default {
                                               </ErrorMessage>
                                             </template>
                                           </div>
-                                        </div>
+                                        </div> -->
                                         <div class="col-md-6">
                                           <div class="form-group">
                                             <label

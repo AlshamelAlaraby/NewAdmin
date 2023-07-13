@@ -66,20 +66,10 @@ export default {
       mouseEnter: "",
       current_id: null,
       menus: [],
-      createScreens: [
-        {
-          name: "",
-          name_e: "",
-          title: "",
-          title_e: "",
-          serial_id: "",
-          search: "",
-          url: "",
-          is_implementor: 0,
-          is_add_on: 0,
-          sort: 0,
-        },
-      ],
+      createScreens: [],
+
+      screenIds: [],
+      allScreens: [],
       subMenus: [],
       create: {
         name: "",
@@ -209,20 +199,7 @@ export default {
           menu_id: null,
           sort: 0,
         };
-        this.createScreens = [
-          {
-            name: "",
-            name_e: "",
-            title: "",
-            title_e: "",
-            serial_id: "",
-            search: "",
-            url: "",
-            is_implementor: 0,
-            is_add_on: 0,
-            sort: 0,
-          },
-        ];
+        this.createScreens = [];
       }
     },
     arabicValueTitle(txt, index) {
@@ -247,9 +224,10 @@ export default {
         adminApi
           .post(`/screens/create-sub-menu-screens`, {
             sub_menu_id: this.current_id,
-            screens: this.createScreens,
+            screens: this.screenIds,
           })
           .then((res) => {
+            this.getScreens();
             setTimeout(() => {
               Swal.fire({
                 icon: "success",
@@ -514,20 +492,7 @@ export default {
                     menu_id: null,
                     sort: 0,
                   };
-                  this.createScreens = [
-                    {
-                      name: "",
-                      name_e: "",
-                      title: "",
-                      title_e: "",
-                      serial_id: "",
-                      search: "",
-                      url: "",
-                      is_implementor: 0,
-                      is_add_on: 0,
-                      sort: 0,
-                    },
-                  ];
+                  this.createScreens = [];
                 }
                 Swal.fire({
                   icon: "success",
@@ -572,19 +537,7 @@ export default {
         is_add_on: 1,
         sort: 0,
       };
-      this.createScreens = [
-        {
-          name: "",
-          name_e: "",
-          title: "",
-          title_e: "",
-          serial_id: "",
-          search: "",
-          url: "",
-          is_implementor: 0,
-          sort: 0,
-        },
-      ];
+      this.createScreens = [];
       this.$nextTick(() => {
         this.$v.$reset();
       });
@@ -596,6 +549,8 @@ export default {
      */
     async resetModal() {
       await this.getSubMenus();
+      this.getAllScreens();
+
       this.create = {
         name: "",
         name_e: "",
@@ -604,20 +559,7 @@ export default {
         is_add_on: 1,
         sort: 0,
       };
-      this.createScreens = [
-        {
-          name: "",
-          name_e: "",
-          title: "",
-          title_e: "",
-          serial_id: "",
-          search: "",
-          url: "",
-          is_implementor: 0,
-          is_add_on: 0,
-          sort: 0,
-        },
-      ];
+      this.createScreens = [];
 
       this.is_disabled = false;
       this.$nextTick(() => {
@@ -638,20 +580,7 @@ export default {
         is_add_on: 1,
         sort: 0,
       };
-      this.createScreens = [
-        {
-          name: "",
-          name_e: "",
-          title: "",
-          title_e: "",
-          serial_id: "",
-          search: "",
-          url: "",
-          is_implementor: 0,
-          is_add_on: 0,
-          sort: 0,
-        },
-      ];
+      this.createScreens = [];
 
       this.is_disabled = false;
       this.$nextTick(() => {
@@ -792,21 +721,22 @@ export default {
             });
             this.createScreens = screens;
           } else {
-            this.createScreens = [
-              {
-                name: "",
-                name_e: "",
-                title: "",
-                title_e: "",
-                serial_id: "",
-                search: "",
-                url: "",
-                is_implementor: 0,
-                is_add_on: 0,
-                sort: 0,
-              },
-            ];
+            this.createScreens = [];
           }
+        })
+        .catch((err) => {
+          Swal.fire({
+            icon: "error",
+            title: `${this.$t("general.Error")}`,
+            text: `${this.$t("general.Thereisanerrorinthesystem")}`,
+          });
+        });
+    },
+    async getAllScreens() {
+      await adminApi
+        .get(`/screens?screens_null=1`)
+        .then((res) => {
+          this.allScreens = res.data.data;
         })
         .catch((err) => {
           Swal.fire({
@@ -997,7 +927,6 @@ export default {
                   <div class="form-group">
                     <label for="field-1" class="control-label">
                       {{ $t("general.Name") }}
-                      <span class="text-danger">*</span>
                     </label>
                     <input
                       type="text"
@@ -1039,7 +968,6 @@ export default {
                   <div class="form-group">
                     <label for="field-2" class="control-label">
                       {{ $t("general.Name_en") }}
-                      <span class="text-danger">*</span>
                     </label>
                     <input
                       type="text"
@@ -1105,7 +1033,6 @@ export default {
                   <div class="form-group">
                     <label class="mr-2 mb-2">
                       {{ $t("general.addOn") }}
-                      <span class="text-danger">*</span>
                     </label>
                     <b-form-group
                       :class="{
@@ -1160,6 +1087,26 @@ export default {
               <span class="sr-only">{{ $t("login.Loading") }}...</span>
             </b-button>
           </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="my-1 mr-2">{{ $t("general.screen") }}</label>
+                <multiselect
+                  v-model="screenIds"
+                  :multiple="true"
+                  :options="allScreens.map((type) => type.id)"
+                  :custom-label="
+                    (opt) =>
+                      $i18n.locale
+                        ? allScreens.find((x) => x.id == opt).name
+                        : allScreens.find((x) => x.id == opt).name_e
+                  "
+                >
+                </multiselect>
+              </div>
+            </div>
+          </div>
+          <hr />
           <div
             class="row mb-2"
             v-for="(item, index) in createScreens"
@@ -1169,240 +1116,84 @@ export default {
               <div class="form-group">
                 <label for="field-1" class="control-label">
                   {{ $t("general.Name") }}
-                  <span class="text-danger">*</span>
                 </label>
                 <div dir="rtl">
                   <input
+                    :disabled="true"
                     type="text"
                     class="form-control arabicInput"
                     v-model="$v.createScreens.$each[index].name.$model"
-                    :class="{
-                      'is-invalid':
-                        $v.createScreens.$each[index].name.$error ||
-                        errors.name,
-                      'is-valid':
-                        !$v.createScreens.$each[index].name.$invalid &&
-                        !errors.name,
-                    }"
                     @keyup="arabicValueIndex(createScreens[index].name, index)"
                     id="field-1"
                   />
                 </div>
-                <div
-                  v-if="!$v.createScreens.$each[index].name.minLength"
-                  class="invalid-feedback"
-                >
-                  {{ $t("general.Itmustbeatleast") }}
-                  {{ $v.createScreens.$each[index].name.$params.minLength.min }}
-                  {{ $t("general.letters") }}
-                </div>
-                <div
-                  v-if="!$v.createScreens.$each[index].name.maxLength"
-                  class="invalid-feedback"
-                >
-                  {{ $t("general.Itmustbeatmost") }}
-                  {{ $v.createScreens.$each[index].name.$params.maxLength.max }}
-                  {{ $t("general.letters") }}
-                </div>
-                <template v-if="errors.name">
-                  <ErrorMessage
-                    v-for="(errorMessage, index) in errors.name"
-                    :key="index"
-                    >{{ errorMessage }}
-                  </ErrorMessage>
-                </template>
               </div>
             </div>
             <div class="col-md-2 direction">
               <div class="form-group">
                 <label for="field-1" class="control-label">
                   {{ $t("general.title") }}
-                  <span class="text-danger">*</span>
                 </label>
                 <div dir="rtl">
                   <input
+                    :disabled="true"
                     type="text"
                     class="form-control arabicInput"
                     v-model="$v.createScreens.$each[index].title.$model"
-                    :class="{
-                      'is-invalid':
-                        $v.createScreens.$each[index].title.$error ||
-                        errors.title,
-                      'is-valid':
-                        !$v.createScreens.$each[index].title.$invalid &&
-                        !errors.title,
-                    }"
                     @keyup="arabicValueTitle(createScreens[index].title, index)"
                   />
                 </div>
-                <div
-                  v-if="!$v.createScreens.$each[index].title.minLength"
-                  class="invalid-feedback"
-                >
-                  {{ $t("general.Itmustbeatleast") }}
-                  {{
-                    $v.createScreens.$each[index].title.$params.minLength.min
-                  }}
-                  {{ $t("general.letters") }}
-                </div>
-                <div
-                  v-if="!$v.createScreens.$each[index].title.maxLength"
-                  class="invalid-feedback"
-                >
-                  {{ $t("general.Itmustbeatmost") }}
-                  {{
-                    $v.createScreens.$each[index].title.$params.maxLength.max
-                  }}
-                  {{ $t("general.letters") }}
-                </div>
-                <template v-if="errors.title">
-                  <ErrorMessage
-                    v-for="(errorMessage, index) in errors.title"
-                    :key="index"
-                    >{{ errorMessage }}
-                  </ErrorMessage>
-                </template>
               </div>
             </div>
             <div class="col-md-2 direction-ltr">
               <div class="form-group">
                 <label for="field-2" class="control-label">
-                  <span class="text-danger">*</span>
                   {{ $t("general.Name_en") }}
                 </label>
                 <div dir="ltr">
                   <input
+                    :disabled="true"
                     type="text"
                     class="form-control englishInput"
                     v-model="$v.createScreens.$each[index].name_e.$model"
-                    :class="{
-                      'is-invalid':
-                        $v.createScreens.$each[index].name_e.$error ||
-                        errors.name_e,
-                      'is-valid':
-                        !$v.createScreens.$each[index].name_e.$invalid &&
-                        !errors.name_e,
-                    }"
                     @keyup="
                       englishValueIndex(createScreens[index].name_e, index)
                     "
                     id="field-2"
                   />
                 </div>
-                <div
-                  v-if="!$v.createScreens.$each[index].name_e.minLength"
-                  class="invalid-feedback"
-                >
-                  {{ $t("general.Itmustbeatleast") }}
-                  {{
-                    $v.createScreens.$each[index].name_e.$params.minLength.min
-                  }}
-                  {{ $t("general.letters") }}
-                </div>
-                <div
-                  v-if="!$v.createScreens.$each[index].name_e.maxLength"
-                  class="invalid-feedback"
-                >
-                  {{ $t("general.Itmustbeatmost") }}
-                  {{
-                    $v.createScreens.$each[index].name_e.$params.maxLength.max
-                  }}
-                  {{ $t("general.letters") }}
-                </div>
-                <template v-if="errors.name_e">
-                  <ErrorMessage
-                    v-for="(errorMessage, index) in errors.name_e"
-                    :key="index"
-                    >{{ errorMessage }}
-                  </ErrorMessage>
-                </template>
               </div>
             </div>
             <div class="col-md-2 direction-ltr">
               <div class="form-group">
                 <label for="field-2" class="control-label">
-                  <span class="text-danger">*</span>
                   {{ $t("general.title_en") }}
                 </label>
                 <div dir="ltr">
                   <input
+                    :disabled="true"
                     type="text"
                     class="form-control englishInput"
                     v-model="$v.createScreens.$each[index].title_e.$model"
-                    :class="{
-                      'is-invalid':
-                        $v.createScreens.$each[index].title_e.$error ||
-                        errors.title_e,
-                      'is-valid':
-                        !$v.createScreens.$each[index].title_e.$invalid &&
-                        !errors.title_e,
-                    }"
                     @keyup="
                       englishValueTitle(createScreens[index].title_e, index)
                     "
                   />
                 </div>
-                <div
-                  v-if="!$v.createScreens.$each[index].title_e.minLength"
-                  class="invalid-feedback"
-                >
-                  {{ $t("general.Itmustbeatleast") }}
-                  {{
-                    $v.createScreens.$each[index].title_e.$params.minLength.min
-                  }}
-                  {{ $t("general.letters") }}
-                </div>
-                <div
-                  v-if="!$v.createScreens.$each[index].title_e.maxLength"
-                  class="invalid-feedback"
-                >
-                  {{ $t("general.Itmustbeatmost") }}
-                  {{
-                    $v.createScreens.$each[index].title_e.$params.maxLength.max
-                  }}
-                  {{ $t("general.letters") }}
-                </div>
-                <template v-if="errors.title_e">
-                  <ErrorMessage
-                    v-for="(errorMessage, index) in errors.title_e"
-                    :key="index"
-                    >{{ errorMessage }}
-                  </ErrorMessage>
-                </template>
               </div>
             </div>
             <div class="col-md-2">
               <div class="form-group">
                 <label for="field-3" class="control-label">
                   {{ $t("general.url") }}
-                  <span class="text-danger">*</span>
                 </label>
                 <input
+                  :disabled="true"
                   type="email"
                   class="form-control"
                   v-model.trim="$v.createScreens.$each[index].url.$model"
-                  :class="{
-                    'is-invalid':
-                      $v.createScreens.$each[index].url.$error || errors.url,
-                    'is-valid':
-                      !$v.createScreens.$each[index].url.$invalid &&
-                      !errors.url,
-                  }"
                   id="field-3"
                 />
-                <div
-                  v-if="!$v.createScreens.$each[index].url.required"
-                  class="invalid-feedback"
-                >
-                  {{ $t("general.fieldIsRequired") }}
-                </div>
-                <template v-if="errors.url">
-                  <ErrorMessage
-                    v-for="(errorMessage, index) in errors.url"
-                    :key="index"
-                    >{{ errorMessage }}</ErrorMessage
-                  >
-                </template>
               </div>
             </div>
             <div class="col-md-2">
@@ -1412,6 +1203,7 @@ export default {
                 </label>
                 <div>
                   <input
+                    :disabled="true"
                     type="number"
                     class="form-control"
                     data-create="2"
@@ -1432,9 +1224,9 @@ export default {
               <div class="form-group">
                 <label class="mr-2 mb-2">
                   {{ $t("general.isImplementor") }}
-                  <span class="text-danger">*</span>
                 </label>
                 <b-form-group
+                  :disabled="true"
                   :class="{
                     'is-invalid':
                       $v.createScreens.$each[index].is_implementor.$error ||
@@ -1445,6 +1237,7 @@ export default {
                   }"
                 >
                   <b-form-radio
+                    :disabled="true"
                     class="d-inline-block"
                     v-model="
                       $v.createScreens.$each[index].is_implementor.$model
@@ -1454,6 +1247,7 @@ export default {
                     >{{ $t("general.Yes") }}</b-form-radio
                   >
                   <b-form-radio
+                    :disabled="true"
                     class="d-inline-block m-1"
                     v-model="
                       $v.createScreens.$each[index].is_implementor.$model
@@ -1476,9 +1270,9 @@ export default {
               <div class="form-group">
                 <label class="mr-2 mb-2">
                   {{ $t("general.addOn") }}
-                  <span class="text-danger">*</span>
                 </label>
                 <b-form-group
+                  :disabled="true"
                   :class="{
                     'is-invalid':
                       $v.createScreens.$each[index].is_add_on.$error ||
@@ -1489,6 +1283,7 @@ export default {
                   }"
                 >
                   <b-form-radio
+                    :disabled="true"
                     class="d-inline-block"
                     v-model="$v.createScreens.$each[index].is_add_on.$model"
                     name="add-on-some-radios"
@@ -1496,6 +1291,7 @@ export default {
                     >{{ $t("general.Yes") }}</b-form-radio
                   >
                   <b-form-radio
+                    :disabled="true"
                     class="d-inline-block m-1"
                     v-model="$v.createScreens.$each[index].is_add_on.$model"
                     name="add-on-some-radios"
@@ -1512,7 +1308,7 @@ export default {
                 </template>
               </div>
             </div>
-            <div class="col-md-2">
+            <!-- <div class="col-md-2">
               <button
                 v-if="createScreens.length > 1"
                 type="button"
@@ -1521,16 +1317,16 @@ export default {
               >
                 <i class="fas fa-trash-alt"></i>
               </button>
-            </div>
+            </div> -->
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <a
               @click.prevent="addNewField"
               href=""
               class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0 mx-2"
               >{{ $t("general.Add") }}</a
             >
-          </div>
+          </div> -->
         </b-tab>
       </b-tabs>
     </form>

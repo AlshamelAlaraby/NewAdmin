@@ -27,47 +27,15 @@ class ScreenRequest extends FormRequest
     public function rules()
     {
         $request =  request();
-//        dd($request->company_id);
+        //        dd($request->company_id);
 
         return [
-//            'name' => [
-//                'required',
-//                Rule::unique('screens')->ignore($this->id)->where(function ($query) use($request) {
-//                    return $query->whereNull('company_id')->whereNull('company_id');
-//                })->whereNull("deleted_at"),
-//            ],
-//            'name_e' => [
-//                'required',
-//                Rule::unique('screens')->ignore($this->id)->where(function ($query) use($request) {
-//                    return $query->whereNull('company_id')->whereNull('company_id');
-//                })->whereNull("deleted_at"),
-//            ],
-//            'title' => [
-//                'required',
-//                Rule::unique('screens')->ignore($this->id)->where(function ($query) use($request) {
-//                    return $query->whereNull('company_id')->whereNull('company_id');
-//                })->whereNull("deleted_at"),
-//            ],
-//            'title_e' => [
-//                'required',
-//                Rule::unique('screens')->ignore($this->id)->where(function ($query) use($request) {
-//                    return $query->whereNull('company_id')->whereNull('company_id');
-//                })->whereNull("deleted_at"),
-//            ],
-//            'sort' => [
-//                'required',
-//                'integer',
-//                'min:0',
-//                Rule::unique('screens')->ignore($this->id)->where(function ($query) use($request) {
-//                    return $query->whereNull('company_id')->whereNull('company_id');
-//                })->whereNull("deleted_at"),
-//            ],
-//            'url' => [
-//                'nullable',
-//                Rule::unique('screens')->ignore($this->id)->where(function ($query) use($request) {
-//                    return $query->whereNull('company_id')->whereNull('company_id');
-//                })->whereNull("deleted_at"),
-//            ],
+            'name' => "required",
+            'name_e' => "required",
+            'title' => "required",
+            'title_e' => "required",
+            'sort' => "required",
+            'url' => "nullable",
             "is_add_on"       => "nullable||in:1,0",
             'is_implementor'  => 'nullable|in:1,0',
             'sub_menu_id'     => 'nullable|exists:sub_menus,id',
@@ -81,7 +49,7 @@ class ScreenRequest extends FormRequest
     public function messages()
     {
         return [
-             'required'      => __('message.field is required'),
+            'required'      => __('message.field is required'),
             'title.unique'        => __('message.field already exists'),
             'title_e.unique'        => __('message.field already exists'),
             'name.unique'        => __('message.field already exists'),
