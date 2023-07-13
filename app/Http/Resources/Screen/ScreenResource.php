@@ -28,6 +28,7 @@ class ScreenResource extends JsonResource
             'sort'           => $this->sort,
             "sub_menu_id"    => $this->sub_menu_id,
             'company_id'     => $this->company_id,
+            'parent_id'      => $this->parent_id,
             'company'        => new  CompanyResource($this->company),
             'sub_menu'       => new SubMenuResource($this->subMenu),
 
