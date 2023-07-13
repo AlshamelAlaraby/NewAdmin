@@ -1405,6 +1405,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       mouseEnter: "",
       menus: [],
       create: {
+        out_site: "",
+        allowed_employee: "",
         company_id: null,
         module_id: null,
         allowed_users_no: "",
@@ -1415,6 +1417,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         document_types: []
       },
       edit: {
+        out_site: "",
+        allowed_employee: "",
         company_id: null,
         module_id: null,
         allowed_users_no: "",
@@ -1429,7 +1433,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         module_id: true,
         allowed_users_no: true,
         start_date: true,
-        end_date: true
+        end_date: true,
+        allowed_employee: true,
+        out_site: true
       },
       filterSetting: [this.$i18n.locale == "ar" ? "company.name" : "company.name_e", this.$i18n.locale == "ar" ? "module.name" : "module.name_e", "allowed_users_no"],
       errors: {},
@@ -1459,6 +1465,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__.required,
         integer: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__.integer
       },
+      out_site: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__.required
+      },
+      allowed_employee: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__.required
+      },
       start_date: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__.required
       },
@@ -1473,6 +1485,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       module_id: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__.required,
         integer: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__.integer
+      },
+      out_site: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__.required
+      },
+      allowed_employee: {
+        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__.required
       },
       allowed_users_no: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__.required,
@@ -1711,6 +1729,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     resetModalHidden: function resetModalHidden() {
       var _this7 = this;
       this.create = {
+        out_site: "",
+        allowed_employee: "",
         company_id: null,
         module_id: null,
         allowed_users_no: "",
@@ -1749,6 +1769,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this8.docType();
               case 6:
                 _this8.create = {
+                  out_site: "",
+                  allowed_employee: "",
                   company_id: null,
                   module_id: null,
                   allowed_users_no: "",
@@ -1791,6 +1813,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this9.docType();
               case 6:
                 _this9.create = {
+                  out_site: "",
+                  allowed_employee: "",
                   company_id: "",
                   module_id: "",
                   allowed_users_no: "",
@@ -1915,6 +1939,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this12.edit.company_id = companyModule.company.id;
                 _this12.edit.module_id = companyModule.project_program_module.id;
                 _this12.edit.allowed_users_no = companyModule.allowed_users_no;
+                _this12.edit.out_site = companyModule.out_site;
+                _this12.edit.allowed_employee = companyModule.allowed_employee;
                 _this12.edit.custom_date_start = new Date(companyModule.start_date);
                 _this12.edit.custom_date_end = companyModule.end_date ? new Date(companyModule.end_date) : null;
                 _this12.edit.start_date = (0,_helper_startDate__WEBPACK_IMPORTED_MODULE_8__.formatDateTime)(companyModule.start_date);
@@ -1924,7 +1950,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   return types.push(e.id);
                 });
                 _this12.edit.document_types = types !== null && types !== void 0 ? types : [];
-              case 17:
+              case 19:
               case "end":
                 return _context3.stop();
             }
@@ -1937,6 +1963,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
      */
     resetModalHiddenEdit: function resetModalHiddenEdit() {
       this.edit = {
+        out_site: "",
+        allowed_employee: "",
         company_id: "",
         module_id: "",
         allowed_users_no: "",
@@ -5328,6 +5356,24 @@ var render = function render() {
   }, [_vm._v("\n                    " + _vm._s(_vm.$t("general.allowed_users_no")) + "\n                  ")]), _vm._v(" "), _c("b-form-checkbox", {
     staticClass: "mb-1",
     model: {
+      value: _vm.setting.allowed_employee,
+      callback: function callback($$v) {
+        _vm.$set(_vm.setting, "allowed_employee", $$v);
+      },
+      expression: "setting.allowed_employee"
+    }
+  }, [_vm._v("\n                    " + _vm._s(_vm.$t("general.allowed_employee")) + "\n                  ")]), _vm._v(" "), _c("b-form-checkbox", {
+    staticClass: "mb-1",
+    model: {
+      value: _vm.setting.out_site,
+      callback: function callback($$v) {
+        _vm.$set(_vm.setting, "out_site", $$v);
+      },
+      expression: "setting.out_site"
+    }
+  }, [_vm._v("\n                    " + _vm._s(_vm.$t("general.out_site")) + "\n                  ")]), _vm._v(" "), _c("b-form-checkbox", {
+    staticClass: "mb-1",
+    model: {
       value: _vm.setting.start_date,
       callback: function callback($$v) {
         _vm.$set(_vm.setting, "start_date", $$v);
@@ -5626,6 +5672,90 @@ var render = function render() {
     staticClass: "form-group"
   }, [_c("label", {
     staticClass: "control-label"
+  }, [_vm._v("\n                      " + _vm._s(_vm.$t("general.allowed_employee")) + "\n                      "), _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v("*")])]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model.trim",
+      value: _vm.$v.create.allowed_employee.$model,
+      expression: "$v.create.allowed_employee.$model",
+      modifiers: {
+        trim: true
+      }
+    }],
+    staticClass: "form-control",
+    "class": {
+      "is-invalid": _vm.$v.create.allowed_employee.$error || _vm.errors.allowed_employee,
+      "is-valid": !_vm.$v.create.allowed_employee.$invalid && !_vm.errors.allowed_employee
+    },
+    attrs: {
+      type: "number"
+    },
+    domProps: {
+      value: _vm.$v.create.allowed_employee.$model
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.$v.create.allowed_employee, "$model", $event.target.value.trim());
+      },
+      blur: function blur($event) {
+        return _vm.$forceUpdate();
+      }
+    }
+  }), _vm._v(" "), _vm.errors.allowed_employee ? _vm._l(_vm.errors.allowed_employee, function (errorMessage, index) {
+    return _c("ErrorMessage", {
+      key: index
+    }, [_vm._v(_vm._s(errorMessage))]);
+  }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    staticClass: "control-label"
+  }, [_vm._v("\n                      " + _vm._s(_vm.$t("general.out_site")) + "\n                      "), _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v("*")])]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model.trim",
+      value: _vm.$v.create.out_site.$model,
+      expression: "$v.create.out_site.$model",
+      modifiers: {
+        trim: true
+      }
+    }],
+    staticClass: "form-control",
+    "class": {
+      "is-invalid": _vm.$v.create.out_site.$error || _vm.errors.out_site,
+      "is-valid": !_vm.$v.create.out_site.$invalid && !_vm.errors.out_site
+    },
+    attrs: {
+      type: "number"
+    },
+    domProps: {
+      value: _vm.$v.create.out_site.$model
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.$v.create.out_site, "$model", $event.target.value.trim());
+      },
+      blur: function blur($event) {
+        return _vm.$forceUpdate();
+      }
+    }
+  }), _vm._v(" "), _vm.errors.out_site ? _vm._l(_vm.errors.out_site, function (errorMessage, index) {
+    return _c("ErrorMessage", {
+      key: index
+    }, [_vm._v(_vm._s(errorMessage))]);
+  }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    staticClass: "control-label"
   }, [_vm._v("\n                      " + _vm._s(_vm.$t("general.startDate")) + "\n                      "), _c("span", {
     staticClass: "text-danger"
   }, [_vm._v("*")])]), _vm._v(" "), _c("date-picker", {
@@ -5789,6 +5919,42 @@ var render = function render() {
         _vm.companyModules.sort(_vm.sortString("-allowed_users_no"));
       }
     }
+  })])])]) : _vm._e(), _vm._v(" "), _vm.setting.allowed_employee ? _c("th", [_c("div", {
+    staticClass: "d-flex justify-content-center"
+  }, [_c("span", [_vm._v(_vm._s(_vm.$t("general.allowed_employee")))]), _vm._v(" "), _c("div", {
+    staticClass: "arrow-sort"
+  }, [_c("i", {
+    staticClass: "fas fa-arrow-up",
+    on: {
+      click: function click($event) {
+        _vm.companyModules.sort(_vm.sortString("allowed_users_no"));
+      }
+    }
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fas fa-arrow-down",
+    on: {
+      click: function click($event) {
+        _vm.companyModules.sort(_vm.sortString("-allowed_users_no"));
+      }
+    }
+  })])])]) : _vm._e(), _vm._v(" "), _vm.setting.out_site ? _c("th", [_c("div", {
+    staticClass: "d-flex justify-content-center"
+  }, [_c("span", [_vm._v(_vm._s(_vm.$t("general.out_site")))]), _vm._v(" "), _c("div", {
+    staticClass: "arrow-sort"
+  }, [_c("i", {
+    staticClass: "fas fa-arrow-up",
+    on: {
+      click: function click($event) {
+        _vm.companyModules.sort(_vm.sortString("allowed_users_no"));
+      }
+    }
+  }), _vm._v(" "), _c("i", {
+    staticClass: "fas fa-arrow-down",
+    on: {
+      click: function click($event) {
+        _vm.companyModules.sort(_vm.sortString("-allowed_users_no"));
+      }
+    }
   })])])]) : _vm._e(), _vm._v(" "), _vm.setting.start_date ? _c("th", [_c("div", {
     staticClass: "d-flex justify-content-center"
   }, [_c("span", [_vm._v(_vm._s(_vm.$t("general.startDate")))]), _vm._v(" "), _c("div", {
@@ -5888,7 +6054,7 @@ var render = function render() {
           }
         }
       }
-    })])]) : _vm._e(), _vm._v(" "), _vm.setting.company_id ? _c("td", [data.company ? [_vm._v("\n                      " + _vm._s(_vm.$i18n.locale == "ar" ? data.company.name : data.company.name_e) + "\n                    ")] : _vm._e()], 2) : _vm._e(), _vm._v(" "), _vm.setting.module_id ? _c("td", [data.project_program_module ? [_vm._v("\n                      " + _vm._s(_vm.$i18n.locale == "ar" ? data.project_program_module.name : data.project_program_module.name_e) + "\n                    ")] : _vm._e()], 2) : _vm._e(), _vm._v(" "), _vm.setting.allowed_users_no ? _c("td", [_vm._v("\n                    " + _vm._s(data.allowed_users_no) + "\n                  ")]) : _vm._e(), _vm._v(" "), _vm.setting.start_date ? _c("td", [_vm._v("\n                    " + _vm._s(_vm.formatDate(data.start_date)) + "\n                  ")]) : _vm._e(), _vm._v(" "), _vm.setting.end_date ? _c("td", [_vm._v("\n                    " + _vm._s(data.end_date ? _vm.formatDate(data.end_date) : null) + "\n                  ")]) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("td", {
+    })])]) : _vm._e(), _vm._v(" "), _vm.setting.company_id ? _c("td", [data.company ? [_vm._v("\n                      " + _vm._s(_vm.$i18n.locale == "ar" ? data.company.name : data.company.name_e) + "\n                    ")] : _vm._e()], 2) : _vm._e(), _vm._v(" "), _vm.setting.module_id ? _c("td", [data.project_program_module ? [_vm._v("\n                      " + _vm._s(_vm.$i18n.locale == "ar" ? data.project_program_module.name : data.project_program_module.name_e) + "\n                    ")] : _vm._e()], 2) : _vm._e(), _vm._v(" "), _vm.setting.allowed_users_no ? _c("td", [_vm._v("\n                    " + _vm._s(data.allowed_users_no) + "\n                  ")]) : _vm._e(), _vm._v(" "), _vm.setting.allowed_employee ? _c("td", [_vm._v("\n                    " + _vm._s(data.allowed_employee) + "\n                  ")]) : _vm._e(), _vm._v(" "), _vm.setting.out_site ? _c("td", [_vm._v("\n                    " + _vm._s(data.out_site) + "\n                  ")]) : _vm._e(), _vm._v(" "), _vm.setting.start_date ? _c("td", [_vm._v("\n                    " + _vm._s(_vm.formatDate(data.start_date)) + "\n                  ")]) : _vm._e(), _vm._v(" "), _vm.setting.end_date ? _c("td", [_vm._v("\n                    " + _vm._s(data.end_date ? _vm.formatDate(data.end_date) : null) + "\n                  ")]) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("td", {
       staticClass: "do-not-print"
     }, [_c("div", {
       staticClass: "btn-group"
@@ -6133,6 +6299,90 @@ var render = function render() {
         }
       }
     }), _vm._v(" "), _vm.errors.allowed_users_no ? _vm._l(_vm.errors.allowed_users_no, function (errorMessage, index) {
+      return _c("ErrorMessage", {
+        key: index
+      }, [_vm._v(_vm._s(errorMessage))]);
+    }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
+      staticClass: "col-md-12"
+    }, [_c("div", {
+      staticClass: "form-group"
+    }, [_c("label", {
+      staticClass: "control-label"
+    }, [_vm._v("\n                                " + _vm._s(_vm.$t("general.allowed_employee")) + "\n                                "), _c("span", {
+      staticClass: "text-danger"
+    }, [_vm._v("*")])]), _vm._v(" "), _c("input", {
+      directives: [{
+        name: "model",
+        rawName: "v-model.trim",
+        value: _vm.$v.edit.allowed_employee.$model,
+        expression: "$v.edit.allowed_employee.$model",
+        modifiers: {
+          trim: true
+        }
+      }],
+      staticClass: "form-control",
+      "class": {
+        "is-invalid": _vm.$v.edit.allowed_employee.$error || _vm.errors.allowed_employee,
+        "is-valid": !_vm.$v.edit.allowed_employee.$invalid && !_vm.errors.allowed_employee
+      },
+      attrs: {
+        type: "number"
+      },
+      domProps: {
+        value: _vm.$v.edit.allowed_employee.$model
+      },
+      on: {
+        input: function input($event) {
+          if ($event.target.composing) return;
+          _vm.$set(_vm.$v.edit.allowed_employee, "$model", $event.target.value.trim());
+        },
+        blur: function blur($event) {
+          return _vm.$forceUpdate();
+        }
+      }
+    }), _vm._v(" "), _vm.errors.allowed_employee ? _vm._l(_vm.errors.allowed_employee, function (errorMessage, index) {
+      return _c("ErrorMessage", {
+        key: index
+      }, [_vm._v(_vm._s(errorMessage))]);
+    }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
+      staticClass: "col-md-12"
+    }, [_c("div", {
+      staticClass: "form-group"
+    }, [_c("label", {
+      staticClass: "control-label"
+    }, [_vm._v("\n                                " + _vm._s(_vm.$t("general.out_site")) + "\n                                "), _c("span", {
+      staticClass: "text-danger"
+    }, [_vm._v("*")])]), _vm._v(" "), _c("input", {
+      directives: [{
+        name: "model",
+        rawName: "v-model.trim",
+        value: _vm.$v.edit.out_site.$model,
+        expression: "$v.edit.out_site.$model",
+        modifiers: {
+          trim: true
+        }
+      }],
+      staticClass: "form-control",
+      "class": {
+        "is-invalid": _vm.$v.edit.out_site.$error || _vm.errors.out_site,
+        "is-valid": !_vm.$v.edit.out_site.$invalid && !_vm.errors.out_site
+      },
+      attrs: {
+        type: "number"
+      },
+      domProps: {
+        value: _vm.$v.edit.out_site.$model
+      },
+      on: {
+        input: function input($event) {
+          if ($event.target.composing) return;
+          _vm.$set(_vm.$v.edit.out_site, "$model", $event.target.value.trim());
+        },
+        blur: function blur($event) {
+          return _vm.$forceUpdate();
+        }
+      }
+    }), _vm._v(" "), _vm.errors.out_site ? _vm._l(_vm.errors.out_site, function (errorMessage, index) {
       return _c("ErrorMessage", {
         key: index
       }, [_vm._v(_vm._s(errorMessage))]);
@@ -7779,7 +8029,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.modal-body {\r\n  padding: 2.25rem !important;\n}\n@media print {\n.do-not-print {\r\n    display: none;\n}\n.arrow-sort {\r\n    display: none;\n}\n}\n.tooltip-inner {\r\n  max-width: 750px !important;\r\n  background-color: #eed900;\r\n  color: black;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ntable td,table th{\r\n  white-space: nowrap;\n}\n.modal-body {\r\n  padding: 2.25rem !important;\n}\n@media print {\n.do-not-print {\r\n    display: none;\n}\n.arrow-sort {\r\n    display: none;\n}\n}\n.tooltip-inner {\r\n  max-width: 750px !important;\r\n  background-color: #eed900;\r\n  color: black;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -469,6 +469,8 @@
         "AddFile": "Add File",
         "ExistBefore": "Exist Before",
         "Type":"Type",
+        "out_site":"Outsite",
+        "allowed_employee":"Allowed Employee",
         "Module": "Module",
         "Visible": "Visible",
         "Invisible": "Invisible",

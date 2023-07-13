@@ -89,6 +89,8 @@ export default {
       allModules: [],
       modules_ids: [],
       moduleName: "",
+      subMenuName: "",
+      menuName: "",
       create: {
         name: "",
         name_e: "",
@@ -190,6 +192,11 @@ export default {
   },
   methods: {
     onSubMenuChanged(subMenuId) {
+      this.subMenuName =
+        this.$i18n.locale == "ar"
+          ? "->" + this.allSubMenus.filter((e) => e.id == subMenuId)[0].name
+          : "->" + this.allSubMenus.filter((e) => e.id == subMenuId)[0].name_e;
+
       if (subMenuId == null) {
         this.sub_menu_id = null;
         return;
@@ -652,6 +659,18 @@ export default {
         });
     },
     async getSubMenus(id) {
+      let menu = this.menus.filter((e) => e.id == id)[0];
+      this.menuName =
+        this.$i18n.locale == "ar"
+          ? "->" +
+            menu.project_program_module.name +
+            " | " +
+            menu.menu_folder.name
+          : "->" +
+            menu.project_program_module.name_e +
+            " | " +
+            menu.menu_folder.name_e;
+
       await adminApi
         .get(`/sub-menus?program_folder_menu_id=${this.menu_id}`)
         .then((res) => {
@@ -995,6 +1014,9 @@ export default {
      */
     async resetModal() {
       this.moduleName = "";
+      this.subMenuName = "";
+      this.menuName = "";
+
       this.modules_ids = [];
       await this.getRootNodes();
       await this.getAllSubMenus();
@@ -1029,6 +1051,9 @@ export default {
     resetForm() {
       this.modules_ids = [];
       this.moduleName = "";
+      this.subMenuName = "";
+      this.menuName = "";
+
       this.create = {
         name: "",
         name_e: "",
@@ -1247,6 +1272,8 @@ export default {
      */
     async resetModalEdit(id) {
       this.modules_ids = [];
+      this.subMenuName = "";
+      this.menuName = "";
 
       await this.getRootNodes();
       await this.getAllSubMenus();
@@ -2516,7 +2543,9 @@ export default {
                       <b-modal
                         dialog-class="modal-full-width"
                         :id="`modal-edit-${data.id}`"
-                        :title="`${$t('general.editProgram')} (${moduleName})`"
+                        :title="`${$t(
+                          'general.editProgram'
+                        )} (${moduleName}${menuName}${subMenuName})`"
                         title-class="font-18"
                         body-class="p-4"
                         size="lg"

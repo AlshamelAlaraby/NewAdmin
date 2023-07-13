@@ -49,6 +49,9 @@ export default {
       mouseEnter: "",
       menus: [],
       create: {
+        out_site: "",
+        allowed_employee: "",
+
         company_id: null,
         module_id: null,
         allowed_users_no: "",
@@ -59,6 +62,9 @@ export default {
         document_types: [],
       },
       edit: {
+        out_site: "",
+        allowed_employee: "",
+
         company_id: null,
         module_id: null,
         allowed_users_no: "",
@@ -74,6 +80,8 @@ export default {
         allowed_users_no: true,
         start_date: true,
         end_date: true,
+        allowed_employee: true,
+        out_site: true,
       },
       filterSetting: [
         this.$i18n.locale == "ar" ? "company.name" : "company.name_e",
@@ -98,6 +106,8 @@ export default {
       company_id: { required, integer },
       module_id: { required, integer },
       allowed_users_no: { required, integer },
+      out_site: { required },
+      allowed_employee: { required },
       start_date: { required },
       end_date: {},
       document_types: {},
@@ -105,6 +115,8 @@ export default {
     edit: {
       company_id: { required, integer },
       module_id: { required, integer },
+      out_site: { required },
+      allowed_employee: { required },
       allowed_users_no: { required, integer },
       start_date: { required },
       end_date: {},
@@ -363,6 +375,9 @@ export default {
      */
     resetModalHidden() {
       this.create = {
+        out_site: "",
+        allowed_employee: "",
+
         company_id: null,
         module_id: null,
         allowed_users_no: "",
@@ -389,6 +404,9 @@ export default {
       await this.getAllModules();
       await this.docType();
       this.create = {
+        out_site: "",
+        allowed_employee: "",
+
         company_id: null,
         module_id: null,
         allowed_users_no: "",
@@ -411,7 +429,11 @@ export default {
       await this.getCompany();
       await this.getModule();
       await this.docType();
+      
       this.create = {
+        out_site: "",
+        allowed_employee: "",
+
         company_id: "",
         module_id: "",
         allowed_users_no: "",
@@ -525,6 +547,8 @@ export default {
       this.edit.company_id = companyModule.company.id;
       this.edit.module_id = companyModule.project_program_module.id;
       this.edit.allowed_users_no = companyModule.allowed_users_no;
+      this.edit.out_site = companyModule.out_site;
+      this.edit.allowed_employee = companyModule.allowed_employee;
       this.edit.custom_date_start = new Date(companyModule.start_date);
       this.edit.custom_date_end = companyModule.end_date
         ? new Date(companyModule.end_date)
@@ -543,6 +567,9 @@ export default {
      */
     resetModalHiddenEdit() {
       this.edit = {
+        out_site: "",
+        allowed_employee: "",
+
         company_id: "",
         module_id: "",
         allowed_users_no: "",
@@ -820,6 +847,19 @@ export default {
                     >
                       {{ $t("general.allowed_users_no") }}
                     </b-form-checkbox>
+                    <b-form-checkbox
+                      v-model="setting.allowed_employee"
+                      class="mb-1"
+                    >
+                      {{ $t("general.allowed_employee") }}
+                    </b-form-checkbox>
+                    <b-form-checkbox
+                      v-model="setting.out_site"
+                      class="mb-1"
+                    >
+                      {{ $t("general.out_site") }}
+                    </b-form-checkbox>
+                    
                     <b-form-checkbox v-model="setting.start_date" class="mb-1">
                       {{ $t("general.startDate") }}
                     </b-form-checkbox>
@@ -1068,6 +1108,62 @@ export default {
                   <div class="col-md-12">
                     <div class="form-group">
                       <label class="control-label">
+                        {{ $t("general.allowed_employee") }}
+                        <span class="text-danger">*</span>
+                      </label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        v-model.trim="$v.create.allowed_employee.$model"
+                        :class="{
+                          'is-invalid':
+                            $v.create.allowed_employee.$error ||
+                            errors.allowed_employee,
+                          'is-valid':
+                            !$v.create.allowed_employee.$invalid &&
+                            !errors.allowed_employee,
+                        }"
+                      />
+                      <template v-if="errors.allowed_employee">
+                        <ErrorMessage
+                          v-for="(
+                            errorMessage, index
+                          ) in errors.allowed_employee"
+                          :key="index"
+                          >{{ errorMessage }}</ErrorMessage
+                        >
+                      </template>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="control-label">
+                        {{ $t("general.out_site") }}
+                        <span class="text-danger">*</span>
+                      </label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        v-model.trim="$v.create.out_site.$model"
+                        :class="{
+                          'is-invalid':
+                            $v.create.out_site.$error || errors.out_site,
+                          'is-valid':
+                            !$v.create.out_site.$invalid && !errors.out_site,
+                        }"
+                      />
+                      <template v-if="errors.out_site">
+                        <ErrorMessage
+                          v-for="(errorMessage, index) in errors.out_site"
+                          :key="index"
+                          >{{ errorMessage }}</ErrorMessage
+                        >
+                      </template>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="control-label">
                         {{ $t("general.startDate") }}
                         <span class="text-danger">*</span>
                       </label>
@@ -1210,6 +1306,52 @@ export default {
                         </div>
                       </div>
                     </th>
+                      <th v-if="setting.allowed_employee">
+                      <div class="d-flex justify-content-center">
+                        <span>{{ $t("general.allowed_employee") }}</span>
+                        <div class="arrow-sort">
+                          <i
+                            class="fas fa-arrow-up"
+                            @click="
+                              companyModules.sort(
+                                sortString('allowed_users_no')
+                              )
+                            "
+                          ></i>
+                          <i
+                            class="fas fa-arrow-down"
+                            @click="
+                              companyModules.sort(
+                                sortString('-allowed_users_no')
+                              )
+                            "
+                          ></i>
+                        </div>
+                      </div>
+                    </th>
+                        <th v-if="setting.out_site">
+                      <div class="d-flex justify-content-center">
+                        <span>{{ $t("general.out_site") }}</span>
+                        <div class="arrow-sort">
+                          <i
+                            class="fas fa-arrow-up"
+                            @click="
+                              companyModules.sort(
+                                sortString('allowed_users_no')
+                              )
+                            "
+                          ></i>
+                          <i
+                            class="fas fa-arrow-down"
+                            @click="
+                              companyModules.sort(
+                                sortString('-allowed_users_no')
+                              )
+                            "
+                          ></i>
+                        </div>
+                      </div>
+                    </th>
                     <th v-if="setting.start_date">
                       <div class="d-flex justify-content-center">
                         <span>{{ $t("general.startDate") }}</span>
@@ -1296,6 +1438,12 @@ export default {
                     </td>
                     <td v-if="setting.allowed_users_no">
                       {{ data.allowed_users_no }}
+                    </td>
+                    <td v-if="setting.allowed_employee">
+                      {{ data.allowed_employee }}
+                    </td>
+                    <td v-if="setting.out_site">
+                      {{ data.out_site }}
                     </td>
                     <td v-if="setting.start_date">
                       {{ formatDate(data.start_date) }}
@@ -1539,6 +1687,66 @@ export default {
                             <div class="col-md-12">
                               <div class="form-group">
                                 <label class="control-label">
+                                  {{ $t("general.allowed_employee") }}
+                                  <span class="text-danger">*</span>
+                                </label>
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  v-model.trim="$v.edit.allowed_employee.$model"
+                                  :class="{
+                                    'is-invalid':
+                                      $v.edit.allowed_employee.$error ||
+                                      errors.allowed_employee,
+                                    'is-valid':
+                                      !$v.edit.allowed_employee.$invalid &&
+                                      !errors.allowed_employee,
+                                  }"
+                                />
+                                <template v-if="errors.allowed_employee">
+                                  <ErrorMessage
+                                    v-for="(
+                                      errorMessage, index
+                                    ) in errors.allowed_employee"
+                                    :key="index"
+                                    >{{ errorMessage }}</ErrorMessage
+                                  >
+                                </template>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label class="control-label">
+                                  {{ $t("general.out_site") }}
+                                  <span class="text-danger">*</span>
+                                </label>
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  v-model.trim="$v.edit.out_site.$model"
+                                  :class="{
+                                    'is-invalid':
+                                      $v.edit.out_site.$error ||
+                                      errors.out_site,
+                                    'is-valid':
+                                      !$v.edit.out_site.$invalid &&
+                                      !errors.out_site,
+                                  }"
+                                />
+                                <template v-if="errors.out_site">
+                                  <ErrorMessage
+                                    v-for="(
+                                      errorMessage, index
+                                    ) in errors.out_site"
+                                    :key="index"
+                                    >{{ errorMessage }}</ErrorMessage
+                                  >
+                                </template>
+                              </div>
+                            </div>
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label class="control-label">
                                   {{ $t("general.startDate") }}
                                   <span class="text-danger">*</span>
                                 </label>
@@ -1641,6 +1849,9 @@ export default {
 </template>
 
 <style>
+table td,table th{
+  white-space: nowrap;
+}
 .modal-body {
   padding: 2.25rem !important;
 }
