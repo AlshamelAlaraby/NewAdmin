@@ -56,15 +56,12 @@ class ScreenRepository implements ScreenRepositoryInterface
     public function update($request, $id)
     {
         return DB::transaction(function () use ($id, $request) {
-            $model_exeits = $this->model->where('id',$id)->whereNull('company_id')->whereNotNull('parent_id')->first();
-            if ($model_exeits){
-                $model_id = $model_exeits->parent_id;
-                $model = $this->model->find($model_id);
-                $model->update($request);
+            $model = $this->model->find($id);
+            $model->update($request);
+            if ($model->parent_id == null){
+                $model_id = $model->id;
             }
-            if (!$model_exeits){
-                $model = $this->model->find($id);
-                $model->update($request);
+            if ($model->parent_id != null){
                 $model_id = $model->id;
             }
             $allModel = $this->model->where('parent_id',$model_id)->get();
@@ -137,11 +134,11 @@ class ScreenRepository implements ScreenRepositoryInterface
         foreach ($request['screens'] as $screen) :
 
             $model_create = $this->model->where('id', $screen)->first();
-            $collect =  collect($model_create)->except(['created_at', 'deleted_at', 'updated_at', 'id','sub_menu_id','parent_id','company_id']);
+            $collect =  collect($model_create)->except(['created_at', 'deleted_at', 'updated_at', 'id','sub_menu_id','company_id']);
             $model_exist = $this->model->where('name', $model_create->name)
                 ->where('sub_menu_id', $request['sub_menu_id'])
                 ->where('company_id', $request['company_id'])
-                ->where('parent_id', $screen)->first();
+                ->first();
 
             if (!$model_exist) {
                 $model = $this->model->create(array_merge($collect->all(), ['sub_menu_id' => $request['sub_menu_id'], 'parent_id' => $screen,"company_id" => $request['company_id']]));

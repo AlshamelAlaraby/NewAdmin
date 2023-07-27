@@ -63,7 +63,7 @@ class ScreenController extends ResponseController
         if (!$model) {
             return responseJson(404, __('message.data not found'));
         }
-        $model = $this->repository->update($request->validated(), $id);
+         $model = $this->repository->update($request->validated(), $id);
 
         return responseJson(200, __('Done'), new ScreenResource($model));
     }

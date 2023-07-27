@@ -70,7 +70,8 @@ class ProjectProgramModule extends Model
     /*** return  Company_id */
     public function getCompanyIdAttribute($key)
     {
-       return  $this->companies()->first()->id ?? null;
+        auth('partner')->id() ?? null;
+        return  $this->companies()->where('partner_id',auth('partner')->id())->first()->id ?? null;
     }
 
     /**
