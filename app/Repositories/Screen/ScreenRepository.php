@@ -58,14 +58,7 @@ class ScreenRepository implements ScreenRepositoryInterface
         return DB::transaction(function () use ($id, $request) {
             $model = $this->model->find($id);
             $model->update($request);
-<<<<<<< HEAD
-            if ($model->parent_id == null){
-                $model_id = $model->id;
-            }
-            if ($model->parent_id != null){
-=======
             if ($model->parent_id == null) {
->>>>>>> 3f25e5bca7a785ca6e92be3c3f16abd87c4250ac
                 $model_id = $model->id;
             }
             if ($model->parent_id != null) {
@@ -140,18 +133,10 @@ class ScreenRepository implements ScreenRepositoryInterface
         foreach ($request['screens'] as $screen) :
 
             $model_create = $this->model->where('id', $screen)->first();
-<<<<<<< HEAD
-            $collect =  collect($model_create)->except(['created_at', 'deleted_at', 'updated_at', 'id','sub_menu_id','company_id']);
-            $model_exist = $this->model->where('name', $model_create->name)
-                ->where('sub_menu_id', $request['sub_menu_id'])
-                ->where('company_id', $request['company_id'])
-                ->first();
-=======
             $collect =  collect($model_create)->except(['created_at', 'deleted_at', 'updated_at', 'id', 'sub_menu_id', 'company_id']);
             $model_exist = $this->model->where('name', $model_create->name)
                 ->where('sub_menu_id', $request['sub_menu_id'])
                 ->where('company_id', $request['company_id'])->first();
->>>>>>> 3f25e5bca7a785ca6e92be3c3f16abd87c4250ac
 
             if (!$model_exist) {
                 $model = $this->model->create(array_merge($collect->all(), ['sub_menu_id' => $request['sub_menu_id'], "company_id" => $request['company_id']]));
