@@ -29,7 +29,7 @@ class ScreenRepository implements ScreenRepositoryInterface
                 $q->where('company_id', $request->company_id);
             });
         }
-        if ($request->screens_null){
+        if ($request->screens_null) {
             $models->whereNull('sub_menu_id')->whereNull('company_id')->whereNull('parent_id');
         }
 
@@ -58,18 +58,24 @@ class ScreenRepository implements ScreenRepositoryInterface
         return DB::transaction(function () use ($id, $request) {
             $model = $this->model->find($id);
             $model->update($request);
+<<<<<<< HEAD
             if ($model->parent_id == null){
                 $model_id = $model->id;
             }
             if ($model->parent_id != null){
+=======
+            if ($model->parent_id == null) {
+>>>>>>> 3f25e5bca7a785ca6e92be3c3f16abd87c4250ac
                 $model_id = $model->id;
             }
-            $allModel = $this->model->where('parent_id',$model_id)->get();
-            foreach ($allModel as $item):
-                $item->update(collect($request)->except(['company_id','sub_menu_id','is_implementor','is_add_on'])->all());
+            if ($model->parent_id != null) {
+                $model_id = $model->id;
+            }
+            $allModel = $this->model->where('parent_id', $model_id)->get();
+            foreach ($allModel as $item) :
+                $item->update(collect($request)->except(['company_id', 'sub_menu_id', 'is_implementor', 'is_add_on'])->all());
             endforeach;
             return $model;
-
         });
     }
     public function delete($id)
@@ -119,11 +125,11 @@ class ScreenRepository implements ScreenRepositoryInterface
 
     public function createSubMenuScreen($request)
     {
-        foreach ($request['screens'] as $screen_id):
+        foreach ($request['screens'] as $screen_id) :
             $screen = $this->model->find($screen_id);
-            $screen_create =  collect($screen)->except(['deleted_at','created_at','updated_at','id','sub_menu_id']);
+            $screen_create =  collect($screen)->except(['deleted_at', 'created_at', 'updated_at', 'id', 'sub_menu_id']);
             $model_exists = $this->model->where('sub_menu_id', $request['sub_menu_id'])->where('parent_id', $screen->id)->where('company_id', null)->first();
-            if (!$model_exists){
+            if (!$model_exists) {
                 $this->model->create(array_merge($screen_create->all(), ['sub_menu_id' => $request['sub_menu_id'], 'parent_id' => $screen->id]));
             }
         endforeach;
@@ -134,14 +140,21 @@ class ScreenRepository implements ScreenRepositoryInterface
         foreach ($request['screens'] as $screen) :
 
             $model_create = $this->model->where('id', $screen)->first();
+<<<<<<< HEAD
             $collect =  collect($model_create)->except(['created_at', 'deleted_at', 'updated_at', 'id','sub_menu_id','company_id']);
             $model_exist = $this->model->where('name', $model_create->name)
                 ->where('sub_menu_id', $request['sub_menu_id'])
                 ->where('company_id', $request['company_id'])
                 ->first();
+=======
+            $collect =  collect($model_create)->except(['created_at', 'deleted_at', 'updated_at', 'id', 'sub_menu_id', 'company_id']);
+            $model_exist = $this->model->where('name', $model_create->name)
+                ->where('sub_menu_id', $request['sub_menu_id'])
+                ->where('company_id', $request['company_id'])->first();
+>>>>>>> 3f25e5bca7a785ca6e92be3c3f16abd87c4250ac
 
             if (!$model_exist) {
-                $model = $this->model->create(array_merge($collect->all(), ['sub_menu_id' => $request['sub_menu_id'], 'parent_id' => $screen,"company_id" => $request['company_id']]));
+                $model = $this->model->create(array_merge($collect->all(), ['sub_menu_id' => $request['sub_menu_id'], "company_id" => $request['company_id']]));
             }
 
         endforeach;

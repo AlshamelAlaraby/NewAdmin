@@ -659,17 +659,19 @@ export default {
         });
     },
     async getSubMenus(id) {
-      let menu = this.menus.filter((e) => e.id == id)[0];
-      this.menuName =
-        this.$i18n.locale == "ar"
-          ? "->" +
-            menu.project_program_module.name +
-            " | " +
-            menu.menu_folder.name
-          : "->" +
-            menu.project_program_module.name_e +
-            " | " +
-            menu.menu_folder.name_e;
+      if (id) {
+        let menu = this.menus.filter((e) => e.id == id)[0];
+        this.menuName =
+          this.$i18n.locale == "ar"
+            ? "->" +
+              menu.project_program_module.name +
+              " | " +
+              menu.menu_folder.name
+            : "->" +
+              menu.project_program_module.name_e +
+              " | " +
+              menu.menu_folder.name_e;
+      }
 
       await adminApi
         .get(`/sub-menus?program_folder_menu_id=${this.menu_id}`)

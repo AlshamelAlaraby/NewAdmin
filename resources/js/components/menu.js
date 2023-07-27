@@ -42,12 +42,12 @@ export const menuItems = [
     //     icon: 'ri-stack-line',
     //     link: '/sub-menu'
     // },
-    // {
-    //     id: 112206,
-    //     label: 'general.screens',
-    //     icon: 'fe-monitor',
-    //     link: '/screens'
-    // },
+    {
+        id: 112206,
+        label: 'general.screens',
+        icon: 'fe-monitor',
+        link: '/screens'
+    },
     {
         id: 7,
         label: 'menuitems.DocumentType.text',

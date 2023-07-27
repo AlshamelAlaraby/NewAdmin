@@ -27,15 +27,24 @@ class ScreenRequest extends FormRequest
     public function rules()
     {
         $request =  request();
-//        dd($request->company_id);
+        //        dd($request->company_id);
 
         return [
+<<<<<<< HEAD
             'name' => 'required',
             'name_e' => 'required',
             'title' => 'required',
             'title_e' => 'required',
             'sort' => 'required',
             'url' => 'nullable',
+=======
+            'name' => "required",
+            'name_e' => "required",
+            'title' => "required",
+            'title_e' => "required",
+            'sort' => "required",
+            'url' => "nullable",
+>>>>>>> 3f25e5bca7a785ca6e92be3c3f16abd87c4250ac
             "is_add_on"       => "nullable||in:1,0",
             'is_implementor'  => 'nullable|in:1,0',
             'sub_menu_id'     => 'nullable|exists:sub_menus,id',
@@ -49,7 +58,7 @@ class ScreenRequest extends FormRequest
     public function messages()
     {
         return [
-             'required'      => __('message.field is required'),
+            'required'      => __('message.field is required'),
             'title.unique'        => __('message.field already exists'),
             'title_e.unique'        => __('message.field already exists'),
             'name.unique'        => __('message.field already exists'),
