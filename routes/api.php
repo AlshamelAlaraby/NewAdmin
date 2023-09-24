@@ -74,6 +74,7 @@ Route::post('/companyModules/{id}', [CompanyController::class, "companyModules"]
 
 Route::group(['prefix' => 'project-program-modules'], function () {
     Route::controller(\App\Http\Controllers\ProjectProgramModule\ProjectProgramModuleController::class)->group(function () {
+        Route::get('all-company-program/{name_company}', 'getCompanyProjectProgramModules');
         Route::get('all-program-modules', 'allProgramModuleId');
         Route::get('/', 'all')->name('project-program-modules.index');
         Route::get('/root-nodes', 'getRootNodes')->name('project-program-modules.root-nodes');

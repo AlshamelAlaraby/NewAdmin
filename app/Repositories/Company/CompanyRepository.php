@@ -106,6 +106,8 @@ class CompanyRepository implements CompanyInterface
         $model->delete();
     }
 
+
+
     // private function forget($id)
     // {
     //     $keys = [

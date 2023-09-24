@@ -29,5 +29,7 @@ interface ProjectProgramModuleInterface
 
     public function allProgramModuleId($request);
 
+    public function companyProjectProgramModules($name_company);
+
     // public function getScreensFromModule($module_id);
 }
