@@ -129,5 +129,11 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
         return $models;
     }
 
+    public function  programModulesCompanyId($company_id)
+    {
+        $models = $this->model->whereRelation('companies','company_id',$company_id)->get();
+        return $models;
+    }
+
 
 }

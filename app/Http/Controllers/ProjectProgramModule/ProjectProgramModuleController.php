@@ -117,6 +117,10 @@ class ProjectProgramModuleController extends Controller
     {
         return $this->modelInterface->companyProjectProgramModules($name_company);
     }
+    public function findProgramModulesCompanyId($company_id)
+    {
+        return $this->modelInterface->programModulesCompanyId($company_id);
+    }
 
     public function allProgramModuleId(Request $request)
     {
