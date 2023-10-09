@@ -567,7 +567,6 @@
         "unrealized_revenue": "الإيرادات غير المحققة",
         "revenue": "الإيرادات",
         "unrealized_commission": "عمولة غير محققة",
-        "commission": "عمولة",
-        "is_web": "الدخول للموقع الالكتروني؟"
+        "commission": "عمولة"
     }
 }

@@ -60,7 +60,6 @@ export default {
         custom_date_start: new Date(),
         custom_date_end: null,
         document_types: [],
-        is_web: 1
       },
       edit: {
         out_site: "",
@@ -74,7 +73,6 @@ export default {
         custom_date_start: null,
         custom_date_end: null,
         document_types: [],
-        is_web: 1
       },
       setting: {
         company_id: true,
@@ -113,7 +111,6 @@ export default {
       start_date: { required },
       end_date: {},
       document_types: {},
-        is_web: {}
     },
     edit: {
       company_id: { required, integer },
@@ -124,7 +121,6 @@ export default {
       start_date: { required },
       end_date: {},
       document_types: {},
-        is_web: {}
     },
   },
   watch: {
@@ -390,7 +386,6 @@ export default {
         custom_date_start: new Date(),
         custom_date_end: null,
         document_types: [],
-          is_web: 1
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -420,7 +415,6 @@ export default {
         custom_date_start: new Date(),
         custom_date_end: null,
         document_types: [],
-          is_web: 1
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -435,7 +429,7 @@ export default {
       await this.getCompany();
       await this.getModule();
       await this.docType();
-
+      
       this.create = {
         out_site: "",
         allowed_employee: "",
@@ -448,7 +442,6 @@ export default {
         custom_date_start: new Date(),
         custom_date_end: null,
         document_types: [],
-          is_web: 1
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -555,8 +548,7 @@ export default {
       this.edit.module_id = companyModule.project_program_module.id;
       this.edit.allowed_users_no = companyModule.allowed_users_no;
       this.edit.out_site = companyModule.out_site;
-      this.edit.is_web = companyModule.is_web;
-        this.edit.allowed_employee = companyModule.allowed_employee;
+      this.edit.allowed_employee = companyModule.allowed_employee;
       this.edit.custom_date_start = new Date(companyModule.start_date);
       this.edit.custom_date_end = companyModule.end_date
         ? new Date(companyModule.end_date)
@@ -586,7 +578,6 @@ export default {
         custom_date_start: null,
         custom_date_end: null,
         document_types: [],
-          is_web: 1
       };
       this.errors = {};
       this.companies = [];
@@ -868,7 +859,7 @@ export default {
                     >
                       {{ $t("general.out_site") }}
                     </b-form-checkbox>
-
+                    
                     <b-form-checkbox v-model="setting.start_date" class="mb-1">
                       {{ $t("general.startDate") }}
                     </b-form-checkbox>
@@ -1056,6 +1047,7 @@ export default {
                       </template>
                     </div>
                   </div>
+
                   <div class="col-md-12">
                     <div class="form-group">
                       <label class="control-label">
@@ -1218,32 +1210,6 @@ export default {
                       </template>
                     </div>
                   </div>
-                  <div class="col-md-12">
-                        <div class="form-group">
-                            <label class="mr-2">
-                                {{ $t("general.is_web") }}
-                                <span class="text-danger">*</span>
-                            </label>
-                            <b-form-group :class="{
-                                  'is-invalid':
-                                    $v.create.is_web.$error || errors.is_web,
-                                  'is-valid':
-                                    !$v.create.is_web.$invalid && !errors.is_web,
-                                }">
-                                <b-form-radio class="d-inline-block" v-model="$v.create.is_web.$model"
-                                              name="some-radios" value="1">{{ $t("general.Active") }}
-                                </b-form-radio>
-                                <b-form-radio class="d-inline-block m-1" v-model="$v.create.is_web.$model"
-                                              name="some-radios" value="0">{{ $t("general.Inactive") }}
-                                </b-form-radio>
-                            </b-form-group>
-                            <template v-if="errors.is_web">
-                                <ErrorMessage v-for="(errorMessage, index) in errors.is_web" :key="index">{{
-                                    errorMessage }}
-                                </ErrorMessage>
-                            </template>
-                        </div>
-                    </div>
                 </div>
               </form>
             </b-modal>
@@ -1652,6 +1618,7 @@ export default {
                                 </template>
                               </div>
                             </div>
+
                             <div class="col-md-12">
                               <div class="form-group">
                                 <label class="control-label">
@@ -1830,39 +1797,6 @@ export default {
                                 </template>
                               </div>
                             </div>
-                            <div class="col-md-12">
-                                  <div class="form-group">
-                                      <label class="mr-2">
-                                          {{ $t("general.is_web") }}
-                                          <span class="text-danger">*</span>
-                                      </label>
-                                      <b-form-group :class="{
-                                          'is-invalid':
-                                            $v.edit.is_web.$error ||
-                                            errors.is_web,
-                                          'is-valid':
-                                            !$v.edit.is_web.$invalid &&
-                                            !errors.is_web,
-                                        }">
-                                          <b-form-radio class="d-inline-block" v-model="$v.edit.is_web.$model"
-                                                        name="some-radios" value="1">{{ $t("general.Active") }}
-                                          </b-form-radio>
-                                          <b-form-radio class="d-inline-block m-1" v-model="$v.edit.is_web.$model"
-                                                        name="some-radios" value="0">{{ $t("general.Inactive") }}
-                                          </b-form-radio>
-                                      </b-form-group>
-                                      <template v-if="errors.is_web">
-                                          <ErrorMessage v-for="(
-                                                                                                    errorMessage, index
-                                                                                                  ) in errors.is_web"
-                                                        :key="index">
-                                              {{
-                                              errorMessage
-                                              }}
-                                          </ErrorMessage>
-                                      </template>
-                                  </div>
-                              </div>
                           </div>
                         </form>
                       </b-modal>

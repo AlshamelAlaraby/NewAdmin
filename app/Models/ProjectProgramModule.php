@@ -11,12 +11,18 @@ class ProjectProgramModule extends Model
     use HasFactory, LogTrait;
 
     protected $guarded = ['id'];
-    protected $table   = 'project_program_modules';
-    protected $hidden  = ['pivot'];
-    protected $appends = ["haveChildren",'company_id'];
-    protected $casts   = [
+    protected $table = 'project_program_modules';
+    protected $hidden = ['pivot'];
+    protected $appends = ["haveChildren", 'company_id', 'is_web'];
+    protected $casts = [
         'is_active' => 'App\Enums\IsActive',
     ];
+
+    // public function getCompaniesAttribute()
+    // {
+
+    //     return $this->companies();
+    // }
 
     /*** return relation  with  Parent */
     public function parent()
@@ -33,32 +39,32 @@ class ProjectProgramModule extends Model
     /*** return  ProjectProgramModule modules  =>  module_id */
     public function modules()
     {
-        return $this->hasMany(ProjectProgramModule::class,'module_id','id');
+        return $this->hasMany(ProjectProgramModule::class, 'module_id', 'id');
     }
 
     /*** return  relation  with   ProgramFolders */
     public function programFolders()
     {
-        return $this->hasMany(ProgramFolder::class,'project_program_module_id','id');
+        return $this->hasMany(ProgramFolder::class, 'project_program_module_id', 'id');
     }
 
     /*** return relation  with  Companies */
     public function companies()
     {
-        return $this->belongsToMany(Company::class, 'company_project_program_modules', 'project_program_module_id', 'company_id');
+        return $this->belongsToMany(Company::class, 'company_project_program_modules', 'project_program_module_id', 'company_id')->withPivot('is_web');
     }
 
     /*** return  relation  with   ScreenAttributes */
     public function screenAttributes()
     {
-        return $this->belongsToMany(Screen::class, 'screen_attributes', 'project_program_module_id', 'screen_id')->withPivot('attributes');;
+        return $this->belongsToMany(Screen::class, 'screen_attributes', 'project_program_module_id', 'screen_id')->withPivot('attributes');
     }
 
     /*** return count relation  hasMany */
     public function hasChildren()
     {
-        return $this->children()->count() > 0 || $this->companies()->count() > 0  || $this->programFolders()->count() > 0 || $this->modules()->count() > 0
-            || $this->screenAttributes()->count() > 0;
+        return $this->children()->count() > 0 || $this->companies()->count() > 0 || $this->programFolders()->count() > 0 || $this->modules()->count() > 0
+        || $this->screenAttributes()->count() > 0;
     }
 
     /*** return  Count  Childrens */
@@ -71,7 +77,27 @@ class ProjectProgramModule extends Model
     public function getCompanyIdAttribute($key)
     {
         auth('partner')->id() ?? null;
-        return  $this->companies()->where('partner_id',auth('partner')->id())->first()->id ?? null;
+        return $this->companies()->where('partner_id', auth('partner')->id())->first()->id ?? null;
+    }
+
+    public function getIsWebAttribute($key)
+    {
+
+        if ($this->company_id != null) {
+
+            return $this->companies()->where('company_id', $this->company_id)->where('project_program_module_id', $this->id)->first()->pivot->is_web;
+        }
+        return null;
+    }
+
+    public function getCompany($id)
+    {
+         $this->companies()->where('company_id', $this->id)->where('project_program_module_id', $this->id)->first()->pivot->is_web;
+    }
+
+    public function scopeTest($query,$request)
+    {
+        $this->getCompany($request);
     }
 
     /**

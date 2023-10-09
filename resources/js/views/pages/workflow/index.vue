@@ -64,7 +64,6 @@ export default {
         id_sort: null,
         media: [],
         is_active: "active",
-        is_web: 1,
       },
       edit: {
         partner_id: null,
@@ -73,7 +72,6 @@ export default {
         id_sort: null,
         is_active: "active",
         old_media: [],
-          is_web: 1,
       },
       errors: {},
       isCheckAll: false,
@@ -110,15 +108,13 @@ export default {
       // menu: { required },
       partner_id: { required },
       company_id: { required },
-      is_active: {  },
-      is_web: {  },
+      is_active: { required },
       media: {},
     },
     edit: {
       // name: { required, minLength: minLength(2), maxLength: maxLength(100) },
       // name_e: { required, minLength: minLength(2), maxLength: maxLength(100) },
-      is_active: {  },
-      is_web: {  },
+      is_active: { required },
       media: {},
       partner_id: { required },
       company_id: { required },
@@ -156,9 +152,11 @@ export default {
       }
     },
   },
+
   mounted() {
     this.getData();
   },
+
   updated() {
     $(function () {
       $(".englishInput").keypress(function (event) {
@@ -560,7 +558,6 @@ export default {
         id_sort: null,
         is_active: "active",
         media: null,
-        is_web: 1,
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -593,7 +590,6 @@ export default {
         module_id: null,
         id_sort: null,
         is_active: "active",
-          is_web: 1,
       };
       this.showPhoto = "./images/img-1.png";
       this.$nextTick(() => {
@@ -615,7 +611,6 @@ export default {
         module_id: null,
         id_sort: null,
         is_active: "active",
-          is_web: 1,
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -647,7 +642,6 @@ export default {
           module_ids: this.create.module_id,
           company_id: this.create.company_id,
           partner_id: this.create.partner_id,
-          is_web: this.create.is_web,
         })
         .then((res) => {
           this.workflow_id = res.data.data.id;
@@ -704,7 +698,6 @@ export default {
             module_id: this.edit.module_id,
             company_id: this.edit.company_id,
             partner_id: this.edit.partner_id,
-            is_web: this.edit.is_web,
           })
           .then((res) => {
             this.$bvModal.hide(`modal-edit-${id}`);
@@ -783,7 +776,6 @@ export default {
       this.edit.module_id = workflow.module_id;
       this.edit.id_sort = workflow.id_sort;
       this.edit.is_active = workflow.is_active;
-      this.edit.is_web = workflow.is_web;
       this.images = workflow.media ? workflow.media : [];
       if (this.images && this.images.length > 0) {
         this.showPhoto = this.images[this.images.length - 1].webp;
@@ -805,7 +797,6 @@ export default {
         module_id: null,
         id_sort: null,
         is_active: "active",
-          is_web: 1,
         old_media: [],
       };
       this.workflow_id = null;
@@ -1663,32 +1654,32 @@ export default {
                                 </div>
                               </div>
                             </div> -->
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                               <div class="form-group">
                                 <label class="mr-2">
-                                  {{ $t("general.is_web") }}
+                                  {{ $t("general.Status") }}
                                   <span class="text-danger">*</span>
                                 </label>
                                 <b-form-group :class="{
                                   'is-invalid':
-                                    $v.create.is_web.$error || errors.is_web,
+                                    $v.create.is_active.$error || errors.is_active,
                                   'is-valid':
-                                    !$v.create.is_web.$invalid && !errors.is_web,
+                                    !$v.create.is_active.$invalid && !errors.is_active,
                                 }">
-                                  <b-form-radio class="d-inline-block" v-model="$v.create.is_web.$model"
-                                    name="some-radios" value="1">{{ $t("general.Active") }}
+                                  <b-form-radio class="d-inline-block" v-model="$v.create.is_active.$model"
+                                    name="some-radios" value="active">{{ $t("general.Active") }}
                                   </b-form-radio>
-                                  <b-form-radio class="d-inline-block m-1" v-model="$v.create.is_web.$model"
-                                    name="some-radios" value="0">{{ $t("general.Inactive") }}
+                                  <b-form-radio class="d-inline-block m-1" v-model="$v.create.is_active.$model"
+                                    name="some-radios" value="inactive">{{ $t("general.Inactive") }}
                                   </b-form-radio>
                                 </b-form-group>
-                                <template v-if="errors.is_web">
-                                  <ErrorMessage v-for="(errorMessage, index) in errors.is_web" :key="index">{{
+                                <template v-if="errors.is_active">
+                                  <ErrorMessage v-for="(errorMessage, index) in errors.is_active" :key="index">{{
                                     errorMessage }}
                                   </ErrorMessage>
                                 </template>
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                         </div>
                       </div>
@@ -2306,31 +2297,31 @@ export default {
                                         </div>
                                       </div>
                                     </div> -->
-                                    <div class="col-md-6">
+                                    <!-- <div class="col-md-6">
                                       <div class="form-group">
                                         <label class="mr-2">
-                                          {{ $t("general.is_web") }}
+                                          {{ $t("general.Status") }}
                                           <span class="text-danger">*</span>
                                         </label>
                                         <b-form-group :class="{
                                           'is-invalid':
-                                            $v.edit.is_web.$error ||
-                                            errors.is_web,
+                                            $v.edit.is_active.$error ||
+                                            errors.is_active,
                                           'is-valid':
-                                            !$v.edit.is_web.$invalid &&
-                                            !errors.is_web,
+                                            !$v.edit.is_active.$invalid &&
+                                            !errors.is_active,
                                         }">
-                                          <b-form-radio class="d-inline-block" v-model="$v.edit.is_web.$model"
-                                            name="some-radios" value="1">{{ $t("general.Active") }}
+                                          <b-form-radio class="d-inline-block" v-model="$v.edit.is_active.$model"
+                                            name="some-radios" value="active">{{ $t("general.Active") }}
                                           </b-form-radio>
-                                          <b-form-radio class="d-inline-block m-1" v-model="$v.edit.is_web.$model"
-                                            name="some-radios" value="0">{{ $t("general.Inactive") }}
+                                          <b-form-radio class="d-inline-block m-1" v-model="$v.edit.is_active.$model"
+                                            name="some-radios" value="inactive">{{ $t("general.Inactive") }}
                                           </b-form-radio>
                                         </b-form-group>
-                                        <template v-if="errors.is_web">
+                                        <template v-if="errors.is_active">
                                           <ErrorMessage v-for="(
                                                                                                     errorMessage, index
-                                                                                                  ) in errors.is_web"
+                                                                                                  ) in errors.is_active"
                                             :key="index">
                                             {{
                                               errorMessage
@@ -2338,7 +2329,7 @@ export default {
                                           </ErrorMessage>
                                         </template>
                                       </div>
-                                    </div>
+                                    </div> -->
                                   </div>
                                 </div>
                               </div>

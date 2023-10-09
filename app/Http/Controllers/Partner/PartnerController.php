@@ -107,7 +107,7 @@ class PartnerController extends Controller
         }
 
         $pieces = parse_url($request->url());
-        $url =  $pieces['scheme']."://".$pieces['host'];
+         $url =  $pieces['scheme']."://".$pieces['host'];
 
         $user = Auth::guard('partner')->user();
         if ($request->url != "0"){
