@@ -5,14 +5,12 @@ namespace App\Http\Controllers\Partner;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Partner\PartnerRequest;
-use App\Http\Requests\Partner\UpdatePartnerRequest;
 use App\Http\Resources\Company\CompanyResource;
 use App\Http\Resources\Log\LogResource;
 use App\Http\Resources\Partner\PartnerResource;
 use App\Models\Company;
 use App\Repositories\Partner\PartnerRepositoryInterface;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Auth;
 
 class PartnerController extends Controller
@@ -44,7 +42,7 @@ class PartnerController extends Controller
     {
         $model = $this->repository->create($request->validated());
         $model->refresh();
-        return responseJson(200, __('Done'),new PartnerResource($model) );
+        return responseJson(200, __('Done'), new PartnerResource($model));
     }
 
     public function update(PartnerRequest $request, $id)
@@ -55,7 +53,7 @@ class PartnerController extends Controller
         }
         $model = $this->repository->update($request->validated(), $id);
         $model->refresh();
-        return responseJson(200, __('Done'),new PartnerResource($model));
+        return responseJson(200, __('Done'), new PartnerResource($model));
     }
 
     public function delete($id)
@@ -107,11 +105,11 @@ class PartnerController extends Controller
         }
 
         $pieces = parse_url($request->url());
-         $url =  $pieces['scheme']."://".$pieces['host'];
+        $url = $pieces['scheme'] . "://" . $pieces['host'];
 
         $user = Auth::guard('partner')->user();
-        if ($request->url != "0"){
-            if ($user->company->url != $url){
+        if ($request->url != "0") {
+            if ($user->company->url != $url) {
                 return responseJson(422, 'Url Not Found');
             }
         }
@@ -120,7 +118,6 @@ class PartnerController extends Controller
             "partner" => new PartnerResource($user),
             "token" => $user->createToken('sanctumPartner')->plainTextToken,
         ]);
-
 
     }
 
@@ -139,11 +136,12 @@ class PartnerController extends Controller
         return responseJson(200, 'logged out');
     }
 
-    public function getCompany($partner_id){
-        $company = Company::query ()->where ('partner_id',$partner_id)->get();
-        if (!$company){
+    public function getCompany($partner_id)
+    {
+        $company = Company::query()->where('partner_id', $partner_id)->get();
+        if (!$company) {
             return responseJson(404, __('message.data not found'));
         }
-        return responseJson (200,'',CompanyResource::collection($company));
+        return responseJson(200, '', CompanyResource::collection($company));
     }
 }
