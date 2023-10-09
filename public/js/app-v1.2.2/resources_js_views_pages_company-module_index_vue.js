@@ -1414,7 +1414,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         end_date: null,
         custom_date_start: new Date(),
         custom_date_end: null,
-        document_types: []
+        document_types: [],
+        is_web: 1
       },
       edit: {
         out_site: "",
@@ -1426,7 +1427,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         end_date: null,
         custom_date_start: null,
         custom_date_end: null,
-        document_types: []
+        document_types: [],
+        is_web: 1
       },
       setting: {
         company_id: true,
@@ -1475,7 +1477,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__.required
       },
       end_date: {},
-      document_types: {}
+      document_types: {},
+      is_web: {}
     },
     edit: {
       company_id: {
@@ -1500,7 +1503,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_11__.required
       },
       end_date: {},
-      document_types: {}
+      document_types: {},
+      is_web: {}
     }
   },
   watch: {
@@ -1738,7 +1742,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         end_date: null,
         custom_date_start: new Date(),
         custom_date_end: null,
-        document_types: []
+        document_types: [],
+        is_web: 1
       };
       this.$nextTick(function () {
         _this7.$v.$reset();
@@ -1778,7 +1783,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   end_date: null,
                   custom_date_start: new Date(),
                   custom_date_end: null,
-                  document_types: []
+                  document_types: [],
+                  is_web: 1
                 };
                 _this8.$nextTick(function () {
                   _this8.$v.$reset();
@@ -1822,7 +1828,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   end_date: null,
                   custom_date_start: new Date(),
                   custom_date_end: null,
-                  document_types: []
+                  document_types: [],
+                  is_web: 1
                 };
                 _this9.$nextTick(function () {
                   _this9.$v.$reset();
@@ -1942,6 +1949,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this12.edit.out_site = companyModule.out_site;
                 _this12.edit.allowed_employee = companyModule.allowed_employee;
                 _this12.edit.custom_date_start = new Date(companyModule.start_date);
+                _this12.edit.is_web = companyModule.is_web;
                 _this12.edit.custom_date_end = companyModule.end_date ? new Date(companyModule.end_date) : null;
                 _this12.edit.start_date = (0,_helper_startDate__WEBPACK_IMPORTED_MODULE_8__.formatDateTime)(companyModule.start_date);
                 _this12.edit.end_date = companyModule.end_date ? (0,_helper_startDate__WEBPACK_IMPORTED_MODULE_8__.formatDateTime)(companyModule.end_date) : null;
@@ -1950,7 +1958,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   return types.push(e.id);
                 });
                 _this12.edit.document_types = types !== null && types !== void 0 ? types : [];
-              case 19:
+              case 20:
               case "end":
                 return _context3.stop();
             }
@@ -1972,7 +1980,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         end_date: null,
         custom_date_start: null,
         custom_date_end: null,
-        document_types: []
+        document_types: [],
+        is_web: 1
       };
       this.errors = {};
       this.companies = [];
@@ -5807,6 +5816,49 @@ var render = function render() {
     return _c("ErrorMessage", {
       key: index
     }, [_vm._v(_vm._s(errorMessage) + "\n                      ")]);
+  }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    staticClass: "mr-2"
+  }, [_vm._v("\n                      Is Web ?\n                      "), _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v("*")])]), _vm._v(" "), _c("b-form-group", {
+    "class": {
+      "is-invalid": _vm.$v.create.is_web.$error || _vm.errors.is_web,
+      "is-valid": !_vm.$v.create.is_web.$invalid && !_vm.errors.is_web
+    }
+  }, [_c("b-form-radio", {
+    staticClass: "d-inline-block",
+    attrs: {
+      name: "some-radios",
+      value: "1"
+    },
+    model: {
+      value: _vm.$v.create.is_web.$model,
+      callback: function callback($$v) {
+        _vm.$set(_vm.$v.create.is_web, "$model", $$v);
+      },
+      expression: "$v.create.is_web.$model"
+    }
+  }, [_vm._v(_vm._s(_vm.$t("general.Active")) + "\n                      ")]), _vm._v(" "), _c("b-form-radio", {
+    staticClass: "d-inline-block m-1",
+    attrs: {
+      name: "some-radios",
+      value: "0"
+    },
+    model: {
+      value: _vm.$v.create.is_web.$model,
+      callback: function callback($$v) {
+        _vm.$set(_vm.$v.create.is_web, "$model", $$v);
+      },
+      expression: "$v.create.is_web.$model"
+    }
+  }, [_vm._v(_vm._s(_vm.$t("general.Inactive")) + "\n                      ")])], 1), _vm._v(" "), _vm.errors.is_web ? _vm._l(_vm.errors.is_web, function (errorMessage, index) {
+    return _c("ErrorMessage", {
+      key: index
+    }, [_vm._v(_vm._s(errorMessage) + "\n                      ")]);
   }) : _vm._e()], 2)])])])]), _vm._v(" "), _c("div", {
     staticClass: "table-responsive mb-3 custom-table-theme position-relative"
   }, [_vm.isLoader ? _c("loader", {
@@ -6443,6 +6495,49 @@ var render = function render() {
       return _c("ErrorMessage", {
         key: index
       }, [_vm._v(_vm._s(errorMessage))]);
+    }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
+      staticClass: "col-md-12"
+    }, [_c("div", {
+      staticClass: "form-group"
+    }, [_c("label", {
+      staticClass: "mr-2"
+    }, [_vm._v("\n                                        Is Web ?\n                                        "), _c("span", {
+      staticClass: "text-danger"
+    }, [_vm._v("*")])]), _vm._v(" "), _c("b-form-group", {
+      "class": {
+        "is-invalid": _vm.$v.edit.is_web.$error || _vm.errors.is_web,
+        "is-valid": !_vm.$v.edit.is_web.$invalid && !_vm.errors.is_web
+      }
+    }, [_c("b-form-radio", {
+      staticClass: "d-inline-block",
+      attrs: {
+        name: "some-radios",
+        value: "1"
+      },
+      model: {
+        value: _vm.$v.edit.is_web.$model,
+        callback: function callback($$v) {
+          _vm.$set(_vm.$v.edit.is_web, "$model", $$v);
+        },
+        expression: "$v.edit.is_web.$model"
+      }
+    }, [_vm._v(_vm._s(_vm.$t("general.Active")) + "\n                                        ")]), _vm._v(" "), _c("b-form-radio", {
+      staticClass: "d-inline-block m-1",
+      attrs: {
+        name: "some-radios",
+        value: "0"
+      },
+      model: {
+        value: _vm.$v.edit.is_web.$model,
+        callback: function callback($$v) {
+          _vm.$set(_vm.$v.edit.is_web, "$model", $$v);
+        },
+        expression: "$v.edit.is_web.$model"
+      }
+    }, [_vm._v(_vm._s(_vm.$t("general.Inactive")) + "\n                                        ")])], 1), _vm._v(" "), _vm.errors.is_web ? _vm._l(_vm.errors.is_web, function (errorMessage, index) {
+      return _c("ErrorMessage", {
+        key: index
+      }, [_vm._v(_vm._s(errorMessage) + "\n                                        ")]);
     }) : _vm._e()], 2)])])])])], 1) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("td", {
       staticClass: "do-not-print"
     }, [_c("b-button", {
@@ -8028,7 +8123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\ntable td,table th{\r\n  white-space: nowrap;\n}\n.modal-body {\r\n  padding: 2.25rem !important;\n}\n@media print {\n.do-not-print {\r\n    display: none;\n}\n.arrow-sort {\r\n    display: none;\n}\n}\n.tooltip-inner {\r\n  max-width: 750px !important;\r\n  background-color: #eed900;\r\n  color: black;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ntable td,table th{\n  white-space: nowrap;\n}\n.modal-body {\n  padding: 2.25rem !important;\n}\n@media print {\n.do-not-print {\n    display: none;\n}\n.arrow-sort {\n    display: none;\n}\n}\n.tooltip-inner {\n  max-width: 750px !important;\n  background-color: #eed900;\n  color: black;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
