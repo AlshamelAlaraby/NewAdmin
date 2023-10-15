@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddModuleColumnToScreensTable extends Migration
+class AddModuleScreenIdColumnToScreensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddModuleColumnToScreensTable extends Migration
     public function up()
     {
         Schema::table('screens', function (Blueprint $table) {
-            $table->string('module')->nullable();
+            $table->unsignedBigInteger('module_screen_id')->nullable();
         });
     }
 

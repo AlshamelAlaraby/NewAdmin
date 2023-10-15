@@ -3,6 +3,7 @@
 namespace App\Http\Resources\Screen;
 
 use App\Http\Resources\Company\CompanyResource;
+use App\Http\Resources\ModuleScreenResource;
 use App\Http\Resources\SubMenuResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -26,12 +27,13 @@ class ScreenResource extends JsonResource
             'url'            => $this->url,
             'is_implementor' => $this->is_implementor,
             'sort'           => $this->sort,
-            'module'           => $this->module,
             "sub_menu_id"    => $this->sub_menu_id,
             'company_id'     => $this->company_id,
             'parent_id'      => $this->parent_id,
+            'module_screen_id'      => $this->module_screen_id,
             'company'        => new  CompanyResource($this->company),
             'sub_menu'       => new SubMenuResource($this->subMenu),
+            'module_screen'       => new ModuleScreenResource($this->ModuleScreen),
 
         ];
     }

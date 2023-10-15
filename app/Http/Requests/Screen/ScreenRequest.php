@@ -36,12 +36,12 @@ class ScreenRequest extends FormRequest
             'title_e' => 'required',
             'sort' => 'required',
             'url' => 'nullable',
-            'module' => 'nullable|string',
             "is_add_on"       => "nullable||in:1,0",
             'is_implementor'  => 'nullable|in:1,0',
             'sub_menu_id'     => 'nullable|exists:sub_menus,id',
             'company_id'      => 'nullable|exists:companies,id',
             'parent_id'       => 'nullable|exists:screens,id',
+            'module_screen_id'       => 'nullable|exists:module_screens,id',
 
 
         ];
