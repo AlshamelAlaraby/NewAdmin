@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
          $this->call(CompanySeeder::class);
          $this->call(ProjectProgramModuleSeeder::class);
          $this->call(ScreenSeeder::class);
+         $this->call(ModuleScreenSeeder::class);
 
         //  \App\Models\Partner::factory(100)->create();
         //  \App\Models\Company::factory(100)->create();

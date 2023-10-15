@@ -41,6 +41,7 @@ class ScreenRequest extends FormRequest
             'sub_menu_id'     => 'nullable|exists:sub_menus,id',
             'company_id'      => 'nullable|exists:companies,id',
             'parent_id'       => 'nullable|exists:screens,id',
+            'module_screen_id'       => 'nullable|exists:module_screens,id',
 
 
         ];

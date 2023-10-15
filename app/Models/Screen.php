@@ -24,6 +24,10 @@ class Screen extends Model
     {
         return $this->belongsTo(SubMenu::class);
     }
+    public function ModuleScreen()
+    {
+        return $this->belongsTo(ModuleScreen::class);
+    }
 
     /*** return relation with Helpfiles */
     public function helpfiles()

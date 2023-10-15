@@ -3,24 +3,21 @@
 use App\Http\Controllers\Auth\CheckIfValidTokenController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\Branch\BranchController;
 use App\Http\Controllers\Button\ButtonController;
-use App\Http\Controllers\CompanyModule\CompanyModuleController;
-use App\Http\Controllers\Company\CompanyController;
 use App\Http\Controllers\CompanyProjectProgramModule\CompanyProjectProgramModuleController;
+use App\Http\Controllers\Company\CompanyController;
 use App\Http\Controllers\DocumentType\DocumentTypeController;
 use App\Http\Controllers\Helpfile\HelpfileController;
 use App\Http\Controllers\Hotfield\HotfieldController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ModuleScreenController;
 use App\Http\Controllers\Partner\PartnerController;
 use App\Http\Controllers\ScreenButton\ScreenButtonController;
 use App\Http\Controllers\ScreenDocumentType\ScreenDocumentTypeController;
 use App\Http\Controllers\ScreenHelpfile\ScreenHelpfileController;
 use App\Http\Controllers\Screen\ScreenController;
 use App\Http\Controllers\SettingScreen\SettingScreenController;
-use App\Http\Controllers\Store\StoreController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\WorkflowTree\WorkflowTreeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -70,8 +67,6 @@ Route::group(['prefix' => 'companies'], function () {
 
 Route::post('/companyModules/{id}', [CompanyController::class, "companyModules"]);
 
-
-
 Route::group(['prefix' => 'project-program-modules'], function () {
     Route::controller(\App\Http\Controllers\ProjectProgramModule\ProjectProgramModuleController::class)->group(function () {
         Route::get('all-company-program/{name_company}', 'getCompanyProjectProgramModules');
@@ -97,7 +92,7 @@ Route::group(['prefix' => 'partners'], function () {
     Route::controller(PartnerController::class)->group(function () {
         Route::get('/', 'all')->name('partners.index');
 
-        Route::middleware ('auth:sanctum')->group (function (){
+        Route::middleware('auth:sanctum')->group(function () {
             Route::get('/profile', 'profile');
             Route::get('/logout', 'logout');
         });
@@ -137,6 +132,13 @@ Route::group(['prefix' => 'screens'], function () {
         Route::post('bulk-delete', 'bulkDelete');
         Route::post('create-company-screens', 'getCreateCompanyScreen');
         Route::post('create-sub-menu-screens', 'createSubMenuScreen');
+    });
+});
+
+Route::group(['prefix' => 'module-screens'], function () {
+    Route::controller(ModuleScreenController::class)->group(function () {
+        Route::get('/', 'all')->name('screens.index');
+
     });
 });
 
@@ -207,7 +209,6 @@ Route::group(['prefix' => 'hotfields'], function () {
     });
 });
 
-
 // api op serials
 Route::group(['prefix' => 'buttons'], function () {
     Route::controller(ButtonController::class)->group(function () {
@@ -220,8 +221,6 @@ Route::group(['prefix' => 'buttons'], function () {
         Route::post('bulk-delete', 'bulkDelete');
     });
 });
-
-
 
 Route::group(['prefix' => 'settingScreen'], function () {
     Route::controller(SettingScreenController::class)->group(function () {
@@ -253,7 +252,6 @@ Route::group(['prefix' => 'screenDocumentType'], function () {
     Route::get('logs/{id}', [ScreenController::class, 'logs'])->name('screenDocumentType.logs');
 });
 
-
 Route::group(['prefix' => 'menu'], function () {
     Route::controller(\App\Http\Controllers\Menu\MenuController::class)->group(function () {
         Route::get('/', 'all')->name('menus.index');
@@ -264,14 +262,10 @@ Route::group(['prefix' => 'menu'], function () {
         Route::delete('/{id}', 'delete')->name('menus.destroy');
         Route::post('bulk-delete', 'bulkDelete');
 
-        Route::get('module-menu/{company_id}/{module_id}','getModuleMenus');
+        Route::get('module-menu/{company_id}/{module_id}', 'getModuleMenus');
 
     });
 });
-
-
-
-
 
 Route::group(['prefix' => 'sub-menus'], function () {
     Route::controller(\App\Http\Controllers\SubMenuController::class)->group(function () {
@@ -286,7 +280,6 @@ Route::group(['prefix' => 'sub-menus'], function () {
         Route::post('create-submenu-menu', 'createSubMenuAndMenu');
     });
 });
-
 
 Route::group(['prefix' => 'folder-menu'], function () {
     Route::controller(\App\Http\Controllers\FolderMenu\FolderMenuController::class)->group(function () {
@@ -312,10 +305,8 @@ Route::group(['prefix' => 'program-folder'], function () {
         Route::post("bulk-delete", "bulkDelete");
         Route::post('/update-array', 'updateArray');
 
-
     });
 });
-
 
 //----------------------------------------------milad routes ------------------------------
 Route::get('everything_about_the_company/{company_id}', [CompanyController::class, 'everything_about_the_company']);
@@ -323,8 +314,7 @@ Route::resource('screen-document-type', ScreenDocumentTypeController::class)->ex
 Route::get('screen-document-type/logs/{id}', [ScreenDocumentTypeController::class, 'logs']);
 Route::post('screen-document-type/bulk-delete', [ScreenDocumentTypeController::class, 'bulkDelete']);
 
-Route::get ('partner-company/{partner_id}',[PartnerController::class,'getCompany']);
-Route::get ('com-modules/{company_id}',[CompanyController::class,'getModules']);
-Route::get ('statics',[MainController::class,'statics']);
+Route::get('partner-company/{partner_id}', [PartnerController::class, 'getCompany']);
+Route::get('com-modules/{company_id}', [CompanyController::class, 'getModules']);
+Route::get('statics', [MainController::class, 'statics']);
 //----------------------------------------------------------------------------------------------
-
