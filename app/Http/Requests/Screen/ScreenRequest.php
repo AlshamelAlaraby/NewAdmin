@@ -36,6 +36,7 @@ class ScreenRequest extends FormRequest
             'title_e' => 'required',
             'sort' => 'required',
             'url' => 'nullable',
+            'module' => 'nullable|string',
             "is_add_on"       => "nullable||in:1,0",
             'is_implementor'  => 'nullable|in:1,0',
             'sub_menu_id'     => 'nullable|exists:sub_menus,id',
