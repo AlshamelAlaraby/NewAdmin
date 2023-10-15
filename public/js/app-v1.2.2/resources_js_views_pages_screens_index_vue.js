@@ -2782,6 +2782,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       screensPagination: {},
       screens: [],
       buttons: [],
+      modules: [],
       serials: [],
       enabled3: true,
       isLoader: false,
@@ -2802,7 +2803,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         search: "",
         url: "",
         is_implementor: 0,
-        sort: 0
+        sort: 0,
+        module_screen_id: null
       },
       edit: {
         name: "",
@@ -2814,7 +2816,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         search: "",
         url: "",
         is_implementor: 0,
-        sort: 0
+        sort: 0,
+        module_screen_id: null
       },
       setting: {
         name: true,
@@ -2864,7 +2867,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       url: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_12__.required
       },
-      is_implementor: {}
+      is_implementor: {},
+      module_screen_id: {}
     },
     edit: {
       name: {
@@ -2891,7 +2895,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       url: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_12__.required
       },
-      is_implementor: {}
+      is_implementor: {},
+      module_screen_id: {}
     }
   },
   watch: {
@@ -3329,7 +3334,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         title_e: "",
         serial_id: "",
         sub_menu_id: null,
-        sort: 0
+        sort: 0,
+        module_screen_id: null
       };
       this.$nextTick(function () {
         _this13.$v.$reset();
@@ -3364,6 +3370,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context3.next = 8;
                 return _this14.getSubMenus();
               case 8:
+                _this14.getModule();
                 _this14.create = {
                   name: "",
                   name_e: "",
@@ -3373,14 +3380,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   sub_menu_id: null,
                   url: "",
                   is_implementor: 0,
-                  sort: 0
+                  sort: 0,
+                  module_screen_id: null
                 };
                 _this14.is_disabled = false;
                 _this14.$nextTick(function () {
                   _this14.$v.$reset();
                 });
                 _this14.errors = {};
-              case 12:
+              case 13:
               case "end":
                 return _context3.stop();
             }
@@ -3402,7 +3410,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         sub_menu_id: null,
         url: "",
         is_implementor: 0,
-        sort: 0
+        sort: 0,
+        module_screen_id: null
       };
       this.is_disabled = false;
       this.$nextTick(function () {
@@ -3606,54 +3615,82 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee7);
       }))();
     },
-    /**
-     *   show Modal (edit)
-     */
-    resetModalEdit: function resetModalEdit(id) {
+    getModule: function getModule() {
       var _this22 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8() {
-        var module;
         return _regeneratorRuntime().wrap(function _callee8$(_context8) {
           while (1) {
             switch (_context8.prev = _context8.next) {
               case 0:
-                module = _this22.screens.find(function (e) {
-                  return id == e.id;
+                _context8.next = 2;
+                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/module-screens").then(function (res) {
+                  var l = res.data.data;
+                  _this22.modules = l;
+                })["catch"](function (err) {
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire({
+                    icon: "error",
+                    title: "".concat(_this22.$t("general.Error")),
+                    text: "".concat(_this22.$t("general.Thereisanerrorinthesystem"))
+                  });
                 });
-                _context8.next = 3;
-                return _this22.getParent();
-              case 3:
-                _context8.next = 5;
-                return _this22.getDocuments();
-              case 5:
-                _context8.next = 7;
-                return _this22.getButtons();
-              case 7:
-                _context8.next = 9;
-                return _this22.getSubMenus();
-              case 9:
-                _this22.edit.name = module.name;
-                _this22.edit.name_e = module.name_e;
-                _this22.edit.title = module.title;
-                _this22.edit.title_e = module.title_e;
-                _this22.edit.serial_id = module.serial_id;
-                _this22.edit.url = module.url;
-                _this22.edit.sort = module.sort;
-                _this22.screen_id = module.id;
-                _this22.edit.is_implementor = module.is_implementor;
-                _context8.next = 20;
-                return _this22.getScreenDocumentTypes();
-              case 20:
-                _context8.next = 22;
-                return _this22.getScreenButtons();
-              case 22:
-                _this22.errors = {};
-              case 23:
+              case 2:
               case "end":
                 return _context8.stop();
             }
           }
         }, _callee8);
+      }))();
+    },
+    /**
+     *   show Modal (edit)
+     */
+    resetModalEdit: function resetModalEdit(id) {
+      var _this23 = this;
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9() {
+        var module;
+        return _regeneratorRuntime().wrap(function _callee9$(_context9) {
+          while (1) {
+            switch (_context9.prev = _context9.next) {
+              case 0:
+                module = _this23.screens.find(function (e) {
+                  return id == e.id;
+                });
+                _context9.next = 3;
+                return _this23.getParent();
+              case 3:
+                _context9.next = 5;
+                return _this23.getDocuments();
+              case 5:
+                _context9.next = 7;
+                return _this23.getButtons();
+              case 7:
+                _context9.next = 9;
+                return _this23.getSubMenus();
+              case 9:
+                _this23.getModule();
+                _this23.edit.name = module.name;
+                _this23.edit.name_e = module.name_e;
+                _this23.edit.title = module.title;
+                _this23.edit.title_e = module.title_e;
+                _this23.edit.serial_id = module.serial_id;
+                _this23.edit.url = module.url;
+                _this23.edit.sort = module.sort;
+                _this23.screen_id = module.id;
+                _this23.edit.module_screen_id = module.module_screen_id;
+                _this23.edit.is_implementor = module.is_implementor;
+                _context9.next = 22;
+                return _this23.getScreenDocumentTypes();
+              case 22:
+                _context9.next = 24;
+                return _this23.getScreenButtons();
+              case 24:
+                _this23.errors = {};
+              case 25:
+              case "end":
+                return _context9.stop();
+            }
+          }
+        }, _callee9);
       }))();
     },
     /**
@@ -3670,6 +3707,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         sub_menu_id: null,
         url: "",
         is_implementor: 0,
+        module_screen_id: null,
         sort: 0
       };
       this.serials = [];
@@ -3697,10 +3735,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
      *   Export Excel
      */
     ExportExcel: function ExportExcel(type, fn, dl) {
-      var _this23 = this;
+      var _this24 = this;
       this.enabled3 = false;
       setTimeout(function () {
-        var elt = _this23.$refs.exportable_table;
+        var elt = _this24.$refs.exportable_table;
         var wb = XLSX.utils.table_to_book(elt, {
           sheet: "Sheet JS"
         });
@@ -3713,7 +3751,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         } else {
           XLSX.writeFile(wb, fn || ("Screens" + "." || 0) + (type || "xlsx"));
         }
-        _this23.enabled3 = true;
+        _this24.enabled3 = true;
       }, 100);
     },
     arabicValue: function arabicValue(txt) {
@@ -7895,6 +7933,38 @@ var render = function render() {
   }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
     staticClass: "col-md-6"
   }, [_c("div", {
+    staticClass: "form-group position-relative"
+  }, [_c("label", {
+    staticClass: "control-label"
+  }, [_vm._v("\n                                          " + _vm._s(_vm.$t("module.module")) + "\n                                          "), _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v("*")])]), _vm._v(" "), _c("multiselect", {
+    attrs: {
+      options: _vm.modules.map(function (type) {
+        return type.id;
+      }),
+      "custom-label": function customLabel(opt) {
+        return _vm.modules.find(function (x) {
+          return x.id == opt;
+        }) ? _vm.modules.find(function (x) {
+          return x.id == opt;
+        }).name : null;
+      }
+    },
+    model: {
+      value: _vm.create.module_screen_id,
+      callback: function callback($$v) {
+        _vm.$set(_vm.create, "module_screen_id", $$v);
+      },
+      expression: "create.module_screen_id"
+    }
+  }), _vm._v(" "), _vm.errors.module_screen_id ? _vm._l(_vm.errors.module_screen_id, function (errorMessage, index) {
+    return _c("ErrorMessage", {
+      key: index
+    }, [_vm._v(_vm._s(errorMessage))]);
+  }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
     staticClass: "form-group"
   }, [_c("label", {
     staticClass: "mr-2 mb-2"
@@ -8716,6 +8786,38 @@ var render = function render() {
         key: index
       }, [_vm._v(_vm._s(errorMessage))]);
     }) : _vm._e()], 2)])]), _vm._v(" "), _c("div", {
+      staticClass: "col-md-6"
+    }, [_c("div", {
+      staticClass: "form-group position-relative"
+    }, [_c("label", {
+      staticClass: "control-label"
+    }, [_vm._v("\n                                                    " + _vm._s(_vm.$t("module.module")) + "\n                                                    "), _c("span", {
+      staticClass: "text-danger"
+    }, [_vm._v("*")])]), _vm._v(" "), _c("multiselect", {
+      attrs: {
+        options: _vm.modules.map(function (type) {
+          return type.id;
+        }),
+        "custom-label": function customLabel(opt) {
+          return _vm.modules.find(function (x) {
+            return x.id == opt;
+          }) ? _vm.modules.find(function (x) {
+            return x.id == opt;
+          }).name : null;
+        }
+      },
+      model: {
+        value: _vm.edit.module_screen_id,
+        callback: function callback($$v) {
+          _vm.$set(_vm.edit, "module_screen_id", $$v);
+        },
+        expression: "edit.module_screen_id"
+      }
+    }), _vm._v(" "), _vm.errors.module_screen_id ? _vm._l(_vm.errors.module_screen_id, function (errorMessage, index) {
+      return _c("ErrorMessage", {
+        key: index
+      }, [_vm._v(_vm._s(errorMessage))]);
+    }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
       staticClass: "col-md-6"
     }, [_c("div", {
       staticClass: "form-group"
@@ -10733,7 +10835,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.dropdown-menu-custom-company.dropdown .dropdown-menu {\r\n  padding: 5px 10px !important;\r\n  overflow-y: scroll;\r\n  height: 400px;\n}\n.modal-dialog .card {\r\n  margin: 0 !important;\n}\n.modal-body.paddingUnset {\r\n  padding: 0 !important;\n}\n.modal-dialog .card-body {\r\n  padding: 1.5rem 1.5rem 0 1.5rem !important;\n}\n.nav-bordered {\r\n  border: unset !important;\n}\n.nav {\r\n  background-color: #dff0fe;\n}\n.tab-content {\r\n  padding: 70px 60px 40px;\r\n  min-height: 300px;\r\n  background-color: #f5f5f5;\r\n  position: relative;\n}\n.nav-tabs .nav-link {\r\n  border: 1px solid #b7b7b7 !important;\r\n  background-color: #d7e5f2;\r\n  border-bottom: 0 !important;\r\n  margin-bottom: 1px;\n}\n.nav-tabs .nav-link.active,\r\n.nav-tabs .nav-item.show .nav-link {\r\n  color: #000;\r\n  background-color: hsl(0deg 0% 96%);\r\n  border-bottom: 0 !important;\n}\n.img-thumbnail {\r\n  max-height: 400px !important;\n}\n@media print {\n.do-not-print {\r\n    display: none;\n}\n.arrow-sort {\r\n    display: none;\n}\n}\n.tooltip-inner {\r\n  max-width: 750px !important;\r\n  background-color: #eed900;\r\n  color: black;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.dropdown-menu-custom-company.dropdown .dropdown-menu {\n  padding: 5px 10px !important;\n  overflow-y: scroll;\n  height: 400px;\n}\n.modal-dialog .card {\n  margin: 0 !important;\n}\n.modal-body.paddingUnset {\n  padding: 0 !important;\n}\n.modal-dialog .card-body {\n  padding: 1.5rem 1.5rem 0 1.5rem !important;\n}\n.nav-bordered {\n  border: unset !important;\n}\n.nav {\n  background-color: #dff0fe;\n}\n.tab-content {\n  padding: 70px 60px 40px;\n  min-height: 300px;\n  background-color: #f5f5f5;\n  position: relative;\n}\n.nav-tabs .nav-link {\n  border: 1px solid #b7b7b7 !important;\n  background-color: #d7e5f2;\n  border-bottom: 0 !important;\n  margin-bottom: 1px;\n}\n.nav-tabs .nav-link.active,\n.nav-tabs .nav-item.show .nav-link {\n  color: #000;\n  background-color: hsl(0deg 0% 96%);\n  border-bottom: 0 !important;\n}\n.img-thumbnail {\n  max-height: 400px !important;\n}\n@media print {\n.do-not-print {\n    display: none;\n}\n.arrow-sort {\n    display: none;\n}\n}\n.tooltip-inner {\n  max-width: 750px !important;\n  background-color: #eed900;\n  color: black;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
