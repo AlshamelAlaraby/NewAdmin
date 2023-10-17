@@ -11,6 +11,8 @@ use App\Http\Resources\ProjectProgramModule\ProjectProgramModuleResource;
 use App\Http\Requests\ProjectProgramModule\AllProjectProgramModuleRequest;
 use App\Http\Requests\ProjectProgramModule\ProjectProgramModuleRequest;
 use App\Http\Requests\ProjectProgramModule\AddCompanyToModuleRequest;
+use App\Http\Resources\PartnerLogin\CompanyLoginResource;
+use App\Models\Company;
 
 class ProjectProgramModuleController extends Controller
 {
@@ -117,9 +119,19 @@ class ProjectProgramModuleController extends Controller
     {
         return $this->modelInterface->companyProjectProgramModules($name_company);
     }
+    // public function findProgramModulesCompanyId($company_id)
+    // {
+    //     return $this->modelInterface->programModulesCompanyId($company_id);
+    // }
+
+
     public function findProgramModulesCompanyId($company_id)
     {
-        return $this->modelInterface->programModulesCompanyId($company_id);
+        $models = Company::find($company_id);
+
+
+        return responseJson(200, 'success', new CompanyLoginResource($models));
+
     }
 
     public function allProgramModuleId(Request $request)

@@ -19,7 +19,7 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
 
         if ($request->program_modules) {
-            $models->whereNotIn("id",$modules);
+            $models->whereNotIn("id", $modules);
         }
 
         if ($request->child == "true") {
@@ -98,10 +98,10 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
     public function createProgramChildren($request)
     {
         foreach ($request['modules'] as $index => $module_id) {
-            $model_create =  $this->model->find($module_id);
-            $model_exists  =  $this->model->where('name', $model_create['name'])->where('name_e', $model_create['name_e'])->where('parent_id', $request['program_id'])->first();
+            $model_create = $this->model->find($module_id);
+            $model_exists = $this->model->where('name', $model_create['name'])->where('name_e', $model_create['name_e'])->where('parent_id', $request['program_id'])->first();
             if (!$model_exists) {
-                $model =  $this->model->create(collect($model_create)->except(['id', 'created_at', 'updated_at'])->all());
+                $model = $this->model->create(collect($model_create)->except(['id', 'created_at', 'updated_at'])->all());
                 $model->update(['parent_id' => $request['program_id'], 'is_module' => 0, 'module_id' => $model_create['id']]);
             }
             if ($index == count($request["modules"]) - 1) {
@@ -112,9 +112,9 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
 
     public function allProgramModuleId($request)
     {
-        $project = $this->model->where('is_module','1')->get()->pluck('id')->toArray();
+        $project = $this->model->where('is_module', '1')->get()->pluck('id')->toArray();
 
-        $modules = $this->model->whereIn('module_id',$project);
+        $modules = $this->model->whereIn('module_id', $project);
 
         if ($request->per_page) {
             return ['data' => $modules->paginate($request->per_page), 'paginate' => true];
@@ -125,17 +125,17 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
 
     public function companyProjectProgramModules($name_company)
     {
-        $models = $this->model->whereRelation('companies','name_e',$name_company)->get();
+        $models = $this->model->whereRelation('companies', 'name_e', $name_company)->get();
         return $models;
     }
 
-    public function  programModulesCompanyId($company_id)
+    public function programModulesCompanyId($company_id)
     {
         $models = $this->model->with(['companies' => function ($q) use ($company_id){
             $q->where('company_id',$company_id);
         }])->whereRelation('companies','company_id',$company_id)->get();
+
         return $models;
     }
-
 
 }

@@ -2,9 +2,6 @@
 
 namespace App\Http\Resources\ProjectProgramModule;
 
-use App\Http\Resources\ProgramFolderResource;
-use App\Http\Resources\Screen\ScreenResource;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProjectProgramModuleResource extends JsonResource
@@ -18,18 +15,19 @@ class ProjectProgramModuleResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'                => $this->id,
-            'name'              => $this->name,
-            'name_e'            => $this->name_e,
-            'parent_id'         => $this->parent_id,
-            'is_active'         => $this->is_active,
-            'sort'              => $this->sort,
-            'icon'              => $this->icon,
+            'id' => $this->id,
+            'name' => $this->name,
+            'name_e' => $this->name_e,
+            'parent_id' => $this->parent_id,
+            'is_active' => $this->is_active,
+            'sort' => $this->sort,
+            'icon' => $this->icon,
+            'is_web' => $this->is_web,
             'is_menu_collapsed' => $this->is_menu_collapsed,
-            'is_module'         => $this->is_module,
-            'module_id'         => $this->module_id,
-            "parent"            => $this->parent,
-            "programFolders"    => $this->programFolders,
+            'is_module' => $this->is_module,
+            'module_id' => $this->module_id,
+            "parent" => $this->parent,
+            "programFolders" => $this->programFolders,
 
         ];
     }

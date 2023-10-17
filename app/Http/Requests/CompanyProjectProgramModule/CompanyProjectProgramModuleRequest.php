@@ -25,15 +25,16 @@ class CompanyProjectProgramModuleRequest extends FormRequest
     public function rules()
     {
         return [
-            "company_id"                        => "required|exists:companies,id",
-            "project_program_module_id"         => "required|exists:project_program_modules,id",
-            "allowed_users_no"                  => "required|min:0|integer",
-            'start_date'                        => 'required|date',
-            'end_date'                          => 'required|date|after_or_equal:start_date',
-            "document_types"                    => 'nullable',
-            'document_types.*'                  => 'nullable|exists:document_types,id',
-            "allowed_employee"                  => "nullable|min:0|integer",
-            "out_site"                          => "nullable|min:0|integer",
+            "company_id" => "required|exists:companies,id",
+            "project_program_module_id" => "required|exists:project_program_modules,id",
+            "allowed_users_no" => "required|min:0|integer",
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after_or_equal:start_date',
+            "document_types" => 'nullable',
+            'document_types.*' => 'nullable|exists:document_types,id',
+            "allowed_employee" => "nullable|min:0|integer",
+            "out_site" => "nullable|min:0|integer",
+            "is_web" => "nullable|in:0,1",
         ];
     }
 

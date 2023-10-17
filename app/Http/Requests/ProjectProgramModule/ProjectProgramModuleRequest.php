@@ -48,6 +48,7 @@ class ProjectProgramModuleRequest extends FormRequest
                 })->where('parent_id', $request->parent_id),
             ],
             "is_active"          => "nullable|in:active,inactive",
+            "is_web"          => "nullable|in:0,1",
             "is_add_on"          => "nullable||in:0,1",
             'is_menu_collapsed'  => 'nullable|in:0,1',
             "icon"               => "nullable|string",

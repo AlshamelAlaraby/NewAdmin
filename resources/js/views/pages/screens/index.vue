@@ -43,6 +43,7 @@ export default {
       screensPagination: {},
       screens: [],
       buttons: [],
+      modules: [],
       serials: [],
       enabled3: true,
       isLoader: false,
@@ -64,6 +65,7 @@ export default {
         url: "",
         is_implementor: 0,
         sort: 0,
+        module_screen_id: null
       },
       edit: {
         name: "",
@@ -76,6 +78,7 @@ export default {
         url: "",
         is_implementor: 0,
         sort: 0,
+        module_screen_id: null
       },
       setting: {
         name: true,
@@ -107,6 +110,7 @@ export default {
       sub_menu_id: {  },
       url: { required },
       is_implementor: {},
+      module_screen_id: {}
     },
     edit: {
       name: { required, minLength: minLength(3), maxLength: maxLength(100) },
@@ -116,6 +120,7 @@ export default {
       sub_menu_id: {  },
       url: { required },
       is_implementor: {},
+      module_screen_id: {}
     },
   },
   watch: {
@@ -567,6 +572,7 @@ export default {
         serial_id: "",
         sub_menu_id: null,
         sort: 0,
+        module_screen_id: null
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -588,6 +594,7 @@ export default {
       await this.getDocuments();
       await this.getButtons();
       await this.getSubMenus();
+      this.getModule();
       this.create = {
         name: "",
         name_e: "",
@@ -598,6 +605,7 @@ export default {
         url: "",
         is_implementor: 0,
         sort: 0,
+        module_screen_id: null
       };
       this.is_disabled = false;
       this.$nextTick(() => {
@@ -619,6 +627,7 @@ export default {
         url: "",
         is_implementor: 0,
         sort: 0,
+        module_screen_id: null
       };
       this.is_disabled = false;
       this.$nextTick(() => {
@@ -782,6 +791,21 @@ export default {
           });
         });
     },
+    async getModule() {
+          await adminApi
+              .get(`/module-screens`)
+              .then((res) => {
+                  let l = res.data.data;
+                  this.modules = l;
+              })
+              .catch((err) => {
+                  Swal.fire({
+                      icon: "error",
+                      title: `${this.$t("general.Error")}`,
+                      text: `${this.$t("general.Thereisanerrorinthesystem")}`,
+                  });
+              });
+      },
     /**
      *   show Modal (edit)
      */
@@ -791,6 +815,7 @@ export default {
       await this.getDocuments();
       await this.getButtons();
       await this.getSubMenus();
+      this.getModule();
       this.edit.name = module.name;
       this.edit.name_e = module.name_e;
       this.edit.title = module.title;
@@ -799,6 +824,7 @@ export default {
       this.edit.url = module.url;
       this.edit.sort = module.sort;
       this.screen_id = module.id;
+      this.edit.module_screen_id = module.module_screen_id;
       this.edit.is_implementor = module.is_implementor;
       await this.getScreenDocumentTypes();
       await this.getScreenButtons();
@@ -818,6 +844,7 @@ export default {
         sub_menu_id: null,
         url: "",
         is_implementor: 0,
+        module_screen_id: null,
         sort: 0,
       };
       this.serials = [];
@@ -871,7 +898,6 @@ export default {
       this.create.title = arabicValue(txt);
       this.edit.title = arabicValue(txt);
     },
-
     englishValue(txt) {
       this.create.name_e = englishValue(txt);
       this.edit.name_e = englishValue(txt);
@@ -1268,7 +1294,6 @@ export default {
                                   </template>
                                 </div>
                               </div>
-
                               <div class="col-md-6 direction">
                                 <div class="form-group">
                                   <label for="field-1" class="control-label">
@@ -1481,6 +1506,29 @@ export default {
                                   </template>
                                 </div>
                               </div>
+                              <div class="col-md-6">
+                                    <div class="form-group position-relative">
+                                        <label class="control-label">
+                                            {{ $t("module.module") }}
+                                            <span class="text-danger">*</span>
+                                        </label>
+
+                                        <multiselect
+                                            v-model="create.module_screen_id"
+                                            :options="modules.map((type) => type.id)"
+                                            :custom-label="(opt) => modules.find((x) => x.id == opt)?modules.find((x) => x.id == opt).name: null"
+                                        >
+                                        </multiselect>
+                                        <template v-if="errors.module_screen_id">
+                                            <ErrorMessage
+                                                v-for="(
+                                                      errorMessage, index
+                                                    ) in errors.module_screen_id"
+                                                :key="index"
+                                            >{{ errorMessage }}</ErrorMessage>
+                                        </template>
+                                    </div>
+                                </div>
                               <div class="col-md-6">
                                 <div class="form-group">
                                   <label class="mr-2 mb-2">
@@ -2399,6 +2447,29 @@ export default {
                                             </div>
                                           </div>
                                         </div>
+                                        <div class="col-md-6">
+                                              <div class="form-group position-relative">
+                                                  <label class="control-label">
+                                                      {{ $t("module.module") }}
+                                                      <span class="text-danger">*</span>
+                                                  </label>
+
+                                                  <multiselect
+                                                      v-model="edit.module_screen_id"
+                                                      :options="modules.map((type) => type.id)"
+                                                      :custom-label="(opt) => modules.find((x) => x.id == opt)?modules.find((x) => x.id == opt).name: null"
+                                                  >
+                                                  </multiselect>
+                                                  <template v-if="errors.module_screen_id">
+                                                      <ErrorMessage
+                                                          v-for="(
+                                                      errorMessage, index
+                                                    ) in errors.module_screen_id"
+                                                          :key="index"
+                                                      >{{ errorMessage }}</ErrorMessage>
+                                                  </template>
+                                              </div>
+                                          </div>
                                         <div class="col-md-6">
                                           <div class="form-group">
                                             <label class="mr-2 mb-2">
