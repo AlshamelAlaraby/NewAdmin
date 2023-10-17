@@ -131,7 +131,9 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
 
     public function  programModulesCompanyId($company_id)
     {
-        $models = $this->model->whereRelation('companies','company_id',$company_id)->get();
+        $models = $this->model->with(['companies' => function ($q) use ($company_id){
+            $q->where('company_id',$company_id);
+        }])->whereRelation('companies','company_id',$company_id)->get();
         return $models;
     }
 
