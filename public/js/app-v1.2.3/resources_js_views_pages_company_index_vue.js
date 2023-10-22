@@ -1487,11 +1487,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required
       },
       tax_id: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
         minValue: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minValue)(0)
       },
       vat_no: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
         minValue: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minValue)(0)
       },
       // url: { required, url, minLength: minLength(10), maxLength: maxLength(200) },
@@ -1502,12 +1500,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.maxLength)(200)
       },
       cr: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
         minValue: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minValue)(0)
       },
       address: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
-        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minLength)(10),
+        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minLength)(0),
         maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.maxLength)(200)
       },
       partner_id: {
@@ -1539,11 +1535,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required
       },
       tax_id: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
         minValue: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minValue)(0)
       },
       vat_no: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
         minValue: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minValue)(0)
       },
       // url: { required, url, minLength: minLength(10), maxLength: maxLength(200) },
@@ -1554,12 +1548,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.maxLength)(200)
       },
       cr: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
         minValue: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minValue)(0)
       },
       address: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.required,
-        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minLength)(10),
+        minLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.minLength)(0),
         maxLength: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_10__.maxLength)(200)
       },
       partner_id: {
@@ -7035,7 +7027,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.dropdown-menu-custom-company.dropdown .dropdown-menu {\r\n  padding: 5px 10px !important;\r\n  overflow-y: scroll;\r\n  height: 400px;\n}\n.modal-dialog .card {\r\n  margin: 0 !important;\n}\n.modal-body.paddingUnset {\r\n  padding: 0 !important;\n}\n.modal-dialog .card-body {\r\n  padding: 1.5rem 1.5rem 0 1.5rem !important;\n}\n.nav-bordered {\r\n  border: unset !important;\n}\n.nav {\r\n  background-color: #dff0fe;\n}\n.tab-content {\r\n  padding: 70px 60px 40px;\r\n  min-height: 300px;\r\n  background-color: #f5f5f5;\r\n  position: relative;\n}\n.nav-tabs .nav-link {\r\n  border: 1px solid #b7b7b7 !important;\r\n  background-color: #d7e5f2;\r\n  border-bottom: 0 !important;\r\n  margin-bottom: 1px;\n}\n.nav-tabs .nav-link.active,\r\n.nav-tabs .nav-item.show .nav-link {\r\n  color: #000;\r\n  background-color: hsl(0deg 0% 96%);\r\n  border-bottom: 0 !important;\n}\n.img-thumbnail {\r\n  max-height: 400px !important;\n}\n@media print {\n.do-not-print {\r\n    display: none;\n}\n.arrow-sort {\r\n    display: none;\n}\n.bg-soft-success {\r\n    background-color: unset;\r\n    color: #000000 !important;\r\n    border: unset;\n}\n.bg-soft-danger {\r\n    background-color: unset;\r\n    color: #000000 !important;\r\n    border: unset;\n}\n}\n.tooltip-inner {\r\n  max-width: 750px !important;\r\n  background-color: #eed900;\r\n  color: black;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.dropdown-menu-custom-company.dropdown .dropdown-menu {\n  padding: 5px 10px !important;\n  overflow-y: scroll;\n  height: 400px;\n}\n.modal-dialog .card {\n  margin: 0 !important;\n}\n.modal-body.paddingUnset {\n  padding: 0 !important;\n}\n.modal-dialog .card-body {\n  padding: 1.5rem 1.5rem 0 1.5rem !important;\n}\n.nav-bordered {\n  border: unset !important;\n}\n.nav {\n  background-color: #dff0fe;\n}\n.tab-content {\n  padding: 70px 60px 40px;\n  min-height: 300px;\n  background-color: #f5f5f5;\n  position: relative;\n}\n.nav-tabs .nav-link {\n  border: 1px solid #b7b7b7 !important;\n  background-color: #d7e5f2;\n  border-bottom: 0 !important;\n  margin-bottom: 1px;\n}\n.nav-tabs .nav-link.active,\n.nav-tabs .nav-item.show .nav-link {\n  color: #000;\n  background-color: hsl(0deg 0% 96%);\n  border-bottom: 0 !important;\n}\n.img-thumbnail {\n  max-height: 400px !important;\n}\n@media print {\n.do-not-print {\n    display: none;\n}\n.arrow-sort {\n    display: none;\n}\n.bg-soft-success {\n    background-color: unset;\n    color: #000000 !important;\n    border: unset;\n}\n.bg-soft-danger {\n    background-color: unset;\n    color: #000000 !important;\n    border: unset;\n}\n}\n.tooltip-inner {\n  max-width: 750px !important;\n  background-color: #eed900;\n  color: black;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

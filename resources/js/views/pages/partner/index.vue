@@ -44,7 +44,6 @@ export default {
       isLoader: false,
       Tooltip: "",
       mouseEnter: "",
-
       create: {
         name: "",
         name_e: "",
@@ -132,26 +131,6 @@ export default {
   },
   mounted() {
     this.getData();
-  },
-  updated() {
-    // $(function () {
-    //   $(".englishInput").keypress(function (event) {
-    //     var ew = event.which;
-    //     if (ew == 32) return true;
-    //     if (48 <= ew && ew <= 57) return true;
-    //     if (65 <= ew && ew <= 90) return true;
-    //     if (97 <= ew && ew <= 122) return true;
-    //     return false;
-    //   });
-    //   $(".arabicInput").keypress(function (event) {
-    //     var ew = event.which;
-    //     if (ew == 32) return true;
-    //     if (48 <= ew && ew <= 57) return false;
-    //     if (65 <= ew && ew <= 90) return false;
-    //     if (97 <= ew && ew <= 122) return false;
-    //     return true;
-    //   });
-    // });
   },
   methods: {
     /**
@@ -772,7 +751,7 @@ export default {
               id="create"
               :title="$t('partner.addpartner')"
               title-class="font-18"
-              size="lg"
+              dialog-class="modal-full-width"
               body-class="p-4"
               :hide-footer="true"
               @show="resetModal"
