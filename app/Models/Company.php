@@ -49,7 +49,8 @@ class Company extends Model implements \Spatie\MediaLibrary\HasMedia
     /*** return count relation  hasMany */
     public function hasChildren()
     {
-        $hasChildren = $this->projectProgramModules()->count() > 0 || $this->screens()->count() > 0 ;
+        $hasChildren = $this->projectProgramModules()->count() > 0 ||
+         $this->screens()->count() > 0 ;
         return $hasChildren;
     }
 
