@@ -576,6 +576,7 @@
         "unrealized_revenue": "Unrealized Revenue",
         "revenue": "Revenue",
         "unrealized_commission": "Unrealized Commission",
-        "commission": "Commission"
+        "commission": "Commission",
+        "contact_person": "Contact Person"
     }
 }

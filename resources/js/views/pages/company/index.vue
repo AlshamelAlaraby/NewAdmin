@@ -68,6 +68,7 @@ export default {
         phone_code: "",
         country_code: "",
         is_active: null,
+          contact_person: ''
       },
       edit: {
         name: "",
@@ -85,6 +86,7 @@ export default {
         country_code: "",
         is_active: null,
         old_media: [],
+          contact_person: ''
       },
       errors: {},
       isCheckAll: false,
@@ -157,6 +159,7 @@ export default {
       },
       partner_id: { required, integer },
       is_active: { required },
+      contact_person : {}
     },
     edit: {
         name: { required, minLength: minLength(3), maxLength: maxLength(100) },
@@ -184,6 +187,7 @@ export default {
         },
         partner_id: { required, integer },
         is_active: { required },
+        contact_person : {}
     },
   },
   watch: {
@@ -460,6 +464,7 @@ export default {
         phone_code: "",
         country_code: "",
         is_active: null,
+        contact_person: ''
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -490,6 +495,7 @@ export default {
         phone_code: "",
         country_code: "",
         is_active: "active",
+          contact_person: ''
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -516,6 +522,7 @@ export default {
         phone_code: "",
         country_code: "",
         is_active: "active",
+          contact_person: ''
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -673,6 +680,7 @@ export default {
       this.edit.vat_no = company.vat_no;
       this.edit.phone = company.phone;
       this.edit.phone_code = company.phone_code;
+      this.edit.contact_person = company.contact_person;
       this.edit.country_code = company.country_code;
       this.errors = {};
       this.images = company.media ?? [];
@@ -698,6 +706,7 @@ export default {
         cr: "",
         address: "",
         website: "",
+          contact_person: '',
         phone_code: "",
         country_code: "",
         is_active: "active",
@@ -719,6 +728,16 @@ export default {
       this.edit.country_code = e.countryCode;
       this.isVaildPhone = e.isValid;
     },
+      updateContactPerson(e) {
+          this.create.phone_code = e.countryCallingCode;
+          this.create.country_code = e.countryCode;
+          this.isVaildPhone = e.isValid;
+      },
+      updateContactPersonEdit(e) {
+          this.edit.phone_code = e.countryCallingCode;
+          this.edit.country_code = e.countryCode;
+          this.isVaildPhone = e.isValid;
+      },
     /**
      *  start  dynamicSortString
      */
@@ -1463,6 +1482,52 @@ export default {
                               </div>
                             </div>
                             <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="field-12" class="control-label">
+                                          {{ $t("general.address") }}
+                                      </label>
+                                      <input
+                                          type="text"
+                                          class="form-control"
+                                          v-model.number="$v.create.address.$model"
+                                          :class="{
+                                    'is-invalid':
+                                      $v.create.address.$error ||
+                                      errors.address,
+                                    'is-valid':
+                                      !$v.create.address.$invalid &&
+                                      !errors.address,
+                                  }"
+                                          id="field-12"
+                                      />
+                                      <div
+                                          v-if="!$v.create.address.minLength"
+                                          class="invalid-feedback"
+                                      >
+                                          {{ $t("general.Itmustbeatleast") }}
+                                          {{ $v.create.address.$params.minLength.min }}
+                                          {{ $t("general.letters") }}
+                                      </div>
+                                      <div
+                                          v-if="!$v.create.address.maxLength"
+                                          class="invalid-feedback"
+                                      >
+                                          {{ $t("general.Itmustbeatmost") }}
+                                          {{ $v.create.address.$params.maxLength.max }}
+                                          {{ $t("general.letters") }}
+                                      </div>
+                                      <template v-if="errors.address">
+                                          <ErrorMessage
+                                              v-for="(
+                                      errorMessage, index
+                                    ) in errors.address"
+                                              :key="index"
+                                          >{{ errorMessage }}</ErrorMessage
+                                          >
+                                      </template>
+                                  </div>
+                              </div>
+                            <div class="col-md-6">
                               <div class="form-group">
                                 <label class="control-label">
                                   {{ $t("general.mobile_no") }}
@@ -1488,52 +1553,30 @@ export default {
                               </div>
                             </div>
                             <div class="col-md-6">
-                              <div class="form-group">
-                                <label for="field-12" class="control-label">
-                                  {{ $t("general.address") }}
-                                  <span class="text-danger">*</span>
-                                </label>
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  v-model.number="$v.create.address.$model"
-                                  :class="{
-                                    'is-invalid':
-                                      $v.create.address.$error ||
-                                      errors.address,
-                                    'is-valid':
-                                      !$v.create.address.$invalid &&
-                                      !errors.address,
-                                  }"
-                                  id="field-12"
-                                />
-                                <div
-                                  v-if="!$v.create.address.minLength"
-                                  class="invalid-feedback"
-                                >
-                                  {{ $t("general.Itmustbeatleast") }}
-                                  {{ $v.create.address.$params.minLength.min }}
-                                  {{ $t("general.letters") }}
-                                </div>
-                                <div
-                                  v-if="!$v.create.address.maxLength"
-                                  class="invalid-feedback"
-                                >
-                                  {{ $t("general.Itmustbeatmost") }}
-                                  {{ $v.create.address.$params.maxLength.max }}
-                                  {{ $t("general.letters") }}
-                                </div>
-                                <template v-if="errors.address">
-                                  <ErrorMessage
-                                    v-for="(
+                                  <div class="form-group">
+                                      <label class="control-label">
+                                          {{ $t("general.contact_person") }}
+                                          <span class="text-danger">*</span>
+                                      </label>
+                                      <VuePhoneNumberInput
+                                          v-model="$v.create.contact_person.$model"
+                                          default-country-code="KW"
+                                          valid-color="#28a745"
+                                          error-color="#dc3545"
+                                          :preferred-countries="['FR', 'EG', 'DE']"
+                                          @update="updateContactPerson"
+                                      />
+                                      <template v-if="errors.contact_person">
+                                          <ErrorMessage
+                                              v-for="(
                                       errorMessage, index
-                                    ) in errors.address"
-                                    :key="index"
-                                    >{{ errorMessage }}</ErrorMessage
-                                  >
-                                </template>
+                                    ) in errors.contact_person"
+                                              :key="index"
+                                          >{{ errorMessage }}</ErrorMessage
+                                          >
+                                      </template>
+                                  </div>
                               </div>
-                            </div>
                             <div class="col-md-6">
                               <div class="form-group">
                                 <label for="field-11" class="control-label">
@@ -1597,7 +1640,6 @@ export default {
                               <div class="form-group">
                                 <label for="field-5" class="control-label">
                                   {{ $t("general.taxnumber") }}
-                                  <span class="text-danger">*</span>
                                 </label>
                                 <input
                                   min="0"
@@ -1628,7 +1670,6 @@ export default {
                               <div class="form-group">
                                 <label for="field-8" class="control-label">
                                   {{ $t("general.CommercialRecord") }}
-                                  <span class="text-danger">*</span>
                                 </label>
                                 <input
                                   type="text"
@@ -1705,7 +1746,6 @@ export default {
                                   {{
                                     $t("general.Valueaddedregistrationnumber")
                                   }}
-                                  <span class="text-danger">*</span>
                                 </label>
                                 <input
                                   type="number"
@@ -2471,6 +2511,63 @@ export default {
                                       </div>
                                     </div>
                                     <div class="col-md-6">
+                                          <div class="form-group">
+                                              <label
+                                                  for="field-12"
+                                                  class="control-label"
+                                              >
+                                                  {{ $t("general.address") }}
+                                              </label>
+                                              <input
+                                                  type="text"
+                                                  class="form-control"
+                                                  v-model.number="
+                                            $v.edit.address.$model
+                                          "
+                                                  :class="{
+                                            'is-invalid':
+                                              $v.edit.address.$error ||
+                                              errors.address,
+                                            'is-valid':
+                                              !$v.edit.address.$invalid &&
+                                              !errors.address,
+                                          }"
+                                                  id="edit-12"
+                                              />
+                                              <div
+                                                  v-if="!$v.edit.address.minLength"
+                                                  class="invalid-feedback"
+                                              >
+                                                  {{ $t("general.Itmustbeatleast") }}
+                                                  {{
+                                                      $v.edit.address.$params.minLength
+                                                          .min
+                                                  }}
+                                                  {{ $t("general.letters") }}
+                                              </div>
+                                              <div
+                                                  v-if="!$v.edit.address.maxLength"
+                                                  class="invalid-feedback"
+                                              >
+                                                  {{ $t("general.Itmustbeatmost") }}
+                                                  {{
+                                                      $v.edit.address.$params.maxLength
+                                                          .max
+                                                  }}
+                                                  {{ $t("general.letters") }}
+                                              </div>
+                                              <template v-if="errors.address">
+                                                  <ErrorMessage
+                                                      v-for="(
+                                              errorMessage, index
+                                            ) in errors.address"
+                                                      :key="index"
+                                                  >{{ errorMessage }}</ErrorMessage
+                                                  >
+                                              </template>
+                                          </div>
+                                      </div>
+                                    <div class="col-md-6">
                                       <div class="form-group">
                                         <label class="control-label">
                                           {{ $t("general.mobile_no") }}
@@ -2502,63 +2599,30 @@ export default {
                                       </div>
                                     </div>
                                     <div class="col-md-6">
-                                      <div class="form-group">
-                                        <label
-                                          for="field-12"
-                                          class="control-label"
-                                        >
-                                          {{ $t("general.address") }}
-                                          <span class="text-danger">*</span>
-                                        </label>
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          v-model.number="
-                                            $v.edit.address.$model
-                                          "
-                                          :class="{
-                                            'is-invalid':
-                                              $v.edit.address.$error ||
-                                              errors.address,
-                                            'is-valid':
-                                              !$v.edit.address.$invalid &&
-                                              !errors.address,
-                                          }"
-                                          id="edit-12"
-                                        />
-                                        <div
-                                          v-if="!$v.edit.address.minLength"
-                                          class="invalid-feedback"
-                                        >
-                                          {{ $t("general.Itmustbeatleast") }}
-                                          {{
-                                            $v.edit.address.$params.minLength
-                                              .min
-                                          }}
-                                          {{ $t("general.letters") }}
-                                        </div>
-                                        <div
-                                          v-if="!$v.edit.address.maxLength"
-                                          class="invalid-feedback"
-                                        >
-                                          {{ $t("general.Itmustbeatmost") }}
-                                          {{
-                                            $v.edit.address.$params.maxLength
-                                              .max
-                                          }}
-                                          {{ $t("general.letters") }}
-                                        </div>
-                                        <template v-if="errors.address">
-                                          <ErrorMessage
-                                            v-for="(
-                                              errorMessage, index
-                                            ) in errors.address"
-                                            :key="index"
-                                            >{{ errorMessage }}</ErrorMessage
-                                          >
-                                        </template>
+                                          <div class="form-group">
+                                              <label class="control-label">
+                                                  {{ $t("general.contact_person") }}
+                                                  <span class="text-danger">*</span>
+                                              </label>
+                                              <VuePhoneNumberInput
+                                                  v-model="$v.edit.contact_person.$model"
+                                                  default-country-code="KW"
+                                                  valid-color="#28a745"
+                                                  error-color="#dc3545"
+                                                  :preferred-countries="['FR', 'EG', 'DE']"
+                                                  @update="updateContactPersonEdit"
+                                              />
+                                              <template v-if="errors.contact_person">
+                                                  <ErrorMessage
+                                                      v-for="(
+                                      errorMessage, index
+                                    ) in errors.contact_person"
+                                                      :key="index"
+                                                  >{{ errorMessage }}</ErrorMessage
+                                                  >
+                                              </template>
+                                          </div>
                                       </div>
-                                    </div>
                                     <div class="col-md-6">
                                       <div class="form-group">
                                         <label
@@ -2642,7 +2706,6 @@ export default {
                                           class="control-label"
                                         >
                                           {{ $t("general.taxnumber") }}
-                                          <span class="text-danger">*</span>
                                         </label>
                                         <input
                                           type="number"
@@ -2676,7 +2739,6 @@ export default {
                                           class="control-label"
                                         >
                                           {{ $t("general.CommercialRecord") }}
-                                          <span class="text-danger">*</span>
                                         </label>
                                         <input
                                           type="text"
@@ -2763,7 +2825,6 @@ export default {
                                               "general.Valueaddedregistrationnumber"
                                             )
                                           }}
-                                          <span class="text-danger">*</span>
                                         </label>
                                         <input
                                           type="number"
