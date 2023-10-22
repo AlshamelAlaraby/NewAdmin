@@ -19,11 +19,12 @@ class CompanyRequest extends FormRequest
             'name'         => 'sometimes|string|max:255|unique:companies,name' . ($this->method() == 'PUT' ? ',' . $this->id : ''),
             'name_e'       => 'sometimes|string|max:255|unique:companies,name_e,' . ($this->method() == 'PUT' ?  $this->id : ''),
             "url"          => "sometimes|url|unique:companies,url" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
-            "address"      => "sometimes|string|max:200",
+            "address"      => "nullable|string|max:200",
             'phone'        => 'sometimes|string|max:20|unique:companies,phone,' . ($this->method() == 'PUT' ?   $this->id : ''),
             "cr"           => "nullable|string|unique:companies,cr" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
             "tax_id"       => "nullable|numeric|digits_between:1,10",
             "vat_no"       => "nullable|numeric|digits_between:1,10",
+
             "email"        => "sometimes|email|unique:companies,email" . ($this->method() == 'PUT' ? ',' . $this->id : ''),
             "is_active"    => "nullable|in:active,inactive",
             "partner_id"   => "nullable|exists:partners,id",
