@@ -20,7 +20,9 @@ return [
     "allowed user num is not valid" => "allowed user num is not valid",
     "can not delete this button because it has screens" => "can not delete this button because it has screens",
     "can not delete this data" => "can not delete this data",
-    "module has companies" => "module has companies"
+    "module has companies" => "module has companies",
+    'you_cannot_log_in_Please_contact_the_administration_first' => 'You cannot log in. Please contact the administration first',
+
 
 
 ];

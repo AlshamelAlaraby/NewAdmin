@@ -114,6 +114,10 @@ class PartnerController extends Controller
             }
         }
 
+        if ($user->is_active === 'inactive') {
+            return responseJson(422, __('message.you_cannot_log_in_Please_contact_the_administration_first'));
+        }
+
         return responseJson(200, 'Login Successfully', [
             "partner" => new PartnerResource($user),
             "token" => $user->createToken('sanctumPartner')->plainTextToken,
