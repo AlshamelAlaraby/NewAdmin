@@ -16,8 +16,7 @@ class UpdateScreensTable extends Migration
         Schema::table('screens', function (Blueprint $table) {
             $table->dropColumn(['name']);
             $table->renameColumn('url', 'middleware_url');
-            $table->boolean('is_add_on')->default(1)->change();
-            $table->boolean('is_implementor')->default(1)->change();
+
 
         });
     }
@@ -32,8 +31,7 @@ class UpdateScreensTable extends Migration
         Schema::table('screens', function (Blueprint $table) {
             $table->string("name", 100)->comment("Name Arabic");
             $table->renameColumn('middleware_url', 'url');
-            $table->boolean('is_add_on')->default(0)->change();
-            $table->boolean('is_implementor')->default(0)->change();
+
         });
     }
 }
