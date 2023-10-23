@@ -30,12 +30,12 @@ class ScreenRequest extends FormRequest
         //        dd($request->company_id);
 
         return [
-            'name' => 'required',
+            // 'name' => 'required',
             'name_e' => 'required',
             'title' => 'required',
             'title_e' => 'required',
-            'sort' => 'required',
-            'url' => 'nullable',
+            // 'sort' => 'required',
+            'middleware_url' => 'nullable',
             "is_add_on"       => "nullable||in:1,0",
             'is_implementor'  => 'nullable|in:1,0',
             'sub_menu_id'     => 'nullable|exists:sub_menus,id',
