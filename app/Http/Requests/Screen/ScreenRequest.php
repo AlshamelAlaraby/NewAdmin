@@ -34,7 +34,7 @@ class ScreenRequest extends FormRequest
             'name_e' => 'required',
             'title' => 'required',
             'title_e' => 'required',
-            // 'sort' => 'required',
+            'sort' => 'required',
             'middleware_url' => 'nullable',
             "is_add_on"       => "nullable||in:1,0",
             'is_implementor'  => 'nullable|in:1,0',

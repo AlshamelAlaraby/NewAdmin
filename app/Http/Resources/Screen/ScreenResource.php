@@ -26,7 +26,7 @@ class ScreenResource extends JsonResource
             'is_add_on'      => $this->is_add_on,
             'middleware_url'            => $this->middleware_url,
             'is_implementor' => $this->is_implementor,
-            // 'sort'           => $this->sort,
+            'sort'           => $this->sort,
             "sub_menu_id"    => $this->sub_menu_id,
             'company_id'     => $this->company_id,
             'parent_id'      => $this->parent_id,
