@@ -577,6 +577,7 @@
         "revenue": "Revenue",
         "unrealized_commission": "Unrealized Commission",
         "commission": "Commission",
-        "contact_person": "Contact Person"
+        "contact_person": "Contact Person",
+        "middleware": "Middleware"
     }
 }

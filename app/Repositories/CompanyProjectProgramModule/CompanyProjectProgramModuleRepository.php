@@ -18,7 +18,10 @@ class CompanyProjectProgramModuleRepository implements CompanyProjectProgramModu
 
     public function getCompanyModules($request)
     {
-        $models = $this->model->where(function ($q) use ($request) {
+        $models = $this->model->when($request->company_ids,function ($q) use($request){
+            $q->whereIn('company_id',$request->company_ids);
+        })
+        ->where(function ($q) use ($request) {
             $this->model->scopeFilter($q, $request);
         })->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
 

@@ -568,6 +568,7 @@
         "revenue": "الإيرادات",
         "unrealized_commission": "عمولة غير محققة",
         "commission": "عمولة",
-        "contact_person": "شخص الاتصال"
+        "contact_person": "شخص الاتصال",
+        "middleware": "الصلاحيه"
     }
 }

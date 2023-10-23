@@ -274,10 +274,6 @@ export default {
       } else {
       }
     },
-
-    /**
-     *  get Data company
-     */
     getData(page = 1) {
       this.isLoader = true;
       let filter = "";
@@ -341,9 +337,6 @@ export default {
           });
       }
     },
-    /**
-     *  delete company
-     */
     deletecompany(id, index) {
       if (Array.isArray(id)) {
         Swal.fire({
@@ -444,10 +437,6 @@ export default {
         });
       }
     },
-
-    /**
-     *  reset Modal (create)
-     */
     resetModalHidden() {
       this.create = {
         name: "",
@@ -475,9 +464,6 @@ export default {
       this.dropDownSenders = [];
       this.$bvModal.hide(`create`);
     },
-    /**
-     *  hidden Modal (create)
-     */
     async resetModal() {
       await this.getPartner();
       this.create = {
@@ -503,9 +489,6 @@ export default {
       this.errors = {};
       this.company_id = null;
     },
-    /**
-     *  create company
-     */
     resetForm() {
       this.create = {
         name: "",
@@ -586,9 +569,6 @@ export default {
           });
       }
     },
-    /**
-     *  edit company
-     */
     editSubmit(id, index) {
       if (!this.edit.name) {
         this.edit.name = this.edit.name_e;
@@ -641,9 +621,6 @@ export default {
           });
       }
     },
-    /**
-     *  get parent
-     */
     async getPartner() {
       await adminApi
         .get(`/partners`)
@@ -659,9 +636,6 @@ export default {
           });
         });
     },
-    /**
-     *   show Modal (edit)
-     */
     async resetModalEdit(id) {
       let company = this.companies.find((e) => id == e.id);
       await this.getPartner();
@@ -728,12 +702,12 @@ export default {
       this.edit.country_code = e.countryCode;
       this.isVaildPhone = e.isValid;
     },
-      updateContactPerson(e) {
+    updateContactPerson(e) {
           this.create.phone_code = e.countryCallingCode;
           this.create.country_code = e.countryCode;
           this.isVaildPhone = e.isValid;
       },
-      updateContactPersonEdit(e) {
+    updateContactPersonEdit(e) {
           this.edit.phone_code = e.countryCallingCode;
           this.edit.country_code = e.countryCode;
           this.isVaildPhone = e.isValid;

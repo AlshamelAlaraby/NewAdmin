@@ -16,7 +16,10 @@ class CompanyRepository implements CompanyInterface
 
     public function all($request)
     {
-        $models = $this->model->where(function ($q) use ($request) {
+        $models = $this->model->when($request->partner_id,function ($q) use($request){
+            $q->where('partner_id',$request->partner_id);
+        })
+        ->where(function ($q) use ($request) {
             $this->model->scopeFilter($q, $request);
         })->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
 

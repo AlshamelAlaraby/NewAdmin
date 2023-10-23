@@ -1646,9 +1646,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         });
       } else {}
     },
-    /**
-     *  get Data company
-     */
     getData: function getData() {
       var _this4 = this;
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
@@ -1697,9 +1694,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         });
       }
     },
-    /**
-     *  delete company
-     */
     deletecompany: function deletecompany(id, index) {
       var _this6 = this;
       if (Array.isArray(id)) {
@@ -1793,9 +1787,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         });
       }
     },
-    /**
-     *  reset Modal (create)
-     */
     resetModalHidden: function resetModalHidden() {
       var _this7 = this;
       this.create = {
@@ -1824,9 +1815,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.dropDownSenders = [];
       this.$bvModal.hide("create");
     },
-    /**
-     *  hidden Modal (create)
-     */
     resetModal: function resetModal() {
       var _this8 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
@@ -1867,9 +1855,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    /**
-     *  create company
-     */
     resetForm: function resetForm() {
       var _this9 = this;
       this.create = {
@@ -1944,9 +1929,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         });
       }
     },
-    /**
-     *  edit company
-     */
     editSubmit: function editSubmit(id, index) {
       var _this11 = this;
       if (!this.edit.name) {
@@ -1993,9 +1975,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         });
       }
     },
-    /**
-     *  get parent
-     */
     getPartner: function getPartner() {
       var _this12 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
@@ -2022,9 +2001,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2);
       }))();
     },
-    /**
-     *   show Modal (edit)
-     */
     resetModalEdit: function resetModalEdit(id) {
       var _this13 = this;
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
