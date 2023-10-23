@@ -5,7 +5,6 @@ namespace App\Http\Controllers\CompanyProjectProgramModule;
 use App\Http\Controllers\ResponseController;
 use App\Http\Requests\CompanyProjectProgramModule\CompanyProjectProgramModuleRequest;
 use App\Http\Resources\CompanyProjectProgramModule\CompanyProjectProgramModuleResource;
-use App\Models\DocumentCompanyModule;
 use App\Repositories\CompanyProjectProgramModule\CompanyProjectProgramModuleInterface;
 use Illuminate\Http\Request;
 
@@ -41,8 +40,9 @@ class CompanyProjectProgramModuleController extends ResponseController
 
     public function store(CompanyProjectProgramModuleRequest $request)
     {
+        $model = $this->repository->create($request->validated());
 
-        return responseJson(200, __('Done'), $this->repository->create($request->validated()));
+        return responseJson(200, __('Done'), new CompanyProjectProgramModuleResource($model));
     }
 
     public function update(CompanyProjectProgramModuleRequest $request, $id)
@@ -54,7 +54,7 @@ class CompanyProjectProgramModuleController extends ResponseController
         }
         $model = $this->repository->update($request->validated(), $id);
 
-        return responseJson(200, __('Done'));
+        return responseJson(200, __('Done'), new CompanyProjectProgramModuleResource($model));
     }
 
     public function delete($id)
@@ -65,9 +65,9 @@ class CompanyProjectProgramModuleController extends ResponseController
             return responseJson(404, __('message.data not found'));
         }
         if ($model->hasChildren()) {
-           foreach ($model->documentTypes as $document):
-               $document['pivot']->delete();
-           endforeach;
+            foreach ($model->documentTypes as $document):
+                $document['pivot']->delete();
+            endforeach;
         }
 //        if ($model->hasChildren()) {
 //            return responseJson(400, __('message.data has relation cant delete'));

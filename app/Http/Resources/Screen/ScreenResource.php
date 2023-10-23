@@ -19,12 +19,12 @@ class ScreenResource extends JsonResource
     {
         return [
             'id'             => $this->id,
-            'name'           => $this->name,
+            // 'name'           => $this->name,
             'name_e'         => $this->name_e,
             'title'          => $this->title,
             'title_e'        => $this->title_e,
             'is_add_on'      => $this->is_add_on,
-            'url'            => $this->url,
+            'middleware_url'            => $this->middleware_url,
             'is_implementor' => $this->is_implementor,
             'sort'           => $this->sort,
             "sub_menu_id"    => $this->sub_menu_id,
