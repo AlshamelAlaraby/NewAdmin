@@ -33,23 +33,33 @@ class CompanyProjectProgramModuleRepository implements CompanyProjectProgramModu
 
     public function create($request)
     {
-        DB::transaction(function () use ($request) {
+        // DB::transaction(function () use ($request) {
+        //     $model = $this->model->create($request);
+        //     if( isset($request['document_types']) ){
+        //         $model->documentTypes()->attach($request['document_types']);
+        //     }
+        // });
+
+
+        return DB::transaction(function () use ($request) {
             $model = $this->model->create($request);
             if( isset($request['document_types']) ){
                 $model->documentTypes()->attach($request['document_types']);
             }
+            return $model;
         });
 
     }
 
     public function update($request, $id)
     {
-        DB::transaction(function () use ($id, $request) {
+        return DB::transaction(function () use ($id, $request) {
             $model = $this->model->find($id);
             $model->update(collect($request)->except('document_types')->toArray());
             if (isset($request['document_types'])) {
                 $model->documentTypes()->sync($request['document_types']);
             }
+            return $model;
         });
     }
 

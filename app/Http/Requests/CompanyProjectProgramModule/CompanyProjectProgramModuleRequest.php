@@ -35,7 +35,7 @@ class CompanyProjectProgramModuleRequest extends FormRequest
             "allowed_employee" => "nullable|min:0|integer",
             "out_site" => "nullable|min:0|integer",
             "is_web" => "nullable|in:0,1",
-            // "status" => "nullable|in:0,1",
+            "status" => "in:0,1",
         ];
     }
 
