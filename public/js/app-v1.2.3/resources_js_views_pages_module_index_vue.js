@@ -10125,9 +10125,9 @@ var render = function render() {
       "custom-label": function customLabel(opt) {
         return _vm.$i18n.locale ? _vm.screens.find(function (x) {
           return x.id == opt;
-        }).name : _vm.screens.find(function (x) {
+        }).title : _vm.screens.find(function (x) {
           return x.id == opt;
-        }).name_e;
+        }).title_e;
       }
     },
     model: {
@@ -10511,9 +10511,9 @@ var render = function render() {
       "custom-label": function customLabel(opt) {
         return _vm.$i18n.locale ? _vm.allScreens.find(function (x) {
           return x.id == opt;
-        }).name : _vm.allScreens.find(function (x) {
+        }).title : _vm.allScreens.find(function (x) {
           return x.id == opt;
-        }).name_e;
+        }).title_e;
       }
     },
     model: {
@@ -13044,7 +13044,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.subMenuComp.custom-btn-dowonload {\r\n  margin-top: 13px;\n}\n.dropdown-menu-custom-company.dropdown .dropdown-menu {\r\n  padding: 5px 10px !important;\r\n  overflow-y: scroll;\r\n  height: 400px;\n}\n.modal-dialog .card {\r\n  margin: 0 !important;\n}\n.modal-body.paddingUnset {\r\n  padding: 0 !important;\n}\n.modal-dialog .card-body {\r\n  padding: 1.5rem 1.5rem 0 1.5rem !important;\n}\n.nav-bordered {\r\n  border: unset !important;\n}\n.nav {\r\n  background-color: #dff0fe;\n}\n.tab-content {\r\n  padding: 70px 60px 40px;\r\n  min-height: 300px;\r\n  background-color: #f5f5f5;\r\n  position: relative;\n}\n.nav-tabs .nav-link {\r\n  border: 1px solid #b7b7b7 !important;\r\n  background-color: #d7e5f2;\r\n  border-bottom: 0 !important;\r\n  margin-bottom: 1px;\n}\n.nav-tabs .nav-link.active,\r\n.nav-tabs .nav-item.show .nav-link {\r\n  color: #000;\r\n  background-color: hsl(0deg 0% 96%);\r\n  border-bottom: 0 !important;\n}\n.img-thumbnail {\r\n  max-height: 400px !important;\n}\n@media print {\n.do-not-print {\r\n    display: none;\n}\n.arrow-sort {\r\n    display: none;\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.subMenuComp.custom-btn-dowonload {\n  margin-top: 13px;\n}\n.dropdown-menu-custom-company.dropdown .dropdown-menu {\n  padding: 5px 10px !important;\n  overflow-y: scroll;\n  height: 400px;\n}\n.modal-dialog .card {\n  margin: 0 !important;\n}\n.modal-body.paddingUnset {\n  padding: 0 !important;\n}\n.modal-dialog .card-body {\n  padding: 1.5rem 1.5rem 0 1.5rem !important;\n}\n.nav-bordered {\n  border: unset !important;\n}\n.nav {\n  background-color: #dff0fe;\n}\n.tab-content {\n  padding: 70px 60px 40px;\n  min-height: 300px;\n  background-color: #f5f5f5;\n  position: relative;\n}\n.nav-tabs .nav-link {\n  border: 1px solid #b7b7b7 !important;\n  background-color: #d7e5f2;\n  border-bottom: 0 !important;\n  margin-bottom: 1px;\n}\n.nav-tabs .nav-link.active,\n.nav-tabs .nav-item.show .nav-link {\n  color: #000;\n  background-color: hsl(0deg 0% 96%);\n  border-bottom: 0 !important;\n}\n.img-thumbnail {\n  max-height: 400px !important;\n}\n@media print {\n.do-not-print {\n    display: none;\n}\n.arrow-sort {\n    display: none;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

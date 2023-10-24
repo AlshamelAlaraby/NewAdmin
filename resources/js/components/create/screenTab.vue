@@ -751,8 +751,8 @@ export default {
               :custom-label="
                 (opt) =>
                   $i18n.locale
-                    ? screens.find((x) => x.id == opt).name
-                    : screens.find((x) => x.id == opt).name_e
+                    ? screens.find((x) => x.id == opt).title
+                    : screens.find((x) => x.id == opt).title_e
               "
             >
             </multiselect>

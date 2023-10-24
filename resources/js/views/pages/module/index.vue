@@ -2265,10 +2265,10 @@ export default {
                             class="body-tr-custom"
                           >
                             <td>
-                              {{ `${data.name}` }}
+                              {{ `${data.title}` }}
                             </td>
                             <td>
-                              {{ `${data.name_e}` }}
+                              {{ `${data.title_e}` }}
                             </td>
                             <td>
                               <template v-if="data.company">

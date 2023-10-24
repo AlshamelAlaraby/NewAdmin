@@ -1098,8 +1098,8 @@ export default {
                   :custom-label="
                     (opt) =>
                       $i18n.locale
-                        ? allScreens.find((x) => x.id == opt).name
-                        : allScreens.find((x) => x.id == opt).name_e
+                        ? allScreens.find((x) => x.id == opt).title
+                        : allScreens.find((x) => x.id == opt).title_e
                   "
                 >
                 </multiselect>
