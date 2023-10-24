@@ -7,6 +7,7 @@ use App\Http\Requests\Screen\AddScreenToDocumentTypeRequest;
 use App\Http\Requests\Screen\CompanyScreensRequest;
 use App\Http\Requests\Screen\CreateSubMenuScreenRequest;
 use App\Http\Requests\Screen\ScreenRequest;
+use App\Http\Requests\CreateCompanyScreenMenuRequest;
 use App\Http\Resources\Screen\CompanyScreensResource;
 use App\Http\Resources\Screen\ScreenResource;
 use App\Models\Screen;
@@ -140,6 +141,13 @@ class ScreenController extends ResponseController
     public function createSubMenuScreen(CreateSubMenuScreenRequest $request)
     {
         $models = $this->repository->createSubMenuScreen($request);
+        return responseJson(200, 'success');
+    }
+
+
+    public function getCreateCompanyScreenMenu(CreateCompanyScreenMenuRequest $request)
+    {
+        $this->repository->createCompanyScreenMenu($request->validated());
         return responseJson(200, 'success');
     }
 }
