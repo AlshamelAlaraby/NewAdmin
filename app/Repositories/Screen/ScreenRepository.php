@@ -14,6 +14,7 @@ class ScreenRepository implements ScreenRepositoryInterface
 
     public function __construct(private Screen $model)
     {
+        $this->model = $model;
     }
 
     public function getAllScreens($request)
@@ -128,13 +129,15 @@ class ScreenRepository implements ScreenRepositoryInterface
         endforeach;
     }
 
+
     public function createCompanyScreen($request)
     {
         foreach ($request['screens'] as $screen) :
 
             $model_create = $this->model->where('id', $screen)->first();
+
             $collect =  collect($model_create)->except(['created_at', 'deleted_at', 'updated_at', 'id', 'sub_menu_id', 'company_id']);
-            $model_exist = $this->model->where('name', $model_create->name)
+            $model_exist = $this->model->where('name_e', $model_create->name_e)
                 ->where('sub_menu_id', $request['sub_menu_id'])
                 ->where('company_id', $request['company_id'])->first();
 

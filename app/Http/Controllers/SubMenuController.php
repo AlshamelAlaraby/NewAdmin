@@ -9,7 +9,6 @@ use App\Http\Resources\SubMenuResource;
 use App\Models\Screen;
 use App\Models\SubMenu;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Routing\Controller;
 
 class SubMenuController extends Controller
@@ -33,12 +32,12 @@ class SubMenuController extends Controller
     public function all(Request $request)
     {
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
-        if ($request->program_folder_menu_id == "0"){
-            $models->where("program_folder_menu_id",null);
+        if ($request->program_folder_menu_id == "0") {
+            $models->where("program_folder_menu_id", null);
 
         }
-        if($request->program_folder_menu_id){
-            $models->where("program_folder_menu_id",$request->program_folder_menu_id);
+        if ($request->program_folder_menu_id) {
+            $models->where("program_folder_menu_id", $request->program_folder_menu_id);
         }
         if ($request->per_page) {
             $models = ['data' => $models->paginate($request->per_page), 'paginate' => true];
@@ -87,7 +86,7 @@ class SubMenuController extends Controller
         if (!$model) {
             return responseJson(404, 'not found');
         }
-        if ($model->hasChildren()){
+        if ($model->hasChildren()) {
             foreach ($model->screens as $screen):
                 $screen->delete();
             endforeach;
@@ -107,9 +106,9 @@ class SubMenuController extends Controller
         foreach ($ids as $id) {
             $model = $this->model->find($id);
             if ($model->hasChildren()) {
-                    foreach ($model->screens as $screen):
-                        $screen->delete();
-                    endforeach;
+                foreach ($model->screens as $screen):
+                    $screen->delete();
+                endforeach;
             }
             $model->delete();
         }
@@ -119,25 +118,24 @@ class SubMenuController extends Controller
 
     public function createSubMenuAndMenu(CreateSubMenuAndMenuRequest $request)
     {
-        $model_create = $this->model->where('id',$request['sub_menu_id'])->first();
-        $collect =  collect($model_create)->except(['created_at','updated_at','id']);
+        $model_create = $this->model->where('id', $request['sub_menu_id'])->first();
+        $collect = collect($model_create)->except(['created_at', 'updated_at', 'id']);
 
-        $model_exists = $this->model->where('name',$model_create->name)->where('program_folder_menu_id',$request['menu_id'])->first();
-        if (!$model_exists){
+        $model_exists = $this->model->where('name', $model_create->name)->where('program_folder_menu_id', $request['menu_id'])->first();
+        if (!$model_exists) {
             $model = $this->model->create($collect->all());
-            $model->update(['program_folder_menu_id'=> $request['menu_id']]);
+            $model->update(['program_folder_menu_id' => $request['menu_id']]);
 
-            $model_screens = Screen::where('sub_menu_id',$request['sub_menu_id'])->where('company_id',null)->get();
-            foreach ($model_screens as $screen){
-                $collect =  collect($screen)->except(['created_at','deleted_at','updated_at','id','sub_menu_id']);
+            $model_screens = Screen::where('sub_menu_id', $request['sub_menu_id'])->where('company_id', null)->get();
+            foreach ($model_screens as $screen) {
+                $collect = collect($screen)->except(['created_at', 'deleted_at', 'updated_at', 'id', 'sub_menu_id']);
                 $collect_screen = Screen::create($collect->all());
-                $collect_screen->update(["sub_menu_id"     => $model->id]);
+                $collect_screen->update(["sub_menu_id" => $model->id]);
             }
-            return responseJson(200, 'success',  new SubMenuResource($model));
+            return responseJson(200, 'success', new SubMenuResource($model));
         }
 
-        return responseJson(200, 'success',  new SubMenuResource($model_exists));
-
+        return responseJson(200, 'success', new SubMenuResource($model_exists));
 
     }
 
@@ -145,12 +143,12 @@ class SubMenuController extends Controller
     {
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
 
-        if ($request->program_folder_menu_id == "0"){
-            $models->where("program_folder_menu_id",null);
+        if ($request->program_folder_menu_id == "0") {
+            $models->where("program_folder_menu_id", null);
         }
-        if($request->program_folder_menu_id){
+        if ($request->program_folder_menu_id) {
 
-            $models->where("program_folder_menu_id",$request->program_folder_menu_id);
+            $models->where("program_folder_menu_id", $request->program_folder_menu_id);
         }
         if ($request->per_page) {
             $models = ['data' => $models->paginate($request->per_page), 'paginate' => true];
@@ -160,6 +158,5 @@ class SubMenuController extends Controller
 
         return responseJson(200, 'success', SubMenuResource::collection($models['data']), $models['paginate'] ? getPaginates($models['data']) : null);
     }
-
 
 }
