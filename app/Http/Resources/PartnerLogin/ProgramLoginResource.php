@@ -22,6 +22,7 @@ class ProgramLoginResource extends JsonResource
             'parent_id' => $this->parent_id,
             'company_id' => $this->company_id,
             'is_web' => $this->is_web ?? null,
+            'status' => $this->status ?? null ,
             'sort' => $this->sort,
             'icon' => $this->icon,
             'is_menu_collapsed' => $this->is_menu_collapsed,

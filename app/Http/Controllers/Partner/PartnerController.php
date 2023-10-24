@@ -104,15 +104,15 @@ class PartnerController extends Controller
             return responseJson(422, 'Email Or Password is wrong!');
         }
 
-        $pieces = parse_url($request->url());
-        $url = $pieces['scheme'] . "://" . $pieces['host'];
+        // $pieces = parse_url($request->url());
+        // $url = $pieces['scheme'] . "://" . $pieces['host'];
 
         $user = Auth::guard('partner')->user();
-        if ($request->url != "0") {
-            if ($user->company->url != $url) {
-                return responseJson(422, 'Url Not Found');
-            }
-        }
+        // if ($request->url != "0") {
+        //     if ($user->company->url != $url) {
+        //         return responseJson(422, 'Url Not Found');
+        //     }
+        // }
 
         if ($user->is_active === 'inactive') {
             return responseJson(422, __('message.you_cannot_log_in_Please_contact_the_administration_first'));

@@ -13,7 +13,7 @@ class ProjectProgramModule extends Model
     protected $guarded = ['id'];
     protected $table = 'project_program_modules';
     protected $hidden = ['pivot'];
-    protected $appends = ["haveChildren", 'company_id', 'is_web'];
+    protected $appends = ["haveChildren", 'company_id', 'is_web', 'status'];
     protected $casts = [
         'is_active' => 'App\Enums\IsActive',
     ];
@@ -51,7 +51,7 @@ class ProjectProgramModule extends Model
     /*** return relation  with  Companies */
     public function companies()
     {
-        return $this->belongsToMany(Company::class, 'company_project_program_modules', 'project_program_module_id', 'company_id')->withPivot('is_web');
+        return $this->belongsToMany(Company::class, 'company_project_program_modules', 'project_program_module_id', 'company_id')->withPivot('is_web', 'status');
     }
 
     /*** return  relation  with   ScreenAttributes */
@@ -79,7 +79,6 @@ class ProjectProgramModule extends Model
         auth('partner')->id() ?? null;
         return $this->companies()->where('partner_id', auth('partner')->id())->first()->id ?? null;
     }
-
     public function getIsWebAttribute($key)
     {
 
@@ -90,12 +89,22 @@ class ProjectProgramModule extends Model
         return null;
     }
 
-    public function getCompany($id)
+    public function getStatusAttribute($key)
     {
-         $this->companies()->where('company_id', $this->id)->where('project_program_module_id', $this->id)->first()->pivot->is_web;
+
+        if ($this->company_id != null) {
+
+            return $this->companies()->where('company_id', $this->company_id)->where('project_program_module_id', $this->id)->first()->pivot->status;
+        }
+        return null;
     }
 
-    public function scopeTest($query,$request)
+    public function getCompany($id)
+    {
+        $this->companies()->where('company_id', $this->id)->where('project_program_module_id', $this->id)->first()->pivot->is_web;
+    }
+
+    public function scopeTest($query, $request)
     {
         $this->getCompany($request);
     }
