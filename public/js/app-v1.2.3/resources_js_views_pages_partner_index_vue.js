@@ -2553,7 +2553,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     AddSubmitProgram: function AddSubmitProgram() {
       var _this21 = this;
       var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-      if (type == 'edit') {
+      if (type != 'edit') {
         this.createProgram.company_id = this.company_id;
       }
       this.$v.createProgram.$touch();
@@ -2772,6 +2772,191 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
           }
         })["finally"](function () {
           _this25.isLoader = false;
+        });
+      }
+    },
+    deleteCompanyModule: function deleteCompanyModule(id, index) {
+      var _this26 = this;
+      if (Array.isArray(id)) {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+          title: "".concat(this.$t("general.Areyousure")),
+          text: "".concat(this.$t("general.Youwontbeabletoreverthis")),
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonText: "".concat(this.$t("general.Yesdeleteit")),
+          cancelButtonText: "".concat(this.$t("general.Nocancel")),
+          confirmButtonClass: "btn btn-success mt-2",
+          cancelButtonClass: "btn btn-danger ml-2 mt-2",
+          buttonsStyling: false
+        }).then(function (result) {
+          if (result.value) {
+            _this26.isLoader = true;
+            _api_adminAxios__WEBPACK_IMPORTED_MODULE_3__["default"].post("/company-project-program-modules/bulk-delete", {
+              ids: id
+            }).then(function (res) {
+              _this26.checkAll = [];
+              _this26.getData();
+              sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                icon: "success",
+                title: "".concat(_this26.$t("general.Deleted")),
+                text: "".concat(_this26.$t("general.Yourrowhasbeendeleted")),
+                showConfirmButton: false,
+                timer: 1500
+              });
+            })["catch"](function (err) {
+              if (err.response.status == 400) {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                  icon: "error",
+                  title: "".concat(_this26.$t("general.Error")),
+                  text: "".concat(_this26.$t("general.CantDeleteRelation"))
+                });
+                _this26.getDataProgram();
+              } else {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                  icon: "error",
+                  title: "".concat(_this26.$t("general.Error")),
+                  text: "".concat(_this26.$t("general.Thereisanerrorinthesystem"))
+                });
+              }
+            })["finally"](function () {
+              _this26.isLoader = false;
+            });
+          }
+        });
+      } else {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+          title: "".concat(this.$t("general.Areyousure")),
+          text: "".concat(this.$t("general.Youwontbeabletoreverthis")),
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonText: "".concat(this.$t("general.Yesdeleteit")),
+          cancelButtonText: "".concat(this.$t("general.Nocancel")),
+          confirmButtonClass: "btn btn-success mt-2",
+          cancelButtonClass: "btn btn-danger ml-2 mt-2",
+          buttonsStyling: false
+        }).then(function (result) {
+          if (result.value) {
+            _this26.isLoader = true;
+            _api_adminAxios__WEBPACK_IMPORTED_MODULE_3__["default"]["delete"]("/company-project-program-modules/".concat(id)).then(function (res) {
+              _this26.checkAll = [];
+              _this26.getDataProgram();
+              sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                icon: "success",
+                title: "".concat(_this26.$t("general.Deleted")),
+                text: "".concat(_this26.$t("general.Yourrowhasbeendeleted")),
+                showConfirmButton: false,
+                timer: 1500
+              });
+            })["catch"](function (err) {
+              if (err.response.status == 400) {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                  icon: "error",
+                  title: "".concat(_this26.$t("general.Error")),
+                  text: "".concat(_this26.$t("general.CantDeleteRelation"))
+                });
+              } else {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                  icon: "error",
+                  title: "".concat(_this26.$t("general.Error")),
+                  text: "".concat(_this26.$t("general.Thereisanerrorinthesystem"))
+                });
+              }
+            })["finally"](function () {
+              _this26.isLoader = false;
+            });
+          }
+        });
+      }
+    },
+    deletecompany: function deletecompany(id, index) {
+      var _this27 = this;
+      if (Array.isArray(id)) {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+          title: "".concat(this.$t("general.Areyousure")),
+          text: "".concat(this.$t("general.Youwontbeabletoreverthis")),
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonText: "".concat(this.$t("general.Yesdeleteit")),
+          cancelButtonText: "".concat(this.$t("general.Nocancel")),
+          confirmButtonClass: "btn btn-success mt-2",
+          cancelButtonClass: "btn btn-danger ml-2 mt-2",
+          buttonsStyling: false
+        }).then(function (result) {
+          if (result.value) {
+            _this27.isLoader = true;
+            _api_adminAxios__WEBPACK_IMPORTED_MODULE_3__["default"].post("/companies/bulk-delete", {
+              ids: id
+            }).then(function (res) {
+              _this27.checkAll = [];
+              _this27.getDataCompany();
+              sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                icon: "success",
+                title: "".concat(_this27.$t("general.Deleted")),
+                text: "".concat(_this27.$t("general.Yourrowhasbeendeleted")),
+                showConfirmButton: false,
+                timer: 1500
+              });
+            })["catch"](function (err) {
+              if (err.response.status == 400) {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                  icon: "error",
+                  title: "".concat(_this27.$t("general.Error")),
+                  text: "".concat(_this27.$t("general.CantDeleteRelation"))
+                });
+              } else {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                  icon: "error",
+                  title: "".concat(_this27.$t("general.Error")),
+                  text: "".concat(_this27.$t("general.Thereisanerrorinthesystem"))
+                });
+              }
+            })["finally"](function () {
+              _this27.isLoader = false;
+            });
+          }
+        });
+      } else {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+          title: "".concat(this.$t("general.Areyousure")),
+          text: "".concat(this.$t("general.Youwontbeabletoreverthis")),
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonText: "".concat(this.$t("general.Yesdeleteit")),
+          cancelButtonText: "".concat(this.$t("general.Nocancel")),
+          confirmButtonClass: "btn btn-success mt-2",
+          cancelButtonClass: "btn btn-danger ml-2 mt-2",
+          buttonsStyling: false
+        }).then(function (result) {
+          if (result.value) {
+            _this27.isLoader = true;
+            _api_adminAxios__WEBPACK_IMPORTED_MODULE_3__["default"]["delete"]("/companies/".concat(id)).then(function (res) {
+              _this27.checkAll = [];
+              _this27.getDataCompany();
+              sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                icon: "success",
+                title: "".concat(_this27.$t("general.Deleted")),
+                text: "".concat(_this27.$t("general.Yourrowhasbeendeleted")),
+                showConfirmButton: false,
+                timer: 1500
+              });
+            })["catch"](function (err) {
+              if (err.response.status == 400) {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                  icon: "error",
+                  title: "".concat(_this27.$t("general.Error")),
+                  text: "".concat(_this27.$t("general.CantDeleteRelation"))
+                });
+              } else {
+                sweetalert2__WEBPACK_IMPORTED_MODULE_5___default().fire({
+                  icon: "error",
+                  title: "".concat(_this27.$t("general.Error")),
+                  text: "".concat(_this27.$t("general.Thereisanerrorinthesystem"))
+                });
+              }
+            })["finally"](function () {
+              _this27.isLoader = false;
+            });
+          }
         });
       }
     }
