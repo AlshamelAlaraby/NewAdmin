@@ -139,7 +139,6 @@ class ScreenController extends ResponseController
 
     public function createSubMenuScreen(CreateSubMenuScreenRequest $request)
     {
-
         $models = $this->repository->createSubMenuScreen($request);
         return responseJson(200, 'success');
     }

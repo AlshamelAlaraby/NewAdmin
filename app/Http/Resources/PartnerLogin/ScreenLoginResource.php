@@ -16,9 +16,9 @@ class ScreenLoginResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'name_e' => $this->name_e,
-            'url'     => $this->url,
+            'title' => $this->title,
+            'title_e' => $this->title_e,
+            'url'     => $this->middleware_url,
             'sort'       => $this->sort,
             'sub_menu_id'      => $this->sub_menu_id,
             'company_id'       => $this->company_id,
