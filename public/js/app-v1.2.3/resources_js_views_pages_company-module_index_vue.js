@@ -1415,7 +1415,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         custom_date_start: new Date(),
         custom_date_end: null,
         document_types: [],
-        is_web: 1
+        is_web: 1,
+        status: 1
       },
       edit: {
         out_site: "",
@@ -1428,7 +1429,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         custom_date_start: null,
         custom_date_end: null,
         document_types: [],
-        is_web: 1
+        is_web: 1,
+        status: 1
       },
       setting: {
         company_id: true,
@@ -1478,7 +1480,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       },
       end_date: {},
       document_types: {},
-      is_web: {}
+      is_web: {},
+      status: {}
     },
     edit: {
       company_id: {
@@ -1504,7 +1507,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       },
       end_date: {},
       document_types: {},
-      is_web: {}
+      is_web: {},
+      status: {}
     }
   },
   watch: {
@@ -1743,7 +1747,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         custom_date_start: new Date(),
         custom_date_end: null,
         document_types: [],
-        is_web: 1
+        is_web: 1,
+        status: 1
       };
       this.$nextTick(function () {
         _this7.$v.$reset();
@@ -1784,7 +1789,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   custom_date_start: new Date(),
                   custom_date_end: null,
                   document_types: [],
-                  is_web: 1
+                  is_web: 1,
+                  status: 1
                 };
                 _this8.$nextTick(function () {
                   _this8.$v.$reset();
@@ -1829,7 +1835,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   custom_date_start: new Date(),
                   custom_date_end: null,
                   document_types: [],
-                  is_web: 1
+                  is_web: 1,
+                  status: 1
                 };
                 _this9.$nextTick(function () {
                   _this9.$v.$reset();
@@ -1950,6 +1957,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this12.edit.allowed_employee = companyModule.allowed_employee;
                 _this12.edit.custom_date_start = new Date(companyModule.start_date);
                 _this12.edit.is_web = companyModule.is_web;
+                _this12.edit.status = companyModule.status;
                 _this12.edit.custom_date_end = companyModule.end_date ? new Date(companyModule.end_date) : null;
                 _this12.edit.start_date = (0,_helper_startDate__WEBPACK_IMPORTED_MODULE_8__.formatDateTime)(companyModule.start_date);
                 _this12.edit.end_date = companyModule.end_date ? (0,_helper_startDate__WEBPACK_IMPORTED_MODULE_8__.formatDateTime)(companyModule.end_date) : null;
@@ -1958,7 +1966,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   return types.push(e.id);
                 });
                 _this12.edit.document_types = types !== null && types !== void 0 ? types : [];
-              case 20:
+              case 21:
               case "end":
                 return _context3.stop();
             }
@@ -1981,7 +1989,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         custom_date_start: null,
         custom_date_end: null,
         document_types: [],
-        is_web: 1
+        is_web: 1,
+        status: 1
       };
       this.errors = {};
       this.companies = [];
@@ -5859,6 +5868,44 @@ var render = function render() {
     return _c("ErrorMessage", {
       key: index
     }, [_vm._v(_vm._s(errorMessage) + "\n                      ")]);
+  }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    staticClass: "mr-2"
+  }, [_vm._v("\n                             " + _vm._s(_vm.$t("general.Status")) + "\n                              "), _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v("*")])]), _vm._v(" "), _c("b-form-group", [_c("b-form-radio", {
+    staticClass: "d-inline-block",
+    attrs: {
+      name: "some-radios-status",
+      value: "1"
+    },
+    model: {
+      value: _vm.$v.create.status.$model,
+      callback: function callback($$v) {
+        _vm.$set(_vm.$v.create.status, "$model", $$v);
+      },
+      expression: "$v.create.status.$model"
+    }
+  }, [_vm._v(_vm._s(_vm.$t("general.Active")) + "\n                              ")]), _vm._v(" "), _c("b-form-radio", {
+    staticClass: "d-inline-block m-1",
+    attrs: {
+      name: "some-radios-status",
+      value: "0"
+    },
+    model: {
+      value: _vm.$v.create.status.$model,
+      callback: function callback($$v) {
+        _vm.$set(_vm.$v.create.status, "$model", $$v);
+      },
+      expression: "$v.create.status.$model"
+    }
+  }, [_vm._v(_vm._s(_vm.$t("general.Inactive")) + "\n                              ")])], 1), _vm._v(" "), _vm.errors.status ? _vm._l(_vm.errors.status, function (errorMessage, index) {
+    return _c("ErrorMessage", {
+      key: index
+    }, [_vm._v(_vm._s(errorMessage) + "\n                              ")]);
   }) : _vm._e()], 2)])])])]), _vm._v(" "), _c("div", {
     staticClass: "table-responsive mb-3 custom-table-theme position-relative"
   }, [_vm.isLoader ? _c("loader", {
@@ -6535,6 +6582,44 @@ var render = function render() {
         expression: "$v.edit.is_web.$model"
       }
     }, [_vm._v(_vm._s(_vm.$t("general.Inactive")) + "\n                                        ")])], 1), _vm._v(" "), _vm.errors.is_web ? _vm._l(_vm.errors.is_web, function (errorMessage, index) {
+      return _c("ErrorMessage", {
+        key: index
+      }, [_vm._v(_vm._s(errorMessage) + "\n                                        ")]);
+    }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
+      staticClass: "col-md-12"
+    }, [_c("div", {
+      staticClass: "form-group"
+    }, [_c("label", {
+      staticClass: "mr-2"
+    }, [_vm._v("\n                                        " + _vm._s(_vm.$t("general.Status")) + "\n                                        "), _c("span", {
+      staticClass: "text-danger"
+    }, [_vm._v("*")])]), _vm._v(" "), _c("b-form-group", [_c("b-form-radio", {
+      staticClass: "d-inline-block",
+      attrs: {
+        name: "some-radios-status-edit",
+        value: "1"
+      },
+      model: {
+        value: _vm.$v.edit.status.$model,
+        callback: function callback($$v) {
+          _vm.$set(_vm.$v.edit.status, "$model", $$v);
+        },
+        expression: "$v.edit.status.$model"
+      }
+    }, [_vm._v(_vm._s(_vm.$t("general.Active")) + "\n                                        ")]), _vm._v(" "), _c("b-form-radio", {
+      staticClass: "d-inline-block m-1",
+      attrs: {
+        name: "some-radios-status-edit",
+        value: "0"
+      },
+      model: {
+        value: _vm.$v.edit.status.$model,
+        callback: function callback($$v) {
+          _vm.$set(_vm.$v.edit.status, "$model", $$v);
+        },
+        expression: "$v.edit.status.$model"
+      }
+    }, [_vm._v(_vm._s(_vm.$t("general.Inactive")) + "\n                                        ")])], 1), _vm._v(" "), _vm.errors.status ? _vm._l(_vm.errors.status, function (errorMessage, index) {
       return _c("ErrorMessage", {
         key: index
       }, [_vm._v(_vm._s(errorMessage) + "\n                                        ")]);

@@ -60,7 +60,8 @@ export default {
         custom_date_start: new Date(),
         custom_date_end: null,
         document_types: [],
-         is_web: 1
+         is_web: 1,
+          status: 1
       },
       edit: {
         out_site: "",
@@ -74,7 +75,8 @@ export default {
         custom_date_start: null,
         custom_date_end: null,
         document_types: [],
-          is_web: 1
+          is_web: 1,
+          status: 1
       },
       setting: {
         company_id: true,
@@ -113,7 +115,8 @@ export default {
       start_date: { required },
       end_date: {},
       document_types: {},
-      is_web: {}
+      is_web: {},
+        status: {}
     },
     edit: {
       company_id: { required, integer },
@@ -124,7 +127,8 @@ export default {
       start_date: { required },
       end_date: {},
       document_types: {},
-        is_web: {}
+        is_web: {},
+        status: {}
     },
   },
   watch: {
@@ -390,7 +394,8 @@ export default {
         custom_date_start: new Date(),
         custom_date_end: null,
         document_types: [],
-          is_web: 1
+          is_web: 1,
+          status: 1
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -420,7 +425,8 @@ export default {
         custom_date_start: new Date(),
         custom_date_end: null,
         document_types: [],
-          is_web: 1
+          is_web: 1,
+          status: 1
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -448,7 +454,8 @@ export default {
         custom_date_start: new Date(),
         custom_date_end: null,
         document_types: [],
-          is_web: 1
+          is_web: 1,
+          status: 1
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -558,6 +565,7 @@ export default {
       this.edit.allowed_employee = companyModule.allowed_employee;
       this.edit.custom_date_start = new Date(companyModule.start_date);
       this.edit.is_web = companyModule.is_web;
+      this.edit.status = companyModule.status;
         this.edit.custom_date_end = companyModule.end_date
         ? new Date(companyModule.end_date)
         : null;
@@ -586,7 +594,8 @@ export default {
         custom_date_start: null,
         custom_date_end: null,
         document_types: [],
-          is_web: 1
+          is_web: 1,
+          status: 1
       };
       this.errors = {};
       this.companies = [];
@@ -1244,6 +1253,27 @@ export default {
                       </template>
                     </div>
                   </div>
+                  <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="mr-2">
+                               {{ $t('general.Status') }}
+                                <span class="text-danger">*</span>
+                            </label>
+                            <b-form-group>
+                                <b-form-radio class="d-inline-block" v-model="$v.create.status.$model"
+                                              name="some-radios-status" value="1">{{ $t("general.Active") }}
+                                </b-form-radio>
+                                <b-form-radio class="d-inline-block m-1" v-model="$v.create.status.$model"
+                                              name="some-radios-status" value="0">{{ $t("general.Inactive") }}
+                                </b-form-radio>
+                            </b-form-group>
+                            <template v-if="errors.status">
+                                <ErrorMessage v-for="(errorMessage, index) in errors.status" :key="index">{{
+                                        errorMessage }}
+                                </ErrorMessage>
+                            </template>
+                        </div>
+                    </div>
                 </div>
               </form>
             </b-modal>
@@ -1851,6 +1881,27 @@ export default {
                                       </b-form-group>
                                       <template v-if="errors.is_web">
                                           <ErrorMessage v-for="(errorMessage, index) in errors.is_web" :key="index">{{
+                                                  errorMessage }}
+                                          </ErrorMessage>
+                                      </template>
+                                  </div>
+                              </div>
+                            <div class="col-md-12">
+                                  <div class="form-group">
+                                      <label class="mr-2">
+                                          {{ $t('general.Status') }}
+                                          <span class="text-danger">*</span>
+                                      </label>
+                                      <b-form-group>
+                                          <b-form-radio class="d-inline-block" v-model="$v.edit.status.$model"
+                                                        name="some-radios-status-edit" value="1">{{ $t("general.Active") }}
+                                          </b-form-radio>
+                                          <b-form-radio class="d-inline-block m-1" v-model="$v.edit.status.$model"
+                                                        name="some-radios-status-edit" value="0">{{ $t("general.Inactive") }}
+                                          </b-form-radio>
+                                      </b-form-group>
+                                      <template v-if="errors.status">
+                                          <ErrorMessage v-for="(errorMessage, index) in errors.status" :key="index">{{
                                                   errorMessage }}
                                           </ErrorMessage>
                                       </template>
