@@ -2211,7 +2211,7 @@ export default {
                     </div>
                     <!-- end .table-responsive-->
                   </b-tab>
-                  <b-tab :disabled="!sub_menu_id" :title="$t('general.screen')">
+                  <b-tab :disabled="!menu_id" :title="$t('general.screen')">
                     <div class="row">
                       <div class="col-2">
                         <b-button
@@ -3087,10 +3087,7 @@ export default {
                               </div>
                               <!-- end .table-responsive-->
                             </b-tab>
-                            <b-tab
-                              :disabled="!menu_id"
-                              :title="$t('general.subMenu')"
-                            >
+                            <b-tab :disabled="!menu_id" :title="$t('general.subMenu')">
                               <div class="row">
                                 <div class="col-2">
                                   <b-button
@@ -3226,10 +3223,7 @@ export default {
                               </div>
                               <!-- end .table-responsive-->
                             </b-tab>
-                            <b-tab
-                              :disabled="!sub_menu_id"
-                              :title="$t('general.screen')"
-                            >
+                            <b-tab :disabled="!menu_id" :title="$t('general.screen')">
                               <div class="row">
                                 <div class="col-2">
                                   <b-button
