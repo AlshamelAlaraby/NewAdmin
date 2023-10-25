@@ -21,6 +21,7 @@ class FolderMenuLoginResource extends JsonResource
             'name_e' => $this->name_e,
             'sort' => $this->sort,
             'is_menu_collapsed' => $this->is_menu_collapsed,
+            
         ];
     }
 }
