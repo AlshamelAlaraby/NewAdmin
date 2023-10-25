@@ -2956,7 +2956,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       screens: [],
       companies: [],
       create: {
-        company_id: "",
         screen_id: null
       },
       edit: {
@@ -2989,9 +2988,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   validations: {
     create: {
       screen_id: {
-        required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required
-      },
-      company_id: {
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_9__.required
       }
     },
@@ -3057,7 +3053,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].get("/screens/all-company-screen?".concat("sub_menu_id=".concat(_this3.sub_menu_id), "&company_id=0")).then(function (res) {
+                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].get("/screens/all-company-screen?".concat(_this3.sub_menu_id ? 'sub_menu_id=' + _this3.sub_menu_id : '', "&company_id=0")).then(function (res) {
                   _this3.screens = res.data.data;
                 })["catch"](function (err) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
@@ -3326,7 +3322,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     resetModalHidden: function resetModalHidden() {
       var _this10 = this;
       this.create = {
-        company_id: "",
         screen_id: null
       };
       this.$nextTick(function () {
@@ -3352,7 +3347,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _this11.getCompanies();
               case 4:
                 _this11.create = {
-                  company_id: "",
                   screen_id: null
                 };
                 _this11.is_disabled = false;
@@ -3374,7 +3368,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     resetForm: function resetForm() {
       var _this12 = this;
       this.create = {
-        company_id: "",
         screen_id: null
       };
       this.is_disabled = false;
@@ -3400,7 +3393,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }
         if (this.sub_menu_id) {
           _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].post("/screens/create-company-screens", {
-            company_id: this.create.company_id,
             screens: this.create.screen_id,
             sub_menu_id: this.sub_menu_id
           }).then(function (res) {
@@ -3429,8 +3421,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           });
         } else {
           _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].post("/screens/create-company-screens-menu", {
-            company_id: this.create.company_id,
-            screens: [this.create.screen_id],
+            screens: this.create.screen_id,
             menu_id: this.menu_id
           }).then(function (res) {
             _this13.is_disabled = true;
@@ -10171,40 +10162,6 @@ var render = function render() {
   }), _vm._v(" "), !_vm.$v.create.screen_id.required ? _c("div", {
     staticClass: "invalid-feedback"
   }, [_vm._v("\n            " + _vm._s(_vm.$t("general.fieldIsRequired")) + "\n          ")]) : _vm._e(), _vm._v(" "), _vm.errors.screen_id ? _vm._l(_vm.errors.screen_id, function (errorMessage, index) {
-    return _c("ErrorMessage", {
-      key: index
-    }, [_vm._v(_vm._s(errorMessage))]);
-  }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
-    staticClass: "form-group position-relative"
-  }, [_c("label", {
-    staticClass: "control-label"
-  }, [_vm._v("\n            " + _vm._s(_vm.$t("general.Company")) + "\n            "), _c("span", {
-    staticClass: "text-danger"
-  }, [_vm._v("*")])]), _vm._v(" "), _c("multiselect", {
-    attrs: {
-      options: _vm.companies.map(function (type) {
-        return type.id;
-      }),
-      "custom-label": function customLabel(opt) {
-        return _vm.$i18n.locale ? _vm.companies.find(function (x) {
-          return x.id == opt;
-        }).name : _vm.companies.find(function (x) {
-          return x.id == opt;
-        }).name_e;
-      }
-    },
-    model: {
-      value: _vm.create.company_id,
-      callback: function callback($$v) {
-        _vm.$set(_vm.create, "company_id", $$v);
-      },
-      expression: "create.company_id"
-    }
-  }), _vm._v(" "), !_vm.$v.create.company_id.required ? _c("div", {
-    staticClass: "invalid-feedback"
-  }, [_vm._v("\n            " + _vm._s(_vm.$t("general.fieldIsRequired")) + "\n          ")]) : _vm._e(), _vm._v(" "), _vm.errors.company_id ? _vm._l(_vm.errors.company_id, function (errorMessage, index) {
     return _c("ErrorMessage", {
       key: index
     }, [_vm._v(_vm._s(errorMessage))]);

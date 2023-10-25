@@ -63,7 +63,6 @@ export default {
       screens: [],
       companies: [],
       create: {
-        company_id: "",
         screen_id: null,
       },
       edit: {
@@ -96,7 +95,6 @@ export default {
   validations: {
     create: {
       screen_id: { required },
-      company_id: { required },
     },
     edit: {
       name: { required, minLength: minLength(3), maxLength: maxLength(100) },
@@ -144,7 +142,7 @@ export default {
   methods: {
     async getDefScreens(id) {
       await adminApi
-        .get(`/screens/all-company-screen?${`sub_menu_id=${this.sub_menu_id}`}&company_id=0`)
+        .get(`/screens/all-company-screen?${this.sub_menu_id?'sub_menu_id='+this.sub_menu_id:''}&company_id=0`)
         .then((res) => {
           this.screens = res.data.data;
         })
@@ -425,7 +423,6 @@ export default {
      */
     resetModalHidden() {
       this.create = {
-        company_id: "",
         screen_id: null,
       };
       this.$nextTick(() => {
@@ -441,7 +438,6 @@ export default {
       await this.getDefScreens();
       await this.getCompanies();
       this.create = {
-        company_id: "",
         screen_id: null,
       };
       this.is_disabled = false;
@@ -455,7 +451,6 @@ export default {
      */
     resetForm() {
       this.create = {
-        company_id: "",
         screen_id: null,
       };
       this.is_disabled = false;
@@ -484,7 +479,7 @@ export default {
         }
         if(this.sub_menu_id){
             adminApi
-                .post(`/screens/create-company-screens`, { company_id:this.create.company_id,screens:this.create.screen_id, sub_menu_id: this.sub_menu_id })
+                .post(`/screens/create-company-screens`, { screens:this.create.screen_id, sub_menu_id: this.sub_menu_id })
                 .then((res) => {
                     this.is_disabled = true;
                     this.$emit("created");
@@ -513,7 +508,7 @@ export default {
                 });
         }else{
             adminApi
-                .post(`/screens/create-company-screens-menu`, { company_id:this.create.company_id,screens:[this.create.screen_id], menu_id: this.menu_id })
+                .post(`/screens/create-company-screens-menu`, { screens:this.create.screen_id, menu_id: this.menu_id })
                 .then((res) => {
                     this.is_disabled = true;
                     this.$emit("created");
@@ -794,37 +789,6 @@ export default {
             <template v-if="errors.screen_id">
               <ErrorMessage
                 v-for="(errorMessage, index) in errors.screen_id"
-                :key="index"
-                >{{ errorMessage }}</ErrorMessage
-              >
-            </template>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="form-group position-relative">
-            <label class="control-label">
-              {{ $t("general.Company") }}
-              <span class="text-danger">*</span>
-            </label>
-
-            <multiselect
-              v-model="create.company_id"
-              :options="companies.map((type) => type.id)"
-              :custom-label="
-                (opt) =>
-                  $i18n.locale
-                    ? companies.find((x) => x.id == opt).name
-                    : companies.find((x) => x.id == opt).name_e
-              "
-            >
-            </multiselect>
-
-            <div v-if="!$v.create.company_id.required" class="invalid-feedback">
-              {{ $t("general.fieldIsRequired") }}
-            </div>
-            <template v-if="errors.company_id">
-              <ErrorMessage
-                v-for="(errorMessage, index) in errors.company_id"
                 :key="index"
                 >{{ errorMessage }}</ErrorMessage
               >

@@ -27,7 +27,6 @@ class CreateCompanyScreenMenuRequest extends FormRequest
             'screens' => 'array',
             'screens.*' => 'required|exists:screens,id',
             'menu_id' => 'nullable|exists:folder_menus,id',
-            'company_id'  => 'required|exists:companies,id',
         ];
     }
 }
