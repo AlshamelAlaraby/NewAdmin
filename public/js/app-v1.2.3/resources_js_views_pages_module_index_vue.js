@@ -3057,7 +3057,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].get("/screens/all-company-screen?sub_menu_id=".concat(_this3.sub_menu_id, "&company_id=0")).then(function (res) {
+                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_0__["default"].get("/screens/all-company-screen?".concat("sub_menu_id=".concat(_this3.sub_menu_id), "&company_id=0")).then(function (res) {
                   _this3.screens = res.data.data;
                 })["catch"](function (err) {
                   sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
