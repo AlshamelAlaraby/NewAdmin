@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use App\Traits\LogTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\LogTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
 
@@ -14,7 +14,7 @@ class FolderMenu extends Model
     use SoftDeletes, LogTrait;
 
     protected $guarded = ["id"];
-    protected $table   = "folder_menus";
+    protected $table = "folder_menus";
 
     /*** return relation with Programs */
     public function programs()
@@ -25,13 +25,18 @@ class FolderMenu extends Model
     /*** return relation with SubMenus */
     public function subMenus()
     {
-        return $this->hasMany(SubMenu::class,'program_folder_menu_id','id');
+        return $this->hasMany(SubMenu::class, 'program_folder_menu_id', 'id');
+    }
+
+    public function screens()
+    {
+        return $this->hasMany(Screen::class, 'menu_id', 'id');
     }
 
     /*** return relation with SubMenus */
     public function hasChildren()
     {
-        return $this->programs()->count() ;
+        return $this->programs()->count();
     }
     public function getActivitylogOptions(): LogOptions
     {
