@@ -5815,6 +5815,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   });
                 });
               case 3:
+                _this10.getScreens();
+              case 4:
               case "end":
                 return _context3.stop();
             }

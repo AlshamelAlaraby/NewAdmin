@@ -685,6 +685,8 @@ export default {
             text: `${this.$t("general.Thereisanerrorinthesystem")}`,
           });
         });
+
+        this.getScreens();
     },
     async getAllSubMenus(id) {
       await adminApi
@@ -3249,16 +3251,6 @@ export default {
                                           }}</span>
                                         </div>
                                       </th>
-                                      <th>
-                                        <div
-                                          class="d-flex justify-content-center"
-                                        >
-                                          <span>{{
-                                            $t("general.Company")
-                                          }}</span>
-                                        </div>
-                                      </th>
-
                                       <th>{{ $t("general.Action") }}</th>
                                     </tr>
                                   </thead>
@@ -3274,18 +3266,6 @@ export default {
                                       <td>
                                         {{ `${data.name_e}` }}
                                       </td>
-                                      <td>
-                                        <template v-if="data.company">
-                                          {{
-                                            `${
-                                              $i18n.locale == "ar"
-                                                ? data.company.name
-                                                : data.company.name_e
-                                            }`
-                                          }}
-                                        </template>
-                                      </td>
-
                                       <td>
                                         <div class="btn-group">
                                           <button
