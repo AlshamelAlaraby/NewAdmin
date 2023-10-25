@@ -23,6 +23,10 @@ class ScreenRepository implements ScreenRepositoryInterface
             $models->where('sub_menu_id', $request->sub_menu_id);
         }
 
+        if ($request->menu_id) {
+            $models->where('menu_id', $request->menu_id);
+        }
+
         if ($request->company_id) {
             $models->whereHas('menu_tree', function ($q) use ($request) {
                 $q->where('company_id', $request->company_id);
