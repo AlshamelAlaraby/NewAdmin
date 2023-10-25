@@ -20,8 +20,8 @@ class programFoldersLoginResource extends JsonResource
             'menu_folder_id' => $this->menu_folder_id,
             'company_id' => $this->company_id,
             'menu_folder' => new FolderMenuLoginResource($this->folder),
+            'screens' => ScreenLoginResource::collection($this->screens),
             "subMenus" => SubMenuLoginResource::collection($this->subMenus),
-            'screens' => ScreenLoginResource::collection($this->screens)
 
         ];
     }

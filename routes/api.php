@@ -67,12 +67,16 @@ Route::group(['prefix' => 'companies'], function () {
 
 Route::post('/companyModules/{id}', [CompanyController::class, "companyModules"]);
 
+
 Route::group(['prefix' => 'project-program-modules'], function () {
+
     Route::controller(\App\Http\Controllers\ProjectProgramModule\ProjectProgramModuleController::class)->group(function () {
+
+        Route::get('/', 'all')->name('project-program-modules.index');
+        
         Route::get('all-company-program/{name_company}', 'getCompanyProjectProgramModules');
         Route::get('find-company-program/{company_id}', 'findProgramModulesCompanyId');
         Route::get('all-program-modules', 'allProgramModuleId');
-        Route::get('/', 'all')->name('project-program-modules.index');
         Route::get('/root-nodes', 'getRootNodes')->name('project-program-modules.root-nodes');
         Route::get('/child-nodes/{parentId}', 'getChildNodes')->name('project-program-modules.child-nodes');
         Route::get('logs/{id}', 'logs')->name('project-program-modules.logs');

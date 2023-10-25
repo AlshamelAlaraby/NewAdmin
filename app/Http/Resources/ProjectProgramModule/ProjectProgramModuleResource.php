@@ -2,7 +2,10 @@
 
 namespace App\Http\Resources\ProjectProgramModule;
 
+use App\Models\FolderMenu;
+use App\Models\ProgramFolder;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\PartnerLogin\programFoldersLoginResource;
 
 class ProjectProgramModuleResource extends JsonResource
 {
@@ -29,6 +32,13 @@ class ProjectProgramModuleResource extends JsonResource
             "parent" => $this->parent,
             "programFolders" => $this->programFolders,
 
+            "programFolders" => programFoldersLoginResource::collection($this->programFolders),
+
+            // 'folders' => FolderMenu::whereIn('id', $this->programFolders->pluck('menu_folder_id'))->get(),
+
+
         ];
     }
+
+
 }
