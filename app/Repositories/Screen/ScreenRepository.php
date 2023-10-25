@@ -156,6 +156,15 @@ class ScreenRepository implements ScreenRepositoryInterface
         if ($request->sub_menu_id) {
             $models->where('sub_menu_id', $request->sub_menu_id);
         }
+        if ($request->menu_id) {
+            $models->where('menu_id', $request->menu_id);
+        }
+
+
+        if ($request->menuScreen) {
+            $models->whereNull('sub_menu_id')->whereNull('type_screen');
+        }
+
         if ($request->company_id == 0) {
             $models->where('company_id', null);
         }
