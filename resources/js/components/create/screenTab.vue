@@ -436,7 +436,6 @@ export default {
      */
     async resetModal() {
       await this.getDefScreens();
-      await this.getCompanies();
       this.create = {
         screen_id: null,
       };

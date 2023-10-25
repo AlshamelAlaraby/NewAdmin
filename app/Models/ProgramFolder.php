@@ -10,7 +10,7 @@ use Spatie\Activitylog\LogOptions;
 class ProgramFolder extends Model
 {
     use HasFactory, LogTrait;
-
+    
     protected $guarded = ["id"];
     protected $table = "program_folder_menus";
     protected $appends = ['company_id'];

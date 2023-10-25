@@ -716,7 +716,7 @@ export default {
     },
     async getScreens(id) {
       await adminApi
-        .get(`/screens?sub_menu_id=${this.sub_menu_id}`)
+        .get(`/screens?${this.sub_menu_id?'sub_menu_id='+this.sub_menu_id:''}${this.menu_id?'&menu_id='+this.menu_id:''}`)
         .then((res) => {
           this.screens = res.data.data;
         })
@@ -2249,12 +2249,6 @@ export default {
                                 <span>{{ $t("general.Name_en") }}</span>
                               </div>
                             </th>
-                            <th>
-                              <div class="d-flex justify-content-center">
-                                <span>{{ $t("general.Company") }}</span>
-                              </div>
-                            </th>
-
                             <th>{{ $t("general.Action") }}</th>
                           </tr>
                         </thead>
@@ -2270,18 +2264,6 @@ export default {
                             <td>
                               {{ `${data.title_e}` }}
                             </td>
-                            <td>
-                              <template v-if="data.company">
-                                {{
-                                  `${
-                                    $i18n.locale == "ar"
-                                      ? data.company.name
-                                      : data.company.name_e
-                                  }`
-                                }}
-                              </template>
-                            </td>
-
                             <td>
                               <div class="btn-group">
                                 <button

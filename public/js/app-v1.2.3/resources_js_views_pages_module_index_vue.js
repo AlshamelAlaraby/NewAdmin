@@ -3343,9 +3343,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context3.next = 2;
                 return _this11.getDefScreens();
               case 2:
-                _context3.next = 4;
-                return _this11.getCompanies();
-              case 4:
                 _this11.create = {
                   screen_id: null
                 };
@@ -3354,7 +3351,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this11.$v.$reset();
                 });
                 _this11.errors = {};
-              case 8:
+              case 6:
               case "end":
                 return _context3.stop();
             }
