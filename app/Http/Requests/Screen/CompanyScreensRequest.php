@@ -24,7 +24,6 @@ class CompanyScreensRequest extends FormRequest
     public function rules()
     {
         return [
-            'company_id'  => 'required|exists:companies,id',
             'sub_menu_id'  => 'required|exists:sub_menus,id',
             'screens'  => 'array',
             'screens.*'  => 'required|exists:screens,id',

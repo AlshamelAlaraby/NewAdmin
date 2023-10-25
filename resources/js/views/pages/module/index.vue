@@ -2251,6 +2251,11 @@ export default {
                                 <span>{{ $t("general.Name_en") }}</span>
                               </div>
                             </th>
+                            <th>
+                                  <div class="d-flex justify-content-center">
+                                      <span>{{ $t("general.subMenu") }}</span>
+                                  </div>
+                            </th>
                             <th>{{ $t("general.Action") }}</th>
                           </tr>
                         </thead>
@@ -2266,6 +2271,9 @@ export default {
                             <td>
                               {{ `${data.title_e}` }}
                             </td>
+                            <td>
+                                  {{ data.sub_menu ? $i18n.locale == 'ar' ? `${data.sub_menu.name}` :`${data.sub_menu.name_e}` : '' }}
+                              </td>
                             <td>
                               <div class="btn-group">
                                 <button
@@ -3251,6 +3259,11 @@ export default {
                                           }}</span>
                                         </div>
                                       </th>
+                                      <th>
+                                            <div class="d-flex justify-content-center">
+                                                <span>{{ $t("general.subMenu") }}</span>
+                                            </div>
+                                        </th>
                                       <th>{{ $t("general.Action") }}</th>
                                     </tr>
                                   </thead>
@@ -3266,6 +3279,9 @@ export default {
                                       <td>
                                         {{ `${data.title_e}` }}
                                       </td>
+                                      <td>
+                                            {{ data.sub_menu ? $i18n.locale == 'ar' ? `${data.sub_menu.name}` :`${data.sub_menu.name_e}` : '' }}
+                                        </td>
                                       <td>
                                         <div class="btn-group">
                                           <button

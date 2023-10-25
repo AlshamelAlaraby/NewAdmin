@@ -140,10 +140,10 @@ class ScreenRepository implements ScreenRepositoryInterface
             $collect = collect($model_create)->except(['created_at', 'deleted_at', 'updated_at', 'id', 'sub_menu_id', 'company_id']);
             $model_exist = $this->model->where('name_e', $model_create->name_e)
                 ->where('sub_menu_id', $request['sub_menu_id'])
-                ->where('company_id', $request['company_id'])->first();
+                ->first();
 
             if (!$model_exist) {
-                $model = $this->model->create(array_merge($collect->all(), ['sub_menu_id' => $request['sub_menu_id'], "company_id" => $request['company_id']]));
+                $model = $this->model->create(array_merge($collect->all(), ['sub_menu_id' => $request['sub_menu_id']]));
             }
 
         endforeach;
