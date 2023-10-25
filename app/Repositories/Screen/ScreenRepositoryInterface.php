@@ -32,4 +32,7 @@ interface ScreenRepositoryInterface
     public function createCompanyScreen($request);
 
     public function getAllCompanyScreen($request);
+
+    public function createCompanyScreenMenu($request);
+
 }

@@ -132,6 +132,10 @@ Route::group(['prefix' => 'screens'], function () {
         Route::post('bulk-delete', 'bulkDelete');
         Route::post('create-company-screens', 'getCreateCompanyScreen');
         Route::post('create-sub-menu-screens', 'createSubMenuScreen');
+
+
+        Route::post('create-company-screens-menu', 'getCreateCompanyScreenMenu');
+
     });
 });
 
