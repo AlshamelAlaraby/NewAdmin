@@ -20,7 +20,9 @@ class FolderMenuLoginResource extends JsonResource
             'name_e' => $this->name_e,
             'sort' => $this->sort,
             'is_menu_collapsed' => $this->is_menu_collapsed,
-            'screens' => count(ScreenLoginResource::collection($this->screens)->where('company_id', $this->company_id)->values()) > 0 ? ScreenLoginResource::collection($this->screens)->where('company_id', $this->company_id)->values() : ScreenLoginResource::collection($this->screens)->where('menu_id', $this->id)->where('company_id', null)->values(),
+
+            // 'screens' => $this->screens,
+
         ];
     }
 }

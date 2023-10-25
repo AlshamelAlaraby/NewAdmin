@@ -26,7 +26,7 @@ class Screen extends Model
     }
     public function menu()
     {
-        return $this->belongsTo(ProgramFolder::class);
+        return $this->belongsTo(ProgramFolder::class ,'menu_id');
     }
     public function ModuleScreen()
     {

@@ -10,7 +10,7 @@ use Spatie\Activitylog\LogOptions;
 class ProgramFolder extends Model
 {
     use HasFactory, LogTrait;
-    
+
     protected $guarded = ["id"];
     protected $table = "program_folder_menus";
     protected $appends = ['company_id'];
@@ -43,6 +43,11 @@ class ProgramFolder extends Model
     public function hasChildren()
     {
         return $this->subMenus()->count() > 0  ;
+    }
+
+    public function screens()
+    {
+        return $this->hasMany(Screen::class, 'menu_id', 'id');
     }
 
     public function getActivitylogOptions(): LogOptions

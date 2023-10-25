@@ -28,10 +28,7 @@ class FolderMenu extends Model
         return $this->hasMany(SubMenu::class, 'program_folder_menu_id', 'id');
     }
 
-    public function screens()
-    {
-        return $this->hasMany(Screen::class, 'menu_id', 'id');
-    }
+  
 
     /*** return relation with SubMenus */
     public function hasChildren()
