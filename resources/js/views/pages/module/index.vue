@@ -718,7 +718,7 @@ export default {
     },
     async getScreens(id) {
       await adminApi
-        .get(`/screens?${this.sub_menu_id?'sub_menu_id='+this.sub_menu_id:''}${this.menu_id?'&menu_id='+this.menu_id:''}`)
+        .get(`/screens?${this.menu_id?'menu_id='+this.menu_id:''}${this.sub_menu_id?'&sub_menu_id='+this.sub_menu_id:''}`)
         .then((res) => {
           this.screens = res.data.data;
         })
@@ -3261,10 +3261,10 @@ export default {
                                       class="body-tr-custom"
                                     >
                                       <td>
-                                        {{ `${data.name}` }}
+                                        {{ `${data.title}` }}
                                       </td>
                                       <td>
-                                        {{ `${data.name_e}` }}
+                                        {{ `${data.title_e}` }}
                                       </td>
                                       <td>
                                         <div class="btn-group">

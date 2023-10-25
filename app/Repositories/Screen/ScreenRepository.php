@@ -20,11 +20,11 @@ class ScreenRepository implements ScreenRepositoryInterface
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
 
         if ($request->sub_menu_id) {
-            $models->where('sub_menu_id', $request->sub_menu_id);
+            $models->orWhere('sub_menu_id', $request->sub_menu_id);
         }
 
         if ($request->menu_id) {
-            $models->where('menu_id', $request->menu_id);
+            $models->orWhere('menu_id', $request->menu_id);
         }
 
         if ($request->company_id) {
@@ -153,11 +153,11 @@ class ScreenRepository implements ScreenRepositoryInterface
     {
         $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
 
-        if ($request->sub_menu_id) {
-            $models->where('sub_menu_id', $request->sub_menu_id);
-        }
+//        if ($request->sub_menu_id) {
+//            $models->orWhere('sub_menu_id', $request->sub_menu_id);
+//        }
         if ($request->menu_id) {
-            $models->where('menu_id', $request->menu_id);
+            $models->orWhere('menu_id', $request->menu_id);
         }
 
 

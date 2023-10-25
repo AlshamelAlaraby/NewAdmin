@@ -142,7 +142,7 @@ export default {
   methods: {
     async getDefScreens(id) {
       await adminApi
-        .get(`/screens/all-company-screen?${this.sub_menu_id?'sub_menu_id='+this.sub_menu_id:''}&company_id=0`)
+        .get(`/screens/all-company-screen?${this.sub_menu_id?'sub_menu_id='+this.sub_menu_id:''}&company_id=0&menuScreen=1`)
         .then((res) => {
           this.screens = res.data.data;
         })
