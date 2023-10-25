@@ -20,7 +20,7 @@ import { arabicValue, englishValue } from "../../helper/langTransform";
  * Advanced Table component
  */
 export default {
-  props: ["sub_menu_id"],
+  props: ["sub_menu_id","menu_id"],
   components: {
     Switches,
     ErrorMessage,
@@ -482,34 +482,65 @@ export default {
         if (this.create.parent_id == null) {
           this.create.parent_id = 0;
         }
-        adminApi
-          .post(`/screens/create-company-screens`, { company_id:this.create.company_id,screens:this.create.screen_id, sub_menu_id: this.sub_menu_id })
-          .then((res) => {
-            this.is_disabled = true;
-            this.$emit("created");
-            setTimeout(() => {
-              Swal.fire({
-                icon: "success",
-                text: `${this.$t("general.Addedsuccessfully")}`,
-                showConfirmButton: false,
-                timer: 1500,
-              });
-            }, 500);
-          })
-          .catch((err) => {
-            if (err.response.data) {
-              this.errors = err.response.data.errors;
-            } else {
-              Swal.fire({
-                icon: "error",
-                title: `${this.$t("general.Error")}`,
-                text: `${this.$t("general.Thereisanerrorinthesystem")}`,
-              });
-            }
-          })
-          .finally(() => {
-            this.isLoader = false;
-          });
+        if(this.sub_menu_id){
+            adminApi
+                .post(`/screens/create-company-screens`, { company_id:this.create.company_id,screens:this.create.screen_id, sub_menu_id: this.sub_menu_id })
+                .then((res) => {
+                    this.is_disabled = true;
+                    this.$emit("created");
+                    setTimeout(() => {
+                        Swal.fire({
+                            icon: "success",
+                            text: `${this.$t("general.Addedsuccessfully")}`,
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    }, 500);
+                })
+                .catch((err) => {
+                    if (err.response.data) {
+                        this.errors = err.response.data.errors;
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: `${this.$t("general.Error")}`,
+                            text: `${this.$t("general.Thereisanerrorinthesystem")}`,
+                        });
+                    }
+                })
+                .finally(() => {
+                    this.isLoader = false;
+                });
+        }else{
+            adminApi
+                .post(`/screens/create-company-screens-menu`, { company_id:this.create.company_id,screens:[this.create.screen_id], menu_id: this.menu_id })
+                .then((res) => {
+                    this.is_disabled = true;
+                    this.$emit("created");
+                    setTimeout(() => {
+                        Swal.fire({
+                            icon: "success",
+                            text: `${this.$t("general.Addedsuccessfully")}`,
+                            showConfirmButton: false,
+                            timer: 1500,
+                        });
+                    }, 500);
+                })
+                .catch((err) => {
+                    if (err.response.data) {
+                        this.errors = err.response.data.errors;
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: `${this.$t("general.Error")}`,
+                            text: `${this.$t("general.Thereisanerrorinthesystem")}`,
+                        });
+                    }
+                })
+                .finally(() => {
+                    this.isLoader = false;
+                });
+        }
       }
     },
     /**

@@ -1427,7 +1427,7 @@ export default {
     <menuComp @created="getMenus" :current_id="current_id" />
     <subMenuComp @created="getAllSubMenus" :menu_id="menu_id" />
     <!-- <ScreenComp @created="getScreens" :sub_menu_id="sub_menu_id" /> -->
-    <ScreenTab @created="getScreens" :sub_menu_id="sub_menu_id" />
+    <ScreenTab @created="getScreens" :menu_id="menu_id" :sub_menu_id="sub_menu_id" />
     <div class="row">
       <div class="col-12">
         <div class="card">
