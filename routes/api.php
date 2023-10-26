@@ -72,8 +72,10 @@ Route::group(['prefix' => 'project-program-modules'], function () {
 
     Route::controller(\App\Http\Controllers\ProjectProgramModule\ProjectProgramModuleController::class)->group(function () {
 
+        Route::get('/get-drop-down', 'DropDown');
+
         Route::get('/', 'all')->name('project-program-modules.index');
-        
+
         Route::get('all-company-program/{name_company}', 'getCompanyProjectProgramModules');
         Route::get('find-company-program/{company_id}', 'findProgramModulesCompanyId');
         Route::get('all-program-modules', 'allProgramModuleId');

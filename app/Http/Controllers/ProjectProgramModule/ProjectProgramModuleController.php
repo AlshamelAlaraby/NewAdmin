@@ -12,6 +12,7 @@ use App\Http\Requests\ProjectProgramModule\AllProjectProgramModuleRequest;
 use App\Http\Requests\ProjectProgramModule\ProjectProgramModuleRequest;
 use App\Http\Requests\ProjectProgramModule\AddCompanyToModuleRequest;
 use App\Http\Resources\PartnerLogin\CompanyLoginResource;
+use App\Http\Resources\ProjectProgramModuleDropDownResource;
 use App\Models\Company;
 
 class ProjectProgramModuleController extends Controller
@@ -139,6 +140,13 @@ class ProjectProgramModuleController extends Controller
         $models = $this->modelInterface->allProgramModuleId($request);
         return responseJson(200, 'success', ProjectProgramModuleResource::collection($models['data']), $models['paginate'] ? getPaginates($models['data']) : null);
 
+    }
+
+    public function DropDown(Request $request)
+    {
+
+        $models = $this->modelInterface->DropDown($request);
+        return responseJson(200, 'success', ProjectProgramModuleDropDownResource::collection($models['data']), $models['paginate'] ? getPaginates($models['data']) : null);
     }
 
 }

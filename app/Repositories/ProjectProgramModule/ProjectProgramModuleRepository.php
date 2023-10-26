@@ -142,4 +142,21 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
         return $models;
     }
 
+    public function DropDown($request)
+    {
+        $modules = $this->model->whereHas('modules')->get()->pluck('id')->toArray();
+
+        $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
+
+        if ($request->is_module) {
+            $models->where('is_module', 1);
+        }
+
+        if ($request->per_page) {
+            return ['data' => $models->paginate($request->per_page), 'paginate' => true];
+        } else {
+            return ['data' => $models->get(), 'paginate' => false];
+        }
+    }
+
 }
