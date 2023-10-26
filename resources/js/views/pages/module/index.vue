@@ -1390,12 +1390,12 @@ export default {
       getSecondLevelChildNodes(rootNode, parentNode) {
           if (!parentNode.collapsed) {
               adminApi
-                  .get(`/tree-properties/child-nodes/${parentNode.id}`)
+                  .get(`/program-folder/menu-folder/${parentNode.id}`)
                   .then((res) => {
                       this.rootNodes = this.getRootNodesAfterCollapse(
                           rootNode,
                           parentNode,
-                          res.data
+                          res.data.data
                       );
                   })
                   .catch((err) => {
@@ -1412,8 +1412,9 @@ export default {
       getThirdLevelChildNodes(rootNode, parentNode, secondParentNode) {
           if (!secondParentNode.collapsed) {
               adminApi
-                  .get(`/tree-properties/child-nodes/${secondParentNode.id}`)
+                  .get(`/program-folder/${secondParentNode.id}`)
                   .then((res) => {
+                      console.log(res.data.data)
                       this.rootNodes = this.getRootNodesAfter2ndCollapse(
                           rootNode,
                           parentNode,
@@ -1908,26 +1909,21 @@ export default {
                                           {{ $i18n.locale == "ar" ? childNode.name : childNode.name_e }}
                                         </span>
                                       </span>
-                                                                  <ul
-                                                                      v-if="childNode.children && childNode.children.length"
-                                                                      class="nested"
-                                                                  >
-                                                                      <li v-for="child in childNode.children" :key="child.id">
+                                          <ul
+                                              v-if="childNode.children && childNode.children.length"
+                                              class="nested list-unstyled"
+                                          >
+                                          <li v-for="child in childNode.children" :key="child.id" style="margin: 0 25px;">
                                           <span>
                                             <i
                                                 @click="getThirdLevelChildNodes(node, childNode, child)"
-                                                v-if="child.haveChildren"
                                                 :class="
                                                 child.collapsed
-                                                  ? 'fa fa-caret-down'
-                                                  : $i18n.locale == 'ar'
-                                                  ? 'fa fa-caret-left'
-                                                  : 'fa fa-caret-right'
+                                                  ? 'fas fa-minus' : 'fas fa-plus'
                                               "
                                             >
                                             </i>
                                             <span
-                                                @click="setCreateParentId(child)"
                                                 :class="{
                                                 'without-children': !child.haveChildren,
                                                 active: child.id == create.parent_id,
