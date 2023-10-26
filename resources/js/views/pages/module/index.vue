@@ -1500,7 +1500,8 @@ export default {
                                   rootNodes[parentIndex].children[index].children = [];
                                   rootNodes[parentIndex].children[index].collapsed = false;
                               } else {
-                                  rootNodes[parentIndex].children[index].children = children;
+                                  rootNodes[parentIndex].children[index].children = children.menu_folders;
+                                  rootNodes[parentIndex].children[index].program_folder_menus = children.program_folder_menus;
                                   rootNodes[parentIndex].children[index].collapsed = true;
                               }
                               return;
@@ -1932,8 +1933,8 @@ export default {
                                               {{ $i18n.locale == "ar" ? child.name : child.name_e }}
                                             </span>
                                           </span>
-                                                                          <ul v-if="child.children && child.children.length" class="nested">
-                                                                              <li v-for="_child in child.children" :key="_child.id">
+                                              <ul v-if="child.children && child.children.length" class="nested">
+                                                  <li v-for="_child in child.children" :key="_child.id">
                                               <span>
                                                 <i
                                                     @click="
