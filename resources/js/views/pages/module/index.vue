@@ -1255,21 +1255,6 @@ export default {
           });
       }
     },
-    async getRootNodes() {
-      await adminApi
-        .get(`/project-program-modules/root-nodes`)
-        .then((res) => {
-          console.log(this.rootNodes);
-          this.rootNodes = res.data;
-        })
-        .catch((err) => {
-          Swal.fire({
-            icon: "error",
-            title: `${this.$t("general.Error")}`,
-            text: `${this.$t("general.Thereisanerrorinthesystem")}`,
-          });
-        });
-    },
 
     /**
      *   show Modal (edit)
@@ -1309,9 +1294,6 @@ export default {
       this.menu_id = null;
       this.sub_menu_id = null;
     },
-    /**
-     *  hidden Modal (edit)
-     */
     resetModalHiddenEdit(id) {
       this.modules_ids = [];
       this.moduleName = "";
@@ -1336,48 +1318,6 @@ export default {
       this.subMenus = [];
       this.screens = [];
     },
-    getUpdatedRootNodes(parentNode, children) {
-      let rootNodes = [...this.rootNodes];
-      rootNodes.forEach((node, index) => {
-        if (node.id == parentNode.id) {
-          if (parentNode.collapsed) {
-            rootNodes[index].children = [];
-            rootNodes[index].collapsed = false;
-          } else {
-            rootNodes[index].children = children;
-            rootNodes[index].collapsed = true;
-          }
-          return;
-        }
-      });
-      return rootNodes;
-    },
-    getRootNodesAfterCollapse(parentNode, secondParentNode, children) {
-      let rootNodes = [...this.rootNodes];
-      rootNodes.forEach((_parentNode, parentIndex) => {
-        if (_parentNode.id == parentNode.id) {
-          if (_parentNode.children && _parentNode.children.length) {
-            _parentNode.children.forEach((child, index) => {
-              if (child.id == secondParentNode.id) {
-                if (secondParentNode.collapsed) {
-                  rootNodes[parentIndex].children[index].children = [];
-                  rootNodes[parentIndex].children[index].collapsed = false;
-                } else {
-                  rootNodes[parentIndex].children[index].children = children;
-                  rootNodes[parentIndex].children[index].collapsed = true;
-                }
-                return;
-              }
-            });
-            return;
-          }
-        }
-      });
-      return rootNodes;
-    },
-    /**
-     *  start  dynamicSortString
-     */
     sortString(value) {
       return dynamicSortString(value);
     },
@@ -1389,10 +1329,6 @@ export default {
         this.checkAll.splice(index, 1);
       }
     },
-
-    /**
-     *   Export Excel
-     */
     ExportExcel(type, fn, dl) {
       this.enabled3 = false;
       setTimeout(() => {
@@ -1409,16 +1345,257 @@ export default {
         this.enabled3 = true;
       }, 100);
     },
-
     arabicValue(txt) {
       this.create.name = arabicValue(txt);
       this.edit.name = arabicValue(txt);
     },
-
     englishValue(txt) {
       this.create.name_e = englishValue(txt);
       this.edit.name_e = englishValue(txt);
     },
+
+      async getRootNodes() {
+          await adminApi
+              .get(`/project-program-modules/root-nodes`)
+              .then((res) => {
+                  console.log(this.rootNodes);
+                  this.rootNodes = res.data;
+              })
+              .catch((err) => {
+                  Swal.fire({
+                      icon: "error",
+                      title: `${this.$t("general.Error")}`,
+                      text: `${this.$t("general.Thereisanerrorinthesystem")}`,
+                  });
+              });
+      },
+      getFirstLevelChildNodes(node) {
+          if (!node.collapsed) {
+              adminApi
+                  .get(`/project-program-modules/child-nodes/${node.id}`)
+                  .then((res) => {
+                      this.rootNodes = this.getUpdatedRootNodes(node, res.data);
+                  })
+                  .catch((err) => {
+                      Swal.fire({
+                          icon: "error",
+                          title: `${this.$t("general.Error")}`,
+                          text: `${this.$t("general.Thereisanerrorinthesystem")}`,
+                      });
+                  });
+          } else {
+              this.rootNodes = this.getUpdatedRootNodes(node);
+          }
+      },
+      getSecondLevelChildNodes(rootNode, parentNode) {
+          if (!parentNode.collapsed) {
+              adminApi
+                  .get(`/tree-properties/child-nodes/${parentNode.id}`)
+                  .then((res) => {
+                      this.rootNodes = this.getRootNodesAfterCollapse(
+                          rootNode,
+                          parentNode,
+                          res.data
+                      );
+                  })
+                  .catch((err) => {
+                      Swal.fire({
+                          icon: "error",
+                          title: `${this.$t("general.Error")}`,
+                          text: `${this.$t("general.Thereisanerrorinthesystem")}`,
+                      });
+                  });
+          } else {
+              this.rootNodes = this.getRootNodesAfterCollapse(rootNode, parentNode);
+          }
+      },
+      getThirdLevelChildNodes(rootNode, parentNode, secondParentNode) {
+          if (!secondParentNode.collapsed) {
+              adminApi
+                  .get(`/tree-properties/child-nodes/${secondParentNode.id}`)
+                  .then((res) => {
+                      this.rootNodes = this.getRootNodesAfter2ndCollapse(
+                          rootNode,
+                          parentNode,
+                          secondParentNode,
+                          res.data
+                      );
+                  })
+                  .catch((err) => {
+                      Swal.fire({
+                          icon: "error",
+                          title: `${this.$t("general.Error")}`,
+                          text: `${this.$t("general.Thereisanerrorinthesystem")}`,
+                      });
+                  });
+          } else {
+              this.rootNodes = this.getRootNodesAfter2ndCollapse(
+                  rootNode,
+                  parentNode,
+                  secondParentNode
+              );
+          }
+      },
+      getFourthLevelChildNodes(rootNode, parentNode, secondParentNode, thirdParentNode) {
+          if (!thirdParentNode.collapsed) {
+              adminApi
+                  .get(`/tree-properties/child-nodes/${thirdParentNode.id}`)
+                  .then((res) => {
+                      this.rootNodes = this.getRootNodesAfter3rdCollapse(
+                          rootNode,
+                          parentNode,
+                          secondParentNode,
+                          thirdParentNode,
+                          res.data
+                      );
+                  })
+                  .catch((err) => {
+                      Swal.fire({
+                          icon: "error",
+                          title: `${this.$t("general.Error")}`,
+                          text: `${this.$t("general.Thereisanerrorinthesystem")}`,
+                      });
+                  });
+          } else {
+              this.rootNodes = this.getRootNodesAfter3rdCollapse(
+                  rootNode,
+                  parentNode,
+                  secondParentNode,
+                  thirdParentNode
+              );
+          }
+      },
+      setCreateParentId(node) {
+          if (this.create.parent_id != node.id) {
+              this.create.parent_id = node.id;
+          } else {
+              this.create.parent_id = null;
+          }
+      },
+      getUpdatedRootNodes(parentNode, children) {
+          let rootNodes = [...this.rootNodes];
+          rootNodes.forEach((node, index) => {
+              if (node.id == parentNode.id) {
+                  if (parentNode.collapsed) {
+                      rootNodes[index].children = [];
+                      rootNodes[index].collapsed = false;
+                  } else {
+                      rootNodes[index].children = children;
+                      rootNodes[index].collapsed = true;
+                  }
+                  return;
+              }
+          });
+          return rootNodes;
+      },
+      getRootNodesAfterCollapse(parentNode, secondParentNode, children) {
+          let rootNodes = [...this.rootNodes];
+          rootNodes.forEach((_parentNode, parentIndex) => {
+              if (_parentNode.id == parentNode.id) {
+                  if (_parentNode.children && _parentNode.children.length) {
+                      _parentNode.children.forEach((child, index) => {
+                          if (child.id == secondParentNode.id) {
+                              if (secondParentNode.collapsed) {
+                                  rootNodes[parentIndex].children[index].children = [];
+                                  rootNodes[parentIndex].children[index].collapsed = false;
+                              } else {
+                                  rootNodes[parentIndex].children[index].children = children;
+                                  rootNodes[parentIndex].children[index].collapsed = true;
+                              }
+                              return;
+                          }
+                      });
+                      return;
+                  }
+              }
+          });
+          return rootNodes;
+      },
+      getRootNodesAfter2ndCollapse(
+          parentNode,
+          secondParentNode,
+          thirdParentNode,
+          children
+      ) {
+          let rootNodes = [...this.rootNodes];
+          rootNodes.forEach((_parentNode, parentIndex) => {
+              if (_parentNode.id == parentNode.id) {
+                  if (_parentNode.children && _parentNode.children.length) {
+                      _parentNode.children.forEach((child, index) => {
+                          if (child.id == secondParentNode.id) {
+                              child.children.forEach((_child, _index) => {
+                                  if (thirdParentNode.id == _child.id) {
+                                      if (thirdParentNode.collapsed) {
+                                          rootNodes[index].children[parentIndex].children[
+                                              _index
+                                              ].children = [];
+                                          rootNodes[index].children[parentIndex].children[
+                                              _index
+                                              ].collapsed = false;
+                                      } else {
+                                          rootNodes[index].children[parentIndex].children[
+                                              _index
+                                              ].children = children;
+                                          rootNodes[index].children[parentIndex].children[
+                                              _index
+                                              ].collapsed = true;
+                                      }
+                                      return;
+                                  }
+                              });
+                          }
+                      });
+                      return;
+                  }
+              }
+          });
+          return rootNodes;
+      },
+      getRootNodesAfter3rdCollapse(
+          parentNode,
+          secondParentNode,
+          thirdParentNode,
+          fourthParentNode,
+          children
+      ) {
+          let rootNodes = [...this.rootNodes];
+          rootNodes.forEach((_parentNode, parentIndex) => {
+              if (_parentNode.id == parentNode.id) {
+                  if (_parentNode.children && _parentNode.children.length) {
+                      _parentNode.children.forEach((child, index) => {
+                          if (child.id == secondParentNode.id) {
+                              child.children.forEach((_child, _index) => {
+                                  if (thirdParentNode.id == _child.id) {
+                                      _child.children.forEach((__child, __index) => {
+                                          if (__child.id == fourthParentNode.id) {
+                                              if (fourthParentNode.collapsed) {
+                                                  rootNodes[index].children[parentIndex].children[
+                                                      _index
+                                                      ].children[__index].children = [];
+                                                  rootNodes[index].children[parentIndex].children[
+                                                      _index
+                                                      ].children[__index].collapsed = false;
+                                              } else {
+                                                  rootNodes[index].children[parentIndex].children[
+                                                      _index
+                                                      ].children[__index].children = children;
+                                                  rootNodes[index].children[parentIndex].children[
+                                                      _index
+                                                      ].children[__index].collapsed = true;
+                                              }
+                                              return;
+                                          }
+                                      });
+                                  }
+                              });
+                          }
+                      });
+                      return;
+                  }
+              }
+          });
+          return rootNodes;
+      },
   },
 };
 </script>
@@ -1681,15 +1858,127 @@ export default {
                 <b-tabs nav-class="nav-tabs nav-bordered">
                   <b-tab :title="$t('general.DataEntry')" active>
                     <div class="row">
-                      <div class="col-8">
-                        <TreeBrowser
-                          :secondNodeNotChoosed="true"
-                          @deleteClicked="deleteModule($event.id, true)"
-                          :currentNodeId="create.parent_id"
-                          @onClick="setCreateCurrentNode"
-                          @nodeExpanded="setChildNodes"
-                          :nodes="rootNodes"
-                        />
+                      <div class="col-8" :class="$i18n.locale == 'ar' ? 'rtl' : 'ltr'">
+<!--                        <TreeBrowser-->
+<!--                          :secondNodeNotChoosed="true"-->
+<!--                          @deleteClicked="deleteModule($event.id, true)"-->
+<!--                          :currentNodeId="create.parent_id"-->
+<!--                          @onClick="setCreateCurrentNode"-->
+<!--                          @nodeExpanded="setChildNodes"-->
+<!--                          :nodes="rootNodes"-->
+<!--                        />-->
+                            <ul id="myUL">
+                              <li v-for="node in rootNodes" :key="node.id" style="margin: 0 25px;">
+                                  <span>
+                                    <i
+                                        @click="getFirstLevelChildNodes(node)"
+                                        v-if="node.haveChildren"
+                                        :class="
+                                        node.collapsed
+                                          ? 'fas fa-minus' : 'fas fa-plus'
+                                      "
+                                    ></i>
+                                    <span
+                                        @click="setCreateParentId(node)"
+                                        :class="{
+                                        'without-children': !node.haveChildren,
+                                        active: node.id == create.parent_id,
+                                      }"
+                                    >
+                                      {{ $i18n.locale == "ar" ? node.name : node.name_e }}
+                                    </span>
+                                  </span>
+                                  <ul v-if="node.children && node.children.length" class="nested list-unstyled">
+                                      <li v-for="childNode in node.children" :key="childNode.id" style="margin: 0 25px;">
+                                      <span>
+                                        <i
+                                            @click="getSecondLevelChildNodes(node, childNode)"
+                                            :class="
+                                            childNode.collapsed
+                                              ?  'fas fa-minus' : 'fas fa-plus'
+                                         "
+                                        >
+                                        </i>
+                                        <span
+                                            :class="{
+                                            'without-children': !childNode.haveChildren,
+                                            active: childNode.id == create.parent_id,
+                                          }"
+                                        >
+                                          {{ $i18n.locale == "ar" ? childNode.name : childNode.name_e }}
+                                        </span>
+                                      </span>
+                                                                  <ul
+                                                                      v-if="childNode.children && childNode.children.length"
+                                                                      class="nested"
+                                                                  >
+                                                                      <li v-for="child in childNode.children" :key="child.id">
+                                          <span>
+                                            <i
+                                                @click="getThirdLevelChildNodes(node, childNode, child)"
+                                                v-if="child.haveChildren"
+                                                :class="
+                                                child.collapsed
+                                                  ? 'fa fa-caret-down'
+                                                  : $i18n.locale == 'ar'
+                                                  ? 'fa fa-caret-left'
+                                                  : 'fa fa-caret-right'
+                                              "
+                                            >
+                                            </i>
+                                            <span
+                                                @click="setCreateParentId(child)"
+                                                :class="{
+                                                'without-children': !child.haveChildren,
+                                                active: child.id == create.parent_id,
+                                              }"
+                                            >
+                                              {{ $i18n.locale == "ar" ? child.name : child.name_e }}
+                                            </span>
+                                          </span>
+                                                                          <ul v-if="child.children && child.children.length" class="nested">
+                                                                              <li v-for="_child in child.children" :key="_child.id">
+                                              <span>
+                                                <i
+                                                    @click="
+                                                    getFourthLevelChildNodes(node, childNode, child, _child)
+                                                  "
+                                                    v-if="_child.haveChildren"
+                                                    :class="
+                                                    _child.collapsed
+                                                      ? 'fa fa-caret-down'
+                                                      : $i18n.locale == 'ar'
+                                                      ? 'fa fa-caret-left'
+                                                      : 'fa fa-caret-right'
+                                                  "
+                                                >
+                                                </i>
+                                                <span
+                                                    @click="setCreateParentId(_child)"
+                                                    :class="{
+                                                    'without-children': !_child.haveChildren,
+                                                    active: _child.id == create.parent_id,
+                                                  }"
+                                                >
+                                                  {{ $i18n.locale == "ar" ? _child.name : _child.name_e }}
+                                                </span>
+                                              </span>
+                                          <ul
+                                              v-if="_child.children && _child.children.length"
+                                              class="nested"
+                                          >
+                                              <li v-for="__child in _child.children" :key="__child.id">
+                                                  {{ $i18n.locale == "ar" ? __child.name : __child.name_e }}
+                                              </li>
+                                          </ul>
+                                      </li>
+                                  </ul>
+                              </li>
+                          </ul>
+                      </li>
+                  </ul>
+                              </li>
+                           </ul>
                       </div>
                       <div class="col-4">
                         <template v-if="create.parent_id">
@@ -3381,74 +3670,52 @@ export default {
   </Layout>
 </template>
 <style scoped lang="scss">
-ul,
 #myUL {
-  list-style-type: none;
-  .delete-node {
-    i {
-      font-size: 18px;
-      margin: 0 5px;
-    }
-  }
+    list-style-type: none;
 }
 #myUL {
-  margin: 0;
-  padding: 0;
-  span {
-    i {
-      font-size: 20px;
-      position: relative;
-      top: 3px;
-      color: black;
+    margin: 0;
+    padding: 0;
+    span {
+        i {
+            padding: 2px;
+            background-color: #6dc6f5;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 18px;
+            line-height: 17px;
+            font-weight: 600;
+        }
+        span:hover,
+        i:hover {
+            cursor: pointer;
+        }
     }
-    span:hover,
-    i:hover {
-      cursor: pointer;
-    }
-  }
 }
 .nested {
-  display: block;
+    display: block;
 }
 .active {
-  color: #1abc9c;
+    color: #1abc9c;
 }
 .rtl {
-  #myUL {
-    .without-children {
-      padding-right: 10px;
+    #myUL {
+        .without-children {
+            padding-right: 10px;
+        }
+        .nested {
+            padding-right: 40px;
+        }
     }
-    .nested {
-      padding-right: 40px;
-    }
-  }
 }
 .ltr {
-  #myUL {
-    .without-children {
-      padding-left: 10px;
+    #myUL {
+        .without-children {
+            padding-left: 10px;
+        }
     }
-  }
 }
 
-@media print {
-  .do-not-print {
-    display: none;
-  }
-  .arrow-sort {
-    display: none;
-  }
-  .bg-soft-success {
-    background-color: unset;
-    color: #000000 !important;
-    border: unset;
-  }
-  .bg-soft-danger {
-    background-color: unset;
-    color: #000000 !important;
-    border: unset;
-  }
-}
 .tooltip-inner {
   max-width: 750px !important;
   background-color: #eed900;
