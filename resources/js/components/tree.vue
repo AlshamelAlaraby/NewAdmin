@@ -48,6 +48,7 @@
         @deleteClicked="(node) => $emit('deleteClicked', node)"
         @editClicked="(node) => $emit('editClicked', node)"
       />
+
     </div>
   </draggable>
 </template>
