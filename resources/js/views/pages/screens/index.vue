@@ -776,7 +776,7 @@ export default {
     },
     async getModule() {
           await adminApi
-              .get(`/module-screens`)
+              .get(`/company-project-program-modules?is_module=1`)
               .then((res) => {
                   let l = res.data.data;
                   this.modules = l;
@@ -1847,6 +1847,11 @@ export default {
                       </div>
                     </th>
                     <th v-if="setting.sub_menu_id">
+                          <div class="d-flex justify-content-center">
+                              <span>{{ $t("module.module") }}</span>
+                          </div>
+                      </th>
+                    <th v-if="setting.sub_menu_id">
                       <div class="d-flex justify-content-center">
                         <span>{{ $t("general.subMenu") }}</span>
                         <div class="arrow-sort">
@@ -1891,9 +1896,6 @@ export default {
                         />
                       </div>
                     </td>
-                    <td v-if="setting.name">
-                      <h5 class="m-0 font-weight-normal">{{ data.name }}</h5>
-                    </td>
                     <td v-if="setting.name_e">
                       <h5 class="m-0 font-weight-normal">{{ data.name_e }}</h5>
                     </td>
@@ -1902,6 +1904,15 @@ export default {
                     </td>
                     <td v-if="setting.title_e">
                       <h5 class="m-0 font-weight-normal">{{ data.title_e }}</h5>
+                    </td>
+                    <td v-if="setting.title_e">
+                        <h5 v-if="data.module_screen" class="m-0 font-weight-normal">
+                            {{
+                                $i18n.locale == "ar"
+                                    ? data.module_screen.name
+                                    : data.module_screen.name_e
+                            }}
+                        </h5>
                     </td>
                     <td v-if="setting.sub_menu_id">
                       <h5 v-if="data.sub_menu" class="m-0 font-weight-normal">
