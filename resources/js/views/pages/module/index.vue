@@ -1358,7 +1358,6 @@ export default {
           await adminApi
               .get(`/project-program-modules/root-nodes`)
               .then((res) => {
-                  console.log(this.rootNodes);
                   this.rootNodes = res.data;
               })
               .catch((err) => {
@@ -1579,7 +1578,6 @@ export default {
                                                       _index
                                                       ].subMenus[__index].collapsed = false;
                                               } else {
-                                                  console.log(children);
                                                   rootNodes[parentIndex].children[index].children[
                                                       _index
                                                       ].subMenus[__index].children = children.screens;
@@ -1863,14 +1861,6 @@ export default {
                   <b-tab :title="$t('general.DataEntry')" active>
                     <div class="row">
                       <div class="col-8" :class="$i18n.locale == 'ar' ? 'rtl' : 'ltr'">
-<!--                        <TreeBrowser-->
-<!--                          :secondNodeNotChoosed="true"-->
-<!--                          @deleteClicked="deleteModule($event.id, true)"-->
-<!--                          :currentNodeId="create.parent_id"-->
-<!--                          @onClick="setCreateCurrentNode"-->
-<!--                          @nodeExpanded="setChildNodes"-->
-<!--                          :nodes="rootNodes"-->
-<!--                        />-->
                             <ul id="myUL">
                               <li v-for="node in rootNodes" :key="node.id" style="margin: 0 25px;">
                                   <span>
@@ -1959,9 +1949,9 @@ export default {
                                                                       </span>
                                                                       <ul
                                                                           v-if="_subMenu.children && _subMenu.children.length"
-                                                                          class="nested"
+                                                                          class="nested list-unstyled"
                                                                       >
-                                                                          <li v-for="__child in _subMenu.children" :key="__child.id">
+                                                                          <li style="margin: 0 25px;" v-for="__child in _subMenu.children" :key="__child.id">
                                                                               {{ $i18n.locale == "ar" ? __child.title : __child.title_e }}
                                                                           </li>
                                                                       </ul>
@@ -2882,18 +2872,122 @@ export default {
                           <b-tabs nav-class="nav-tabs nav-bordered">
                             <b-tab :title="$t('general.DataEntry')" active>
                               <div class="row">
-                                <div class="col-8">
-                                  <TreeBrowser
-                                    :secondNodeNotChoosed="true"
-                                    @deleteClicked="
-                                      deleteModule($event.id, true)
-                                    "
-                                    :currentNodeId="edit.parent_id"
-                                    @onClick="setUpdateCurrentNode"
-                                    @nodeExpanded="setChildNodes"
-                                    :nodes="rootNodes"
-                                  />
-                                </div>
+                                <div class="col-8" :class="$i18n.locale == 'ar' ? 'rtl' : 'ltr'">
+                                      <ul id="myUL">
+                                          <li v-for="node in rootNodes" :key="node.id" style="margin: 0 25px;">
+                                  <span>
+                                    <i
+                                        @click="getFirstLevelChildNodes(node)"
+                                        v-if="node.haveChildren"
+                                        :class="
+                                        node.collapsed
+                                          ? 'fas fa-minus' : 'fas fa-plus'
+                                      "
+                                    ></i>
+                                    <span
+                                        @click="setCreateParentId(node)"
+                                        :class="{
+                                        'without-children': !node.haveChildren,
+                                        active: node.id == create.parent_id,
+                                      }"
+                                    >
+                                      {{ $i18n.locale == "ar" ? node.name : node.name_e }}
+                                    </span>
+                                  </span>
+                                              <ul v-if="node.children && node.children.length" class="nested list-unstyled">
+                                                  <li v-for="childNode in node.children" :key="childNode.id" style="margin: 0 25px;">
+                                      <span>
+                                        <i
+                                            @click="getSecondLevelChildNodes(node, childNode)"
+                                            :class="
+                                            childNode.collapsed
+                                              ?  'fas fa-minus' : 'fas fa-plus'
+                                         "
+                                        >
+                                        </i>
+                                        <span
+                                            :class="{
+                                            'without-children': !childNode.haveChildren,
+                                            active: childNode.id == create.parent_id,
+                                          }"
+                                        >
+                                          {{ $i18n.locale == "ar" ? childNode.name : childNode.name_e }}
+                                        </span>
+                                      </span>
+                                                      <ul
+                                                          v-if="childNode.children && childNode.children.length"
+                                                          class="nested list-unstyled"
+                                                      >
+                                                          <li v-for="child in childNode.children" :key="child.id" style="margin: 0 25px;">
+                                                              <span>
+                                                                <i
+                                                                    @click="getThirdLevelChildNodes(node, childNode, child)"
+                                                                    :class="
+                                                                    child.collapsed
+                                                                      ? 'fas fa-minus' : 'fas fa-plus'
+                                                                  "
+                                                                >
+                                                                </i>
+                                                                <span
+                                                                    :class="{
+                                                                    'without-children': !child.haveChildren,
+                                                                    active: child.id == create.parent_id,
+                                                                  }"
+                                                                >
+                                                                  {{ $i18n.locale == "ar" ? child.name : child.name_e }}
+                                                                </span>
+                                                              </span>
+                                                              <ul v-if="(child.screens || child.subMenus) && (child.subMenus.length || child.screens.length)" class="nested list-unstyled">
+                                                                  <li v-for="_subMenu in child.subMenus" :key="_subMenu.id" style="margin: 0 25px;">
+                                                                  <span>
+                                                                    <i
+                                                                        @click="
+                                                                        getFourthLevelChildNodes(node, childNode, child, _subMenu)
+                                                                      "
+                                                                        :class="
+                                                                        _subMenu.collapsed
+                                                                          ? 'fas fa-minus' : 'fas fa-plus'
+                                                                      "
+                                                                    >
+                                                                    </i>
+                                                                        <span
+                                                                            :class="{
+                                                                            'without-children': !_subMenu.haveChildren,
+                                                                            active: _subMenu.id == create.parent_id,
+                                                                          }"
+                                                                        >
+                                                                          {{ $i18n.locale == "ar" ? _subMenu.name : _subMenu.name_e }}
+                                                                        </span>
+                                                                      </span>
+                                                                      <ul
+                                                                          v-if="_subMenu.children && _subMenu.children.length"
+                                                                          class="nested list-unstyled"
+                                                                      >
+                                                                          <li style="margin: 0 25px;" v-for="__child in _subMenu.children" :key="__child.id">
+                                                                              {{ $i18n.locale == "ar" ? __child.title : __child.title_e }}
+                                                                          </li>
+                                                                      </ul>
+                                                                  </li>
+                                                                  <li v-for="_screen in child.screens" :key="_screen.id" style="margin: 0 25px;">
+                                                                      <span>
+                                                                        <span
+                                                                            :class="{
+                                                                            'without-children': !_screen.haveChildren,
+                                                                            active: _screen.id == create.parent_id,
+                                                                          }"
+                                                                        >
+                                                                          {{ $i18n.locale == "ar" ? _screen.title : _screen.title_e }}
+                                                                        </span>
+                                                                      </span>
+                                                                  </li>
+                                                              </ul>
+                                                          </li>
+                                                      </ul>
+                                                  </li>
+                                              </ul>
+                                          </li>
+                                      </ul>
+                                  </div>
                                 <div class="col-4">
                                   <template v-if="edit.parent_id">
                                     <div class="row">
