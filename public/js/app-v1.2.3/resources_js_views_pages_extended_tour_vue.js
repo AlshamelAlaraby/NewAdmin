@@ -4917,12 +4917,15 @@ var menuItems = [{
   label: 'menuitems.partner.text',
   icon: 'far fa-user-circle',
   link: '/partner'
-}, {
-  id: 3,
-  label: 'menuitems.company.text',
-  icon: 'ri-building-4-line',
-  link: '/company'
-}, {
+},
+/*{
+    id: 3,
+    label: 'menuitems.company.text',
+    icon: 'ri-building-4-line',
+    link: '/company'
+},*/
+
+{
   id: 4,
   label: 'menuitems.module.text',
   icon: 'fab fa-medium-m',
@@ -4956,12 +4959,13 @@ var menuItems = [{
   label: 'menuitems.DocumentType.text',
   icon: 'ri-stack-line',
   link: '/document-types'
-}, {
-  id: 4874387,
-  label: 'menuitems.Workflow.text',
-  icon: 'ri-hotel-line',
-  link: '/company-module'
 }
+/*{
+    id: 4874387,
+    label: 'menuitems.Workflow.text',
+    icon: 'ri-hotel-line',
+    link: '/company-module'
+},*/
 // {
 //     id: 6,
 //     label: 'menuitems.HotFields.text',

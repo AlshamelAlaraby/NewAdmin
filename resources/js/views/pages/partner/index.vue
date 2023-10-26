@@ -1079,7 +1079,7 @@ export default {
               out_site: "",
               allowed_employee: "",
 
-              company_id: "",
+              company_id: this.companies.map(el => el.id), ///Alaa Get company_id
               module_id: "",
               allowed_users_no: "",
               start_date: formatDateTime(new Date()),
@@ -4567,6 +4567,13 @@ export default {
                                                         </div>
                                                     </div>
                                                 </th>
+                                                 <th>
+                                                    <div class="d-flex justify-content-center">
+                                                       <th v-if="editProgram.status">{{ $t("general.Status") }}</th>
+                   
+                    
+                                                    </div>
+                                                </th>
                                                 <th v-if="enabled3" class="do-not-print">
                                                     {{ $t("general.Action") }}
                                                 </th>
@@ -4611,6 +4618,22 @@ export default {
                                                 <td>
                                                     {{ mod.end_date ? formatDate(mod.end_date) : null }}
                                                 </td>
+                                                  <td v-if="editProgram.status">
+                                                    <span
+                                                        :class="[
+                                                        mod.status == 1
+                                                            ? 'bg-soft-success text-success'
+                                                            : 'bg-soft-danger  text-danger',
+                                                        'badge',
+                                                        ]"
+                                                    >
+                                                        {{
+                                                        mod.status == 1
+                                                            ? `${$t("general.Active")}`
+                                                            : `${$t("general.Inactive")}`
+                                                        }}
+                                                    </span>
+                                                    </td>
                                                 <td v-if="enabled3" class="do-not-print">
                                                     <div class="btn-group">
                                                         <button

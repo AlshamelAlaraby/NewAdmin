@@ -1,5 +1,4 @@
-export const menuItems = [
-    {
+export const menuItems = [{
         id: 1,
         label: "menuitems.navigation.text",
         isTitle: true
@@ -10,12 +9,12 @@ export const menuItems = [
         icon: 'far fa-user-circle',
         link: '/partner'
     },
-    {
+    /*{
         id: 3,
         label: 'menuitems.company.text',
         icon: 'ri-building-4-line',
         link: '/company'
-    },
+    },*/
 
     {
         id: 4,
@@ -54,12 +53,12 @@ export const menuItems = [
         icon: 'ri-stack-line',
         link: '/document-types'
     },
-    {
+    /*{
         id: 4874387,
         label: 'menuitems.Workflow.text',
         icon: 'ri-hotel-line',
         link: '/company-module'
-    },
+    },*/
     // {
     //     id: 6,
     //     label: 'menuitems.HotFields.text',
@@ -751,4 +750,3 @@ export const menuItems = [
     //     ]
     // }
 ];
-
