@@ -34,6 +34,10 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
             $models->whereNull("parent_id")->where('is_module', 1);
         }
 
+        if ($request->is_module) {
+            $models->where('is_module', 1);
+        }
+
         if ($request->per_page) {
             return ['data' => $models->paginate($request->per_page), 'paginate' => true];
         } else {
@@ -131,9 +135,9 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
 
     public function programModulesCompanyId($company_id)
     {
-        $models = $this->model->with(['companies' => function ($q) use ($company_id){
-            $q->where('company_id',$company_id);
-        }])->whereRelation('companies','company_id',$company_id)->get();
+        $models = $this->model->with(['companies' => function ($q) use ($company_id) {
+            $q->where('company_id', $company_id);
+        }])->whereRelation('companies', 'company_id', $company_id)->get();
 
         return $models;
     }
