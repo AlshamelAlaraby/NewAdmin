@@ -18,6 +18,7 @@ import { formatDateOnly } from "../../../helper/startDate";
 import { arabicValue, englishValue } from "../../../helper/langTransform";
 import Module from "../../../components/create/module";
 
+
 /**
  * Advanced Table component
  */
@@ -772,6 +773,7 @@ export default {
               .then((res) => {
                   let l = res.data.data;
                   this.modules = l;
+                  //console.log(l);
               })
               .catch((err) => {
                   Swal.fire({
@@ -1407,6 +1409,7 @@ export default {
                                   </template>
                                 </div>
                               </div>
+<!--
                               <div class="col-md-6">
                                 <div class="form-group">
                                   <label for="field-2" class="control-label">
@@ -1432,6 +1435,7 @@ export default {
                                   </template>
                                 </div>
                               </div>
+-->
                               <div class="col-md-6">
                                     <div class="form-group position-relative">
                                         <label class="control-label">
@@ -2264,6 +2268,7 @@ export default {
                                             </template>
                                           </div>
                                         </div>
+<!--
                                         <div class="col-md-6">
                                           <div class="form-group">
                                             <label
@@ -2296,6 +2301,7 @@ export default {
                                             </div>
                                           </div>
                                         </div>
+-->
                                         <div class="col-md-6">
                                               <div class="form-group position-relative">
                                                   <label class="control-label">
