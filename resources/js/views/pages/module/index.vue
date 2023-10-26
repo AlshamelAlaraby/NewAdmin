@@ -1441,14 +1441,13 @@ export default {
               adminApi
                   .get(`/program-folder/sub-menu-folder/${thirdParentNode.id}`)
                   .then((res) => {
-                      console.log(res.data.data)
-                      // this.rootNodes = this.getRootNodesAfter3rdCollapse(
-                      //     rootNode,
-                      //     parentNode,
-                      //     secondParentNode,
-                      //     thirdParentNode,
-                      //     res.data.data
-                      // );
+                      this.rootNodes = this.getRootNodesAfter3rdCollapse(
+                          rootNode,
+                          parentNode,
+                          secondParentNode,
+                          thirdParentNode,
+                          res.data.data
+                      );
                   })
                   .catch((err) => {
                       Swal.fire({
@@ -1570,22 +1569,23 @@ export default {
                           if (child.id == secondParentNode.id) {
                               child.children.forEach((_child, _index) => {
                                   if (thirdParentNode.id == _child.id) {
-                                      _child.children.forEach((__child, __index) => {
+                                      _child.subMenus.forEach((__child, __index) => {
                                           if (__child.id == fourthParentNode.id) {
                                               if (fourthParentNode.collapsed) {
-                                                  rootNodes[index].children[parentIndex].children[
+                                                  rootNodes[parentIndex].children[index].children[
                                                       _index
-                                                      ].children[__index].children = [];
-                                                  rootNodes[index].children[parentIndex].children[
+                                                      ].subMenus[__index].children = [];
+                                                  rootNodes[parentIndex].children[index].children[
                                                       _index
-                                                      ].children[__index].collapsed = false;
+                                                      ].subMenus[__index].collapsed = false;
                                               } else {
-                                                  rootNodes[index].children[parentIndex].children[
+                                                  console.log(children);
+                                                  rootNodes[parentIndex].children[index].children[
                                                       _index
-                                                      ].children[__index].children = children;
-                                                  rootNodes[index].children[parentIndex].children[
+                                                      ].subMenus[__index].children = children.screens;
+                                                  rootNodes[parentIndex].children[index].children[
                                                       _index
-                                                      ].children[__index].collapsed = true;
+                                                      ].subMenus[__index].collapsed = true;
                                               }
                                               return;
                                           }
@@ -1957,14 +1957,14 @@ export default {
                                                                           {{ $i18n.locale == "ar" ? _subMenu.name : _subMenu.name_e }}
                                                                         </span>
                                                                       </span>
-<!--                                                                      <ul-->
-<!--                                                                          v-if="_subMenu.children && _subMenu.children.length"-->
-<!--                                                                          class="nested"-->
-<!--                                                                      >-->
-<!--                                                                          <li v-for="__child in _child.children" :key="__child.id">-->
-<!--                                                                              {{ $i18n.locale == "ar" ? __child.name : __child.name_e }}-->
-<!--                                                                          </li>-->
-<!--                                                                      </ul>-->
+                                                                      <ul
+                                                                          v-if="_subMenu.children && _subMenu.children.length"
+                                                                          class="nested"
+                                                                      >
+                                                                          <li v-for="__child in _subMenu.children" :key="__child.id">
+                                                                              {{ $i18n.locale == "ar" ? __child.title : __child.title_e }}
+                                                                          </li>
+                                                                      </ul>
                                                               </li>
                                                                 <li v-for="_screen in child.screens" :key="_screen.id" style="margin: 0 25px;">
                                                                       <span>
