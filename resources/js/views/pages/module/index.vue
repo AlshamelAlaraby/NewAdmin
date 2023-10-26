@@ -1412,14 +1412,13 @@ export default {
       getThirdLevelChildNodes(rootNode, parentNode, secondParentNode) {
           if (!secondParentNode.collapsed) {
               adminApi
-                  .get(`/program-folder/${secondParentNode.id}`)
+                  .get(`/program-folder/${secondParentNode.program_folder_menu_id}`)
                   .then((res) => {
-                      console.log(res.data.data)
                       this.rootNodes = this.getRootNodesAfter2ndCollapse(
                           rootNode,
                           parentNode,
                           secondParentNode,
-                          res.data
+                          res.data.data
                       );
                   })
                   .catch((err) => {
@@ -1440,15 +1439,16 @@ export default {
       getFourthLevelChildNodes(rootNode, parentNode, secondParentNode, thirdParentNode) {
           if (!thirdParentNode.collapsed) {
               adminApi
-                  .get(`/tree-properties/child-nodes/${thirdParentNode.id}`)
+                  .get(`/program-folder/sub-menu-folder/${thirdParentNode.id}`)
                   .then((res) => {
-                      this.rootNodes = this.getRootNodesAfter3rdCollapse(
-                          rootNode,
-                          parentNode,
-                          secondParentNode,
-                          thirdParentNode,
-                          res.data
-                      );
+                      console.log(res.data.data)
+                      // this.rootNodes = this.getRootNodesAfter3rdCollapse(
+                      //     rootNode,
+                      //     parentNode,
+                      //     secondParentNode,
+                      //     thirdParentNode,
+                      //     res.data.data
+                      // );
                   })
                   .catch((err) => {
                       Swal.fire({
@@ -1501,7 +1501,6 @@ export default {
                                   rootNodes[parentIndex].children[index].collapsed = false;
                               } else {
                                   rootNodes[parentIndex].children[index].children = children.menu_folders;
-                                  rootNodes[parentIndex].children[index].program_folder_menus = children.program_folder_menus;
                                   rootNodes[parentIndex].children[index].collapsed = true;
                               }
                               return;
@@ -1528,17 +1527,20 @@ export default {
                               child.children.forEach((_child, _index) => {
                                   if (thirdParentNode.id == _child.id) {
                                       if (thirdParentNode.collapsed) {
-                                          rootNodes[index].children[parentIndex].children[
+                                          rootNodes[parentIndex].children[index].children[
                                               _index
                                               ].children = [];
-                                          rootNodes[index].children[parentIndex].children[
+                                          rootNodes[parentIndex].children[index].children[
                                               _index
                                               ].collapsed = false;
                                       } else {
-                                          rootNodes[index].children[parentIndex].children[
+                                          rootNodes[parentIndex].children[index].children[
                                               _index
-                                              ].children = children;
-                                          rootNodes[index].children[parentIndex].children[
+                                              ].screens = children.screens;
+                                          rootNodes[parentIndex].children[index].children[
+                                              _index
+                                              ].subMenus = children.subMenus;
+                                          rootNodes[parentIndex].children[index].children[
                                               _index
                                               ].collapsed = true;
                                       }
@@ -1914,66 +1916,73 @@ export default {
                                               v-if="childNode.children && childNode.children.length"
                                               class="nested list-unstyled"
                                           >
-                                          <li v-for="child in childNode.children" :key="child.id" style="margin: 0 25px;">
-                                          <span>
-                                            <i
-                                                @click="getThirdLevelChildNodes(node, childNode, child)"
-                                                :class="
-                                                child.collapsed
-                                                  ? 'fas fa-minus' : 'fas fa-plus'
-                                              "
-                                            >
-                                            </i>
-                                            <span
-                                                :class="{
-                                                'without-children': !child.haveChildren,
-                                                active: child.id == create.parent_id,
-                                              }"
-                                            >
-                                              {{ $i18n.locale == "ar" ? child.name : child.name_e }}
-                                            </span>
-                                          </span>
-                                              <ul v-if="child.children && child.children.length" class="nested">
-                                                  <li v-for="_child in child.children" :key="_child.id">
-                                              <span>
-                                                <i
-                                                    @click="
-                                                    getFourthLevelChildNodes(node, childNode, child, _child)
-                                                  "
-                                                    v-if="_child.haveChildren"
-                                                    :class="
-                                                    _child.collapsed
-                                                      ? 'fa fa-caret-down'
-                                                      : $i18n.locale == 'ar'
-                                                      ? 'fa fa-caret-left'
-                                                      : 'fa fa-caret-right'
-                                                  "
-                                                >
-                                                </i>
-                                                <span
-                                                    @click="setCreateParentId(_child)"
-                                                    :class="{
-                                                    'without-children': !_child.haveChildren,
-                                                    active: _child.id == create.parent_id,
-                                                  }"
-                                                >
-                                                  {{ $i18n.locale == "ar" ? _child.name : _child.name_e }}
-                                                </span>
-                                              </span>
-                                          <ul
-                                              v-if="_child.children && _child.children.length"
-                                              class="nested"
-                                          >
-                                              <li v-for="__child in _child.children" :key="__child.id">
-                                                  {{ $i18n.locale == "ar" ? __child.name : __child.name_e }}
-                                              </li>
-                                          </ul>
-                                      </li>
-                                  </ul>
-                              </li>
-                          </ul>
-                      </li>
-                  </ul>
+                                                <li v-for="child in childNode.children" :key="child.id" style="margin: 0 25px;">
+                                                              <span>
+                                                                <i
+                                                                    @click="getThirdLevelChildNodes(node, childNode, child)"
+                                                                    :class="
+                                                                    child.collapsed
+                                                                      ? 'fas fa-minus' : 'fas fa-plus'
+                                                                  "
+                                                                >
+                                                                </i>
+                                                                <span
+                                                                    :class="{
+                                                                    'without-children': !child.haveChildren,
+                                                                    active: child.id == create.parent_id,
+                                                                  }"
+                                                                >
+                                                                  {{ $i18n.locale == "ar" ? child.name : child.name_e }}
+                                                                </span>
+                                                              </span>
+                                                              <ul v-if="(child.screens || child.subMenus) && (child.subMenus.length || child.screens.length)" class="nested list-unstyled">
+                                                                <li v-for="_subMenu in child.subMenus" :key="_subMenu.id" style="margin: 0 25px;">
+                                                                  <span>
+                                                                    <i
+                                                                        @click="
+                                                                        getFourthLevelChildNodes(node, childNode, child, _subMenu)
+                                                                      "
+                                                                        :class="
+                                                                        _subMenu.collapsed
+                                                                          ? 'fas fa-minus' : 'fas fa-plus'
+                                                                      "
+                                                                    >
+                                                                    </i>
+                                                                        <span
+                                                                            :class="{
+                                                                            'without-children': !_subMenu.haveChildren,
+                                                                            active: _subMenu.id == create.parent_id,
+                                                                          }"
+                                                                        >
+                                                                          {{ $i18n.locale == "ar" ? _subMenu.name : _subMenu.name_e }}
+                                                                        </span>
+                                                                      </span>
+<!--                                                                      <ul-->
+<!--                                                                          v-if="_subMenu.children && _subMenu.children.length"-->
+<!--                                                                          class="nested"-->
+<!--                                                                      >-->
+<!--                                                                          <li v-for="__child in _child.children" :key="__child.id">-->
+<!--                                                                              {{ $i18n.locale == "ar" ? __child.name : __child.name_e }}-->
+<!--                                                                          </li>-->
+<!--                                                                      </ul>-->
+                                                              </li>
+                                                                <li v-for="_screen in child.screens" :key="_screen.id" style="margin: 0 25px;">
+                                                                      <span>
+                                                                        <span
+                                                                            :class="{
+                                                                            'without-children': !_screen.haveChildren,
+                                                                            active: _screen.id == create.parent_id,
+                                                                          }"
+                                                                        >
+                                                                          {{ $i18n.locale == "ar" ? _screen.title : _screen.title_e }}
+                                                                        </span>
+                                                                      </span>
+                                                                  </li>
+                                                              </ul>
+                                                  </li>
+                                              </ul>
+                                          </li>
+                                      </ul>
                               </li>
                            </ul>
                       </div>
