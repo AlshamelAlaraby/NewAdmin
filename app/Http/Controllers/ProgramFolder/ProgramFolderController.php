@@ -139,7 +139,7 @@ class ProgramFolderController extends Controller
     public function subMenus($id)
     {
 
-        $models = SubMenu::where('id', $id)->with('screens')->get();
+        $models = SubMenu::where('id', $id)->with('screens')->first();
 
         return responseJson(200, 'success', $models);
     }
