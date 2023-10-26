@@ -3597,7 +3597,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context8.prev = _context8.next) {
               case 0:
                 _context8.next = 2;
-                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/company-project-program-modules?is_module=1").then(function (res) {
+                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/project-program-modules/get-drop-down?is_module=1").then(function (res) {
                   var l = res.data.data;
                   _this22.modules = l;
                   //console.log(l);
@@ -7827,9 +7827,7 @@ var render = function render() {
     staticClass: "form-group position-relative"
   }, [_c("label", {
     staticClass: "control-label"
-  }, [_vm._v("\n                                            " + _vm._s(_vm.$t("module.module")) + "\n                                            "), _c("span", {
-    staticClass: "text-danger"
-  }, [_vm._v("*")])]), _vm._v(" "), _c("multiselect", {
+  }, [_vm._v("\n                                            " + _vm._s(_vm.$t("module.module")) + "\n                                        ")]), _vm._v(" "), _c("multiselect", {
     attrs: {
       options: _vm.modules.map(function (type) {
         return type.id;
@@ -7839,7 +7837,7 @@ var render = function render() {
           return x.id == opt;
         }) ? _vm.modules.find(function (x) {
           return x.id == opt;
-        }).name : null;
+        }).name_e : null;
       }
     },
     model: {
@@ -8202,25 +8200,7 @@ var render = function render() {
     }
   })])])]) : _vm._e(), _vm._v(" "), _vm.setting.sub_menu_id ? _c("th", [_c("div", {
     staticClass: "d-flex justify-content-center"
-  }, [_c("span", [_vm._v(_vm._s(_vm.$t("module.module")))])])]) : _vm._e(), _vm._v(" "), _vm.setting.sub_menu_id ? _c("th", [_c("div", {
-    staticClass: "d-flex justify-content-center"
-  }, [_c("span", [_vm._v(_vm._s(_vm.$t("general.subMenu")))]), _vm._v(" "), _c("div", {
-    staticClass: "arrow-sort"
-  }, [_c("i", {
-    staticClass: "fas fa-arrow-up",
-    on: {
-      click: function click($event) {
-        _vm.screens.sort(_vm.sortString("name_e"));
-      }
-    }
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fas fa-arrow-down",
-    on: {
-      click: function click($event) {
-        _vm.screens.sort(_vm.sortString("-name_e"));
-      }
-    }
-  })])])]) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("th", {
+  }, [_c("span", [_vm._v(_vm._s(_vm.$t("module.module")))])])]) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("th", {
     staticClass: "do-not-print"
   }, [_vm._v("\n                      " + _vm._s(_vm.$t("general.Action")) + "\n                    ")]) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("th", {
     staticClass: "do-not-print"
@@ -8291,9 +8271,9 @@ var render = function render() {
       staticClass: "m-0 font-weight-normal"
     }, [_vm._v(_vm._s(data.title_e))])]) : _vm._e(), _vm._v(" "), _vm.setting.title_e ? _c("td", [data.module_screen ? _c("h5", {
       staticClass: "m-0 font-weight-normal"
-    }, [_vm._v("\n                            " + _vm._s(_vm.$i18n.locale == "ar" ? data.module_screen.name : data.module_screen.name_e) + "\n                        ")]) : _vm._e()]) : _vm._e(), _vm._v(" "), _vm.setting.sub_menu_id ? _c("td", [data.sub_menu ? _c("h5", {
+    }, [_vm._v("\n                            " + _vm._s(_vm.$i18n.locale == "ar" ? data.module_screen.name : data.module_screen.name_e) + "\n                        ")]) : _c("h5", {
       staticClass: "m-0 font-weight-normal"
-    }, [_vm._v("\n                        " + _vm._s(_vm.$i18n.locale == "ar" ? data.sub_menu.name : data.sub_menu.name_e) + "\n                      ")]) : _vm._e()]) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("td", {
+    }, [_vm._v("\n                            General\n                        ")])]) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("td", {
       staticClass: "do-not-print"
     }, [_c("div", {
       staticClass: "btn-group"
@@ -8618,9 +8598,7 @@ var render = function render() {
       staticClass: "form-group position-relative"
     }, [_c("label", {
       staticClass: "control-label"
-    }, [_vm._v("\n                                                      " + _vm._s(_vm.$t("module.module")) + "\n                                                      "), _c("span", {
-      staticClass: "text-danger"
-    }, [_vm._v("*")])]), _vm._v(" "), _c("multiselect", {
+    }, [_vm._v("\n                                                      " + _vm._s(_vm.$t("module.module")) + "\n                                                  ")]), _vm._v(" "), _c("multiselect", {
       attrs: {
         options: _vm.modules.map(function (type) {
           return type.id;
@@ -8630,7 +8608,7 @@ var render = function render() {
             return x.id == opt;
           }) ? _vm.modules.find(function (x) {
             return x.id == opt;
-          }).name : null;
+          }).name_e : null;
         }
       },
       model: {

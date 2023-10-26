@@ -144,9 +144,7 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
 
     public function DropDown($request)
     {
-        $modules = $this->model->whereHas('modules')->get()->pluck('id')->toArray();
-
-        $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
+        $models = $this->model->select('id','name','name_e')->distinct();
 
         if ($request->is_module) {
             $models->where('is_module', 1);

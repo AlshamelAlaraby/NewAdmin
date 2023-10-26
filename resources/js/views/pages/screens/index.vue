@@ -776,7 +776,7 @@ export default {
     },
     async getModule() {
           await adminApi
-              .get(`/company-project-program-modules?is_module=1`)
+              .get(`/project-program-modules/get-drop-down?is_module=1`)
               .then((res) => {
                   let l = res.data.data;
                   this.modules = l;
@@ -1449,13 +1449,12 @@ export default {
                                     <div class="form-group position-relative">
                                         <label class="control-label">
                                             {{ $t("module.module") }}
-                                            <span class="text-danger">*</span>
                                         </label>
 
                                         <multiselect
                                             v-model="create.module_screen_id"
                                             :options="modules.map((type) => type.id)"
-                                            :custom-label="(opt) => modules.find((x) => x.id == opt)?modules.find((x) => x.id == opt).name: null"
+                                            :custom-label="(opt) => modules.find((x) => x.id == opt)?modules.find((x) => x.id == opt).name_e: null"
                                         >
                                         </multiselect>
                                         <template v-if="errors.module_screen_id">
@@ -1851,21 +1850,6 @@ export default {
                               <span>{{ $t("module.module") }}</span>
                           </div>
                       </th>
-                    <th v-if="setting.sub_menu_id">
-                      <div class="d-flex justify-content-center">
-                        <span>{{ $t("general.subMenu") }}</span>
-                        <div class="arrow-sort">
-                          <i
-                            class="fas fa-arrow-up"
-                            @click="screens.sort(sortString('name_e'))"
-                          ></i>
-                          <i
-                            class="fas fa-arrow-down"
-                            @click="screens.sort(sortString('-name_e'))"
-                          ></i>
-                        </div>
-                      </div>
-                    </th>
                     <th v-if="enabled3" class="do-not-print">
                       {{ $t("general.Action") }}
                     </th>
@@ -1913,15 +1897,9 @@ export default {
                                     : data.module_screen.name_e
                             }}
                         </h5>
-                    </td>
-                    <td v-if="setting.sub_menu_id">
-                      <h5 v-if="data.sub_menu" class="m-0 font-weight-normal">
-                        {{
-                          $i18n.locale == "ar"
-                            ? data.sub_menu.name
-                            : data.sub_menu.name_e
-                        }}
-                      </h5>
+                        <h5 v-else class="m-0 font-weight-normal">
+                            General
+                        </h5>
                     </td>
                     <td v-if="enabled3" class="do-not-print">
                       <div class="btn-group">
@@ -2359,13 +2337,12 @@ export default {
                                               <div class="form-group position-relative">
                                                   <label class="control-label">
                                                       {{ $t("module.module") }}
-                                                      <span class="text-danger">*</span>
                                                   </label>
 
                                                   <multiselect
                                                       v-model="edit.module_screen_id"
                                                       :options="modules.map((type) => type.id)"
-                                                      :custom-label="(opt) => modules.find((x) => x.id == opt)?modules.find((x) => x.id == opt).name: null"
+                                                      :custom-label="(opt) => modules.find((x) => x.id == opt)?modules.find((x) => x.id == opt).name_e: null"
                                                   >
                                                   </multiselect>
                                                   <template v-if="errors.module_screen_id">
