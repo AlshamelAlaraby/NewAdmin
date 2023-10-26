@@ -64,6 +64,7 @@ export default {
         search: "",
         middleware_url: "",
         is_implementor: 0,
+        is_add_on: 0,
         sort: 0,
         module_screen_id: null
       },
@@ -76,6 +77,7 @@ export default {
         search: "",
           middleware_url: "",
         is_implementor: 0,
+          is_add_on: 0,
         sort: 0,
         module_screen_id: null
       },
@@ -107,7 +109,8 @@ export default {
       sub_menu_id: {  },
         middleware_url: { required },
       is_implementor: {},
-      module_screen_id: {}
+      module_screen_id: {},
+        is_add_on: {}
     },
     edit: {
       name_e: { required, minLength: minLength(3), maxLength: maxLength(100) },
@@ -116,7 +119,8 @@ export default {
       sub_menu_id: {  },
         middleware_url: { required },
       is_implementor: {},
-      module_screen_id: {}
+      module_screen_id: {},
+        is_add_on: {}
     },
   },
   watch: {
@@ -548,7 +552,8 @@ export default {
         serial_id: "",
         sub_menu_id: null,
         sort: 0,
-        module_screen_id: null
+        module_screen_id: null,
+          is_add_on: 0,
       };
       this.$nextTick(() => {
         this.$v.$reset();
@@ -580,6 +585,7 @@ export default {
         sub_menu_id: null,
           middleware_url: "",
         is_implementor: 0,
+          is_add_on: 0,
         sort: 0,
         module_screen_id: null
       };
@@ -602,6 +608,7 @@ export default {
         sub_menu_id: null,
           middleware_url: "",
         is_implementor: 0,
+          is_add_on: 0,
         sort: 0,
         module_screen_id: null
       };
@@ -769,7 +776,7 @@ export default {
     },
     async getModule() {
           await adminApi
-              .get(`/module-screens`)
+              .get(`/project-program-modules/get-drop-down?is_module=1`)
               .then((res) => {
                   let l = res.data.data;
                   this.modules = l;
@@ -798,6 +805,7 @@ export default {
       this.edit.title = module.title;
       this.edit.title_e = module.title_e;
       this.edit.serial_id = module.serial_id;
+      this.edit.is_add_on = module.is_add_on;
       this.edit.middleware_url = module.middleware_url;
       this.edit.sort = module.sort;
       this.screen_id = module.id;
@@ -821,6 +829,7 @@ export default {
         sub_menu_id: null,
           middleware_url: "",
         is_implementor: 0,
+          is_add_on: 0,
         module_screen_id: null,
         sort: 0,
       };
@@ -1440,13 +1449,12 @@ export default {
                                     <div class="form-group position-relative">
                                         <label class="control-label">
                                             {{ $t("module.module") }}
-                                            <span class="text-danger">*</span>
                                         </label>
 
                                         <multiselect
                                             v-model="create.module_screen_id"
                                             :options="modules.map((type) => type.id)"
-                                            :custom-label="(opt) => modules.find((x) => x.id == opt)?modules.find((x) => x.id == opt).name: null"
+                                            :custom-label="(opt) => modules.find((x) => x.id == opt)?modules.find((x) => x.id == opt).name_e: null"
                                         >
                                         </multiselect>
                                         <template v-if="errors.module_screen_id">
@@ -1501,6 +1509,39 @@ export default {
                                   </template>
                                 </div>
                               </div>
+                              <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="mr-2 mb-2">
+                                            {{ $t("general.is_add_on") }}
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <b-form-group>
+                                            <b-form-radio
+                                                class="d-inline-block"
+                                                v-model="$v.create.is_add_on.$model"
+                                                name="some-radiosis_add_on"
+                                                :value="1"
+                                            >{{ $t("general.Yes") }}</b-form-radio
+                                            >
+                                            <b-form-radio
+                                                class="d-inline-block m-1"
+                                                v-model="$v.create.is_add_on.$model"
+                                                name="some-radiosis_add_on"
+                                                :value="0"
+                                            >{{ $t("general.No") }}</b-form-radio
+                                            >
+                                        </b-form-group>
+                                        <template v-if="errors.is_add_on">
+                                            <ErrorMessage
+                                                v-for="(
+                                        errorMessage, index
+                                      ) in errors.is_add_on"
+                                                :key="index"
+                                            >{{ $t(errorMessage) }}
+                                            </ErrorMessage>
+                                        </template>
+                                    </div>
+                                </div>
                             </div>
                           </div>
                         </div>
@@ -1805,20 +1846,10 @@ export default {
                       </div>
                     </th>
                     <th v-if="setting.sub_menu_id">
-                      <div class="d-flex justify-content-center">
-                        <span>{{ $t("general.subMenu") }}</span>
-                        <div class="arrow-sort">
-                          <i
-                            class="fas fa-arrow-up"
-                            @click="screens.sort(sortString('name_e'))"
-                          ></i>
-                          <i
-                            class="fas fa-arrow-down"
-                            @click="screens.sort(sortString('-name_e'))"
-                          ></i>
-                        </div>
-                      </div>
-                    </th>
+                          <div class="d-flex justify-content-center">
+                              <span>{{ $t("module.module") }}</span>
+                          </div>
+                      </th>
                     <th v-if="enabled3" class="do-not-print">
                       {{ $t("general.Action") }}
                     </th>
@@ -1849,9 +1880,6 @@ export default {
                         />
                       </div>
                     </td>
-                    <td v-if="setting.name">
-                      <h5 class="m-0 font-weight-normal">{{ data.name }}</h5>
-                    </td>
                     <td v-if="setting.name_e">
                       <h5 class="m-0 font-weight-normal">{{ data.name_e }}</h5>
                     </td>
@@ -1861,14 +1889,17 @@ export default {
                     <td v-if="setting.title_e">
                       <h5 class="m-0 font-weight-normal">{{ data.title_e }}</h5>
                     </td>
-                    <td v-if="setting.sub_menu_id">
-                      <h5 v-if="data.sub_menu" class="m-0 font-weight-normal">
-                        {{
-                          $i18n.locale == "ar"
-                            ? data.sub_menu.name
-                            : data.sub_menu.name_e
-                        }}
-                      </h5>
+                    <td v-if="setting.title_e">
+                        <h5 v-if="data.module_screen" class="m-0 font-weight-normal">
+                            {{
+                                $i18n.locale == "ar"
+                                    ? data.module_screen.name
+                                    : data.module_screen.name_e
+                            }}
+                        </h5>
+                        <h5 v-else class="m-0 font-weight-normal">
+                            General
+                        </h5>
                     </td>
                     <td v-if="enabled3" class="do-not-print">
                       <div class="btn-group">
@@ -2306,13 +2337,12 @@ export default {
                                               <div class="form-group position-relative">
                                                   <label class="control-label">
                                                       {{ $t("module.module") }}
-                                                      <span class="text-danger">*</span>
                                                   </label>
 
                                                   <multiselect
                                                       v-model="edit.module_screen_id"
                                                       :options="modules.map((type) => type.id)"
-                                                      :custom-label="(opt) => modules.find((x) => x.id == opt)?modules.find((x) => x.id == opt).name: null"
+                                                      :custom-label="(opt) => modules.find((x) => x.id == opt)?modules.find((x) => x.id == opt).name_e: null"
                                                   >
                                                   </multiselect>
                                                   <template v-if="errors.module_screen_id">
@@ -2379,6 +2409,39 @@ export default {
                                             </template>
                                           </div>
                                         </div>
+                                        <div class="col-md-6">
+                                              <div class="form-group">
+                                                  <label class="mr-2 mb-2">
+                                                      {{ $t("general.is_add_on") }}
+                                                      <span class="text-danger">*</span>
+                                                  </label>
+                                                  <b-form-group>
+                                                      <b-form-radio
+                                                          class="d-inline-block"
+                                                          v-model="$v.edit.is_add_on.$model"
+                                                          name="some-radiosis_add_on"
+                                                          :value="1"
+                                                      >{{ $t("general.Yes") }}</b-form-radio
+                                                      >
+                                                      <b-form-radio
+                                                          class="d-inline-block m-1"
+                                                          v-model="$v.edit.is_add_on.$model"
+                                                          name="some-radiosis_add_on"
+                                                          :value="0"
+                                                      >{{ $t("general.No") }}</b-form-radio
+                                                      >
+                                                  </b-form-group>
+                                                  <template v-if="errors.is_add_on">
+                                                      <ErrorMessage
+                                                          v-for="(
+                                        errorMessage, index
+                                      ) in errors.is_add_on"
+                                                          :key="index"
+                                                      >{{ $t(errorMessage) }}
+                                                      </ErrorMessage>
+                                                  </template>
+                                              </div>
+                                          </div>
                                       </div>
                                     </div>
                                   </div>

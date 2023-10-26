@@ -569,6 +569,7 @@
         "unrealized_commission": "عمولة غير محققة",
         "commission": "عمولة",
         "contact_person": "شخص الاتصال",
-        "middleware": "الصلاحيه"
+        "middleware": "الصلاحيه",
+        "is_add_on": "اضافات"
     }
 }

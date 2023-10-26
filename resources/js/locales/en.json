@@ -578,6 +578,7 @@
         "unrealized_commission": "Unrealized Commission",
         "commission": "Commission",
         "contact_person": "Contact Person",
-        "middleware": "Middleware"
+        "middleware": "Middleware",
+        "is_add_on": "is add on ?"
     }
 }
