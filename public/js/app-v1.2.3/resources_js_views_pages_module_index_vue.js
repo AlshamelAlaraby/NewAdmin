@@ -6583,8 +6583,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     getFourthLevelChildNodes: function getFourthLevelChildNodes(rootNode, parentNode, secondParentNode, thirdParentNode) {
       var _this30 = this;
       if (!thirdParentNode.collapsed) {
-        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/tree-properties/child-nodes/".concat(thirdParentNode.id)).then(function (res) {
-          _this30.rootNodes = _this30.getRootNodesAfter3rdCollapse(rootNode, parentNode, secondParentNode, thirdParentNode, res.data);
+        _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/program-folder/sub-menu-folder/".concat(thirdParentNode.id)).then(function (res) {
+          console.log(res.data.data);
+          // this.rootNodes = this.getRootNodesAfter3rdCollapse(
+          //     rootNode,
+          //     parentNode,
+          //     secondParentNode,
+          //     thirdParentNode,
+          //     res.data.data
+          // );
         })["catch"](function (err) {
           sweetalert2__WEBPACK_IMPORTED_MODULE_4___default().fire({
             icon: "error",
