@@ -307,6 +307,7 @@ Route::group(['prefix' => 'folder-menu'], function () {
 Route::group(['prefix' => 'program-folder'], function () {
     Route::controller(\App\Http\Controllers\ProgramFolder\ProgramFolderController::class)->group(function () {
         Route::get('/menu-folder/{id}', 'menuFolder');
+        Route::get('/sub-menu-folder/{id}', 'subMenus');
         Route::get('/', 'all')->name('program-folder.index');
         Route::get('/{id}', 'find');
         Route::post('/', 'create')->name('program-folder.create');

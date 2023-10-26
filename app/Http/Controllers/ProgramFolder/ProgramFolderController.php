@@ -8,6 +8,7 @@ use App\Http\Requests\ProgramFolder\UpdateProgramFileRequest;
 use App\Http\Resources\ProgramFolderResource;
 use App\Models\FolderMenu;
 use App\Models\ProgramFolder;
+use App\Models\SubMenu;
 use App\Repositories\ProgramFolder\ProgramFolderInterface;
 use Illuminate\Http\Request;
 use Mockery\Exception;
@@ -110,64 +111,37 @@ class ProgramFolderController extends Controller
         return responseJson(200, 'success', \App\Http\Resources\Log\LogResource::collection($logs));
     }
 
-    // public function menuFolder($id){
-
-    //     // $models = $this->model->where('project_program_module_id', $id)->get();
-    //     // return $models;
-    //     $menu_folder_ids = $this->model->where('project_program_module_id', $id)->pluck('menu_folder_id')->toArray();
-    //     $menu_folders = $this->folderMenuModel->whereIn('id', $menu_folder_ids)->select('id', 'name','name_e')->get();
-    //     return responseJson(200, 'success', $menu_folders);
-    // }
-
-
-
-    // public function menuFolder($id)
-    // {
-
-    //     $data = [];
-
-    //     $data['program_folder_menus'] = $this->model->where('project_program_module_id', $id)->get();
-
-
-    //     $menu_folder_ids = $this->model->where('project_program_module_id', $id)->pluck('menu_folder_id')->toArray();
-
-    //     $data['menu_folders'] = $this->folderMenuModel->whereIn('id', $menu_folder_ids)->select('id', 'name', 'name_e')->get();
-
-    //     $response = [
-    //         'message' => 'success',
-    //         'data' => $data,
-
-    //     ];
-
-    //     return response()->json($response);
-    // }..
-
-
     public function menuFolder($id)
-{
-    $data = [];
+    {
+        $data = [];
 
-    $data['program_folder_menus'] = $this->model->where('project_program_module_id', $id)->get();
-    $menu_folder_ids = $this->model->where('project_program_module_id', $id)->pluck('menu_folder_id')->toArray();
-    $data['menu_folders'] = $this->folderMenuModel->whereIn('id', $menu_folder_ids)->select('id', 'name', 'name_e')->get();
+        $data['program_folder_menus'] = $this->model->where('project_program_module_id', $id)->get();
+        $menu_folder_ids = $this->model->where('project_program_module_id', $id)->pluck('menu_folder_id')->toArray();
+        $data['menu_folders'] = $this->folderMenuModel->whereIn('id', $menu_folder_ids)->select('id', 'name', 'name_e')->get();
 
+        $modifiedMenuFolders = [];
 
-    $modifiedMenuFolders = [];
+        foreach ($data['menu_folders'] as $index => $menuFolder) {
+            $menuFolder['program_folder_menu_id'] = $data['program_folder_menus'][$index]['id'];
+            $modifiedMenuFolders[] = $menuFolder;
+        }
 
-    foreach ($data['menu_folders'] as $index => $menuFolder) {
-        $menuFolder['program_folder_menu_id'] = $data['program_folder_menus'][$index]['id'];
-        $modifiedMenuFolders[] = $menuFolder;
+        $response = [
+            'message' => 'success',
+            'data' => [
+                'menu_folders' => $modifiedMenuFolders,
+            ],
+        ];
+
+        return response()->json($response);
     }
 
-    $response = [
-        'message' => 'success',
-        'data' => [
-            'menu_folders' => $modifiedMenuFolders,
-        ],
-    ];
+    public function subMenus($id)
+    {
 
-    return response()->json($response);
-}
+        $models = SubMenu::where('id', $id)->with('screens')->get();
 
+        return responseJson(200, 'success', $models);
+    }
 
 }
