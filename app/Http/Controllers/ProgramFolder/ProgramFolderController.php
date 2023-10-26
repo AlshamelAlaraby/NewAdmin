@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProgramFolder\ProgramFolderRequest;
 use App\Http\Requests\ProgramFolder\UpdateProgramFileRequest;
 use App\Http\Resources\ProgramFolderResource;
+use App\Models\FolderMenu;
+use App\Models\ProgramFolder;
 use App\Repositories\ProgramFolder\ProgramFolderInterface;
 use Illuminate\Http\Request;
 use Mockery\Exception;
@@ -16,9 +18,11 @@ class ProgramFolderController extends Controller
     protected $repository;
     protected $resource = ProgramFolderResource::class;
 
-    public function __construct(ProgramFolderInterface $repository)
+    public function __construct(ProgramFolderInterface $repository, private ProgramFolder $model ,private FolderMenu $folderMenuModel)
     {
         $this->repository = $repository;
+        $this->model = $model;
+        $this->folderMenuModel = $folderMenuModel;
     }
 
     public function all(Request $request)
@@ -51,7 +55,6 @@ class ProgramFolderController extends Controller
         return responseJson(200, __('Done'));
     }
 
-
     public function update(UpdateProgramFileRequest $request, $id)
     {
         try {
@@ -71,7 +74,6 @@ class ProgramFolderController extends Controller
     {
         $model = $this->repository->updateArray($request->validated());
         return responseJson(200, __('Done'));
-
 
     }
 
@@ -107,4 +109,12 @@ class ProgramFolderController extends Controller
         return $logs = $this->repository->logs($id);
         return responseJson(200, 'success', \App\Http\Resources\Log\LogResource::collection($logs));
     }
+
+
+    public function menuFolder($id){
+        $menu_folder_ids = $this->model->where('project_program_module_id', $id)->pluck('menu_folder_id')->toArray();
+        $menu_folders = $this->folderMenuModel->whereIn('id', $menu_folder_ids)->select('id', 'name','name_e')->get();
+        return responseJson(200, 'success', $menu_folders);
+    }
+
 }
