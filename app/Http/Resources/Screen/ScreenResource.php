@@ -4,6 +4,7 @@ namespace App\Http\Resources\Screen;
 
 use App\Http\Resources\Company\CompanyResource;
 use App\Http\Resources\ModuleScreenResource;
+use App\Http\Resources\ProjectProgramModule\ProjectProgramModuleResource;
 use App\Http\Resources\SubMenuResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -33,7 +34,7 @@ class ScreenResource extends JsonResource
             'module_screen_id'      => $this->module_screen_id,
             'company'        => new  CompanyResource($this->company),
             'sub_menu'       => new SubMenuResource($this->subMenu),
-            'module_screen'       => new ModuleScreenResource($this->ModuleScreen),
+            'module_screen'       => new ProjectProgramModuleResource($this->ModuleScreen),
 
         ];
     }
