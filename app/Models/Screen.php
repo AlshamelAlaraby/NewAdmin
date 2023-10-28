@@ -31,11 +31,11 @@ class Screen extends Model
 
     //relation with Project Program Module
 
-    public function ProjectProgramModule()
+    public function module()
     {
-        return $this->belongsTo(ProjectProgramModule::class, 'module_id');
+        return $this->belongsTo(Module::class, 'module_id');
     }
-    
+
 
     public function ModuleScreen()
     {

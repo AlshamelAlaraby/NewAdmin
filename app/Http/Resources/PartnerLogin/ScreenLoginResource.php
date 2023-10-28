@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\PartnerLogin;
 
+use App\Http\Resources\ModuleResource;
 use App\Http\Resources\ProjectProgramModuleDropDownResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -26,7 +27,7 @@ class ScreenLoginResource extends JsonResource
             'menu_id'      => $this->menu_id,
             'company_id'       => $this->company_id,
             'module_id'       => $this->module_id,
-            "module"          => new ProjectProgramModuleDropDownResource($this->ProjectProgramModule),
+            "module"          => new ModuleResource($this->module),
 
         ];
     }

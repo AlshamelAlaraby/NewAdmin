@@ -18,6 +18,8 @@ use App\Repositories\Helpfile\HelpfileRepository;
 use App\Repositories\Helpfile\HelpfileRepositoryInterface;
 use App\Repositories\Hotfield\HotfieldRepository;
 use App\Repositories\Hotfield\HotfieldRepositoryInterface;
+use App\Repositories\Module\ModuleInterface;
+use App\Repositories\Module\ModuleRepository;
 use App\Repositories\Partner\PartnerRepository;
 use App\Repositories\Partner\PartnerRepositoryInterface;
 use App\Repositories\ProgramFolder\ProgramFolderInterface;
@@ -70,6 +72,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ScreenAttributeInterface::class, ScreenAttributeRepository::class);
         $this->app->bind(FolderMenuInterface::class, FolderMenuRepository::class);
         $this->app->bind(ProgramFolderInterface::class, ProgramFolderRepository::class);
+        $this->app->bind(ModuleInterface::class, ModuleRepository::class);
 
     }
 

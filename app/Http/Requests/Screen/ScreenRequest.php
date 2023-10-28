@@ -42,7 +42,7 @@ class ScreenRequest extends FormRequest
             'company_id'      => 'nullable|exists:companies,id',
             'parent_id'       => 'nullable|exists:screens,id',
             'module_screen_id'       => 'nullable|exists:project_program_modules,id',
-            'module_id'       => 'nullable|exists:project_program_modules,id',
+            'module_id'       => 'nullable|exists:modules,id',
 
 
         ];
