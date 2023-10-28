@@ -35,6 +35,7 @@ class ScreenResource extends JsonResource
             'company'        => new  CompanyResource($this->company),
             'sub_menu'       => new SubMenuResource($this->subMenu),
             'module_screen'       => new ProjectProgramModuleResource($this->ModuleScreen),
+            'module_id'      => $this->module_id,
 
         ];
     }
