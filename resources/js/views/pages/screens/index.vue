@@ -776,7 +776,7 @@ export default {
     },
     async getModule() {
           await adminApi
-              .get(`/project-program-modules/get-drop-down?is_module=1`)
+              .get(`/modules`)
               .then((res) => {
                   let l = res.data.data;
                   this.modules = l;
