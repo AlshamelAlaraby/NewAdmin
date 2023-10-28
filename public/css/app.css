@@ -31676,7 +31676,7 @@ a.ck.ck-button:not(.ck-disabled):hover {
 @font-face {
   font-family: "remixicon";
   src: url(/fonts/remixicon.eot?5ddcd2c120d358ee10d77a8e0a383bee); /* IE9*/
-  src: url(/fonts/remixicon.eot?5ddcd2c120d358ee10d77a8e0a383bee) format("embedded-opentype"), url(/fonts/remixicon.woff2?f45d28a142788d05eb6a5c43a5cfcb8a) format("woff2"), url(/fonts/remixicon.woff?d72ac20cd8317e0252021df25d941f02) format("woff"), url(/fonts/remixicon.ttf?b5e55622baba6dd1a0602c596c14c7c3) format("truetype"), url(/fonts/remixicon.svg?c01e4268f0e6b98a2189ab84be161186) format("svg"); /* iOS 4.1- */
+  src: url(/fonts/remixicon.eot?5ddcd2c120d358ee10d77a8e0a383bee) format("embedded-opentype"), url(/fonts/remixicon.woff2?f45d28a142788d05eb6a5c43a5cfcb8a) format("woff2"), url(/fonts/remixicon.woff?d72ac20cd8317e0252021df25d941f02) format("woff"), url(/fonts/remixicon.ttf?b5e55622baba6dd1a0602c596c14c7c3) format("truetype"), url(/fonts/remixicon.svg?26db1a6a38136cc0581d9fba98f76aa4) format("svg"); /* iOS 4.1- */
   font-display: swap;
 }
 [class^=ri-], [class*=" ri-"] {
@@ -60639,7 +60639,7 @@ a.ck.ck-button:not(.ck-disabled):hover {
 @font-face {
   font-family: "feather";
   src: url(/fonts/feather.eot?ba142c9a3d0f5747c3470e1126aa9e88); /* IE9*/
-  src: url(/fonts/feather.eot?ba142c9a3d0f5747c3470e1126aa9e88) format("embedded-opentype"), url(/fonts/feather.woff?3fa166a56aa3839c5d12598e38b2d877) format("woff"), url(/fonts/feather.ttf?aaacbaee6c14b4207d39846c6d971e1f) format("truetype"), url(/fonts/feather.svg?4c0609ba502f17aa4f399fa63c4d4357) format("svg"); /* iOS 4.1- */
+  src: url(/fonts/feather.eot?ba142c9a3d0f5747c3470e1126aa9e88) format("embedded-opentype"), url(/fonts/feather.woff?3fa166a56aa3839c5d12598e38b2d877) format("woff"), url(/fonts/feather.ttf?aaacbaee6c14b4207d39846c6d971e1f) format("truetype"), url(/fonts/feather.svg?68000ec2e5401dd81479b093e83daf58) format("svg"); /* iOS 4.1- */
 }
 [class^=fe-] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -67732,7 +67732,7 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
   font-display: block;
   src: url(/fonts/fa-brands-400.eot?607a77859353c0cc1882b51e1e269d38);
-  src: url(/fonts/fa-brands-400.eot?607a77859353c0cc1882b51e1e269d38) format("embedded-opentype"), url(/fonts/fa-brands-400.woff2?31015e861aeb30ff8355fab3e876a6bd) format("woff2"), url(/fonts/fa-brands-400.woff?ee26f57bc9e3619b022b2c0ea0fc4660) format("woff"), url(/fonts/fa-brands-400.ttf?5818bbd07dfd7095920a592049f5d9bd) format("truetype"), url(/fonts/fa-brands-400.svg?5f363d3d71c36033aff040837c8683ab) format("svg");
+  src: url(/fonts/fa-brands-400.eot?607a77859353c0cc1882b51e1e269d38) format("embedded-opentype"), url(/fonts/fa-brands-400.woff2?31015e861aeb30ff8355fab3e876a6bd) format("woff2"), url(/fonts/fa-brands-400.woff?ee26f57bc9e3619b022b2c0ea0fc4660) format("woff"), url(/fonts/fa-brands-400.ttf?5818bbd07dfd7095920a592049f5d9bd) format("truetype"), url(/fonts/fa-brands-400.svg?3c45c98f6f6c1b009c082510d0255ef4) format("svg");
 }
 .fab {
   font-family: "Font Awesome 5 Brands";
@@ -67745,7 +67745,7 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
   font-display: block;
   src: url(/fonts/fa-regular-400.eot?0747be4cba2f8600544f4f09645d971a);
-  src: url(/fonts/fa-regular-400.eot?0747be4cba2f8600544f4f09645d971a) format("embedded-opentype"), url(/fonts/fa-regular-400.woff2?c52405129ae48097815d4da606003470) format("woff2"), url(/fonts/fa-regular-400.woff?8b892b7904a39e37c53dc5a7534bb60e) format("woff"), url(/fonts/fa-regular-400.ttf?c3146b3524e97475c094343e848a7370) format("truetype"), url(/fonts/fa-regular-400.svg?f4f60ace2cf62f2cba66b370b535a8ad) format("svg");
+  src: url(/fonts/fa-regular-400.eot?0747be4cba2f8600544f4f09645d971a) format("embedded-opentype"), url(/fonts/fa-regular-400.woff2?c52405129ae48097815d4da606003470) format("woff2"), url(/fonts/fa-regular-400.woff?8b892b7904a39e37c53dc5a7534bb60e) format("woff"), url(/fonts/fa-regular-400.ttf?c3146b3524e97475c094343e848a7370) format("truetype"), url(/fonts/fa-regular-400.svg?ab47faeab8ddc5f809ec2a5377c1fbe4) format("svg");
 }
 .far {
   font-family: "Font Awesome 5 Free";
@@ -67758,7 +67758,7 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
   font-display: block;
   src: url(/fonts/fa-solid-900.eot?7eefe04dc985dd4ad38bd7f4ec0c20a0);
-  src: url(/fonts/fa-solid-900.eot?7eefe04dc985dd4ad38bd7f4ec0c20a0) format("embedded-opentype"), url(/fonts/fa-solid-900.woff2?9451d5fee89b51a20f8a44c56a4f6c1a) format("woff2"), url(/fonts/fa-solid-900.woff?a940d584750708f5435ce2c523498ddb) format("woff"), url(/fonts/fa-solid-900.ttf?32267f3b4db33a7c85ee31d9b317c9e4) format("truetype"), url(/fonts/fa-solid-900.svg?3a909e9bcf105f28ebe725ce76fe7cf9) format("svg");
+  src: url(/fonts/fa-solid-900.eot?7eefe04dc985dd4ad38bd7f4ec0c20a0) format("embedded-opentype"), url(/fonts/fa-solid-900.woff2?9451d5fee89b51a20f8a44c56a4f6c1a) format("woff2"), url(/fonts/fa-solid-900.woff?a940d584750708f5435ce2c523498ddb) format("woff"), url(/fonts/fa-solid-900.ttf?32267f3b4db33a7c85ee31d9b317c9e4) format("truetype"), url(/fonts/fa-solid-900.svg?18df003f90a7f1313b98b23384ec4f1b) format("svg");
 }
 .fa,
 .fas {
@@ -67771,7 +67771,7 @@ readers do not read off random characters that represent icons */
   font-weight: normal;
   font-style: normal;
   src: url(/fonts/boxicons.eot?6829ebb16362074c0c306cfa17ff6c0d);
-  src: url(/fonts/boxicons.eot?6829ebb16362074c0c306cfa17ff6c0d) format("embedded-opentype"), url(/fonts/boxicons.woff2?c6d7d0356c53c17d21beee212148029d) format("woff2"), url(/fonts/boxicons.woff?dcaf6a260cca4a061aff4a03f336ce1d) format("woff"), url(/fonts/boxicons.ttf?e2ffa5b9254ec286b380fd1f83f1cba3) format("truetype"), url(/fonts/boxicons.svg?3e906787d0915a1e482c6a0a61625709) format("svg");
+  src: url(/fonts/boxicons.eot?6829ebb16362074c0c306cfa17ff6c0d) format("embedded-opentype"), url(/fonts/boxicons.woff2?c6d7d0356c53c17d21beee212148029d) format("woff2"), url(/fonts/boxicons.woff?dcaf6a260cca4a061aff4a03f336ce1d) format("woff"), url(/fonts/boxicons.ttf?e2ffa5b9254ec286b380fd1f83f1cba3) format("truetype"), url(/fonts/boxicons.svg?5e81160c5f41fcc12b388f726eca743a) format("svg");
 }
 .bx {
   font-family: "boxicons" !important;
@@ -72610,7 +72610,7 @@ readers do not read off random characters that represent icons */
 @font-face {
   font-family: "weathericons";
   src: url(/fonts/weathericons-regular-webfont.eot?bb2ec001c20cf752f8520e72eb49cce6);
-  src: url(/fonts/weathericons-regular-webfont.eot?bb2ec001c20cf752f8520e72eb49cce6) format("embedded-opentype"), url(/fonts/weathericons-regular-webfont.woff2?e218aee6928fe3da9ed6e0a1d3adc8be) format("woff2"), url(/fonts/weathericons-regular-webfont.woff?371511ddba5fdac0538c83f41d8fa022) format("woff"), url(/fonts/weathericons-regular-webfont.ttf?0942d1e1c447d6ce3ffcc75168766387) format("truetype"), url(/fonts/weathericons-regular-webfont.svg?86a76ca5e882e8285706b5a2a58cc065) format("svg");
+  src: url(/fonts/weathericons-regular-webfont.eot?bb2ec001c20cf752f8520e72eb49cce6) format("embedded-opentype"), url(/fonts/weathericons-regular-webfont.woff2?e218aee6928fe3da9ed6e0a1d3adc8be) format("woff2"), url(/fonts/weathericons-regular-webfont.woff?371511ddba5fdac0538c83f41d8fa022) format("woff"), url(/fonts/weathericons-regular-webfont.ttf?0942d1e1c447d6ce3ffcc75168766387) format("truetype"), url(/fonts/weathericons-regular-webfont.svg?1341a15172cec8dae06e7382405d3939) format("svg");
   font-weight: normal;
   font-style: normal;
 }

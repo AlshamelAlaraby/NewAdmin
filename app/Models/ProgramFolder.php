@@ -13,7 +13,7 @@ class ProgramFolder extends Model
 
     protected $guarded = ["id"];
     protected $table = "program_folder_menus";
-    protected $appends = ['company_id'];
+    //protected $appends = ['company_id'];
 
     /*** return relation  with  Folder */
     public function folder()
@@ -34,10 +34,10 @@ class ProgramFolder extends Model
     }
 
     /*** return CompanyId */
-    public function getCompanyIdAttribute($key)
+    /*public function getCompanyIdAttribute($key)
     {
         return  $this->program()->first()->company_id;
-    }
+    }*/
 
     /*** return count relation  hasMany */
     public function hasChildren()

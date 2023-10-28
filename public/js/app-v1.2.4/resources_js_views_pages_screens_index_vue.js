@@ -2802,6 +2802,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         search: "",
         middleware_url: "",
         is_implementor: 0,
+        is_add_on: 0,
         sort: 0,
         module_screen_id: null
       },
@@ -2814,6 +2815,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         search: "",
         middleware_url: "",
         is_implementor: 0,
+        is_add_on: 0,
         sort: 0,
         module_screen_id: null
       },
@@ -2860,7 +2862,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_12__.required
       },
       is_implementor: {},
-      module_screen_id: {}
+      module_screen_id: {},
+      is_add_on: {}
     },
     edit: {
       name_e: {
@@ -2883,7 +2886,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_12__.required
       },
       is_implementor: {},
-      module_screen_id: {}
+      module_screen_id: {},
+      is_add_on: {}
     }
   },
   watch: {
@@ -3302,7 +3306,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         serial_id: "",
         sub_menu_id: null,
         sort: 0,
-        module_screen_id: null
+        module_screen_id: null,
+        is_add_on: 0
       };
       this.$nextTick(function () {
         _this13.$v.$reset();
@@ -3347,6 +3352,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   sub_menu_id: null,
                   middleware_url: "",
                   is_implementor: 0,
+                  is_add_on: 0,
                   sort: 0,
                   module_screen_id: null
                 };
@@ -3377,6 +3383,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         sub_menu_id: null,
         middleware_url: "",
         is_implementor: 0,
+        is_add_on: 0,
         sort: 0,
         module_screen_id: null
       };
@@ -3590,7 +3597,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context8.prev = _context8.next) {
               case 0:
                 _context8.next = 2;
-                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/module-screens").then(function (res) {
+                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/project-program-modules/get-drop-down?is_module=1").then(function (res) {
                   var l = res.data.data;
                   _this22.modules = l;
                   //console.log(l);
@@ -3641,19 +3648,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this23.edit.title = module.title;
                 _this23.edit.title_e = module.title_e;
                 _this23.edit.serial_id = module.serial_id;
+                _this23.edit.is_add_on = module.is_add_on;
                 _this23.edit.middleware_url = module.middleware_url;
                 _this23.edit.sort = module.sort;
                 _this23.screen_id = module.id;
                 _this23.edit.module_screen_id = module.module_screen_id;
                 _this23.edit.is_implementor = module.is_implementor;
-                _context9.next = 22;
+                _context9.next = 23;
                 return _this23.getScreenDocumentTypes();
-              case 22:
-                _context9.next = 24;
+              case 23:
+                _context9.next = 25;
                 return _this23.getScreenButtons();
-              case 24:
-                _this23.errors = {};
               case 25:
+                _this23.errors = {};
+              case 26:
               case "end":
                 return _context9.stop();
             }
@@ -3675,6 +3683,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         sub_menu_id: null,
         middleware_url: "",
         is_implementor: 0,
+        is_add_on: 0,
         module_screen_id: null,
         sort: 0
       };
@@ -7818,9 +7827,7 @@ var render = function render() {
     staticClass: "form-group position-relative"
   }, [_c("label", {
     staticClass: "control-label"
-  }, [_vm._v("\n                                            " + _vm._s(_vm.$t("module.module")) + "\n                                            "), _c("span", {
-    staticClass: "text-danger"
-  }, [_vm._v("*")])]), _vm._v(" "), _c("multiselect", {
+  }, [_vm._v("\n                                            " + _vm._s(_vm.$t("module.module")) + "\n                                        ")]), _vm._v(" "), _c("multiselect", {
     attrs: {
       options: _vm.modules.map(function (type) {
         return type.id;
@@ -7830,7 +7837,7 @@ var render = function render() {
           return x.id == opt;
         }) ? _vm.modules.find(function (x) {
           return x.id == opt;
-        }).name : null;
+        }).name_e : null;
       }
     },
     model: {
@@ -7887,6 +7894,44 @@ var render = function render() {
     return _c("ErrorMessage", {
       key: index
     }, [_vm._v(_vm._s(_vm.$t(errorMessage)) + "\n                                    ")]);
+  }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-6"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", {
+    staticClass: "mr-2 mb-2"
+  }, [_vm._v("\n                                            " + _vm._s(_vm.$t("general.is_add_on")) + "\n                                            "), _c("span", {
+    staticClass: "text-danger"
+  }, [_vm._v("*")])]), _vm._v(" "), _c("b-form-group", [_c("b-form-radio", {
+    staticClass: "d-inline-block",
+    attrs: {
+      name: "some-radiosis_add_on",
+      value: 1
+    },
+    model: {
+      value: _vm.$v.create.is_add_on.$model,
+      callback: function callback($$v) {
+        _vm.$set(_vm.$v.create.is_add_on, "$model", $$v);
+      },
+      expression: "$v.create.is_add_on.$model"
+    }
+  }, [_vm._v(_vm._s(_vm.$t("general.Yes")))]), _vm._v(" "), _c("b-form-radio", {
+    staticClass: "d-inline-block m-1",
+    attrs: {
+      name: "some-radiosis_add_on",
+      value: 0
+    },
+    model: {
+      value: _vm.$v.create.is_add_on.$model,
+      callback: function callback($$v) {
+        _vm.$set(_vm.$v.create.is_add_on, "$model", $$v);
+      },
+      expression: "$v.create.is_add_on.$model"
+    }
+  }, [_vm._v(_vm._s(_vm.$t("general.No")))])], 1), _vm._v(" "), _vm.errors.is_add_on ? _vm._l(_vm.errors.is_add_on, function (errorMessage, index) {
+    return _c("ErrorMessage", {
+      key: index
+    }, [_vm._v(_vm._s(_vm.$t(errorMessage)) + "\n                                            ")]);
   }) : _vm._e()], 2)])])])])]), _vm._v(" "), _c("b-tab", {
     attrs: {
       disabled: !_vm.screen_id,
@@ -8155,23 +8200,7 @@ var render = function render() {
     }
   })])])]) : _vm._e(), _vm._v(" "), _vm.setting.sub_menu_id ? _c("th", [_c("div", {
     staticClass: "d-flex justify-content-center"
-  }, [_c("span", [_vm._v(_vm._s(_vm.$t("general.subMenu")))]), _vm._v(" "), _c("div", {
-    staticClass: "arrow-sort"
-  }, [_c("i", {
-    staticClass: "fas fa-arrow-up",
-    on: {
-      click: function click($event) {
-        _vm.screens.sort(_vm.sortString("name_e"));
-      }
-    }
-  }), _vm._v(" "), _c("i", {
-    staticClass: "fas fa-arrow-down",
-    on: {
-      click: function click($event) {
-        _vm.screens.sort(_vm.sortString("-name_e"));
-      }
-    }
-  })])])]) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("th", {
+  }, [_c("span", [_vm._v(_vm._s(_vm.$t("module.module")))])])]) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("th", {
     staticClass: "do-not-print"
   }, [_vm._v("\n                      " + _vm._s(_vm.$t("general.Action")) + "\n                    ")]) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("th", {
     staticClass: "do-not-print"
@@ -8234,17 +8263,17 @@ var render = function render() {
           }
         }
       }
-    })])]) : _vm._e(), _vm._v(" "), _vm.setting.name ? _c("td", [_c("h5", {
-      staticClass: "m-0 font-weight-normal"
-    }, [_vm._v(_vm._s(data.name))])]) : _vm._e(), _vm._v(" "), _vm.setting.name_e ? _c("td", [_c("h5", {
+    })])]) : _vm._e(), _vm._v(" "), _vm.setting.name_e ? _c("td", [_c("h5", {
       staticClass: "m-0 font-weight-normal"
     }, [_vm._v(_vm._s(data.name_e))])]) : _vm._e(), _vm._v(" "), _vm.setting.title ? _c("td", [_c("h5", {
       staticClass: "m-0 font-weight-normal"
     }, [_vm._v(_vm._s(data.title))])]) : _vm._e(), _vm._v(" "), _vm.setting.title_e ? _c("td", [_c("h5", {
       staticClass: "m-0 font-weight-normal"
-    }, [_vm._v(_vm._s(data.title_e))])]) : _vm._e(), _vm._v(" "), _vm.setting.sub_menu_id ? _c("td", [data.sub_menu ? _c("h5", {
+    }, [_vm._v(_vm._s(data.title_e))])]) : _vm._e(), _vm._v(" "), _vm.setting.title_e ? _c("td", [data.module_screen ? _c("h5", {
       staticClass: "m-0 font-weight-normal"
-    }, [_vm._v("\n                        " + _vm._s(_vm.$i18n.locale == "ar" ? data.sub_menu.name : data.sub_menu.name_e) + "\n                      ")]) : _vm._e()]) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("td", {
+    }, [_vm._v("\n                            " + _vm._s(_vm.$i18n.locale == "ar" ? data.module_screen.name : data.module_screen.name_e) + "\n                        ")]) : _c("h5", {
+      staticClass: "m-0 font-weight-normal"
+    }, [_vm._v("\n                            General\n                        ")])]) : _vm._e(), _vm._v(" "), _vm.enabled3 ? _c("td", {
       staticClass: "do-not-print"
     }, [_c("div", {
       staticClass: "btn-group"
@@ -8569,9 +8598,7 @@ var render = function render() {
       staticClass: "form-group position-relative"
     }, [_c("label", {
       staticClass: "control-label"
-    }, [_vm._v("\n                                                      " + _vm._s(_vm.$t("module.module")) + "\n                                                      "), _c("span", {
-      staticClass: "text-danger"
-    }, [_vm._v("*")])]), _vm._v(" "), _c("multiselect", {
+    }, [_vm._v("\n                                                      " + _vm._s(_vm.$t("module.module")) + "\n                                                  ")]), _vm._v(" "), _c("multiselect", {
       attrs: {
         options: _vm.modules.map(function (type) {
           return type.id;
@@ -8581,7 +8608,7 @@ var render = function render() {
             return x.id == opt;
           }) ? _vm.modules.find(function (x) {
             return x.id == opt;
-          }).name : null;
+          }).name_e : null;
         }
       },
       model: {
@@ -8638,6 +8665,44 @@ var render = function render() {
       return _c("ErrorMessage", {
         key: index
       }, [_vm._v(_vm._s(_vm.$t(errorMessage)) + "\n                                              ")]);
+    }) : _vm._e()], 2)]), _vm._v(" "), _c("div", {
+      staticClass: "col-md-6"
+    }, [_c("div", {
+      staticClass: "form-group"
+    }, [_c("label", {
+      staticClass: "mr-2 mb-2"
+    }, [_vm._v("\n                                                      " + _vm._s(_vm.$t("general.is_add_on")) + "\n                                                      "), _c("span", {
+      staticClass: "text-danger"
+    }, [_vm._v("*")])]), _vm._v(" "), _c("b-form-group", [_c("b-form-radio", {
+      staticClass: "d-inline-block",
+      attrs: {
+        name: "some-radiosis_add_on",
+        value: 1
+      },
+      model: {
+        value: _vm.$v.edit.is_add_on.$model,
+        callback: function callback($$v) {
+          _vm.$set(_vm.$v.edit.is_add_on, "$model", $$v);
+        },
+        expression: "$v.edit.is_add_on.$model"
+      }
+    }, [_vm._v(_vm._s(_vm.$t("general.Yes")))]), _vm._v(" "), _c("b-form-radio", {
+      staticClass: "d-inline-block m-1",
+      attrs: {
+        name: "some-radiosis_add_on",
+        value: 0
+      },
+      model: {
+        value: _vm.$v.edit.is_add_on.$model,
+        callback: function callback($$v) {
+          _vm.$set(_vm.$v.edit.is_add_on, "$model", $$v);
+        },
+        expression: "$v.edit.is_add_on.$model"
+      }
+    }, [_vm._v(_vm._s(_vm.$t("general.No")))])], 1), _vm._v(" "), _vm.errors.is_add_on ? _vm._l(_vm.errors.is_add_on, function (errorMessage, index) {
+      return _c("ErrorMessage", {
+        key: index
+      }, [_vm._v(_vm._s(_vm.$t(errorMessage)) + "\n                                                      ")]);
     }) : _vm._e()], 2)])])])])]), _vm._v(" "), _c("b-tab", {
       attrs: {
         title: _vm.$t("general.DocumentType")

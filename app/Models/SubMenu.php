@@ -24,7 +24,7 @@ class SubMenu extends Model
     /*** return  relation  Screens */
     public function screens()
     {
-        return $this->hasMany(Screen::class, 'sub_menu_id', 'id');
+        return $this->hasMany(Screen::class, 'sub_menu_id', 'id')->whereNull('company_id');
     }
 
     /*** return count relation  hasMany */
