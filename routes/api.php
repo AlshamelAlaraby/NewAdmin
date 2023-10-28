@@ -319,6 +319,15 @@ Route::group(['prefix' => 'program-folder'], function () {
 
     });
 });
+Route::group(['prefix' => 'modules'], function () {
+    Route::controller(\App\Http\Controllers\ModuleController::class)->group(function () {
+
+        Route::get('/', 'all')->name('modules.index');
+        Route::get('/{id}', 'find');
+
+
+    });
+});
 
 //----------------------------------------------milad routes ------------------------------
 Route::get('everything_about_the_company/{company_id}', [CompanyController::class, 'everything_about_the_company']);
