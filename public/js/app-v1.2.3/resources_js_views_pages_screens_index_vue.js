@@ -3597,7 +3597,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context8.prev = _context8.next) {
               case 0:
                 _context8.next = 2;
-                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/project-program-modules/get-drop-down?is_module=1").then(function (res) {
+                return _api_adminAxios__WEBPACK_IMPORTED_MODULE_2__["default"].get("/modules").then(function (res) {
                   var l = res.data.data;
                   _this22.modules = l;
                   //console.log(l);
