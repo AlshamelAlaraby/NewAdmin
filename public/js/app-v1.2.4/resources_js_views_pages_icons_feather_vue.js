@@ -1352,7 +1352,7 @@ var render = function render() {
     staticClass: "row"
   }, [_c("div", {
     staticClass: "col-md-6"
-  }, [_vm._v("\n                " + _vm._s(new Date().getFullYear()) + " ©  " + _vm._s(_vm.$t("general.AllRightsReservedTo")) + " "), _c("a", {
+  }, [_vm._v("\r\n                " + _vm._s(new Date().getFullYear()) + " ©  " + _vm._s(_vm.$t("general.AllRightsReservedTo")) + " "), _c("a", {
     staticClass: "link-footer",
     attrs: {
       href: "#"
@@ -1405,7 +1405,7 @@ var render = function render() {
       }
     }, [_c("i", {
       "class": "".concat(item.icon, " mr-1")
-    }), _vm._v("\n                                " + _vm._s(_vm.$t(item.label)) + "\n                            ")]) : _vm._e(), _vm._v(" "), item.subItems ? _c("a", {
+    }), _vm._v("\r\n                                " + _vm._s(_vm.$t(item.label)) + "\r\n                            ")]) : _vm._e(), _vm._v(" "), item.subItems ? _c("a", {
       staticClass: "nav-link dropdown-toggle arrow-none",
       attrs: {
         href: "javascript: void(0);",
@@ -1417,7 +1417,7 @@ var render = function render() {
       }
     }, [_c("i", {
       "class": "".concat(item.icon, " mr-1")
-    }), _vm._v("\n                                " + _vm._s(_vm.$t(item.label)) + "\n                                "), _c("div", {
+    }), _vm._v("\r\n                                " + _vm._s(_vm.$t(item.label)) + "\r\n                                "), _c("div", {
       staticClass: "arrow-down"
     })]) : _vm._e(), _vm._v(" "), _vm.hasItems(item) ? _c("div", {
       staticClass: "dropdown-menu row",
@@ -1442,7 +1442,7 @@ var render = function render() {
         on: {
           click: _vm.onMenuClick
         }
-      }, [_vm._v("\n                                            " + _vm._s(_vm.$t(subitem.label)) + "\n                                            "), _c("div", {
+      }, [_vm._v("\r\n                                            " + _vm._s(_vm.$t(subitem.label)) + "\r\n                                            "), _c("div", {
         staticClass: "arrow-down"
       })]), _vm._v(" "), _c("div", {
         staticClass: "dropdown-menu"
@@ -2982,7 +2982,7 @@ var render = function render() {
         name: "home"
       }
     }
-  }, [_vm._v("\n                                        Sales\n                                    ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                        Sales\r\n                                    ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link side-nav-link-ref",
@@ -2991,7 +2991,7 @@ var render = function render() {
         name: "crm-dashboard"
       }
     }, "to", "/dashboard/crm")
-  }, [_vm._v("\n                                        CRM\n                                    ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                        CRM\r\n                                    ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link side-nav-link-ref",
@@ -3000,7 +3000,7 @@ var render = function render() {
     }, "to", {
       name: "analytics-dashboard"
     })
-  }, [_vm._v("\n                                        Analytics\n                                    ")])], 1)])])]) : _vm._e(), _vm._v(" "), _vm.activetab === 2 ? _c("div", {
+  }, [_vm._v("\r\n                                        Analytics\r\n                                    ")])], 1)])])]) : _vm._e(), _vm._v(" "), _vm.activetab === 2 ? _c("div", {
     staticClass: "twocolumn-menu-item d-block",
     attrs: {
       id: "apps"
@@ -3018,7 +3018,7 @@ var render = function render() {
         name: "calendar"
       }
     }
-  }, [_vm._v("\n                                    Calendar\n                                ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                    Calendar\r\n                                ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link side-nav-link-ref",
@@ -3027,7 +3027,7 @@ var render = function render() {
         name: "chat"
       }
     }
-  }, [_vm._v("\n                                    Chat\n                                ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                    Chat\r\n                                ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -3057,70 +3057,70 @@ var render = function render() {
         name: "products"
       }
     }
-  }, [_vm._v("\n                                                Products List\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Products List\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "products-grid"
       }
     }
-  }, [_vm._v("\n                                                Products Grid\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Products Grid\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "product-detail"
       }
     }
-  }, [_vm._v("\n                                                Product Detail\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Product Detail\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "product-create"
       }
     }
-  }, [_vm._v("\n                                                Create Product\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Create Product\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "customers"
       }
     }
-  }, [_vm._v("\n                                                Customers\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Customers\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "orders"
       }
     }
-  }, [_vm._v("\n                                                Orders\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Orders\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "order-detail"
       }
     }
-  }, [_vm._v("\n                                                Order Detail\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Order Detail\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "sellers"
       }
     }
-  }, [_vm._v("\n                                                Sellers\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Sellers\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "cart"
       }
     }
-  }, [_vm._v("\n                                                Shopping Cart\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Shopping Cart\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "checkout"
       }
     }
-  }, [_vm._v("\n                                                Checkout\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                Checkout\r\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -3150,21 +3150,21 @@ var render = function render() {
         name: "email-inbox"
       }
     }
-  }, [_vm._v("\n                                                Inbox\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Inbox\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "reademail"
       }
     }
-  }, [_vm._v("\n                                                Read Email\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Read Email\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: _defineProperty({
       to: "/email/templates"
     }, "to", {
       name: "email-templates"
     })
-  }, [_vm._v("\n                                                Email Templates\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                Email Templates\r\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link side-nav-link-ref",
@@ -3173,7 +3173,7 @@ var render = function render() {
     }, "to", {
       name: ""
     })
-  }, [_vm._v("\n                                    Companies\n                                ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                    Companies\r\n                                ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -3203,21 +3203,21 @@ var render = function render() {
         name: "task-list"
       }
     }
-  }, [_vm._v("\n                                                List\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                List\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "task-detail"
       }
     }
-  }, [_vm._v("\n                                                Details\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Details\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "kanban-board"
       }
     }
-  }, [_vm._v("\n                                                Kanban Board\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                Kanban Board\r\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -3247,14 +3247,14 @@ var render = function render() {
         name: "contacts-list"
       }
     }
-  }, [_vm._v("\n                                                Members List\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Members List\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "contacts-profile"
       }
     }
-  }, [_vm._v("\n                                                Profile\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                Profile\r\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link side-nav-link-ref",
@@ -3263,7 +3263,7 @@ var render = function render() {
         name: "file-manager"
       }
     }
-  }, [_vm._v("\n                                    File Manager\n                                ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                    File Manager\r\n                                ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link side-nav-link-ref",
@@ -3272,7 +3272,7 @@ var render = function render() {
         name: "tickets"
       }
     }
-  }, [_vm._v("\n                                    Tickets\n                                ")])], 1)])]) : _vm._e(), _vm._v(" "), _vm.activetab === 3 ? _c("div", {
+  }, [_vm._v("\r\n                                    Tickets\r\n                                ")])], 1)])]) : _vm._e(), _vm._v(" "), _vm.activetab === 3 ? _c("div", {
     staticClass: "twocolumn-menu-item d-block",
     attrs: {
       id: "pages"
@@ -3484,7 +3484,7 @@ var render = function render() {
       href: "javascript: void(0);",
       "data-toggle": "collapse"
     }
-  }, [_vm._v("\n                                        Error Pages\n                                        "), _c("span", {
+  }, [_vm._v("\r\n                                        Error Pages\r\n                                        "), _c("span", {
     staticClass: "menu-arrow"
   })]), _vm._v(" "), _c("b-collapse", {
     attrs: {
@@ -3849,49 +3849,49 @@ var render = function render() {
         name: "elements"
       }
     }
-  }, [_vm._v("\n                                                    General Elements\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    General Elements\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "advanced-form"
       }
     }
-  }, [_vm._v("\n                                                    Advanced\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Advanced\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "validation"
       }
     }
-  }, [_vm._v("\n                                                    Validation\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Validation\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "wizard"
       }
     }
-  }, [_vm._v("\n                                                    Wizard\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Wizard\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "mask"
       }
     }
-  }, [_vm._v("\n                                                    Masks\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Masks\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "quill"
       }
     }
-  }, [_vm._v("\n                                                    Quill Editor\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Quill Editor\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: _defineProperty({
       to: "/forms/file-uploads"
     }, "to", {
       name: "file-uploads"
     })
-  }, [_vm._v("\n                                                    File Uploads\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                    File Uploads\r\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -3921,14 +3921,14 @@ var render = function render() {
         name: "basic"
       }
     }
-  }, [_vm._v("\n                                                    Basic Tables\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Basic Tables\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "advanced"
       }
     }
-  }, [_vm._v("\n                                                    Advanced Tables\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                    Advanced Tables\r\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -3958,35 +3958,35 @@ var render = function render() {
         name: "charts-apex"
       }
     }
-  }, [_vm._v("\n                                                    Apex Charts\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Apex Charts\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "charts-chartjs"
       }
     }
-  }, [_vm._v("\n                                                    Chartjs Charts\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Chartjs Charts\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "charts-c3"
       }
     }
-  }, [_vm._v("\n                                                    C3 Charts\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    C3 Charts\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "charts-chartist"
       }
     }
-  }, [_vm._v("\n                                                    Chartist Charts\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Chartist Charts\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "charts-knob"
       }
     }
-  }, [_vm._v("\n                                                    Knob Charts\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                    Knob Charts\r\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -4016,7 +4016,7 @@ var render = function render() {
         name: "maps-google"
       }
     }
-  }, [_vm._v("\n                                                    Google Maps\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                    Google Maps\r\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -4052,7 +4052,7 @@ var render = function render() {
       href: "javascript: void(0);",
       "data-toggle": "collapse"
     }
-  }, [_vm._v("\n                                                    Second Level\n                                                    "), _c("span", {
+  }, [_vm._v("\r\n                                                    Second Level\r\n                                                    "), _c("span", {
     staticClass: "menu-arrow"
   })]), _vm._v(" "), _c("b-collapse", {
     attrs: {
@@ -4302,1091 +4302,1091 @@ var render = function render() {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-alert-octagon"
-  }), _vm._v(" fe-alert-octagon\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-alert-octagon\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-alert-circle"
-  }), _vm._v(" fe-alert-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-alert-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-activity"
-  }), _vm._v(" fe-activity\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-activity\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-alert-triangle"
-  }), _vm._v(" fe-alert-triangle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-alert-triangle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-align-center"
-  }), _vm._v(" fe-align-center\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-align-center\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-airplay"
-  }), _vm._v(" fe-airplay\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-airplay\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-align-justify"
-  }), _vm._v(" fe-align-justify\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-align-justify\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-align-left"
-  }), _vm._v(" fe-align-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-align-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-align-right"
-  }), _vm._v(" fe-align-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-align-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-arrow-down-left"
-  }), _vm._v(" fe-arrow-down-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-arrow-down-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-arrow-down-right"
-  }), _vm._v(" fe-arrow-down-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-arrow-down-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-anchor"
-  }), _vm._v(" fe-anchor\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-anchor\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-aperture"
-  }), _vm._v(" fe-aperture\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-aperture\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-arrow-left"
-  }), _vm._v(" fe-arrow-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-arrow-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-arrow-right"
-  }), _vm._v(" fe-arrow-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-arrow-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-arrow-down"
-  }), _vm._v(" fe-arrow-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-arrow-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-arrow-up-left"
-  }), _vm._v(" fe-arrow-up-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-arrow-up-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-arrow-up-right"
-  }), _vm._v(" fe-arrow-up-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-arrow-up-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-arrow-up"
-  }), _vm._v(" fe-arrow-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-arrow-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-award"
-  }), _vm._v(" fe-award\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-award\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-bar-chart"
-  }), _vm._v(" fe-bar-chart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-bar-chart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-at-sign"
-  }), _vm._v(" fe-at-sign\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-at-sign\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-bar-chart-2"
-  }), _vm._v(" fe-bar-chart-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-bar-chart-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-battery-charging"
-  }), _vm._v(" fe-battery-charging\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-battery-charging\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-bell-off"
-  }), _vm._v(" fe-bell-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-bell-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-battery"
-  }), _vm._v(" fe-battery\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-battery\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-bluetooth"
-  }), _vm._v(" fe-bluetooth\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-bluetooth\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-bell"
-  }), _vm._v(" fe-bell\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-bell\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-book"
-  }), _vm._v(" fe-book\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-book\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-briefcase"
-  }), _vm._v(" fe-briefcase\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-briefcase\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-camera-off"
-  }), _vm._v(" fe-camera-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-camera-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-calendar"
-  }), _vm._v(" fe-calendar\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-calendar\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-bookmark"
-  }), _vm._v(" fe-bookmark\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-bookmark\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-box"
-  }), _vm._v(" fe-box\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-box\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-camera"
-  }), _vm._v(" fe-camera\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-camera\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-check-circle"
-  }), _vm._v(" fe-check-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-check-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-check"
-  }), _vm._v(" fe-check\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-check\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-check-square"
-  }), _vm._v(" fe-check-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-check-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-cast"
-  }), _vm._v(" fe-cast\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-cast\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-chevron-down"
-  }), _vm._v(" fe-chevron-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-chevron-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-chevron-left"
-  }), _vm._v(" fe-chevron-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-chevron-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-chevron-right"
-  }), _vm._v(" fe-chevron-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-chevron-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-chevron-up"
-  }), _vm._v(" fe-chevron-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-chevron-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-chevrons-down"
-  }), _vm._v(" fe-chevrons-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-chevrons-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-chevrons-right"
-  }), _vm._v(" fe-chevrons-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-chevrons-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-chevrons-up"
-  }), _vm._v(" fe-chevrons-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-chevrons-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-chevrons-left"
-  }), _vm._v(" fe-chevrons-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-chevrons-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-circle"
-  }), _vm._v(" fe-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-clipboard"
-  }), _vm._v(" fe-clipboard\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-clipboard\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-chrome"
-  }), _vm._v(" fe-chrome\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-chrome\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-clock"
-  }), _vm._v(" fe-clock\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-clock\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-cloud-lightning"
-  }), _vm._v(" fe-cloud-lightning\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-cloud-lightning\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-cloud-drizzle"
-  }), _vm._v(" fe-cloud-drizzle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-cloud-drizzle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-cloud-rain"
-  }), _vm._v(" fe-cloud-rain\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-cloud-rain\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-cloud-off"
-  }), _vm._v(" fe-cloud-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-cloud-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-codepen"
-  }), _vm._v(" fe-codepen\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-codepen\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-cloud-snow"
-  }), _vm._v(" fe-cloud-snow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-cloud-snow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-compass"
-  }), _vm._v(" fe-compass\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-compass\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-copy"
-  }), _vm._v(" fe-copy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-copy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-corner-down-right"
-  }), _vm._v(" fe-corner-down-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-corner-down-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-corner-down-left"
-  }), _vm._v(" fe-corner-down-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-corner-down-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-corner-left-down"
-  }), _vm._v(" fe-corner-left-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-corner-left-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-corner-left-up"
-  }), _vm._v(" fe-corner-left-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-corner-left-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-corner-up-left"
-  }), _vm._v(" fe-corner-up-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-corner-up-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-corner-up-right"
-  }), _vm._v(" fe-corner-up-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-corner-up-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-corner-right-down"
-  }), _vm._v(" fe-corner-right-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-corner-right-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-corner-right-up"
-  }), _vm._v(" fe-corner-right-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-corner-right-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-cpu"
-  }), _vm._v(" fe-cpu\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-cpu\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-credit-card"
-  }), _vm._v(" fe-credit-card\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-credit-card\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-crosshair"
-  }), _vm._v(" fe-crosshair\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-crosshair\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-disc"
-  }), _vm._v(" fe-disc\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-disc\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-delete"
-  }), _vm._v(" fe-delete\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-delete\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-download-cloud"
-  }), _vm._v(" fe-download-cloud\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-download-cloud\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-download"
-  }), _vm._v(" fe-download\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-download\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-droplet"
-  }), _vm._v(" fe-droplet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-droplet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-edit-2"
-  }), _vm._v(" fe-edit-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-edit-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-edit"
-  }), _vm._v(" fe-edit\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-edit\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-edit-1"
-  }), _vm._v(" fe-edit-1\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-edit-1\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-external-link"
-  }), _vm._v(" fe-external-link\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-external-link\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-eye"
-  }), _vm._v(" fe-eye\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-eye\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-feather"
-  }), _vm._v(" fe-feather\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-feather\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-facebook"
-  }), _vm._v(" fe-facebook\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-facebook\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-file-minus"
-  }), _vm._v(" fe-file-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-file-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-eye-off"
-  }), _vm._v(" fe-eye-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-eye-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-fast-forward"
-  }), _vm._v(" fe-fast-forward\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-fast-forward\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-file-text"
-  }), _vm._v(" fe-file-text\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-file-text\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-film"
-  }), _vm._v(" fe-film\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-film\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-file"
-  }), _vm._v(" fe-file\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-file\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-file-plus"
-  }), _vm._v(" fe-file-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-file-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-folder"
-  }), _vm._v(" fe-folder\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-folder\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-filter"
-  }), _vm._v(" fe-filter\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-filter\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-flag"
-  }), _vm._v(" fe-flag\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-flag\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-globe"
-  }), _vm._v(" fe-globe\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-globe\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-grid"
-  }), _vm._v(" fe-grid\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-grid\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-heart"
-  }), _vm._v(" fe-heart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-heart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-home"
-  }), _vm._v(" fe-home\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-home\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-github"
-  }), _vm._v(" fe-github\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-github\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-image"
-  }), _vm._v(" fe-image\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-image\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-inbox"
-  }), _vm._v(" fe-inbox\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-inbox\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-layers"
-  }), _vm._v(" fe-layers\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-layers\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-info"
-  }), _vm._v(" fe-info\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-info\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-instagram"
-  }), _vm._v(" fe-instagram\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-instagram\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-layout"
-  }), _vm._v(" fe-layout\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-layout\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-link-2"
-  }), _vm._v(" fe-link-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-link-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-life-buoy"
-  }), _vm._v(" fe-life-buoy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-life-buoy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-link"
-  }), _vm._v(" fe-link\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-link\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-log-in"
-  }), _vm._v(" fe-log-in\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-log-in\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-list"
-  }), _vm._v(" fe-list\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-list\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-lock"
-  }), _vm._v(" fe-lock\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-lock\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-log-out"
-  }), _vm._v(" fe-log-out\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-log-out\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-loader"
-  }), _vm._v(" fe-loader\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-loader\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-mail"
-  }), _vm._v(" fe-mail\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-mail\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-maximize-2"
-  }), _vm._v(" fe-maximize-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-maximize-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-map"
-  }), _vm._v(" fe-map\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-map\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-maximize"
-  }), _vm._v(" fe-maximize\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-maximize\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-map-pin"
-  }), _vm._v(" fe-map-pin\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-map-pin\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-menu"
-  }), _vm._v(" fe-menu\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-menu\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-message-circle"
-  }), _vm._v(" fe-message-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-message-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-message-square"
-  }), _vm._v(" fe-message-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-message-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-minimize-2"
-  }), _vm._v(" fe-minimize-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-minimize-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-minimize"
-  }), _vm._v(" fe-minimize\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-minimize\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-mic-off"
-  }), _vm._v(" fe-mic-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-mic-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-minus-circle"
-  }), _vm._v(" fe-minus-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-minus-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-mic"
-  }), _vm._v(" fe-mic\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-mic\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-minus-square"
-  }), _vm._v(" fe-minus-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-minus-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-minus"
-  }), _vm._v(" fe-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-moon"
-  }), _vm._v(" fe-moon\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-moon\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-monitor"
-  }), _vm._v(" fe-monitor\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-monitor\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-more-vertical"
-  }), _vm._v(" fe-more-vertical\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-more-vertical\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-more-horizontal"
-  }), _vm._v(" fe-more-horizontal\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-more-horizontal\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-move"
-  }), _vm._v(" fe-move\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-move\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-music"
-  }), _vm._v(" fe-music\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-music\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-navigation-2"
-  }), _vm._v(" fe-navigation-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-navigation-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-navigation"
-  }), _vm._v(" fe-navigation\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-navigation\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-octagon"
-  }), _vm._v(" fe-octagon\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-octagon\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-package"
-  }), _vm._v(" fe-package\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-package\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-pause-circle"
-  }), _vm._v(" fe-pause-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-pause-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-pause"
-  }), _vm._v(" fe-pause\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-pause\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-percent"
-  }), _vm._v(" fe-percent\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-percent\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-phone-call"
-  }), _vm._v(" fe-phone-call\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-phone-call\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-phone-forwarded"
-  }), _vm._v(" fe-phone-forwarded\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-phone-forwarded\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-phone-missed"
-  }), _vm._v(" fe-phone-miss\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-phone-miss\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-phone-off"
-  }), _vm._v(" fe-phone-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-phone-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-phone-incoming"
-  }), _vm._v(" fe-phone-incoming\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-phone-incoming\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-phone"
-  }), _vm._v(" fe-phone\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-phone\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-phone-outgoing"
-  }), _vm._v(" fe-phone-outgoing\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-phone-outgoing\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-pie-chart"
-  }), _vm._v(" fe-pie-chart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-pie-chart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-play-circle"
-  }), _vm._v(" fe-play-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-play-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-play"
-  }), _vm._v(" fe-play\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-play\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-plus-square"
-  }), _vm._v(" fe-plus-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-plus-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-plus-circle"
-  }), _vm._v(" fe-plus-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-plus-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-plus"
-  }), _vm._v(" fe-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-pocket"
-  }), _vm._v(" fe-pocket\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-pocket\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-printer"
-  }), _vm._v(" fe-printer\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-printer\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-power"
-  }), _vm._v(" fe-power\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-power\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-radio"
-  }), _vm._v(" fe-radio\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-radio\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-repeat"
-  }), _vm._v(" fe-repeat\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-repeat\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-refresh-ccw"
-  }), _vm._v(" fe-refresh-ccw\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-refresh-ccw\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-rewind"
-  }), _vm._v(" fe-rewind\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-rewind\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-rotate-ccw"
-  }), _vm._v(" fe-rotate-ccw\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-rotate-ccw\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-refresh-cw"
-  }), _vm._v(" fe-refresh-cw\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-refresh-cw\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-rotate-cw"
-  }), _vm._v(" fe-rotate-cw\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-rotate-cw\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-save"
-  }), _vm._v(" fe-save\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-save\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-search"
-  }), _vm._v(" fe-search\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-search\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-server"
-  }), _vm._v(" fe-server\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-server\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-scissors"
-  }), _vm._v(" fe-scissors\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-scissors\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-share-2"
-  }), _vm._v(" fe-share-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-share-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-share"
-  }), _vm._v(" fe-share\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-share\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-shield"
-  }), _vm._v(" fe-shield\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-shield\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-settings"
-  }), _vm._v(" fe-settings\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-settings\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-skip-back"
-  }), _vm._v(" fe-skip-back\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-skip-back\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-shuffle"
-  }), _vm._v(" fe-shuffle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-shuffle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-sidebar"
-  }), _vm._v(" fe-sidebar\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-sidebar\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-skip-forward"
-  }), _vm._v(" fe-skip-forward\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-skip-forward\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-slack"
-  }), _vm._v(" fe-slack\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-slack\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-slash"
-  }), _vm._v(" fe-slash\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-slash\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-smartphone"
-  }), _vm._v(" fe-smartphone\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-smartphone\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-square"
-  }), _vm._v(" fe-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-speaker"
-  }), _vm._v(" fe-speaker\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-speaker\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-star"
-  }), _vm._v(" fe-star\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-star\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-stop-circle"
-  }), _vm._v(" fe-stop-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-stop-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-sun"
-  }), _vm._v(" fe-sun\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-sun\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-sunrise"
-  }), _vm._v(" fe-sunrise\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-sunrise\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-tablet"
-  }), _vm._v(" fe-tablet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-tablet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-tag"
-  }), _vm._v(" fe-tag\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-tag\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-sunset"
-  }), _vm._v(" fe-sunset\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-sunset\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-target"
-  }), _vm._v(" fe-target\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-target\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-thermometer"
-  }), _vm._v(" fe-thermometer\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-thermometer\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-thumbs-up"
-  }), _vm._v(" fe-thumbs-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-thumbs-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-thumbs-down"
-  }), _vm._v(" fe-thumbs-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-thumbs-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-toggle-left"
-  }), _vm._v(" fe-toggle-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-toggle-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-toggle-right"
-  }), _vm._v(" fe-toggle-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-toggle-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-trash-2"
-  }), _vm._v(" fe-trash-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-trash-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-trash"
-  }), _vm._v(" fe-trash\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-trash\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-trending-up"
-  }), _vm._v(" fe-trending-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-trending-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-trending-down"
-  }), _vm._v(" fe-trending-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-trending-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-triangle"
-  }), _vm._v(" fe-triangle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-triangle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-type"
-  }), _vm._v(" fe-type\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-type\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-twitter"
-  }), _vm._v(" fe-twitter\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-twitter\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-upload"
-  }), _vm._v(" fe-upload\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-upload\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-umbrella"
-  }), _vm._v(" fe-umbrella\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-umbrella\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-upload-cloud"
-  }), _vm._v(" fe-upload-cloud\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-upload-cloud\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-unlock"
-  }), _vm._v(" fe-unlock\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-unlock\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-user-check"
-  }), _vm._v(" fe-user-check\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-user-check\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-user-minus"
-  }), _vm._v(" fe-user-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-user-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-user-plus"
-  }), _vm._v(" fe-user-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-user-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-user-x"
-  }), _vm._v(" fe-user-x\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-user-x\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-user"
-  }), _vm._v(" fe-user\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-user\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-users"
-  }), _vm._v(" fe-users\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-users\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-video-off"
-  }), _vm._v(" fe-video-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-video-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-video"
-  }), _vm._v(" fe-video\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-video\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-voicemail"
-  }), _vm._v(" fe-voicemail\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-voicemail\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-volume-x"
-  }), _vm._v(" fe-volume-x\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-volume-x\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-volume-1"
-  }), _vm._v(" fe-volume-1\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-volume-1\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-volume-2"
-  }), _vm._v(" fe-volume-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-volume-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-volume"
-  }), _vm._v(" fe-volume\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-volume\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-watch"
-  }), _vm._v(" fe-watch\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-watch\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-wifi"
-  }), _vm._v(" fe-wifi\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-wifi\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-x-square"
-  }), _vm._v(" fe-x-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-x-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-wind"
-  }), _vm._v(" fe-wind\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-wind\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-x"
-  }), _vm._v(" fe-x\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-x\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-x-circle"
-  }), _vm._v(" fe-x-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-x-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-zap"
-  }), _vm._v(" fe-zap\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-zap\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-zoom-in"
-  }), _vm._v(" fe-zoom-in\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-zoom-in\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-zoom-out"
-  }), _vm._v(" fe-zoom-out\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-zoom-out\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-command"
-  }), _vm._v(" fe-command\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-command\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-cloud"
-  }), _vm._v(" fe-cloud\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-cloud\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-hash"
-  }), _vm._v(" fe-hash\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-hash\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-headphones"
-  }), _vm._v(" fe-headphones\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-headphones\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-underline"
-  }), _vm._v(" fe-underline\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-underline\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-italic"
-  }), _vm._v(" fe-italic\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-italic\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-bold"
-  }), _vm._v(" fe-bold\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-bold\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-crop"
-  }), _vm._v(" fe-crop\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-crop\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-help-circle"
-  }), _vm._v(" fe-help-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-help-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-paperclip"
-  }), _vm._v(" fe-paperclip\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-paperclip\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-shopping-cart"
-  }), _vm._v(" fe-shopping-cart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-shopping-cart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-tv"
-  }), _vm._v(" fe-tv\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-tv\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-wifi-off"
-  }), _vm._v(" fe-wifi-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-wifi-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-gitlab"
-  }), _vm._v(" fe-gitlab\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-gitlab\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-sliders"
-  }), _vm._v(" fe-sliders\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-sliders\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-star-on"
-  }), _vm._v(" fe-star-on\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-star-on\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-heart-on"
-  }), _vm._v(" fe-heart-on\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-heart-on\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-archive"
-  }), _vm._v(" fe-archive\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-archive\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-arrow-down-circle"
-  }), _vm._v(" fe-arrow-down-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-arrow-down-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-arrow-up-circle"
-  }), _vm._v(" fe-arrow-up-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-arrow-up-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-arrow-left-circle"
-  }), _vm._v(" fe-arrow-left-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-arrow-left-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-arrow-right-circle"
-  }), _vm._v(" fe-arrow-right-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-arrow-right-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-bar-chart-line-"
-  }), _vm._v(" fe-bar-chart-line-\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-bar-chart-line-\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-bar-chart-line"
-  }), _vm._v(" fe-bar-chart-line\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-bar-chart-line\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-book-open"
-  }), _vm._v(" fe-book-open\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-book-open\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-code"
-  }), _vm._v(" fe-code\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-code\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-database"
-  }), _vm._v(" fe-database\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-database\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-dollar-sign"
-  }), _vm._v(" fe-dollar-sign\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-dollar-sign\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-folder-plus"
-  }), _vm._v(" fe-folder-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-folder-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-gift"
-  }), _vm._v(" fe-gift\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-gift\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-folder-minus"
-  }), _vm._v(" fe-folder-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-folder-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-git-commit"
-  }), _vm._v(" fe-git-commit\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-git-commit\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-git-branch"
-  }), _vm._v(" fe-git-branch\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-git-branch\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-git-pull-request"
-  }), _vm._v(" fe-git-pull-request\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-git-pull-request\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-git-merge"
-  }), _vm._v(" fe-git-merge\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-git-merge\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-linkedin"
-  }), _vm._v(" fe-linkedin\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-linkedin\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-hard-drive"
-  }), _vm._v(" fe-hard-drive\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-hard-drive\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-more-vertical-"
-  }), _vm._v(" fe-more-vertical-\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-more-vertical-\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-more-horizontal-"
-  }), _vm._v(" fe-more-horizontal-\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-more-horizontal-\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-rss"
-  }), _vm._v(" fe-rss\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-rss\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-send"
-  }), _vm._v(" fe-send\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-send\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-shield-off"
-  }), _vm._v(" fe-shield-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-shield-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-shopping-bag"
-  }), _vm._v(" fe-shopping-bag\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-shopping-bag\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-terminal"
-  }), _vm._v(" fe-terminal\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-terminal\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-truck"
-  }), _vm._v(" fe-truck\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-truck\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-zap-off"
-  }), _vm._v(" fe-zap-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" fe-zap-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "fe-youtube"
-  }), _vm._v(" fe-youtube\n                        ")])])])])])])], 1);
+  }), _vm._v(" fe-youtube\r\n                        ")])])])])])])], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -6737,7 +6737,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.link-footer[data-v-61a7c374]{\n    color: black;\n    font-weight: bold;\n}\n.link-footer[data-v-61a7c374]:hover{\n    color: rgb(0, 163, 244);\n    font-weight: bold;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.link-footer[data-v-61a7c374]{\r\n    color: black;\r\n    font-weight: bold;\n}\n.link-footer[data-v-61a7c374]:hover{\r\n    color: rgb(0, 163, 244);\r\n    font-weight: bold;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6785,7 +6785,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.logo-lg img[data-v-81fbb27e] {\n  width: 70px;\n  height: 45px;\n}\n.logo-sm img[data-v-81fbb27e] {\n  width: 70px;\n  height: 45px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.logo-lg img[data-v-81fbb27e] {\r\n  width: 70px;\r\n  height: 45px;\n}\n.logo-sm img[data-v-81fbb27e] {\r\n  width: 70px;\r\n  height: 45px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

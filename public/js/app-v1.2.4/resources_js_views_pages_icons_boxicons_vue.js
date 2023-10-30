@@ -1352,7 +1352,7 @@ var render = function render() {
     staticClass: "row"
   }, [_c("div", {
     staticClass: "col-md-6"
-  }, [_vm._v("\n                " + _vm._s(new Date().getFullYear()) + " ©  " + _vm._s(_vm.$t("general.AllRightsReservedTo")) + " "), _c("a", {
+  }, [_vm._v("\r\n                " + _vm._s(new Date().getFullYear()) + " ©  " + _vm._s(_vm.$t("general.AllRightsReservedTo")) + " "), _c("a", {
     staticClass: "link-footer",
     attrs: {
       href: "#"
@@ -1405,7 +1405,7 @@ var render = function render() {
       }
     }, [_c("i", {
       "class": "".concat(item.icon, " mr-1")
-    }), _vm._v("\n                                " + _vm._s(_vm.$t(item.label)) + "\n                            ")]) : _vm._e(), _vm._v(" "), item.subItems ? _c("a", {
+    }), _vm._v("\r\n                                " + _vm._s(_vm.$t(item.label)) + "\r\n                            ")]) : _vm._e(), _vm._v(" "), item.subItems ? _c("a", {
       staticClass: "nav-link dropdown-toggle arrow-none",
       attrs: {
         href: "javascript: void(0);",
@@ -1417,7 +1417,7 @@ var render = function render() {
       }
     }, [_c("i", {
       "class": "".concat(item.icon, " mr-1")
-    }), _vm._v("\n                                " + _vm._s(_vm.$t(item.label)) + "\n                                "), _c("div", {
+    }), _vm._v("\r\n                                " + _vm._s(_vm.$t(item.label)) + "\r\n                                "), _c("div", {
       staticClass: "arrow-down"
     })]) : _vm._e(), _vm._v(" "), _vm.hasItems(item) ? _c("div", {
       staticClass: "dropdown-menu row",
@@ -1442,7 +1442,7 @@ var render = function render() {
         on: {
           click: _vm.onMenuClick
         }
-      }, [_vm._v("\n                                            " + _vm._s(_vm.$t(subitem.label)) + "\n                                            "), _c("div", {
+      }, [_vm._v("\r\n                                            " + _vm._s(_vm.$t(subitem.label)) + "\r\n                                            "), _c("div", {
         staticClass: "arrow-down"
       })]), _vm._v(" "), _c("div", {
         staticClass: "dropdown-menu"
@@ -2982,7 +2982,7 @@ var render = function render() {
         name: "home"
       }
     }
-  }, [_vm._v("\n                                        Sales\n                                    ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                        Sales\r\n                                    ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link side-nav-link-ref",
@@ -2991,7 +2991,7 @@ var render = function render() {
         name: "crm-dashboard"
       }
     }, "to", "/dashboard/crm")
-  }, [_vm._v("\n                                        CRM\n                                    ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                        CRM\r\n                                    ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link side-nav-link-ref",
@@ -3000,7 +3000,7 @@ var render = function render() {
     }, "to", {
       name: "analytics-dashboard"
     })
-  }, [_vm._v("\n                                        Analytics\n                                    ")])], 1)])])]) : _vm._e(), _vm._v(" "), _vm.activetab === 2 ? _c("div", {
+  }, [_vm._v("\r\n                                        Analytics\r\n                                    ")])], 1)])])]) : _vm._e(), _vm._v(" "), _vm.activetab === 2 ? _c("div", {
     staticClass: "twocolumn-menu-item d-block",
     attrs: {
       id: "apps"
@@ -3018,7 +3018,7 @@ var render = function render() {
         name: "calendar"
       }
     }
-  }, [_vm._v("\n                                    Calendar\n                                ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                    Calendar\r\n                                ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link side-nav-link-ref",
@@ -3027,7 +3027,7 @@ var render = function render() {
         name: "chat"
       }
     }
-  }, [_vm._v("\n                                    Chat\n                                ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                    Chat\r\n                                ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -3057,70 +3057,70 @@ var render = function render() {
         name: "products"
       }
     }
-  }, [_vm._v("\n                                                Products List\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Products List\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "products-grid"
       }
     }
-  }, [_vm._v("\n                                                Products Grid\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Products Grid\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "product-detail"
       }
     }
-  }, [_vm._v("\n                                                Product Detail\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Product Detail\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "product-create"
       }
     }
-  }, [_vm._v("\n                                                Create Product\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Create Product\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "customers"
       }
     }
-  }, [_vm._v("\n                                                Customers\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Customers\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "orders"
       }
     }
-  }, [_vm._v("\n                                                Orders\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Orders\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "order-detail"
       }
     }
-  }, [_vm._v("\n                                                Order Detail\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Order Detail\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "sellers"
       }
     }
-  }, [_vm._v("\n                                                Sellers\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Sellers\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "cart"
       }
     }
-  }, [_vm._v("\n                                                Shopping Cart\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Shopping Cart\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "checkout"
       }
     }
-  }, [_vm._v("\n                                                Checkout\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                Checkout\r\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -3150,21 +3150,21 @@ var render = function render() {
         name: "email-inbox"
       }
     }
-  }, [_vm._v("\n                                                Inbox\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Inbox\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "reademail"
       }
     }
-  }, [_vm._v("\n                                                Read Email\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Read Email\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: _defineProperty({
       to: "/email/templates"
     }, "to", {
       name: "email-templates"
     })
-  }, [_vm._v("\n                                                Email Templates\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                Email Templates\r\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link side-nav-link-ref",
@@ -3173,7 +3173,7 @@ var render = function render() {
     }, "to", {
       name: ""
     })
-  }, [_vm._v("\n                                    Companies\n                                ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                    Companies\r\n                                ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -3203,21 +3203,21 @@ var render = function render() {
         name: "task-list"
       }
     }
-  }, [_vm._v("\n                                                List\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                List\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "task-detail"
       }
     }
-  }, [_vm._v("\n                                                Details\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Details\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "kanban-board"
       }
     }
-  }, [_vm._v("\n                                                Kanban Board\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                Kanban Board\r\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -3247,14 +3247,14 @@ var render = function render() {
         name: "contacts-list"
       }
     }
-  }, [_vm._v("\n                                                Members List\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                Members List\r\n                                            ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "contacts-profile"
       }
     }
-  }, [_vm._v("\n                                                Profile\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                Profile\r\n                                            ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link side-nav-link-ref",
@@ -3263,7 +3263,7 @@ var render = function render() {
         name: "file-manager"
       }
     }
-  }, [_vm._v("\n                                    File Manager\n                                ")])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                    File Manager\r\n                                ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link side-nav-link-ref",
@@ -3272,7 +3272,7 @@ var render = function render() {
         name: "tickets"
       }
     }
-  }, [_vm._v("\n                                    Tickets\n                                ")])], 1)])]) : _vm._e(), _vm._v(" "), _vm.activetab === 3 ? _c("div", {
+  }, [_vm._v("\r\n                                    Tickets\r\n                                ")])], 1)])]) : _vm._e(), _vm._v(" "), _vm.activetab === 3 ? _c("div", {
     staticClass: "twocolumn-menu-item d-block",
     attrs: {
       id: "pages"
@@ -3484,7 +3484,7 @@ var render = function render() {
       href: "javascript: void(0);",
       "data-toggle": "collapse"
     }
-  }, [_vm._v("\n                                        Error Pages\n                                        "), _c("span", {
+  }, [_vm._v("\r\n                                        Error Pages\r\n                                        "), _c("span", {
     staticClass: "menu-arrow"
   })]), _vm._v(" "), _c("b-collapse", {
     attrs: {
@@ -3849,49 +3849,49 @@ var render = function render() {
         name: "elements"
       }
     }
-  }, [_vm._v("\n                                                    General Elements\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    General Elements\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "advanced-form"
       }
     }
-  }, [_vm._v("\n                                                    Advanced\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Advanced\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "validation"
       }
     }
-  }, [_vm._v("\n                                                    Validation\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Validation\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "wizard"
       }
     }
-  }, [_vm._v("\n                                                    Wizard\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Wizard\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "mask"
       }
     }
-  }, [_vm._v("\n                                                    Masks\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Masks\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "quill"
       }
     }
-  }, [_vm._v("\n                                                    Quill Editor\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Quill Editor\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: _defineProperty({
       to: "/forms/file-uploads"
     }, "to", {
       name: "file-uploads"
     })
-  }, [_vm._v("\n                                                    File Uploads\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                    File Uploads\r\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -3921,14 +3921,14 @@ var render = function render() {
         name: "basic"
       }
     }
-  }, [_vm._v("\n                                                    Basic Tables\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Basic Tables\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "advanced"
       }
     }
-  }, [_vm._v("\n                                                    Advanced Tables\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                    Advanced Tables\r\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -3958,35 +3958,35 @@ var render = function render() {
         name: "charts-apex"
       }
     }
-  }, [_vm._v("\n                                                    Apex Charts\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Apex Charts\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "charts-chartjs"
       }
     }
-  }, [_vm._v("\n                                                    Chartjs Charts\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Chartjs Charts\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "charts-c3"
       }
     }
-  }, [_vm._v("\n                                                    C3 Charts\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    C3 Charts\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "charts-chartist"
       }
     }
-  }, [_vm._v("\n                                                    Chartist Charts\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
+  }, [_vm._v("\r\n                                                    Chartist Charts\r\n                                                ")])], 1), _vm._v(" "), _c("li", [_c("router-link", {
     staticClass: "side-nav-link-ref",
     attrs: {
       to: {
         name: "charts-knob"
       }
     }
-  }, [_vm._v("\n                                                    Knob Charts\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                    Knob Charts\r\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -4016,7 +4016,7 @@ var render = function render() {
         name: "maps-google"
       }
     }
-  }, [_vm._v("\n                                                    Google Maps\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
+  }, [_vm._v("\r\n                                                    Google Maps\r\n                                                ")])], 1)])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("a", {
     directives: [{
@@ -4052,7 +4052,7 @@ var render = function render() {
       href: "javascript: void(0);",
       "data-toggle": "collapse"
     }
-  }, [_vm._v("\n                                                    Second Level\n                                                    "), _c("span", {
+  }, [_vm._v("\r\n                                                    Second Level\r\n                                                    "), _c("span", {
     staticClass: "menu-arrow"
   })]), _vm._v(" "), _c("b-collapse", {
     attrs: {
@@ -4306,2335 +4306,2335 @@ var render = function render() {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-sticker"
-  }), _vm._v(" bx bx-sticker\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-sticker\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-shield-quarter"
-  }), _vm._v(" bx bx-shield-quarter\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-shield-quarter\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-upside-down"
-  }), _vm._v(" bx bx-upside-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-upside-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-laugh"
-  }), _vm._v(" bx bx-laugh\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-laugh\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-meh-blank"
-  }), _vm._v(" bx bx-meh-blank\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-meh-blank\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-happy-beaming"
-  }), _vm._v(" bx bx-happy-beaming\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-happy-beaming\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-shocked"
-  }), _vm._v(" bx bx-shocked\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-shocked\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-sleepy"
-  }), _vm._v(" bx bx-sleepy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-sleepy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-confused"
-  }), _vm._v(" bx bx-confused\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-confused\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-wink-smile"
-  }), _vm._v(" bx bx-wink-smile\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-wink-smile\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dizzy"
-  }), _vm._v(" bx bx-dizzy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dizzy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-happy-heart-eyes"
-  }), _vm._v(" bx bx-happy-heart-eyes\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-happy-heart-eyes\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-angry"
-  }), _vm._v(" bx bx-angry\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-angry\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-smile"
-  }), _vm._v(" bx bx-smile\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-smile\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-tired"
-  }), _vm._v(" bx bx-tired\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-tired\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cool"
-  }), _vm._v(" bx bx-cool\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cool\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-happy-alt"
-  }), _vm._v(" bx bx-happy-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-happy-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-wink-tongue"
-  }), _vm._v(" bx bx-wink-tongue\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-wink-tongue\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-meh-alt"
-  }), _vm._v(" bx bx-meh-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-meh-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-food-menu"
-  }), _vm._v(" bx bx-food-menu\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-food-menu\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-food-tag"
-  }), _vm._v(" bx bx-food-tag\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-food-tag\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-female-sign"
-  }), _vm._v(" bx bx-female-sign\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-female-sign\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-male-sign"
-  }), _vm._v(" bx bx-male-sign\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-male-sign\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-female"
-  }), _vm._v(" bx bx-female\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-female\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-male"
-  }), _vm._v(" bx bx-male\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-male\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-clinic"
-  }), _vm._v(" bx bx-clinic\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-clinic\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-health"
-  }), _vm._v(" bx bx-health\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-health\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-shekel"
-  }), _vm._v(" bx bx-shekel\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-shekel\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-yen"
-  }), _vm._v(" bx bx-yen\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-yen\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-won"
-  }), _vm._v(" bx bx-won\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-won\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pound"
-  }), _vm._v(" bx bx-pound\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pound\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-euro"
-  }), _vm._v(" bx bx-euro\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-euro\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-rupee"
-  }), _vm._v(" bx bx-rupee\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-rupee\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-ruble"
-  }), _vm._v(" bx bx-ruble\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-ruble\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-lira"
-  }), _vm._v(" bx bx-lira\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-lira\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bitcoin"
-  }), _vm._v(" bx bx-bitcoin\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bitcoin\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-tone"
-  }), _vm._v(" bx bx-tone\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-tone\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bolt-circle"
-  }), _vm._v(" bx bx-bolt-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bolt-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cake"
-  }), _vm._v(" bx bx-cake\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cake\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-spa"
-  }), _vm._v(" bx bx-spa\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-spa\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dish"
-  }), _vm._v(" bx bx-dish\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dish\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-fridge"
-  }), _vm._v(" bx bx-fridge\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-fridge\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-image-add"
-  }), _vm._v(" bx bx-image-add\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-image-add\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-image-alt"
-  }), _vm._v(" bx bx-image-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-image-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-space-bar"
-  }), _vm._v(" bx bx-space-bar\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-space-bar\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-alarm-add"
-  }), _vm._v(" bx bx-alarm-add\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-alarm-add\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-archive-out"
-  }), _vm._v(" bx bx-archive-out\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-archive-out\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-archive-in"
-  }), _vm._v(" bx bx-archive-in\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-archive-in\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-add-to-queue"
-  }), _vm._v(" bx bx-add-to-queue\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-add-to-queue\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-border-radius"
-  }), _vm._v(" bx bx-border-radius\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-border-radius\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-check-shield"
-  }), _vm._v(" bx bx-check-shield\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-check-shield\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-label"
-  }), _vm._v(" bx bx-label\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-label\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-file-find"
-  }), _vm._v(" bx bx-file-find\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-file-find\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-face"
-  }), _vm._v(" bx bx-face\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-face\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-extension"
-  }), _vm._v(" bx bx-extension\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-extension\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-exit"
-  }), _vm._v(" bx bx-exit\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-exit\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-conversation"
-  }), _vm._v(" bx bx-conversation\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-conversation\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-sort-z-a"
-  }), _vm._v(" bx bx-sort-z-a\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-sort-z-a\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-sort-a-z"
-  }), _vm._v(" bx bx-sort-a-z\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-sort-a-z\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-printer"
-  }), _vm._v(" bx bx-printer\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-printer\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-radio"
-  }), _vm._v(" bx bx-radio\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-radio\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-customize"
-  }), _vm._v(" bx bx-customize\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-customize\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-brush-alt"
-  }), _vm._v(" bx bx-brush-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-brush-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-briefcase-alt-2"
-  }), _vm._v(" bx bx-briefcase-alt-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-briefcase-alt-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-time-five"
-  }), _vm._v(" bx bx-time-five\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-time-five\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pie-chart-alt-2"
-  }), _vm._v(" bx bx-pie-chart-alt-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pie-chart-alt-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-gas-pump"
-  }), _vm._v(" bx bx-gas-pump\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-gas-pump\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-mobile-vibration"
-  }), _vm._v(" bx bx-mobile-vibration\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-mobile-vibration\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-mobile-landscape"
-  }), _vm._v(" bx bx-mobile-landscape\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-mobile-landscape\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-border-all"
-  }), _vm._v(" bx bx-border-all\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-border-all\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-border-bottom"
-  }), _vm._v(" bx bx-border-bottom\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-border-bottom\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-border-top"
-  }), _vm._v(" bx bx-border-top\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-border-top\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-border-left"
-  }), _vm._v(" bx bx-border-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-border-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-border-right"
-  }), _vm._v(" bx bx-border-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-border-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dialpad-alt"
-  }), _vm._v(" bx bx-dialpad-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dialpad-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-filter-alt"
-  }), _vm._v(" bx bx-filter-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-filter-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-brightness"
-  }), _vm._v(" bx bx-brightness\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-brightness\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-brightness-half"
-  }), _vm._v(" bx bx-brightness-half\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-brightness-half\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-wifi-off"
-  }), _vm._v(" bx bx-wifi-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-wifi-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-credit-card-alt"
-  }), _vm._v(" bx bx-credit-card-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-credit-card-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-band-aid"
-  }), _vm._v(" bx bx-band-aid\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-band-aid\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-hive"
-  }), _vm._v(" bx bx-hive\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-hive\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-map-pin"
-  }), _vm._v(" bx bx-map-pin\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-map-pin\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-line-chart"
-  }), _vm._v(" bx bx-line-chart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-line-chart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-receipt"
-  }), _vm._v(" bx bx-receipt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-receipt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-purchase-tag-alt"
-  }), _vm._v(" bx bx-purchase-tag-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-purchase-tag-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-basket"
-  }), _vm._v(" bx bx-basket\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-basket\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-palette"
-  }), _vm._v(" bx bx-palette\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-palette\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-no-entry"
-  }), _vm._v(" bx bx-no-entry\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-no-entry\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-message-alt-dots"
-  }), _vm._v(" bx bx-message-alt-dots\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-message-alt-dots\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-message-alt"
-  }), _vm._v(" bx bx-message-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-message-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-check-square"
-  }), _vm._v(" bx bx-check-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-check-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-log-out-circle"
-  }), _vm._v(" bx bx-log-out-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-log-out-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-log-in-circle"
-  }), _vm._v(" bx bx-log-in-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-log-in-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-doughnut-chart"
-  }), _vm._v(" bx bx-doughnut-chart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-doughnut-chart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-building-house"
-  }), _vm._v(" bx bx-building-house\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-building-house\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-accessibility"
-  }), _vm._v(" bx bx-accessibility\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-accessibility\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-user-voice"
-  }), _vm._v(" bx bx-user-voice\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-user-voice\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cuboid"
-  }), _vm._v(" bx bx-cuboid\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cuboid\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cube-alt"
-  }), _vm._v(" bx bx-cube-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cube-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-polygon"
-  }), _vm._v(" bx bx-polygon\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-polygon\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-square-rounded"
-  }), _vm._v(" bx bx-square-rounded\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-square-rounded\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-square"
-  }), _vm._v(" bx bx-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-error-alt"
-  }), _vm._v(" bx bx-error-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-error-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-shield-alt-2"
-  }), _vm._v(" bx bx-shield-alt-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-shield-alt-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-paint-roll"
-  }), _vm._v(" bx bx-paint-roll\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-paint-roll\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-droplet"
-  }), _vm._v(" bx bx-droplet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-droplet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-street-view"
-  }), _vm._v(" bx bx-street-view\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-street-view\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-plus-medical"
-  }), _vm._v(" bx bx-plus-medical\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-plus-medical\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-search-alt-2"
-  }), _vm._v(" bx bx-search-alt-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-search-alt-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bowling-ball"
-  }), _vm._v(" bx bx-bowling-ball\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bowling-ball\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dna"
-  }), _vm._v(" bx bx-dna\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dna\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cycling"
-  }), _vm._v(" bx bx-cycling\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cycling\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-shape-circle"
-  }), _vm._v(" bx bx-shape-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-shape-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-down-arrow-alt"
-  }), _vm._v(" bx bx-down-arrow-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-down-arrow-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-up-arrow-alt"
-  }), _vm._v(" bx bx-up-arrow-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-up-arrow-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-right-arrow-alt"
-  }), _vm._v(" bx bx-right-arrow-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-right-arrow-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-left-arrow-alt"
-  }), _vm._v(" bx bx-left-arrow-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-left-arrow-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-lock-open-alt"
-  }), _vm._v(" bx bx-lock-open-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-lock-open-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-lock-alt"
-  }), _vm._v(" bx bx-lock-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-lock-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cylinder"
-  }), _vm._v(" bx bx-cylinder\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cylinder\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pyramid"
-  }), _vm._v(" bx bx-pyramid\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pyramid\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-comment-dots"
-  }), _vm._v(" bx bx-comment-dots\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-comment-dots\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-comment"
-  }), _vm._v(" bx bx-comment\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-comment\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-landscape"
-  }), _vm._v(" bx bx-landscape\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-landscape\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-book-open"
-  }), _vm._v(" bx bx-book-open\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-book-open\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-transfer-alt"
-  }), _vm._v(" bx bx-transfer-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-transfer-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-copy-alt"
-  }), _vm._v(" bx bx-copy-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-copy-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-run"
-  }), _vm._v(" bx bx-run\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-run\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-user-pin"
-  }), _vm._v(" bx bx-user-pin\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-user-pin\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-grid"
-  }), _vm._v(" bx bx-grid\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-grid\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-code-alt"
-  }), _vm._v(" bx bx-code-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-code-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-mail-send"
-  }), _vm._v(" bx bx-mail-send\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-mail-send\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-ghost"
-  }), _vm._v(" bx bx-ghost\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-ghost\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-shape-triangle"
-  }), _vm._v(" bx bx-shape-triangle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-shape-triangle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-shape-square"
-  }), _vm._v(" bx bx-shape-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-shape-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-video-recording"
-  }), _vm._v(" bx bx-video-recording\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-video-recording\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-notepad"
-  }), _vm._v(" bx bx-notepad\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-notepad\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bug-alt"
-  }), _vm._v(" bx bx-bug-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bug-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-mouse-alt"
-  }), _vm._v(" bx bx-mouse-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-mouse-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-edit-alt"
-  }), _vm._v(" bx bx-edit-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-edit-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-chat"
-  }), _vm._v(" bx bx-chat\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-chat\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-book-content"
-  }), _vm._v(" bx bx-book-content\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-book-content\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-message-square-dots"
-  }), _vm._v(" bx bx-message-square-dots\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-message-square-dots\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-message-square"
-  }), _vm._v(" bx bx-message-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-message-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-slideshow"
-  }), _vm._v(" bx bx-slideshow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-slideshow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-wallet-alt"
-  }), _vm._v(" bx bx-wallet-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-wallet-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-memory-card"
-  }), _vm._v(" bx bx-memory-card\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-memory-card\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-message-rounded-dots"
-  }), _vm._v(" bx bx-message-rounded-dots\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-message-rounded-dots\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-message-dots"
-  }), _vm._v(" bx bx-message-dots\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-message-dots\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bar-chart-alt-2"
-  }), _vm._v(" bx bx-bar-chart-alt-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bar-chart-alt-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-store-alt"
-  }), _vm._v(" bx bx-store-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-store-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-buildings"
-  }), _vm._v(" bx bx-buildings\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-buildings\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-home-circle"
-  }), _vm._v(" bx bx-home-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-home-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-money"
-  }), _vm._v(" bx bx-money\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-money\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-walk"
-  }), _vm._v(" bx bx-walk\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-walk\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-repeat"
-  }), _vm._v(" bx bx-repeat\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-repeat\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-font-family"
-  }), _vm._v(" bx bx-font-family\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-font-family\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-joystick-button"
-  }), _vm._v(" bx bx-joystick-button\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-joystick-button\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-paint"
-  }), _vm._v(" bx bx-paint\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-paint\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-unlink"
-  }), _vm._v(" bx bx-unlink\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-unlink\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-brush"
-  }), _vm._v(" bx bx-brush\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-brush\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-rotate-left"
-  }), _vm._v(" bx bx-rotate-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-rotate-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-badge-check"
-  }), _vm._v(" bx bx-badge-check\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-badge-check\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-show-alt"
-  }), _vm._v(" bx bx-show-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-show-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-caret-down"
-  }), _vm._v(" bx bx-caret-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-caret-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-caret-right"
-  }), _vm._v(" bx bx-caret-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-caret-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-caret-up"
-  }), _vm._v(" bx bx-caret-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-caret-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-caret-left"
-  }), _vm._v(" bx bx-caret-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-caret-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-calendar-event"
-  }), _vm._v(" bx bx-calendar-event\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-calendar-event\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-magnet"
-  }), _vm._v(" bx bx-magnet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-magnet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-rewind-circle"
-  }), _vm._v(" bx bx-rewind-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-rewind-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-card"
-  }), _vm._v(" bx bx-card\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-card\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-help-circle"
-  }), _vm._v(" bx bx-help-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-help-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-test-tube"
-  }), _vm._v(" bx bx-test-tube\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-test-tube\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-note"
-  }), _vm._v(" bx bx-note\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-note\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-sort-down"
-  }), _vm._v(" bx bx-sort-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-sort-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-sort-up"
-  }), _vm._v(" bx bx-sort-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-sort-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-id-card"
-  }), _vm._v(" bx bx-id-card\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-id-card\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-badge"
-  }), _vm._v(" bx bx-badge\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-badge\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-grid-small"
-  }), _vm._v(" bx bx-grid-small\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-grid-small\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-grid-vertical"
-  }), _vm._v(" bx bx-grid-vertical\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-grid-vertical\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-grid-horizontal"
-  }), _vm._v(" bx bx-grid-horizontal\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-grid-horizontal\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-move-vertical"
-  }), _vm._v(" bx bx-move-vertical\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-move-vertical\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-move-horizontal"
-  }), _vm._v(" bx bx-move-horizontal\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-move-horizontal\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-stats"
-  }), _vm._v(" bx bx-stats\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-stats\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-equalizer"
-  }), _vm._v(" bx bx-equalizer\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-equalizer\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-disc"
-  }), _vm._v(" bx bx-disc\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-disc\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-analyse"
-  }), _vm._v(" bx bx-analyse\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-analyse\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-search-alt"
-  }), _vm._v(" bx bx-search-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-search-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dollar-circle"
-  }), _vm._v(" bx bx-dollar-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dollar-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-football"
-  }), _vm._v(" bx bx-football\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-football\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-ball"
-  }), _vm._v(" bx bx-ball\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-ball\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-circle"
-  }), _vm._v(" bx bx-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-transfer"
-  }), _vm._v(" bx bx-transfer\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-transfer\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-fingerprint"
-  }), _vm._v(" bx bx-fingerprint\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-fingerprint\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-font-color"
-  }), _vm._v(" bx bx-font-color\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-font-color\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-highlight"
-  }), _vm._v(" bx bx-highlight\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-highlight\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-file-blank"
-  }), _vm._v(" bx bx-file-blank\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-file-blank\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-strikethrough"
-  }), _vm._v(" bx bx-strikethrough\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-strikethrough\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-photo-album"
-  }), _vm._v(" bx bx-photo-album\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-photo-album\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-code-block"
-  }), _vm._v(" bx bx-code-block\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-code-block\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-font-size"
-  }), _vm._v(" bx bx-font-size\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-font-size\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-handicap"
-  }), _vm._v(" bx bx-handicap\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-handicap\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dialpad"
-  }), _vm._v(" bx bx-dialpad\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dialpad\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-wind"
-  }), _vm._v(" bx bx-wind\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-wind\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-water"
-  }), _vm._v(" bx bx-water\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-water\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-swim"
-  }), _vm._v(" bx bx-swim\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-swim\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-restaurant"
-  }), _vm._v(" bx bx-restaurant\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-restaurant\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-box"
-  }), _vm._v(" bx bx-box\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-box\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-menu-alt-right"
-  }), _vm._v(" bx bx-menu-alt-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-menu-alt-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-menu-alt-left"
-  }), _vm._v(" bx bx-menu-alt-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-menu-alt-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-video-plus"
-  }), _vm._v(" bx bx-video-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-video-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-list-ol"
-  }), _vm._v(" bx bx-list-ol\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-list-ol\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-planet"
-  }), _vm._v(" bx bx-planet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-planet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-hotel"
-  }), _vm._v(" bx bx-hotel\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-hotel\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-movie"
-  }), _vm._v(" bx bx-movie\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-movie\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-taxi"
-  }), _vm._v(" bx bx-taxi\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-taxi\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-train"
-  }), _vm._v(" bx bx-train\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-train\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bath"
-  }), _vm._v(" bx bx-bath\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bath\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bed"
-  }), _vm._v(" bx bx-bed\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bed\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-area"
-  }), _vm._v(" bx bx-area\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-area\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bot"
-  }), _vm._v(" bx bx-bot\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bot\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dumbbell"
-  }), _vm._v(" bx bx-dumbbell\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dumbbell\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-check-double"
-  }), _vm._v(" bx bx-check-double\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-check-double\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bus"
-  }), _vm._v(" bx bx-bus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-check-circle"
-  }), _vm._v(" bx bx-check-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-check-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-rocket"
-  }), _vm._v(" bx bx-rocket\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-rocket\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-certification"
-  }), _vm._v(" bx bx-certification\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-certification\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-slider-alt"
-  }), _vm._v(" bx bx-slider-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-slider-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-sad"
-  }), _vm._v(" bx bx-sad\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-sad\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-meh"
-  }), _vm._v(" bx bx-meh\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-meh\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-happy"
-  }), _vm._v(" bx bx-happy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-happy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cart-alt"
-  }), _vm._v(" bx bx-cart-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cart-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-car"
-  }), _vm._v(" bx bx-car\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-car\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-loader-alt"
-  }), _vm._v(" bx bx-loader-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-loader-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-loader-circle"
-  }), _vm._v(" bx bx-loader-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-loader-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-wrench"
-  }), _vm._v(" bx bx-wrench\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-wrench\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-alarm-off"
-  }), _vm._v(" bx bx-alarm-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-alarm-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-layout"
-  }), _vm._v(" bx bx-layout\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-layout\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dock-left"
-  }), _vm._v(" bx bx-dock-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dock-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dock-top"
-  }), _vm._v(" bx bx-dock-top\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dock-top\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dock-right"
-  }), _vm._v(" bx bx-dock-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dock-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dock-bottom"
-  }), _vm._v(" bx bx-dock-bottom\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dock-bottom\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dock-bottom"
-  }), _vm._v(" bx bx-dock-bottom\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dock-bottom\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-world"
-  }), _vm._v(" bx bx-world\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-world\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-selection"
-  }), _vm._v(" bx bx-selection\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-selection\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-paper-plane"
-  }), _vm._v(" bx bx-paper-plane\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-paper-plane\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-slider"
-  }), _vm._v(" bx bx-slider\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-slider\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-loader"
-  }), _vm._v(" bx bx-loader\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-loader\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-chalkboard"
-  }), _vm._v(" bx bx-chalkboard\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-chalkboard\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-trash-alt"
-  }), _vm._v(" bx bx-trash-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-trash-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-grid-alt"
-  }), _vm._v(" bx bx-grid-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-grid-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-command"
-  }), _vm._v(" bx bx-command\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-command\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-window-close"
-  }), _vm._v(" bx bx-window-close\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-window-close\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-notification-off"
-  }), _vm._v(" bx bx-notification-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-notification-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-plug"
-  }), _vm._v(" bx bx-plug\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-plug\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-infinite"
-  }), _vm._v(" bx bx-infinite\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-infinite\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-carousel"
-  }), _vm._v(" bx bx-carousel\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-carousel\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-hourglass"
-  }), _vm._v(" bx bx-hourglass\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-hourglass\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-briefcase-alt"
-  }), _vm._v(" bx bx-briefcase-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-briefcase-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-wallet"
-  }), _vm._v(" bx bx-wallet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-wallet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-station"
-  }), _vm._v(" bx bx-station\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-station\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-collection"
-  }), _vm._v(" bx bx-collection\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-collection\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-tv"
-  }), _vm._v(" bx bx-tv\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-tv\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-closet"
-  }), _vm._v(" bx bx-closet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-closet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-paperclip"
-  }), _vm._v(" bx bx-paperclip\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-paperclip\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-expand"
-  }), _vm._v(" bx bx-expand\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-expand\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pen"
-  }), _vm._v(" bx bx-pen\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pen\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-purchase-tag"
-  }), _vm._v(" bx bx-purchase-tag\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-purchase-tag\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-images"
-  }), _vm._v(" bx bx-images\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-images\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pie-chart-alt"
-  }), _vm._v(" bx bx-pie-chart-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pie-chart-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-news"
-  }), _vm._v(" bx bx-news\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-news\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-downvote"
-  }), _vm._v(" bx bx-downvote\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-downvote\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-upvote"
-  }), _vm._v(" bx bx-upvote\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-upvote\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-globe-alt"
-  }), _vm._v(" bx bx-globe-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-globe-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-store"
-  }), _vm._v(" bx bx-store\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-store\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-hdd"
-  }), _vm._v(" bx bx-hdd\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-hdd\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-skip-previous-circle"
-  }), _vm._v(" bx bx-skip-previous-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-skip-previous-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-skip-next-circle"
-  }), _vm._v(" bx bx-skip-next-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-skip-next-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-chip"
-  }), _vm._v(" bx bx-chip\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-chip\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cast"
-  }), _vm._v(" bx bx-cast\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cast\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-body"
-  }), _vm._v(" bx bx-body\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-body\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-phone-outgoing"
-  }), _vm._v(" bx bx-phone-outgoing\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-phone-outgoing\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-phone-incoming"
-  }), _vm._v(" bx bx-phone-incoming\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-phone-incoming\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-collapse"
-  }), _vm._v(" bx bx-collapse\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-collapse\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-rename"
-  }), _vm._v(" bx bx-rename\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-rename\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-rotate-right"
-  }), _vm._v(" bx bx-rotate-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-rotate-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-horizontal-center"
-  }), _vm._v(" bx bx-horizontal-center\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-horizontal-center\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-ruler"
-  }), _vm._v(" bx bx-ruler\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-ruler\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-import"
-  }), _vm._v(" bx bx-import\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-import\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-calendar-alt"
-  }), _vm._v(" bx bx-calendar-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-calendar-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-battery"
-  }), _vm._v(" bx bx-battery\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-battery\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-server"
-  }), _vm._v(" bx bx-server\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-server\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-task"
-  }), _vm._v(" bx bx-task\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-task\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-folder-open"
-  }), _vm._v(" bx bx-folder-open\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-folder-open\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-film"
-  }), _vm._v(" bx bx-film\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-film\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-aperture"
-  }), _vm._v(" bx bx-aperture\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-aperture\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-phone-call"
-  }), _vm._v(" bx bx-phone-call\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-phone-call\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-up-arrow"
-  }), _vm._v(" bx bx-up-arrow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-up-arrow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-undo"
-  }), _vm._v(" bx bx-undo\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-undo\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-timer"
-  }), _vm._v(" bx bx-timer\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-timer\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-support"
-  }), _vm._v(" bx bx-support\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-support\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-subdirectory-right"
-  }), _vm._v(" bx bx-subdirectory-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-subdirectory-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-right-arrow"
-  }), _vm._v(" bx bx-\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-"
-  }), _vm._v(" bx bx-right-arrow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-right-arrow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-revision"
-  }), _vm._v(" bx bx-revision\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-revision\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-repost"
-  }), _vm._v(" bx bx-repost\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-repost\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-reply"
-  }), _vm._v(" bx bx-reply\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-reply\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-reply-all"
-  }), _vm._v(" bx bx-reply-all\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-reply-all\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-redo"
-  }), _vm._v(" bx bx-redo\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-redo\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-radar"
-  }), _vm._v(" bx bx-radar\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-radar\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-poll"
-  }), _vm._v(" bx bx-poll\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-poll\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-list-check"
-  }), _vm._v(" bx bx-list-check\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-list-check\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-like"
-  }), _vm._v(" bx bx-like\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-like\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-left-arrow"
-  }), _vm._v(" bx bx-left-arrow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-left-arrow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-joystick-alt"
-  }), _vm._v(" bx bx-joystick-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-joystick-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-history"
-  }), _vm._v(" bx bx-history\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-history\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-flag"
-  }), _vm._v(" bx bx-flag\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-flag\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-first-aid"
-  }), _vm._v(" bx bx-first-aid\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-first-aid\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-export"
-  }), _vm._v(" bx bx-export\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-export\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-down-arrow"
-  }), _vm._v(" bx bx-down-arrow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-down-arrow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dislike"
-  }), _vm._v(" bx bx-dislike\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dislike\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-crown"
-  }), _vm._v(" bx bx-crown\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-crown\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-barcode"
-  }), _vm._v(" bx bx-barcode\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-barcode\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-user"
-  }), _vm._v(" bx bx-user\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-user\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-user-x"
-  }), _vm._v(" bx bx-user-x\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-user-x\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-user-plus"
-  }), _vm._v(" bx bx-user-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-user-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-user-minus"
-  }), _vm._v(" bx bx-user-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-user-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-user-circle"
-  }), _vm._v(" bx bx-user-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-user-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-user-check"
-  }), _vm._v(" bx bx-user-check\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-user-check\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-underline"
-  }), _vm._v(" bx bx-underline\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-underline\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-trophy"
-  }), _vm._v(" bx bx-trophy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-trophy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-trash"
-  }), _vm._v(" bx bx-trash\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-trash\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-text"
-  }), _vm._v(" bx bx-text\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-text\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-sun"
-  }), _vm._v(" bx bx-sun\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-sun\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-star"
-  }), _vm._v(" bx bx-star\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-star\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-sort"
-  }), _vm._v(" bx bx-sort\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-sort\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-shuffle"
-  }), _vm._v(" bx bx-shuffle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-shuffle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-shopping-bag"
-  }), _vm._v(" bx bx-shopping-bag\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-shopping-bag\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-shield"
-  }), _vm._v(" bx bx-shield\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-shield\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-shield-alt"
-  }), _vm._v(" bx bx-shield-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-shield-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-share"
-  }), _vm._v(" bx bx-share\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-share\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-share-alt"
-  }), _vm._v(" bx bx-share-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-share-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-select-multiple"
-  }), _vm._v(" bx bx-select-multiple\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-select-multiple\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-screenshot"
-  }), _vm._v(" bx bx-screenshot\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-screenshot\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-save"
-  }), _vm._v(" bx bx-save\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-save\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pulse"
-  }), _vm._v(" bx bx-pulse\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pulse\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-power-off"
-  }), _vm._v(" bx bx-power-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-power-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-plus"
-  }), _vm._v(" bx bx-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pin"
-  }), _vm._v(" bx bx-pin\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pin\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pencil"
-  }), _vm._v(" bx bx-pencil\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pencil\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pin"
-  }), _vm._v(" bx bx-pin\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pin\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pencil"
-  }), _vm._v(" bx bx-pencil\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pencil\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-paste"
-  }), _vm._v(" bx bx-paste\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-paste\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-paragraph"
-  }), _vm._v(" bx bx-paragraph\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-paragraph\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-package"
-  }), _vm._v(" bx bx-package\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-package\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-notification"
-  }), _vm._v(" bx bx-notification\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-notification\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-music"
-  }), _vm._v(" bx bx-music\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-music\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-move"
-  }), _vm._v(" bx bx-move\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-move\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-mouse"
-  }), _vm._v(" bx bx-mouse\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-mouse\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-minus"
-  }), _vm._v(" bx bx-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-microphone-off"
-  }), _vm._v(" bx bx-microphone-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-microphone-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-log-out"
-  }), _vm._v(" bx bx-log-out\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-log-out\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-log-in"
-  }), _vm._v(" bx bx-log-in\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-log-in\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-link-external"
-  }), _vm._v(" bx bx-link-external\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-link-external\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-joystick"
-  }), _vm._v(" bx bx-joystick\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-joystick\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-italic"
-  }), _vm._v(" bx bx-italic\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-italic\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-home-alt"
-  }), _vm._v(" bx bx-home-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-home-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-heading"
-  }), _vm._v(" bx bx-heading\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-heading\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-hash"
-  }), _vm._v(" bx bx-hash\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-hash\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-group"
-  }), _vm._v(" bx bx-group\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-group\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-git-repo-forked"
-  }), _vm._v(" bx bx-git-repo-forked\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-git-repo-forked\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-git-pull-request"
-  }), _vm._v(" bx bx-git-pull-request\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-git-pull-request\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-git-merge"
-  }), _vm._v(" bx bx-git-merge\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-git-merge\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-git-compare"
-  }), _vm._v(" bx bx-git-compare\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-git-compare\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-git-commit"
-  }), _vm._v(" bx bx-git-commit\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-git-commit\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-git-branch"
-  }), _vm._v(" bx bx-git-branch\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-git-branch\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-font"
-  }), _vm._v(" bx bx-font\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-font\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-filter"
-  }), _vm._v(" bx bx-filter\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-filter\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-file"
-  }), _vm._v(" bx bx-file\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-file\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-edit"
-  }), _vm._v(" bx bx-edit\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-edit\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-diamond"
-  }), _vm._v(" bx bx-diamond\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-diamond\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-detail"
-  }), _vm._v(" bx bx-detail\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-detail\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cut"
-  }), _vm._v(" bx bx-cut\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cut\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cube"
-  }), _vm._v(" bx bx-cube\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cube\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-crop"
-  }), _vm._v(" bx bx-crop\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-crop\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-credit-card"
-  }), _vm._v(" bx bx-credit-card\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-credit-card\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-columns"
-  }), _vm._v(" bx bx-columns\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-columns\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cog"
-  }), _vm._v(" bx bx-cog\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cog\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cloud-snow"
-  }), _vm._v(" bx bx-cloud-snow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cloud-snow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cloud-rain"
-  }), _vm._v(" bx bx-cloud-rain\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cloud-rain\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cloud-lightning"
-  }), _vm._v(" bx bx-cloud-lightning\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cloud-lightning\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cloud-light-rain"
-  }), _vm._v(" bx bx-cloud-light-rain\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cloud-light-rain\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cloud-drizzle"
-  }), _vm._v(" bx bx-cloud-drizzle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cloud-drizzle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-check"
-  }), _vm._v(" bx bx-check\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-check\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cart"
-  }), _vm._v(" bx bx-cart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-calculator"
-  }), _vm._v(" bx bx-calculator\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-calculator\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bold"
-  }), _vm._v(" bx bx-bold\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bold\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-award"
-  }), _vm._v(" bx bx-award\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-award\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-anchor"
-  }), _vm._v(" bx bx-anchor\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-anchor\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-album"
-  }), _vm._v(" bx bx-album\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-album\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-adjust"
-  }), _vm._v(" bx bx-adjust\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-adjust\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-x"
-  }), _vm._v(" bx bx-x\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-x\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-table"
-  }), _vm._v(" bx bx-table\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-table\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-duplicate"
-  }), _vm._v(" bx bx-duplicate\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-duplicate\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-windows"
-  }), _vm._v(" bx bx-windows\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-windows\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-window"
-  }), _vm._v(" bx bx-window\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-window\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-window-open"
-  }), _vm._v(" bx bx-window-open\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-window-open\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-wifi"
-  }), _vm._v(" bx bx-wifi\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-wifi\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-voicemail"
-  }), _vm._v(" bx bx-voicemail\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-voicemail\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-video-off"
-  }), _vm._v(" bx bx-video-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-video-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-usb"
-  }), _vm._v(" bx bx-usb\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-usb\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-upload"
-  }), _vm._v(" bx bx-upload\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-upload\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-alarm"
-  }), _vm._v(" bx bx-alarm\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-alarm\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-tennis-ball"
-  }), _vm._v(" bx bx-tennis-ball\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-tennis-ball\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-target-lock"
-  }), _vm._v(" bx bx-target-lock\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-target-lock\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-tag"
-  }), _vm._v(" bx bx-tag\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-tag\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-tab"
-  }), _vm._v(" bx bx-tab\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-tab\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-spreadsheet"
-  }), _vm._v(" bx bx-spreadsheet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-spreadsheet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-sitemap"
-  }), _vm._v(" bx bx-sitemap\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-sitemap\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-sidebar"
-  }), _vm._v(" bx bx-sidebar\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-sidebar\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-send"
-  }), _vm._v(" bx bx-send\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-send\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pie-chart"
-  }), _vm._v(" bx bx-pie-chart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pie-chart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-phone"
-  }), _vm._v(" bx bx-phone\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-phone\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-navigation"
-  }), _vm._v(" bx bx-navigation\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-navigation\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-mobile"
-  }), _vm._v(" bx bx-mobile\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-mobile\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-mobile-alt"
-  }), _vm._v(" bx bx-mobile-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-mobile-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-message"
-  }), _vm._v(" bx bx-message\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-message\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-message-rounded"
-  }), _vm._v(" bx bx-message-rounded\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-message-rounded\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-map"
-  }), _vm._v(" bx bx-map\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-map\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-map-alt"
-  }), _vm._v(" bx bx-map-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-map-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-lock"
-  }), _vm._v(" bx bx-lock\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-lock\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-lock-open"
-  }), _vm._v(" bx bx-lock-open\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-lock-open\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-list-minus"
-  }), _vm._v(" bx bx-list-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-list-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-list-ul"
-  }), _vm._v(" bx bx-list-ul\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-list-ul\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-list-plus"
-  }), _vm._v(" bx bx-list-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-list-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-link"
-  }), _vm._v(" bx bx-link\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-link\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-link-alt"
-  }), _vm._v(" bx bx-link-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-link-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-layer"
-  }), _vm._v(" bx bx-layer\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-layer\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-laptop"
-  }), _vm._v(" bx bx-laptop\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-laptop\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-home"
-  }), _vm._v(" bx bx-home\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-home\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-heart"
-  }), _vm._v(" bx bx-heart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-heart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-headphone"
-  }), _vm._v(" bx bx-headphone\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-headphone\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-devices"
-  }), _vm._v(" bx bx-devices\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-devices\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-globe"
-  }), _vm._v(" bx bx-globe\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-globe\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-gift"
-  }), _vm._v(" bx bx-gift\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-gift\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-envelope"
-  }), _vm._v(" bx bx-envelope\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-envelope\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-download"
-  }), _vm._v(" bx bx-download\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-download\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dots-vertical"
-  }), _vm._v(" bx bx-dots-vertical\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dots-vertical\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dots-vertical-rounded"
-  }), _vm._v(" bx bx-dots-vertical-rounded\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dots-vertical-rounded\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dots-horizontal"
-  }), _vm._v(" bx bx-dots-horizontal\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dots-horizontal\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dots-horizontal-rounded"
-  }), _vm._v(" bx bx-dots-horizontal-rounded\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dots-horizontal-rounded\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-dollar"
-  }), _vm._v(" bx bx-dollar\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-dollar\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-directions"
-  }), _vm._v(" bx bx-directions\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-directions\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-desktop"
-  }), _vm._v(" bx bx-desktop\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-desktop\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-data"
-  }), _vm._v(" bx bx-data\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-data\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-compass"
-  }), _vm._v(" bx bx-compass\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-compass\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-crosshair"
-  }), _vm._v(" bx bx-crosshair\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-crosshair\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-terminal"
-  }), _vm._v(" bx bx-terminal\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-terminal\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cloud"
-  }), _vm._v(" bx bx-cloud\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cloud\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cloud-upload"
-  }), _vm._v(" bx bx-cloud-upload\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cloud-upload\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-cloud-download"
-  }), _vm._v(" bx bx-cloud-download\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-cloud-download\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-chart"
-  }), _vm._v(" bx bx-chart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-chart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-calendar"
-  }), _vm._v(" bx bx-calendar\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-calendar\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-calendar-x"
-  }), _vm._v(" bx bx-calendar-x\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-calendar-x\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-calendar-minus"
-  }), _vm._v(" bx bx-calendar-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-calendar-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-calendar-check"
-  }), _vm._v(" bx bx-calendar-check\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-calendar-check\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-calendar-plus"
-  }), _vm._v(" bx bx-calendar-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-calendar-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-buoy"
-  }), _vm._v(" bx bx-buoy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-buoy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bulb"
-  }), _vm._v(" bx bx-bulb\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bulb\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bluetooth"
-  }), _vm._v(" bx bx-bluetooth\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bluetooth\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bug"
-  }), _vm._v(" bx bx-bug\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bug\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-building"
-  }), _vm._v(" bx bx-building\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-building\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-broadcast"
-  }), _vm._v(" bx bx-broadcast\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-broadcast\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-briefcase"
-  }), _vm._v(" bx bx-briefcase\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-briefcase\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bookmark-plus"
-  }), _vm._v(" bx bx-bookmark-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bookmark-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bookmark-minus"
-  }), _vm._v(" bx bx-bookmark-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bookmark-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-"
-  }), _vm._v(" bx bx-\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-book"
-  }), _vm._v(" bx bx-book\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-book\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-book-bookmark"
-  }), _vm._v(" bx bx-book-bookmark\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-book-bookmark\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-block"
-  }), _vm._v(" bx bx-block\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-block\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-basketball"
-  }), _vm._v(" bx bx-basketball\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-basketball\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bar-chart"
-  }), _vm._v(" bx bx-bar-chart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bar-chart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bar-chart-square"
-  }), _vm._v(" bx bx-bar-chart-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bar-chart-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bar-chart-alt"
-  }), _vm._v(" bx bx-bar-chart-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bar-chart-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-at"
-  }), _vm._v(" bx bx-at\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-at\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-archive"
-  }), _vm._v(" bx bx-archive\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-archive\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-zoom-out"
-  }), _vm._v(" bx bx-zoom-out\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-zoom-out\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-zoom-in"
-  }), _vm._v(" bx bx-zoom-in\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-zoom-in\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-x-circle"
-  }), _vm._v(" bx bx-x-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-x-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-volume"
-  }), _vm._v(" bx bx-volume\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-volume\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-volume-mute"
-  }), _vm._v(" bx bx-volume-mute\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-volume-mute\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-volume-low"
-  }), _vm._v(" bx bx-volume-low\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-volume-low\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-volume-full"
-  }), _vm._v(" bx bx-volume-full\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-volume-full\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-video"
-  }), _vm._v(" bx bx-video\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-video\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-vertical-center"
-  }), _vm._v(" bx bx-vertical-center\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-vertical-center\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-up-arrow-circle"
-  }), _vm._v(" bx bx-up-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-up-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-trending-up"
-  }), _vm._v(" bx bx-trending-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-trending-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-trending-down"
-  }), _vm._v(" bx bx-trending-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-trending-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-toggle-right"
-  }), _vm._v(" bx bx-toggle-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-toggle-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-toggle-left"
-  }), _vm._v(" bx bx-toggle-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-toggle-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-time"
-  }), _vm._v(" bx bx-time\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-time\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-sync"
-  }), _vm._v(" bx bx-sync\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-sync\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-stopwatch"
-  }), _vm._v(" bx bx-stopwatch\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-stopwatch\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-stop"
-  }), _vm._v(" bx bx-stop\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-stop\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-stop-circle"
-  }), _vm._v(" bx bx-stop-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-stop-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-skip-previous"
-  }), _vm._v(" bx bx-skip-previous\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-skip-previous\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-skip-next"
-  }), _vm._v(" bx bx-skip-next\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-skip-next\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-show"
-  }), _vm._v(" bx bx-show\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-show\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-search"
-  }), _vm._v(" bx bx-search\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-search\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-rss"
-  }), _vm._v(" bx bx-rss\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-rss\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-right-top-arrow-circle"
-  }), _vm._v(" bx bx-right-top-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-right-top-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-right-indent"
-  }), _vm._v(" bx bx-right-indent\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-right-indent\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-right-down-arrow-circle"
-  }), _vm._v(" bx bx-right-down-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-right-down-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-right-arrow-circle"
-  }), _vm._v(" bx bx-right-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-right-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-reset"
-  }), _vm._v(" bx bx-reset\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-reset\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-rewind"
-  }), _vm._v(" bx bx-rewind\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-rewind\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-rectangle"
-  }), _vm._v(" bx bx-rectangle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-rectangle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-radio-circle"
-  }), _vm._v(" bx bx-radio-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-radio-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-radio-circle-marked"
-  }), _vm._v(" bx bx-radio-circle-marked\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-radio-circle-marked\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-question-mark"
-  }), _vm._v(" bx bx-question-mark\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-question-mark\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-plus-circle"
-  }), _vm._v(" bx bx-plus-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-plus-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-play"
-  }), _vm._v(" bx bx-play\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-play\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-play-circle"
-  }), _vm._v(" bx bx-play-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-play-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pause"
-  }), _vm._v(" bx bx-pause\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pause\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-pause-circle"
-  }), _vm._v(" bx bx-pause-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-pause-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-moon"
-  }), _vm._v(" bx bx-moon\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-moon\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-minus-circle"
-  }), _vm._v(" bx bx-minus-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-minus-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-microphone"
-  }), _vm._v(" bx bx-microphone\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-microphone\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-menu"
-  }), _vm._v(" bx bx-menu\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-menu\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-left-top-arrow-circle"
-  }), _vm._v(" bx bx-left-top-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-left-top-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-left-indent"
-  }), _vm._v(" bx bx-left-indent\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-left-indent\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-left-down-arrow-circle"
-  }), _vm._v(" bx bx-left-down-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-left-down-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-left-arrow-circle"
-  }), _vm._v(" bx bx-left-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-left-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-last-page"
-  }), _vm._v(" bx bx-last-page\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-last-page\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-key"
-  }), _vm._v(" bx bx-key\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-key\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-align-justify"
-  }), _vm._v(" bx bx-align-justify\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-align-justify\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-info-circle"
-  }), _vm._v(" bx bx-info-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-info-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-image"
-  }), _vm._v(" bx bx-image\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-image\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-hide"
-  }), _vm._v(" bx bx-hide\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-hide\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-fullscreen"
-  }), _vm._v(" bx bx-fullscreen\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-fullscreen\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-folder"
-  }), _vm._v(" bx bx-folder\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-folder\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-folder-plus"
-  }), _vm._v(" bx bx-folder-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-folder-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-folder-minus"
-  }), _vm._v(" bx bx-folder-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-folder-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-first-page"
-  }), _vm._v(" bx bx-first-page\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-first-page\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-fast-forward"
-  }), _vm._v(" bx bx-fast-forward\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-fast-forward\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-fast-forward-circle"
-  }), _vm._v(" bx bx-fast-forward-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-fast-forward-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-exit-fullscreen"
-  }), _vm._v(" bx bx-exit-fullscreen\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-exit-fullscreen\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-error"
-  }), _vm._v(" bx bx-error\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-error\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-error-circle"
-  }), _vm._v(" bx bx-error-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-error-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-down-arrow-circle"
-  }), _vm._v(" bx bx-down-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-down-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-copyright"
-  }), _vm._v(" bx bx-copyright\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-copyright\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-copy"
-  }), _vm._v(" bx bx-copy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-copy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-coffee"
-  }), _vm._v(" bx bx-coffee\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-coffee\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-code"
-  }), _vm._v(" bx bx-code\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-code\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-code-curly"
-  }), _vm._v(" bx bx-code-curly\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-code-curly\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-clipboard"
-  }), _vm._v(" bx bx-clipboard\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-clipboard\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-chevrons-left"
-  }), _vm._v(" bx bx-chevrons-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-chevrons-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-chevrons-right"
-  }), _vm._v(" bx bx-chevrons-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-chevrons-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-chevrons-up"
-  }), _vm._v(" bx bx-chevrons-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-chevrons-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-chevrons-down"
-  }), _vm._v(" bx bx-chevrons-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-chevrons-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-chevron-right"
-  }), _vm._v(" bx bx-chevron-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-chevron-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-chevron-left"
-  }), _vm._v(" bx bx-chevron-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-chevron-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-chevron-up"
-  }), _vm._v(" bx bx-chevron-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-chevron-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-chevron-down"
-  }), _vm._v(" bx bx-chevron-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-chevron-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-checkbox-square"
-  }), _vm._v(" bx bx-checkbox-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-checkbox-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-checkbox"
-  }), _vm._v(" bx bx-checkbox\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-checkbox\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-checkbox-checked"
-  }), _vm._v(" bx bx-checkbox-checked\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-checkbox-checked\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-captions"
-  }), _vm._v(" bx bx-captions\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-captions\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-camera"
-  }), _vm._v(" bx bx-camera\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-camera\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-camera-off"
-  }), _vm._v(" bx bx-camera-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-camera-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bullseye"
-  }), _vm._v(" bx bx-bullseye\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bullseye\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bookmarks"
-  }), _vm._v(" bx bx-bookmarks\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bookmarks\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bookmark"
-  }), _vm._v(" bx bx-bookmark\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bookmark\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bell"
-  }), _vm._v(" bx bx-bell\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bell\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bell-plus"
-  }), _vm._v(" bx bx-bell-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bell-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bell-off"
-  }), _vm._v(" bx bx-bell-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bell-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-bell-minus"
-  }), _vm._v(" bx bx-bell-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-bell-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-arrow-back"
-  }), _vm._v(" bx bx-arrow-back\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-arrow-back\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-align-right"
-  }), _vm._v(" bx bx-align-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-align-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-align-middle"
-  }), _vm._v(" bx bx-align-middle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bx-align-middle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bx-align-left"
-  }), _vm._v(" bx bx-align-left\n                        ")])]), _vm._v(" "), _c("h5", {
+  }), _vm._v(" bx bx-align-left\r\n                        ")])]), _vm._v(" "), _c("h5", {
     staticClass: "mt-5"
   }, [_vm._v("Solid Icons")]), _vm._v(" "), _c("div", {
     staticClass: "row icons-list-demo"
@@ -6642,1795 +6642,1795 @@ var render = function render() {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-wink-tongue"
-  }), _vm._v(" bx bxs-wink-tongue\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-wink-tongue\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-upside-down"
-  }), _vm._v(" bx bxs-upside-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-upside-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-happy-alt"
-  }), _vm._v(" bx bxs-happy-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-happy-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-laugh"
-  }), _vm._v(" bx bxs-laugh\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-laugh\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-meh-blank"
-  }), _vm._v(" bx bxs-meh-blank\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-meh-blank\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cool"
-  }), _vm._v(" bx bxs-cool\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cool\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-tired"
-  }), _vm._v(" bx bxs-tired\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-tired\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-happy-beaming"
-  }), _vm._v(" bx bxs-happy-beaming\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-happy-beaming\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-shocked"
-  }), _vm._v(" bx bxs-shocked\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-shocked\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-happy"
-  }), _vm._v(" bx bxs-happy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-happy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-sad"
-  }), _vm._v(" bx bxs-sad\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-sad\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-sleepy"
-  }), _vm._v(" bx bxs-sleepy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-sleepy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-confused"
-  }), _vm._v(" bx bxs-confused\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-confused\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-meh-alt"
-  }), _vm._v(" bx bxs-meh-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-meh-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-meh"
-  }), _vm._v(" bx bxs-meh\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-meh\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-smile"
-  }), _vm._v(" bx bxs-smile\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-smile\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-wink-smile"
-  }), _vm._v(" bx bxs-wink-smile\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-wink-smile\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-dizzy"
-  }), _vm._v(" bx bxs-dizzy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-dizzy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-happy-heart-eyes"
-  }), _vm._v(" bx bxs-happy-heart-eyes\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-happy-heart-eyes\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-angry"
-  }), _vm._v(" bx bxs-angry\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-angry\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-business"
-  }), _vm._v(" bx bxs-business\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-business\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-camera-plus"
-  }), _vm._v(" bx bxs-camera-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-camera-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-food-menu"
-  }), _vm._v(" bx bxs-food-menu\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-food-menu\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-offer"
-  }), _vm._v(" bx bxs-offer\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-offer\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-clinic"
-  }), _vm._v(" bx bxs-clinic\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-clinic\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-hand-left"
-  }), _vm._v(" bx bxs-hand-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-hand-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-hand-down"
-  }), _vm._v(" bx bxs-hand-down\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-hand-down\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-hand-right"
-  }), _vm._v(" bx bxs-hand-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-hand-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-hand-up"
-  }), _vm._v(" bx bxs-hand-up\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-hand-up\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-baby-carriage"
-  }), _vm._v(" bx bxs-baby-carriage\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-baby-carriage\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-caret-left-circle"
-  }), _vm._v(" bx bxs-caret-left-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-caret-left-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-caret-right-circle"
-  }), _vm._v(" bx bxs-caret-right-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-caret-right-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-caret-down-circle"
-  }), _vm._v(" bx bxs-caret-down-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-caret-down-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-caret-up-circle"
-  }), _vm._v(" bx bxs-caret-up-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-caret-up-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-tone"
-  }), _vm._v(" bx bxs-tone\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-tone\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bolt-circle"
-  }), _vm._v(" bx bxs-bolt-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bolt-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-city"
-  }), _vm._v(" bx bxs-city\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-city\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cake"
-  }), _vm._v(" bx bxs-cake\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cake\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-spa"
-  }), _vm._v(" bx bxs-spa\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-spa\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-dish"
-  }), _vm._v(" bx bxs-dish\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-dish\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-fridge"
-  }), _vm._v(" bx bxs-fridge\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-fridge\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-image-add"
-  }), _vm._v(" bx bxs-image-add\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-image-add\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-alarm-add"
-  }), _vm._v(" bx bxs-alarm-add\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-alarm-add\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-archive-out"
-  }), _vm._v(" bx bxs-archive-out\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-archive-out\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-archive-in"
-  }), _vm._v(" bx bxs-archive-in\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-archive-in\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-add-to-queue"
-  }), _vm._v(" bx bxs-add-to-queue\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-add-to-queue\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-check-shield"
-  }), _vm._v(" bx bxs-check-shield\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-check-shield\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-label"
-  }), _vm._v(" bx bxs-label\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-label\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-face"
-  }), _vm._v(" bx bxs-face\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-face\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-find"
-  }), _vm._v(" bx bxs-file-find\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-find\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-extension"
-  }), _vm._v(" bx bxs-extension\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-extension\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-exit"
-  }), _vm._v(" bx bxs-exit\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-exit\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-brush-alt"
-  }), _vm._v(" bx bxs-brush-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-brush-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-layout"
-  }), _vm._v(" bx bxs-layout\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-layout\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-quote-alt-right"
-  }), _vm._v(" bx bxs-quote-alt-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-quote-alt-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-quote-alt-left"
-  }), _vm._v(" bx bxs-quote-alt-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-quote-alt-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-mobile-vibration"
-  }), _vm._v(" bx bxs-mobile-vibration\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-mobile-vibration\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-fast-forward-circle"
-  }), _vm._v(" bx bxs-fast-forward-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-fast-forward-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-rewind-circle"
-  }), _vm._v(" bx bxs-rewind-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-rewind-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-carousel"
-  }), _vm._v(" bx bxs-carousel\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-carousel\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-customize"
-  }), _vm._v(" bx bxs-customize\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-customize\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-calendar-event"
-  }), _vm._v(" bx bxs-calendar-event\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-calendar-event\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-calendar-check"
-  }), _vm._v(" bx bxs-calendar-check\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-calendar-check\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-calendar-x"
-  }), _vm._v(" bx bxs-calendar-x\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-calendar-x\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-calendar-minus"
-  }), _vm._v(" bx bxs-calendar-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-calendar-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-calendar-plus"
-  }), _vm._v(" bx bxs-calendar-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-calendar-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-calendar-alt"
-  }), _vm._v(" bx bxs-calendar-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-calendar-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-calendar"
-  }), _vm._v(" bx bxs-calendar\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-calendar\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-briefcase-alt-2"
-  }), _vm._v(" bx bxs-briefcase-alt-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-briefcase-alt-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bookmark-minus"
-  }), _vm._v(" bx bxs-bookmark-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bookmark-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bookmarks"
-  }), _vm._v(" bx bxs-bookmarks\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bookmarks\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-time-five"
-  }), _vm._v(" bx bxs-time-five\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-time-five\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-pie-chart-alt-2"
-  }), _vm._v(" bx bxs-pie-chart-alt-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-pie-chart-alt-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-time"
-  }), _vm._v(" bx bxs-time\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-time\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-timer"
-  }), _vm._v(" bx bxs-timer\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-timer\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-stopwatch"
-  }), _vm._v(" bx bxs-stopwatch\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-stopwatch\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-compass"
-  }), _vm._v(" bx bxs-compass\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-compass\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-user-check"
-  }), _vm._v(" bx bxs-user-check\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-user-check\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-user-x"
-  }), _vm._v(" bx bxs-user-x\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-user-x\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-grid"
-  }), _vm._v(" bx bxs-grid\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-grid\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-zoom-out"
-  }), _vm._v(" bx bxs-zoom-out\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-zoom-out\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-zoom-in"
-  }), _vm._v(" bx bxs-zoom-in\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-zoom-in\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-search"
-  }), _vm._v(" bx bxs-search\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-search\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bell-minus"
-  }), _vm._v(" bx bxs-bell-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bell-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bell-plus"
-  }), _vm._v(" bx bxs-bell-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bell-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-folder-minus"
-  }), _vm._v(" bx bxs-folder-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-folder-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-mobile"
-  }), _vm._v(" bx bxs-mobile\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-mobile\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-data"
-  }), _vm._v(" bx bxs-data\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-data\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-skip-next-circle"
-  }), _vm._v(" bx bxs-skip-next-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-skip-next-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-skip-previous-circle"
-  }), _vm._v(" bx bxs-skip-previous-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-skip-previous-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-chalkboard"
-  }), _vm._v(" bx bxs-chalkboard\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-chalkboard\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-school"
-  }), _vm._v(" bx bxs-school\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-school\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-institution"
-  }), _vm._v(" bx bxs-institution\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-institution\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-left-down-arrow-circle"
-  }), _vm._v(" bx bxs-left-down-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-left-down-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-left-top-arrow-circle"
-  }), _vm._v(" bx bxs-left-top-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-left-top-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-right-down-arrow-circle"
-  }), _vm._v(" bx bxs-right-down-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-right-down-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-right-top-arrow-circle"
-  }), _vm._v(" bx bxs-right-top-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-right-top-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-down-arrow"
-  }), _vm._v(" bx bxs-down-arrow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-down-arrow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-up-arrow"
-  }), _vm._v(" bx bxs-up-arrow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-up-arrow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-left-arrow"
-  }), _vm._v(" bx bxs-left-arrow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-left-arrow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-right-arrow"
-  }), _vm._v(" bx bxs-right-arrow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-right-arrow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-rectangle"
-  }), _vm._v(" bx bxs-rectangle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-rectangle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-brightness"
-  }), _vm._v(" bx bxs-brightness\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-brightness\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-brightness-half"
-  }), _vm._v(" bx bxs-brightness-half\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-brightness-half\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-paint"
-  }), _vm._v(" bx bxs-paint\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-paint\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-credit-card"
-  }), _vm._v(" bx bxs-credit-card\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-credit-card\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-credit-card-alt"
-  }), _vm._v(" bx bxs-credit-card-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-credit-card-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-band-aid"
-  }), _vm._v(" bx bxs-band-aid\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-band-aid\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-map-pin"
-  }), _vm._v(" bx bxs-map-pin\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-map-pin\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-receipt"
-  }), _vm._v(" bx bxs-receipt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-receipt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-purchase-tag-alt"
-  }), _vm._v(" bx bxs-purchase-tag-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-purchase-tag-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-basket"
-  }), _vm._v(" bx bxs-basket\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-basket\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-palette"
-  }), _vm._v(" bx bxs-palette\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-palette\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-plane-alt"
-  }), _vm._v(" bx bxs-plane-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-plane-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-component"
-  }), _vm._v(" bx bxs-component\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-component\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-traffic-barrier"
-  }), _vm._v(" bx bxs-traffic-barrier\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-traffic-barrier\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-no-entry"
-  }), _vm._v(" bx bxs-no-entry\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-no-entry\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-message-alt-dots"
-  }), _vm._v(" bx bxs-message-alt-dots\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-message-alt-dots\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-message-alt"
-  }), _vm._v(" bx bxs-message-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-message-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-check-square"
-  }), _vm._v(" bx bxs-check-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-check-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-notification-off"
-  }), _vm._v(" bx bxs-notification-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-notification-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-notification"
-  }), _vm._v(" bx bxs-notification\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-notification\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-log-out"
-  }), _vm._v(" bx bxs-log-out\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-log-out\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-log-in"
-  }), _vm._v(" bx bxs-log-in\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-log-in\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-log-out-circle"
-  }), _vm._v(" bx bxs-log-out-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-log-out-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-log-in-circle"
-  }), _vm._v(" bx bxs-log-in-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-log-in-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-circle"
-  }), _vm._v(" bx bxs-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-doughnut-chart"
-  }), _vm._v(" bx bxs-doughnut-chart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-doughnut-chart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-building-house"
-  }), _vm._v(" bx bxs-building-house\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-building-house\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-comment-error"
-  }), _vm._v(" bx bxs-comment-error\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-comment-error\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-user-voice"
-  }), _vm._v(" bx bxs-user-voice\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-user-voice\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cuboid"
-  }), _vm._v(" bx bxs-cuboid\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cuboid\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cube-alt"
-  }), _vm._v(" bx bxs-cube-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cube-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-polygon"
-  }), _vm._v(" bx bxs-polygon\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-polygon\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-square-rounded"
-  }), _vm._v(" bx bxs-square-rounded\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-square-rounded\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-square"
-  }), _vm._v(" bx bxs-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-error-alt"
-  }), _vm._v(" bx bxs-error-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-error-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-shield-alt-2"
-  }), _vm._v(" bx bxs-shield-alt-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-shield-alt-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-paint-roll"
-  }), _vm._v(" bx bxs-paint-roll\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-paint-roll\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-comment-add"
-  }), _vm._v(" bx bxs-comment-add\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-comment-add\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-droplet-half"
-  }), _vm._v(" bx bxs-droplet-half\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-droplet-half\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-search-alt-2"
-  }), _vm._v(" bx bxs-search-alt-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-search-alt-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bowling-ball"
-  }), _vm._v(" bx bxs-bowling-ball\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bowling-ball\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-hourglass-bottom"
-  }), _vm._v(" bx bxs-hourglass-bottom\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-hourglass-bottom\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-hourglass-top"
-  }), _vm._v(" bx bxs-hourglass-top\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-hourglass-top\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-lock-open-alt"
-  }), _vm._v(" bx bxs-lock-open-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-lock-open-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-lock-alt"
-  }), _vm._v(" bx bxs-lock-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-lock-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-graduation"
-  }), _vm._v(" bx bxs-graduation\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-graduation\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-vial"
-  }), _vm._v(" bx bxs-vial\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-vial\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cylinder"
-  }), _vm._v(" bx bxs-cylinder\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cylinder\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-pyramid"
-  }), _vm._v(" bx bxs-pyramid\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-pyramid\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-wine"
-  }), _vm._v(" bx bxs-wine\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-wine\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-comment-detail"
-  }), _vm._v(" bx bxs-comment-detail\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-comment-detail\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-comment-dots"
-  }), _vm._v(" bx bxs-comment-dots\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-comment-dots\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-comment"
-  }), _vm._v(" bx bxs-comment\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-comment\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-traffic"
-  }), _vm._v(" bx bxs-traffic\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-traffic\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-landscape"
-  }), _vm._v(" bx bxs-landscape\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-landscape\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-adjust-alt"
-  }), _vm._v(" bx bxs-adjust-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-adjust-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-id-card"
-  }), _vm._v(" bx bxs-id-card\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-id-card\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-parking"
-  }), _vm._v(" bx bxs-parking\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-parking\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-plane-land"
-  }), _vm._v(" bx bxs-plane-land\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-plane-land\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-plane-take-off"
-  }), _vm._v(" bx bxs-plane-take-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-plane-take-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-analyse"
-  }), _vm._v(" bx bxs-analyse\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-analyse\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-gif"
-  }), _vm._v(" bx bxs-file-gif\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-gif\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-jpg"
-  }), _vm._v(" bx bxs-file-jpg\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-jpg\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-png"
-  }), _vm._v(" bx bxs-file-png\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-png\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-txt"
-  }), _vm._v(" bx bxs-file-txt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-txt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-md"
-  }), _vm._v(" bx bxs-file-md\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-md\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-json"
-  }), _vm._v(" bx bxs-file-json\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-json\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-js"
-  }), _vm._v(" bx bxs-file-js\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-js\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-css"
-  }), _vm._v(" bx bxs-file-css\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-css\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-html"
-  }), _vm._v(" bx bxs-file-html\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-html\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-copy-alt"
-  }), _vm._v(" bx bxs-copy-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-copy-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-doc"
-  }), _vm._v(" bx bxs-file-doc\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-doc\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-user-pin"
-  }), _vm._v(" bx bxs-user-pin\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-user-pin\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-quote-single-right"
-  }), _vm._v(" bx bxs-quote-single-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-quote-single-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-quote-single-left"
-  }), _vm._v(" bx bxs-quote-single-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-quote-single-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-ghost"
-  }), _vm._v(" bx bxs-ghost\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-ghost\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-direction-left"
-  }), _vm._v(" bx bxs-direction-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-direction-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-video-recording"
-  }), _vm._v(" bx bxs-video-recording\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-video-recording\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-notepad"
-  }), _vm._v(" bx bxs-notepad\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-notepad\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bug-alt"
-  }), _vm._v(" bx bxs-bug-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bug-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-mouse-alt"
-  }), _vm._v(" bx bxs-mouse-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-mouse-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-edit-alt"
-  }), _vm._v(" bx bxs-edit-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-edit-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-chat"
-  }), _vm._v(" bx bxs-chat\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-chat\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-book-content"
-  }), _vm._v(" bx bxs-book-content\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-book-content\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-message-square-dots"
-  }), _vm._v(" bx bxs-message-square-dots\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-message-square-dots\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-message-square"
-  }), _vm._v(" bx bxs-message-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-message-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-slideshow"
-  }), _vm._v(" bx bxs-slideshow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-slideshow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bank"
-  }), _vm._v(" bx bxs-bank\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bank\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-wallet-alt"
-  }), _vm._v(" bx bxs-wallet-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-wallet-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-memory-card"
-  }), _vm._v(" bx bxs-memory-card\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-memory-card\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-devices"
-  }), _vm._v(" bx bxs-devices\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-devices\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-message-rounded-dots"
-  }), _vm._v(" bx bxs-message-rounded-dots\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-message-rounded-dots\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-message-dots"
-  }), _vm._v(" bx bxs-message-dots\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-message-dots\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bar-chart-alt-2"
-  }), _vm._v(" bx bxs-bar-chart-alt-2\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bar-chart-alt-2\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-store-alt"
-  }), _vm._v(" bx bxs-store-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-store-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-buildings"
-  }), _vm._v(" bx bxs-buildings\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-buildings\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-home-circle"
-  }), _vm._v(" bx bxs-home-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-home-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-pdf"
-  }), _vm._v(" bx bxs-file-pdf\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-pdf\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-yin-yang"
-  }), _vm._v(" bx bxs-yin-yang\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-yin-yang\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-ship"
-  }), _vm._v(" bx bxs-ship\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-ship\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-factory"
-  }), _vm._v(" bx bxs-factory\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-factory\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-tree"
-  }), _vm._v(" bx bxs-tree\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-tree\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-plane"
-  }), _vm._v(" bx bxs-plane\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-plane\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-user-rectangle"
-  }), _vm._v(" bx bxs-user-rectangle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-user-rectangle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-eyedropper"
-  }), _vm._v(" bx bxs-eyedroppers\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-eyedroppers\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cloud-lightning"
-  }), _vm._v(" bx bxs-cloud-lightning\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cloud-lightning\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cloud-rain"
-  }), _vm._v(" bx bxs-cloud-rain\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cloud-rain\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-eraser"
-  }), _vm._v(" bx bxs-eraser\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-eraser\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-magic-wand"
-  }), _vm._v(" bx bxs-magic-wand\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-magic-wand\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-hotel"
-  }), _vm._v(" bx bxs-hotel\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-hotel\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-color-fill"
-  }), _vm._v(" bx bxs-color-fill\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-color-fill\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-capsule"
-  }), _vm._v(" bx bxs-capsule\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-capsule\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-flask"
-  }), _vm._v(" bx bxs-flask\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-flask\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-joystick-button"
-  }), _vm._v(" bx bxs-joystick-button\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-joystick-button\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-direction-right"
-  }), _vm._v(" bx bxs-direction-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-direction-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-directions"
-  }), _vm._v(" bx bxs-directions\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-directions\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-megaphone"
-  }), _vm._v(" bx bxs-megaphone\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-megaphone\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-keyboard"
-  }), _vm._v(" bx bxs-keyboard\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-keyboard\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-brush"
-  }), _vm._v(" bx bxs-brush\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-brush\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-coffee-alt"
-  }), _vm._v(" bx bxs-coffee-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-coffee-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-badge-check"
-  }), _vm._v(" bx bxs-badge-check\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-badge-check\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-landmark"
-  }), _vm._v(" bx bxs-landmark\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-landmark\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-gas-pump"
-  }), _vm._v(" bx bxs-gas-pump\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-gas-pump\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-user-badge"
-  }), _vm._v(" bx bxs-user-badge\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-user-badge\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-right-arrow-square"
-  }), _vm._v(" bx bxs-right-arrow-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-right-arrow-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-down-arrow-square"
-  }), _vm._v(" bx bxs-down-arrow-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-down-arrow-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-up-arrow-square"
-  }), _vm._v(" bx bxs-up-arrow-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-up-arrow-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-left-arrow-square"
-  }), _vm._v(" bx bxs-left-arrow-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-left-arrow-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-ambulance"
-  }), _vm._v(" bx bxs-ambulance\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-ambulance\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-magnet"
-  }), _vm._v(" bx bxs-magnet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-magnet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-card"
-  }), _vm._v(" bx bxs-card\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-card\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-help-circle"
-  }), _vm._v(" bx bxs-help-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-help-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-note"
-  }), _vm._v(" bx bxs-note\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-note\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-badge"
-  }), _vm._v(" bx bxs-badge\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-badge\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-flame"
-  }), _vm._v(" bx bxs-flame\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-flame\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-disc"
-  }), _vm._v(" bx bxs-disc\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-disc\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-minus-square"
-  }), _vm._v(" bx bxs-minus-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-minus-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-plus-square"
-  }), _vm._v(" bx bxs-plus-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-plus-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-x-square"
-  }), _vm._v(" bx bxs-x-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-x-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs- microphone-alt"
-  }), _vm._v(" bx bxs-microphone-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-microphone-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-image-alt"
-  }), _vm._v(" bx bxs-image-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-image-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-skull"
-  }), _vm._v(" bx bxs-skull\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-skull\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-dollar-circle"
-  }), _vm._v(" bx bxs-dollar-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-dollar-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-film"
-  }), _vm._v(" bx bxs-film\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-film\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-ball"
-  }), _vm._v(" bx bxs-ball\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-ball\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-edit"
-  }), _vm._v(" bx bxs-edit\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-edit\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-blank"
-  }), _vm._v(" bx bxs-file-blank\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-blank\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bell-ring"
-  }), _vm._v(" bx bxs-bell-ring\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bell-ring\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-photo-album"
-  }), _vm._v(" bx bxs-photo-album\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-photo-album\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-key"
-  }), _vm._v(" bx bxs-key\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-key\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-video-plus"
-  }), _vm._v(" bx bxs-video-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-video-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-box"
-  }), _vm._v(" bx bxs-box\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-box\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-planet"
-  }), _vm._v(" bx bxs-planet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-planet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-movie"
-  }), _vm._v(" bx bxs-movie\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-movie\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-taxi"
-  }), _vm._v(" bx bxs-taxi\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-taxi\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-train"
-  }), _vm._v(" bx bxs-train\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-train\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bath"
-  }), _vm._v(" bx bxs-bath\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bath\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bed"
-  }), _vm._v(" bx bxs-bed\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bed\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-area"
-  }), _vm._v(" bx bxs-area\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-area\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bot"
-  }), _vm._v(" bx bxs-bot\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bot\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bus"
-  }), _vm._v(" bx bxs-bus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-star-half"
-  }), _vm._v(" bx bxs-star-half\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-star-half\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-checkbox-checked"
-  }), _vm._v(" bx bxs-checkbox-checked\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-checkbox-checked\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-checkbox"
-  }), _vm._v(" bx bxs-checkbox\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-checkbox\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-check-circle"
-  }), _vm._v(" bx bxs-check-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-check-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-rocket"
-  }), _vm._v(" bx bxs-rocket\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-rocket\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-certification"
-  }), _vm._v(" bx bxs-certification\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-certification\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-plus"
-  }), _vm._v(" bx bxs-file-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-dashboard"
-  }), _vm._v(" bx bxs-dashboard\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-dashboard\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-conversation"
-  }), _vm._v(" bx bxs-conversation\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-conversation\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-battery-low"
-  }), _vm._v(" bx bxs-battery-low\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-battery-low\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-folder-open"
-  }), _vm._v(" bx bxs-folder-open\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-folder-open\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-zap"
-  }), _vm._v(" bx bxs-zap\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-zap\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-x-circle"
-  }), _vm._v(" bx bxs-x-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-x-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-wrench"
-  }), _vm._v(" bx bxs-wrench\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-wrench\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-widget"
-  }), _vm._v(" bx bxs-widget\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-widget\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-watch"
-  }), _vm._v(" bx bxs-watch\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-watch\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-watch-alt"
-  }), _vm._v(" bx bxs-watch-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-watch-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-wallet"
-  }), _vm._v(" bx bxs-wallet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-wallet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-volume"
-  }), _vm._v(" bx bxs-volume\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-volume\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-volume-mute"
-  }), _vm._v(" bx bxs-volume-mute\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-volume-mute\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-volume-low"
-  }), _vm._v(" bx bxs-volume-low\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-volume-low\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-volume-full"
-  }), _vm._v(" bx bxs-volume-full\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-volume-full\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-videos"
-  }), _vm._v(" bx bxs-videos\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-videos\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-video"
-  }), _vm._v(" bx bxs-video\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-video\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-video-off"
-  }), _vm._v(" bx bxs-video-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-video-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-user"
-  }), _vm._v(" bx bxs-user\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-user\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-user-plus"
-  }), _vm._v(" bx bxs-user-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-user-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-user-minus"
-  }), _vm._v(" bx bxs-user-minus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-user-minus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-user-detail"
-  }), _vm._v(" bx bxs-user-detail\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-user-detail\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-user-circle"
-  }), _vm._v(" bx bxs-user-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-user-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-upvote"
-  }), _vm._v(" bx bxs-upvote\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-upvote\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-up-arrow-circle"
-  }), _vm._v(" bx bxs-up-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-up-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-truck"
-  }), _vm._v(" bx bxs-truck\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-truck\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-trophy"
-  }), _vm._v(" bx bxs-trophy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-trophy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-trash"
-  }), _vm._v(" bx bxs-trash\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-trash\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-trash-alt"
-  }), _vm._v(" bx bxs-trash-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-trash-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-torch"
-  }), _vm._v(" bx bxs-torch\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-torch\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-toggle-right"
-  }), _vm._v(" bx bxs-toggle-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-toggle-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-to-top"
-  }), _vm._v(" bx bxs-to-top\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-to-top\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-terminal"
-  }), _vm._v(" bx bxs-terminal\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-terminal\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-tennis-ball"
-  }), _vm._v(" bx bxs-tennis-ball\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-tennis-ball\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-tag"
-  }), _vm._v(" bx bxs-tag\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-tag\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-tag-x"
-  }), _vm._v(" bx bxs-tag-x\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-tag-x\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-t-shirt"
-  }), _vm._v(" bx bxs-t-shirt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-t-shirt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-sun"
-  }), _vm._v(" bx bxs-sun\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-sun\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-store"
-  }), _vm._v(" bx bxs-store\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-store\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-star"
-  }), _vm._v(" bx bxs-star\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-star\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-spreadsheet"
-  }), _vm._v(" bx bxs-spreadsheet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-spreadsheet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-show"
-  }), _vm._v(" bx bxs-show\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-show\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-shopping-bag"
-  }), _vm._v(" bx bxs-shopping-bag\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-shopping-bag\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-shopping-bag-alt"
-  }), _vm._v(" bx bxs-shopping-bag-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-shopping-bag-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-shield"
-  }), _vm._v(" bx bxs-shield\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-shield\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-share"
-  }), _vm._v(" bx bxs-share\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-share\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-share-alt"
-  }), _vm._v(" bx bxs-share-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-share-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-server"
-  }), _vm._v(" bx bxs-server\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-server\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-send"
-  }), _vm._v(" bx bxs-send\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-send\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-select-multiple"
-  }), _vm._v(" bx bxs-select-multiple\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-select-multiple\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-sort-alt"
-  }), _vm._v(" bx bxs-sort-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-sort-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-save"
-  }), _vm._v(" bx bxs-save\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-save\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-ruler"
-  }), _vm._v(" bx bxs-ruler\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-ruler\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-right-arrow-circle"
-  }), _vm._v(" bx bxs-right-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-right-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-report"
-  }), _vm._v(" bx bxs-report\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-report\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-rename"
-  }), _vm._v(" bx bxs-rename\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-rename\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-radio"
-  }), _vm._v(" bx bxs-radio\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-radio\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-quote-right"
-  }), _vm._v(" bx bxs-quote-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-quote-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-quote-left"
-  }), _vm._v(" bx bxs-quote-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-quote-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-purchase-tag"
-  }), _vm._v(" bx bxs-purchase-tag\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-purchase-tag\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-printer"
-  }), _vm._v(" bx bxs-printer\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-printer\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-plus-circle"
-  }), _vm._v(" bx bxs-plus-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-plus-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-plug"
-  }), _vm._v(" bx bxs-plug\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-plug\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-playlist"
-  }), _vm._v(" bx bxs-playlist\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-playlist\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-pin"
-  }), _vm._v(" bx bxs-pin\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-pin\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-pie-chart"
-  }), _vm._v(" bx bxs-pie-chart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-pie-chart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-pie-chart-alt"
-  }), _vm._v(" bx bxs-pie-chart-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-pie-chart-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-phone"
-  }), _vm._v(" bx bxs-phone\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-phone\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-phone-outgoing"
-  }), _vm._v(" bx bxs-phone-outgoing\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-phone-outgoing\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-phone-incoming"
-  }), _vm._v(" bx bxs-phone-incoming\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-phone-incoming\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-phone-call"
-  }), _vm._v(" bx bxs-phone-call\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-phone-call\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-pencil"
-  }), _vm._v(" bx bxs-pencil\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-pencil\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-pen"
-  }), _vm._v(" bx bxs-pen\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-pen\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-paste"
-  }), _vm._v(" bx bxs-paste\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-paste\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-paper-plane"
-  }), _vm._v(" bx bxs-paper-plane\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-paper-plane\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-package"
-  }), _vm._v(" bx bxs-package\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-package\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-news"
-  }), _vm._v(" bx bxs-news\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-news\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-navigation"
-  }), _vm._v(" bx bxs-navigation\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-navigation\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-music"
-  }), _vm._v(" bx bxs-music\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-music\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-mouse"
-  }), _vm._v(" bx bxs-mouse\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-mouse\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-moon"
-  }), _vm._v(" bx bxs-moon\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-moon\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-minus-circle"
-  }), _vm._v(" bx bxs-minus-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-minus-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-microphone"
-  }), _vm._v(" bx bxs-microphone\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-microphone\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-microphone-off"
-  }), _vm._v(" bx bxs-microphone-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-microphone-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-message"
-  }), _vm._v(" bx bxs-message\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-message\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-message-rounded"
-  }), _vm._v(" bx bxs-message-rounded\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-message-rounded\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-map"
-  }), _vm._v(" bx bxs-map\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-map\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-map-alt"
-  }), _vm._v(" bx bxs-map-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-map-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-lock"
-  }), _vm._v(" bx bxs-lock\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-lock\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-lock-open"
-  }), _vm._v(" bx bxs-lock-open\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-lock-open\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-like"
-  }), _vm._v(" bx bxs-like\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-like\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-left-arrow-circle"
-  }), _vm._v(" bx bxs-left-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-left-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-layer"
-  }), _vm._v(" bx bxs-layer\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-layer\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-joystick"
-  }), _vm._v(" bx bxs-joystick\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-joystick\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-joystick-alt"
-  }), _vm._v(" bx bxs-joystick-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-joystick-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-info-circle"
-  }), _vm._v(" bx bxs-info-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-info-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-inbox"
-  }), _vm._v(" bx bxs-inbox\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-inbox\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-image"
-  }), _vm._v(" bx bxs-image\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-image\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-hourglass"
-  }), _vm._v(" bx bxs-hourglass\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-hourglass\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-hot"
-  }), _vm._v(" bx bxs-hot\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-hot\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-home"
-  }), _vm._v(" bx bxs-home\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-home\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-hide"
-  }), _vm._v(" bx bxs-hide\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-hide\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-heart"
-  }), _vm._v(" bx bxs-heart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-heart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-hdd"
-  }), _vm._v(" bx bxs-hdd\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-hdd\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-group"
-  }), _vm._v(" bx bxs-group\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-group\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-grid-alt"
-  }), _vm._v(" bx bxs-grid-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-grid-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-gift"
-  }), _vm._v(" bx bxs-gift\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-gift\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-flag"
-  }), _vm._v(" bx bxs-flag\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-flag\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-flag-alt"
-  }), _vm._v(" bx bxs-flag-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-flag-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-first-aid"
-  }), _vm._v(" bx bxs-first-aid\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-first-aid\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-filter-alt"
-  }), _vm._v(" bx bxs-filter-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-filter-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file"
-  }), _vm._v(" bx bxs-file\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file"
-  }), _vm._v(" bx bxs-file\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-file-image"
-  }), _vm._v(" bx bxs-file-image\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-file-image\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-error"
-  }), _vm._v(" bx bxs-error\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-error\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-error-circle"
-  }), _vm._v(" bx bxs-error-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-error-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-envelope"
-  }), _vm._v(" bx bxs-envelope\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-envelope\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-eject"
-  }), _vm._v(" bx bxs-eject\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-eject\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-duplicate"
-  }), _vm._v(" bx bxs-duplicate\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-duplicate\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-droplet"
-  }), _vm._v(" bx bxs-droplet\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-droplet\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-drink"
-  }), _vm._v(" bx bxs-drink\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-drink\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-downvote"
-  }), _vm._v(" bx bxs-downvote\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-downvote\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-download"
-  }), _vm._v(" bx bxs-download\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-download\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-down-arrow-circle"
-  }), _vm._v(" bx bxs-down-arrow-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-down-arrow-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-dock-top"
-  }), _vm._v(" bx bxs-dock-top\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-dock-top\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-dock-right"
-  }), _vm._v(" bx bxs-dock-right\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-dock-right\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-dock-left"
-  }), _vm._v(" bx bxs-dock-left\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-dock-left\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-dock-bottom"
-  }), _vm._v(" bx bxs-dock-bottom\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-dock-bottom\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-dislike"
-  }), _vm._v(" bx bxs-dislike\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-dislike\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-discount"
-  }), _vm._v(" bx bxs-discount\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-discount\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-detail"
-  }), _vm._v(" bx bxs-detail\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-detail\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cube"
-  }), _vm._v(" bx bxs-cube\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cube\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-crown"
-  }), _vm._v(" bx bxs-crown\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-crown\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-coupon"
-  }), _vm._v(" bx bxs-coupon\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-coupon\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-copy"
-  }), _vm._v(" bx bxs-copy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-copy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-contact"
-  }), _vm._v(" bx bxs-contact\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-contact\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-collection"
-  }), _vm._v(" bx bxs-collection\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-collection\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cog"
-  }), _vm._v(" bx bxs-cog\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cog\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-coffee"
-  }), _vm._v(" bx bxs-coffee\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-coffee\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cloud"
-  }), _vm._v(" bx bxs-cloud\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cloud\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cloud-upload"
-  }), _vm._v(" bx bxs-cloud-upload\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cloud-upload\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cloud-download"
-  }), _vm._v(" bx bxs-cloud-download\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cloud-download\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-chip"
-  }), _vm._v(" bx bxs-chip\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-chip\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-chart"
-  }), _vm._v(" bx bxs-chart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-chart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cart"
-  }), _vm._v(" bx bxs-cart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-cart-alt"
-  }), _vm._v(" bx bxs-cart-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-cart-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-car"
-  }), _vm._v(" bx bxs-car\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-car\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-captions"
-  }), _vm._v(" bx bxs-captions\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-captions\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-calculator"
-  }), _vm._v(" bx bxs-calculator\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-calculator\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-buoy"
-  }), _vm._v(" bx bxs-buoy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-buoy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bulb"
-  }), _vm._v(" bx bxs-bulb\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bulb\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-building"
-  }), _vm._v(" bx bxs-building\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-building\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bug"
-  }), _vm._v(" bx bxs-bug\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bug\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-briefcase-alt"
-  }), _vm._v(" bx bxs-briefcase-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-briefcase-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-briefcase"
-  }), _vm._v(" bx bxs-briefcase\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-briefcase\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bookmark-star"
-  }), _vm._v(" bx bxs-bookmark-star\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bookmark-star\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-book-open"
-  }), _vm._v(" bx bxs-book-open\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-book-open\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bookmark-plus"
-  }), _vm._v(" bx bxs-bookmark-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bookmark-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bookmark"
-  }), _vm._v(" bx bxs-bookmark\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bookmark\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-book"
-  }), _vm._v(" bx bxs-book\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-book\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bolt"
-  }), _vm._v(" bx bxs-bolt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bolt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bell-off"
-  }), _vm._v(" bx bxs-bell-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bell-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bell"
-  }), _vm._v(" bx bxs-bell\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bell\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-battery-full"
-  }), _vm._v(" bx bxs-battery-full\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-battery-full\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-battery-charging"
-  }), _vm._v(" bx bxs-battery-charging\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-battery-charging\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-battery"
-  }), _vm._v(" bx bxs-battery\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-battery\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-barcode"
-  }), _vm._v(" bx bxs-barcode\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-barcode\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-bar-chart-square"
-  }), _vm._v(" bx bxs-bar-chart-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-bar-chart-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-award"
-  }), _vm._v(" bx bxs-award\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-award\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-folder-plus"
-  }), _vm._v(" bx bxs-folder-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-folder-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-folder"
-  }), _vm._v(" bx bxs-folder\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-folder\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-camera-off"
-  }), _vm._v(" bx bxs-camera-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-camera-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-camera"
-  }), _vm._v(" bx bxs-camera\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-camera\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-archive"
-  }), _vm._v(" bx bxs-archive\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-archive\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-album"
-  }), _vm._v(" bx bxs-album\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-album\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-alarm-off"
-  }), _vm._v(" bx bxs-alarm-off\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-alarm-off\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-alarm"
-  }), _vm._v(" bx bxs-alarm\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxs-alarm\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxs-adjust"
-  }), _vm._v(" bx bxs-adjust\n                        ")])]), _vm._v(" "), _c("h4", {
+  }), _vm._v(" bx bxs-adjust\r\n                        ")])]), _vm._v(" "), _c("h4", {
     staticClass: "mt-5"
   }, [_vm._v("Logos")]), _vm._v(" "), _c("div", {
     staticClass: "row icons-list-demo"
@@ -8438,447 +8438,447 @@ var render = function render() {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-redbubble"
-  }), _vm._v(" bx bxl-redbubble\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-redbubble\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-patreon"
-  }), _vm._v(" bx bxl-patreon\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-patreon\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-gitlab"
-  }), _vm._v(" bx bxl-gitlab\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-gitlab\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-etsy"
-  }), _vm._v(" bx bxl-etsy\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-etsy\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-figma"
-  }), _vm._v(" bx bxl-figma\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-figma\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-audible"
-  }), _vm._v(" bx bxl-audible\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-audible\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-algolia"
-  }), _vm._v(" bx bxl-algolia\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-algolia\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-adobe"
-  }), _vm._v(" bx bxl-adobe\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-adobe\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-pinterest-alt"
-  }), _vm._v(" bx bxl-pinterest-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-pinterest-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-imdb"
-  }), _vm._v(" bx bxl-imdb\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-imdb\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-jquery"
-  }), _vm._v(" bx bxl-jquery\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-jquery\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-facebook-circle"
-  }), _vm._v(" bx bxl-facebook-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-facebook-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-instagram-alt"
-  }), _vm._v(" bx bxl-instagram-alt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-instagram-alt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-flickr-square"
-  }), _vm._v(" bx bxl-flickr-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-flickr-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-whatsapp-square"
-  }), _vm._v(" bx bxl-whatsapp-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-whatsapp-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-squarespace"
-  }), _vm._v(" bx bxl-squarespace\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-squarespace\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-medium-old"
-  }), _vm._v(" bx bxl-medium-old\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-medium-old\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-mailchimp"
-  }), _vm._v(" bx bxl-mailchimp\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-mailchimp\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-wix"
-  }), _vm._v(" bx bxl-wix\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-wix\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-trello"
-  }), _vm._v(" bx bxl-trello\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-trello\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-spotify"
-  }), _vm._v(" bx bxl-spotify\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-spotify\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-soundcloud"
-  }), _vm._v(" bx bxl-soundcloud\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-soundcloud\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-snapchat"
-  }), _vm._v(" bx bxl-snapchat\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-snapchat\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-less"
-  }), _vm._v(" bx bxl-less\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-less\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-flickr"
-  }), _vm._v(" bx bxl-flickr\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-flickr\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-shopify"
-  }), _vm._v(" bx bxl-shopify\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-shopify\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-jsfiddle"
-  }), _vm._v(" bx bxl-jsfiddle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-jsfiddle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-css3"
-  }), _vm._v(" bx bxl-css3\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-css3\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-microsoft"
-  }), _vm._v(" bx bxl-microsoft\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-microsoft\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-yahoo"
-  }), _vm._v(" bx bxl-yahoo\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-yahoo\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-bootstrap"
-  }), _vm._v(" bx bxl-bootstrap\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-bootstrap\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-redux"
-  }), _vm._v(" bx bxl-redux\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-redux\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-mastercard"
-  }), _vm._v(" bx bxl-mastercard\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-mastercard\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-visa"
-  }), _vm._v(" bx bxl-visa\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-visa\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-baidu"
-  }), _vm._v(" bx bxl-baidu\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-baidu\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-chrome"
-  }), _vm._v(" bx bxl-chrome\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-chrome\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-dailymotion"
-  }), _vm._v(" bx bxl-dailymotion\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-dailymotion\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-joomla"
-  }), _vm._v(" bx bxl-joomla\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-joomla\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-internet-explorer"
-  }), _vm._v(" bx bxl-internet-explorer\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-internet-explorer\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-paypal"
-  }), _vm._v(" bx bxl-paypal\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-paypal\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-edge"
-  }), _vm._v(" bx bxl-edge\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-edge\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-stripe"
-  }), _vm._v(" bx bxl-stripe\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-stripe\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-telegram"
-  }), _vm._v(" bx bxl-telegram\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-telegram\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-wordpress"
-  }), _vm._v(" bx bxl-wordpress\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-wordpress\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-periscope"
-  }), _vm._v(" bx bxl-periscope\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-periscope\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-react"
-  }), _vm._v(" bx bxl-react\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-react\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-bing"
-  }), _vm._v(" bx bxl-bing\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-bing\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-vuejs"
-  }), _vm._v(" bx bxl-vuejs\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-vuejs\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-kickstarter"
-  }), _vm._v(" bx bxl-kickstarter\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-kickstarter\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-nodejs"
-  }), _vm._v(" bx bxl-nodejs\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-nodejs\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-javascript"
-  }), _vm._v(" bx bxl-javascript\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-javascript\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-firefox"
-  }), _vm._v(" bx bxl-firefox\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-firefox\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-stack-overflow"
-  }), _vm._v(" bx bxl-stack-overflow\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-stack-overflow\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-magento"
-  }), _vm._v(" bx bxl-magento\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-magento\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-product-hunt"
-  }), _vm._v(" bx bxl-product-hunt\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-product-hunt\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-html5"
-  }), _vm._v(" bx bxl-html5\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-html5\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-git"
-  }), _vm._v(" bx bxl-git\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-git\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-quora"
-  }), _vm._v(" bx bxl-quora\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-quora\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-yelp"
-  }), _vm._v(" bx bxl-yelp\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-yelp\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-airbnb"
-  }), _vm._v(" bx bxl-airbnb\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-airbnb\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-opera"
-  }), _vm._v(" bx bxl-opera\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-opera\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-invision"
-  }), _vm._v(" bx bxl-invision\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-invision\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-foursquare"
-  }), _vm._v(" bx bxl-foursquare\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-foursquare\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-sass"
-  }), _vm._v(" bx bxl-sass\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-sass\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-wikipedia"
-  }), _vm._v(" bx bxl-wikipedia\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-wikipedia\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-unsplash"
-  }), _vm._v(" bx bxl-unsplash\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-unsplash\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-digg"
-  }), _vm._v(" bx bxl-digg\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-digg\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-amazon"
-  }), _vm._v(" bx bxl-amazon\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-amazon\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-ebay"
-  }), _vm._v(" bx bxl-ebay\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-ebay\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-drupal"
-  }), _vm._v(" bx bxl-drupal\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-drupal\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-dropbox"
-  }), _vm._v(" bx bxl-dropbox\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-dropbox\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-discourse"
-  }), _vm._v(" bx bxl-discourse\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-discourse\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-deviantart"
-  }), _vm._v(" bx bxl-deviantart\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-deviantart\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-digitalocean"
-  }), _vm._v(" bx bxl-digitalocean\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-digitalocean\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-creative-commons"
-  }), _vm._v(" bx bxl-creative-commons\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-creative-commons\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-codepen"
-  }), _vm._v(" bx bxl-codepen\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-codepen\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-angular"
-  }), _vm._v(" bx bxl-angular\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-angular\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-messenger"
-  }), _vm._v(" bx bxl-messenger\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-messenger\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-pocket"
-  }), _vm._v(" bx bxl-pocket\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-pocket\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-vk"
-  }), _vm._v(" bx bxl-vk\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-vk\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-windows"
-  }), _vm._v(" bx bxl-windows\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-windows\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-play-store"
-  }), _vm._v(" bx bxl-play-store\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-play-store\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-android"
-  }), _vm._v(" bx bxl-android\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-android\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-apple"
-  }), _vm._v(" bx bxl-apple\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-apple\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-blogger"
-  }), _vm._v(" bx bxl-blogger\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-blogger\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-pinterest"
-  }), _vm._v(" bx bxl-pinterest\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-pinterest\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-reddit"
-  }), _vm._v(" bx bxl-reddit\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-reddit\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-discord"
-  }), _vm._v(" bx bxl-discord\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-discord\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-twitch"
-  }), _vm._v(" bx bxl-twitch\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-twitch\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-slack"
-  }), _vm._v(" bx bxl-slack\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-slack\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-slack-old"
-  }), _vm._v(" bx bxl-slack-old\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-slack-old\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-skype"
-  }), _vm._v(" bx bxl-skype\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-skype\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-medium-square"
-  }), _vm._v(" bx bxl-medium-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-medium-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-medium"
-  }), _vm._v(" bx bxl-medium\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-medium\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-linkedin-square"
-  }), _vm._v(" bx bxl-linkedin-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-linkedin-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-google-plus-circle"
-  }), _vm._v(" bx bxl-google-plus-circle\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-google-plus-circle\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-google-plus"
-  }), _vm._v(" bx bxl-google-plus\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-google-plus\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-facebook-square"
-  }), _vm._v(" bx bxl-facebook-square\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-facebook-square\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-bitcoin"
-  }), _vm._v(" bx bxl-bitcoin\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-bitcoin\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-linkedin"
-  }), _vm._v(" bx bxl-linkedin\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-linkedin\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-vimeo"
-  }), _vm._v(" bx bxl-vimeo\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-vimeo\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-dribbble"
-  }), _vm._v(" bx bxl-dribbble\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-dribbble\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-behance"
-  }), _vm._v(" bx bxl-behance\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-behance\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-tumblr"
-  }), _vm._v(" bx bxl-tumblr\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-tumblr\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-whatsapp"
-  }), _vm._v(" bx bxl-whatsapp\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-whatsapp\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-youtube"
-  }), _vm._v(" bx bxl-youtube\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-youtube\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-twitter"
-  }), _vm._v(" bx bxl-twitter\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-twitter\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-instagram"
-  }), _vm._v(" bx bxl-instagram\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-instagram\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-google"
-  }), _vm._v(" bx bxl-google\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-google\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-github"
-  }), _vm._v(" bx bxl-github\n                        ")]), _vm._v(" "), _c("div", {
+  }), _vm._v(" bx bxl-github\r\n                        ")]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 col-sm-6"
   }, [_c("i", {
     staticClass: "bx bxl-facebook"
-  }), _vm._v(" bx bxl-facebook\n                        ")])])])])])])], 1);
+  }), _vm._v(" bx bxl-facebook\r\n                        ")])])])])])])], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -10229,7 +10229,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.link-footer[data-v-61a7c374]{\n    color: black;\n    font-weight: bold;\n}\n.link-footer[data-v-61a7c374]:hover{\n    color: rgb(0, 163, 244);\n    font-weight: bold;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.link-footer[data-v-61a7c374]{\r\n    color: black;\r\n    font-weight: bold;\n}\n.link-footer[data-v-61a7c374]:hover{\r\n    color: rgb(0, 163, 244);\r\n    font-weight: bold;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10277,7 +10277,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.logo-lg img[data-v-81fbb27e] {\n  width: 70px;\n  height: 45px;\n}\n.logo-sm img[data-v-81fbb27e] {\n  width: 70px;\n  height: 45px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.logo-lg img[data-v-81fbb27e] {\r\n  width: 70px;\r\n  height: 45px;\n}\n.logo-sm img[data-v-81fbb27e] {\r\n  width: 70px;\r\n  height: 45px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
