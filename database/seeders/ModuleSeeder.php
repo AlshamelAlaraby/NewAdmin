@@ -58,6 +58,11 @@ class ModuleSeeder extends Seeder
                 'name' => 'Booking',
                 'name_e' => 'Booking',
             ],
+            [
+                'id' => 9,
+                'name' => 'نظام ادارة المستشفيات',
+                'name_e' => 'Hospitals Management System',
+            ],
 
         ];
 

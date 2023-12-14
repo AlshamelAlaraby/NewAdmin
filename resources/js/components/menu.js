@@ -17,6 +17,12 @@ export const menuItems = [{
     },*/
 
     {
+        id: 3,
+        label: 'general.Programs',
+        icon: 'fa fa-project-diagram',
+        link: '/programs'
+    },
+    {
         id: 4,
         label: 'menuitems.module.text',
         icon: 'fab fa-medium-m',

@@ -26,40 +26,38 @@ class ScreenRequest extends FormRequest
      */
     public function rules()
     {
-        $request =  request();
-        //        dd($request->company_id);
 
         return [
-            // 'name' => 'required',
-            'name_e' => 'required',
-            'title' => 'required',
-            'title_e' => 'required',
+            'name' => 'required|unique:screens,name',
+            'name_e' => 'required|unique:screens,name_e',
+            'middleware' => 'required',
+            'title' => 'required|unique:screens,title',
+            'title_e' => 'required|unique:screens,title_e',
             'sort' => 'required',
             'middleware_url' => 'nullable',
             "is_add_on"       => "nullable||in:1,0",
+            "is_short_cut"       => "nullable|in:1,0",
             'is_implementor'  => 'nullable|in:1,0',
             'sub_menu_id'     => 'nullable|exists:sub_menus,id',
             'company_id'      => 'nullable|exists:companies,id',
             'parent_id'       => 'nullable|exists:screens,id',
             'module_screen_id'       => 'nullable|exists:project_program_modules,id',
             'module_id'       => 'nullable|exists:modules,id',
-
-
         ];
     }
 
     public function messages()
     {
         return [
-            'required'      => __('message.field is required'),
-            'title.unique'        => __('message.field already exists'),
-            'title_e.unique'        => __('message.field already exists'),
-            'name.unique'        => __('message.field already exists'),
-            'name_e.unique'        => __('message.field already exists'),
-            'title.required'        => __('message.field already exists'),
-            'title_e.required'        => __('message.field already exists'),
-            'name.required'        => __('message.field already exists'),
-            'name_e.required'        => __('message.field already exists'),
+            // 'required'      => __('message.field is required'),
+            // 'title.unique'        => __('message.field already exists'),
+            // 'title_e.unique'        => __('message.field already exists'),
+            // 'name.unique'        => __('message.field already exists'),
+            // 'name_e.unique'        => __('message.field already exists'),
+            // 'title.required'        => __('message.field already exists'),
+            // 'title_e.required'        => __('message.field already exists'),
+            // 'name.required'        => __('message.field already exists'),
+            // 'name_e.required'        => __('message.field already exists'),
         ];
     }
 }

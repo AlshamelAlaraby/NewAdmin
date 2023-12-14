@@ -2,44 +2,52 @@
 
 namespace App\Repositories\ProjectProgramModule;
 
+use App\Models\ModuleDashboard;
+use App\Models\ModuleMenu;
 use Illuminate\Support\Facades\DB;
 
 class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
 {
 
-    public function __construct(private \App\Models\ProjectProgramModule $model)
+    public function __construct(private \App\Models\ProjectProgramModule $model, private ModuleMenu $module_menu)
     {
         $this->model = $model;
+        $this->module_menu = $module_menu;
     }
 
     public function all($request)
     {
-        $modules = $this->model->whereHas('modules')->get()->pluck('id')->toArray();
 
-        $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
+        $models = $this->model->where('is_module',$request->program_parent ? 0 :1)->filter($request)->latest();
 
-        if ($request->program_modules) {
-            $models->whereNotIn("id", $modules);
-        }
-
-        if ($request->child == "true") {
-            $models->whereNotNull("parent_id");
-        }
-
-        if ($request->program_parent) {
-            $models->whereNull("parent_id")->where('is_module', 0);
+        //This for filter programs by modules in Programs pages
+        if ($request->program_parent && $request->search) {
+            $models->orWhereRelation('children',function($q) use($request){
+                $q->where('name', 'like', '%' . $request->search . '%');
+                $q->orWhere('name_e', 'like', '%' . $request->search . '%');
+            });
         }
 
         if ($request->module_child) {
-            $models->whereNull("parent_id")->where('is_module', 1);
-        }
-
-        if ($request->is_module) {
-            $models->where('is_module', 1);
+            $models->whereNull("parent_id");
         }
 
         if ($request->per_page) {
-            return ['data' => $models->paginate($request->per_page), 'paginate' => true];
+            $data = $models->paginate($request->per_page);
+
+
+            //this for get program modules and set them first in the modules dropdown in the partner page
+            if ($request->program_modules && $request->inside_id) {
+                $program_models = $this->model->where('parent_id',$request->inside_id)->get()->merge($data->items())->unique('id');
+                $data->setCollection($program_models);
+            }
+
+            //return the selected module from dropdown when append module to tree menu
+            if($request->selected_id){
+                $selected_module_in_dropdown = $this->model->where('id',$request->selected_id)->get()->merge($data->items())->unique('id');
+                $data->setCollection($selected_module_in_dropdown);
+            }
+            return ['data' => $data, 'paginate' => true];
         } else {
             return ['data' => $models->get(), 'paginate' => false];
         }
@@ -78,11 +86,32 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
         return $this->model->find($id)->activities()->orderBy('created_at', 'DESC')->get();
     }
 
-    public function delete($id)
+    public function delete($request)
     {
-        $model = $this->find($id);
-        // $this->forget($id);
-        $model->delete();
+        if($request->node_type == 'module'){
+            $node = $this->model->where('is_module',1)->find($request->node_id);
+
+            if($request->action == 'un_assign_module_to_program'){
+                $node->update(['parent_id' => null]);
+                return 1;
+            }
+
+        }
+
+        else if($request->node_type == 'program'){
+            $node =$this->model->where('is_module',0)->find($request->node_id);
+            $this->model->where('parent_id',$node->id)->update(['parent_id' => null]);
+            return 1;
+        }
+        else
+            $node = $this->module_menu->find($request->node_id);
+
+        if(isset($node)){
+
+            $node->delete();
+            return 1 ;
+        }
+        return 0;
     }
 
     public function addModuleToCompany($request)
@@ -114,11 +143,12 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
         }
     }
 
+
     public function allProgramModuleId($request)
     {
-        $project = $this->model->where('is_module', '1')->get()->pluck('id')->toArray();
+        $modules = $this->model->where('is_module', '1');
 
-        $modules = $this->model->whereIn('module_id', $project);
+        // $modules = $this->model->whereIn('module_id', $project);
 
         if ($request->per_page) {
             return ['data' => $modules->paginate($request->per_page), 'paginate' => true];
@@ -156,5 +186,86 @@ class ProjectProgramModuleRepository implements ProjectProgramModuleInterface
             return ['data' => $models->get(), 'paginate' => false];
         }
     }
+
+
+
+    // create new menu item inside module or folder
+    public function createNewMenuItem($request)
+    {
+        if($request->inside_type == 'program'){
+            $module = $this->model->find($request->module_id);
+            $module->update(['parent_id' => $request->inside_id,'sort' => $request->sort]);
+            return $module;
+        }
+        if($request->type == 'page')
+            $data = $request->only(['page_id','sort','type','module_id']);
+        else
+            $data = $request->only(['name','name_e','sort','type','module_id']);
+
+        $data['folder_id'] = $request->inside_type =='folder' ? $request->inside_id : null;
+        return $this->module_menu->create($data);
+
+    }
+
+
+    // edit menu item
+    public function editTreeItem($request)
+    {
+        $data = [];
+        $node = $request->node;
+        if($request->node_type == 'page')
+            $node->update(['sort' => $request->sort]);
+        elseif($request->node_type == 'folder')
+            $data = $request->only(['name','name_e','sort']);
+        elseif($request->node_type == 'module' || $request->node_type == 'program')
+            $data = $request->only(['name','name_e','icon',isset($request->action) && $request->node_type == 'module' ? 'sort' : '','module_dashboard_id']);
+
+
+        if($data)
+            $node->update($data);
+
+        return $node;
+
+    }
+
+    public function module_dashboards($request){
+        $data = ModuleDashboard::select('id','name','name_e')->when($request->search ,function($q) use($request) {
+            $q->where('name','like',"%$request->search%")->orWhere('name_e','like',"%$request->search%");
+        })->paginate(20);
+
+        if($request->selected_module_dashboard_id){
+            $selected_dashboard_in_dropdown = ModuleDashboard::select('id','name','name_e')->where('id',$request->selected_module_dashboard_id)->get()->merge($data->items());
+            $data->setCollection($selected_dashboard_in_dropdown);
+        }
+
+        return $data;
+    }
+
+    public function getChildrenInsideModule($module){
+        $menu = $this->module_menu->with(['page','childrens' => function ($q) {$q->orderBy('sort');}])->where('module_id',$module->id)->whereNull('folder_id')->orderBy('sort')->get();
+        $childrens = $this->arrangeMenu($menu);
+        return $childrens ;
+
+    }
+
+
+
+    protected function arrangeMenu($menu)
+    {
+        $arrangedMenu = [];
+
+        foreach ($menu as $item) {
+            $children = $item->childrens->load(['page','childrens'=> function ($q) {$q->orderBy('sort');}])->sortBy('sort');
+
+            if ($children->isNotEmpty()) {
+                $item->childrens = $this->arrangeMenu($children);
+            }
+
+            $arrangedMenu[] = $item;
+        }
+
+        return $arrangedMenu;
+    }
+
 
 }

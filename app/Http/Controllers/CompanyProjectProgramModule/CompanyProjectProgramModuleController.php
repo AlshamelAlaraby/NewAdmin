@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\CompanyProjectProgramModule;
 
 use App\Http\Controllers\ResponseController;
+use App\Http\Requests\CompanyProjectProgramModule\AttachOrDetachCompaniesWithProgramsRequest;
 use App\Http\Requests\CompanyProjectProgramModule\CompanyProjectProgramModuleRequest;
 use App\Http\Resources\CompanyProjectProgramModule\CompanyProjectProgramModuleResource;
+use App\Http\Resources\CompanyProjectProgramModule\ProgramsWithCompanyProjectProgramModuleResource;
+use App\Models\Company;
 use App\Repositories\CompanyProjectProgramModule\CompanyProjectProgramModuleInterface;
 use Illuminate\Http\Request;
 
@@ -98,6 +101,18 @@ class CompanyProjectProgramModuleController extends ResponseController
         }
         $logs = $this->repository->logs($id);
         return responseJson(200, 'success', \App\Http\Resources\Log\LogResource::collection($logs));
+    }
+
+
+    public function attach_or_detach_companies_with_programs(AttachOrDetachCompaniesWithProgramsRequest $request)
+    {
+        $this->repository->attach_or_detach_companies_with_programs($request);
+    }
+    public function get_programs_and_modules_for_company(Company $company)
+    {
+        $data = $this->repository->get_programs_and_modules_for_company($company);
+
+        return responseJson(200, 'success',ProgramsWithCompanyProjectProgramModuleResource::collection($data));
     }
 
 }

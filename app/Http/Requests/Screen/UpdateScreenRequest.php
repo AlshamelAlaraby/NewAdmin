@@ -49,8 +49,13 @@ class UpdateScreenRequest extends FormRequest
                 'max:100',
                 Rule::unique('screens', 'title_e')->ignore($this->route('id')),
             ],
+            "is_short_cut"       => "nullable|in:1,0",
+            'middleware' => 'required',
+            'middleware_url' => 'required',
+
             'serial_id'  => 'nullable',
             'module_id'  => 'nullable|exists:modules,id',
+            'module_screen_id'       => 'nullable|exists:project_program_modules,id',
 
         ];
     }
@@ -58,8 +63,8 @@ class UpdateScreenRequest extends FormRequest
     public function messages()
     {
         return [
-            'required'      => __('message.field is required'),
-            'unique'        => __('message.field already exists'),
+            // 'required'      => __('message.field is required'),
+            // 'unique'        => __('message.field already exists'),
         ];
     }
 }

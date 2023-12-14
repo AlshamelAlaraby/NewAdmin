@@ -11,6 +11,8 @@ use App\Http\Resources\ProjectProgramModule\ProjectProgramModuleResource;
 use App\Http\Requests\ProjectProgramModule\AllProjectProgramModuleRequest;
 use App\Http\Requests\ProjectProgramModule\ProjectProgramModuleRequest;
 use App\Http\Requests\ProjectProgramModule\AddCompanyToModuleRequest;
+use App\Http\Requests\ProjectProgramModule\CreateNewMenuItemRequest;
+use App\Http\Requests\ProjectProgramModule\EditMenuItemRequest;
 use App\Http\Resources\PartnerLogin\CompanyLoginResource;
 use App\Http\Resources\ProjectProgramModuleDropDownResource;
 use App\Models\Company;
@@ -64,16 +66,12 @@ class ProjectProgramModuleController extends Controller
         return responseJson(200, 'success');
     }
 
-    public function delete($id)
+    public function delete(Request $request)
     {
-        $model = $this->modelInterface->find($id);
+        $model = $this->modelInterface->delete($request);
         if (!$model) {
             return responseJson(404, __('message.data not found'));
         }
-        if ($model->hasChildren()) {
-            return responseJson(400, __('message.parent have children'));
-        }
-        $this->modelInterface->delete($id);
 
         return responseJson(200, 'success');
     }
@@ -106,7 +104,6 @@ class ProjectProgramModuleController extends Controller
 
     public function removeModuleFromCompany($module_id, $company_id)
     {
-
         $this->modelInterface->removeModuleFromCompany($module_id, $company_id);
         return responseJson(200, 'success');
     }
@@ -115,6 +112,7 @@ class ProjectProgramModuleController extends Controller
     {
         return $this->modelInterface->createProgramChildren($request);
     }
+
 
     public function getCompanyProjectProgramModules($name_company)
     {
@@ -144,9 +142,31 @@ class ProjectProgramModuleController extends Controller
 
     public function DropDown(Request $request)
     {
-
         $models = $this->modelInterface->DropDown($request);
         return responseJson(200, 'success', ProjectProgramModuleDropDownResource::collection($models['data']), $models['paginate'] ? getPaginates($models['data']) : null);
     }
+
+
+
+    public function createNewMenuItem(CreateNewMenuItemRequest $request)
+    {
+        return $this->modelInterface->createNewMenuItem($request);
+    }
+
+
+    public function editTreeItem(EditMenuItemRequest $request)
+    {
+        return $this->modelInterface->editTreeItem($request);
+    }
+
+    public function getChildrenInsideModule(ProjectProgramModule $projectProgramModule)
+    {
+        return responseJson(200, 'success', $this->modelInterface->getChildrenInsideModule($projectProgramModule));
+    }
+    public function module_dashboards(Request $request)
+    {
+        return responseJson(200, 'success', $this->modelInterface->module_dashboards($request));
+    }
+
 
 }

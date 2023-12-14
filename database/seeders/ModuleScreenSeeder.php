@@ -60,8 +60,12 @@ class ModuleScreenSeeder extends Seeder
                 'name' => 'Point Of Sale',
                 'name_e' => 'Point Of Sale',
 
-            ]
-            ,
+            ],
+            [
+                'id' => 8,
+                'name' => 'نظام ادارة المستشفيات',
+                'name_e' => 'Hospitals Management System',
+            ],
 
         ];
 

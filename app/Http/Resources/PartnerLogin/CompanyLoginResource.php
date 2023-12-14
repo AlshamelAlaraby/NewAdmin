@@ -16,7 +16,7 @@ class CompanyLoginResource extends JsonResource
 
     public function toArray($request)
     {
-        $is_active = $this->is_active->value != "active"  ? 0 : 1;
+        $is_active = $this->is_active != "active"  ? 0 : 1;//->value != "active"  ? 0 : 1
 
         return [
             "id"    => $this->id,

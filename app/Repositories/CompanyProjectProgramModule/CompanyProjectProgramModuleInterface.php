@@ -17,6 +17,10 @@ interface CompanyProjectProgramModuleInterface
 
     public function delete($id);
 
+    public function attach_or_detach_companies_with_programs($request);
+
+    public function get_programs_and_modules_for_company($company);
+
 
 
 }

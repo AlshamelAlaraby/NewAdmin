@@ -31,6 +31,7 @@ class CompanyProjectProgramModuleResource extends JsonResource
             "document_types"         => DocumentTypeResource::collection($this->documentTypes),
             "is_web"               => $this->is_web,
             "status"               => $this->status,
+            "company_program_id"               => $this->company_program_id,
 
         ];
     }

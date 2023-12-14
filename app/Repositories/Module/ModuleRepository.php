@@ -2,17 +2,19 @@
 
 namespace App\Repositories\Module;
 
+use App\Models\ProjectProgramModule;
+
 class ModuleRepository implements ModuleInterface
 {
 
-    public function __construct(private \App\Models\Module $model)
+    public function __construct(private \App\Models\Module $model,private ProjectProgramModule $module)
     {
         $this->model = $model;
     }
 
     public function all($request)
     {
-        $models = $this->model->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
+        $models = $this->module->where('is_module',1)->filter($request)->orderBy($request->order ? $request->order : 'updated_at', $request->sort ? $request->sort : 'DESC');
 
         if ($request->per_page) {
             return ['data' => $models->paginate($request->per_page), 'paginate' => true];

@@ -31,21 +31,13 @@ class ProjectProgramModuleRequest extends FormRequest
                 'sometimes',
                 Rule::unique('project_program_modules')->ignore($this->id)->where(function ($query) use($request) {
                     return $query->where('is_module', $request->is_module);
-                })->where('parent_id', $request->parent_id),
+                })->whereNull('deleted_at'),
             ],
             'name_e' => [
                 'sometimes',
                 Rule::unique('project_program_modules')->ignore($this->id)->where(function ($query) use($request) {
                     return $query->where('is_module', $request->is_module);
-                })->where('parent_id', $request->parent_id),
-            ],
-            'sort' => [
-                'sometimes',
-                'integer',
-                'min:0',
-                Rule::unique('project_program_modules')->ignore($this->id)->where(function ($query) use($request) {
-                    return $query->where('is_module', $request->is_module);
-                })->where('parent_id', $request->parent_id),
+                })->whereNull('deleted_at'),
             ],
             "is_active"          => "nullable|in:active,inactive",
             "is_web"          => "nullable|in:0,1",
@@ -53,6 +45,7 @@ class ProjectProgramModuleRequest extends FormRequest
             'is_menu_collapsed'  => 'nullable|in:0,1',
             "icon"               => "nullable|string",
             "is_module"          => "nullable|in:0,1",
+            "module_dashboard_id"          => "required_if:is_module,1|exists:module_dashboards,id",
             'parent_id'          => 'nullable|exists:partners,id',
         ];
     }

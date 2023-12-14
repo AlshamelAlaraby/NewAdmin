@@ -24,9 +24,15 @@ class CompanyProjectProgramModuleRequest extends FormRequest
      */
     public function rules()
     {
+        $request = request();
         return [
             "company_id" => "required|exists:companies,id",
-            "project_program_module_id" => "required|exists:project_program_modules,id",
+            "company_program_id" => "required|exists:companies_programs,id",
+            "project_program_module_id" => ["required","exists:project_program_modules,id",
+            request()->method() == 'PUT'?
+            Rule::unique('company_project_program_modules')->where('company_program_id',$request->company_program_id)->ignore($request->id)->whereNull('deleted_at')
+            :Rule::unique('company_project_program_modules')->where('company_program_id',$request->company_program_id)->whereNull('deleted_at')
+            ],
             "allowed_users_no" => "required|min:0|integer",
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',

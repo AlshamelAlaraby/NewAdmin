@@ -182,7 +182,7 @@
             "text": "التنقل"
         },
         "module": {
-            "text": "برنامج"
+            "text": "موديولز"
         },
         "screen_button": {
             "text": "زر الشاشة"
@@ -432,7 +432,16 @@
     },
     "general": {
         "out_site":"عدد العملاء الخارجين",
+        "Add Page":"اضف صفحة",
+        "Add Folder":"اضف فولدر",
+        "Dashboard":"الداشبورد",
         "Type":"النوع",
+        "Filter Icons":"فلتر الايقونات",
+        "Program Tree":"شجرة البرامج",
+        "Add Program":"اضف برنامج",
+        "Create New Program":"اضف برنامج جديد",
+        "Programs":"البرامج",
+        "Add inside":"اضف بداخل",
         "allowed_employee":"عدد الموظفين المسموحين",
         "icon":"ايقون",
         "screen":"الشاشة",
@@ -473,7 +482,9 @@
         "title_en": "العنوان (انجليزي)",
         "IdSort": "معرف الترتيب",
         "screens": "الشاشات",
+        "Module Tree": "شجرة الموديولز",
         "Partner": "الشريك",
+        "Is Short Cut": " لينك مختصر ؟",
         "Company": "الشركة",
         "Module": "الوحدة",
         "Default": "افتراضي",
@@ -493,8 +504,12 @@
         "PleaseEnterValidEmail": "الرجاء إدخال بريد إلكتروني صحيح .",
         "notDataFound": "لا يوجد بيانات .",
         "Create": "اضافه",
+        "Update Module": "تعديل الموديول",
+        "Create New Module": "انشاء موديول جديد",
+        "Add Module": "اضف موديول",
         "Action": "الاجراءات",
         "Status": "الحاله",
+        "Update": "تعديل",
         "Date": "التاريخ",
         "Active": "نشط",
         "Inactive": "غير نشط",

@@ -3,6 +3,7 @@ import checkAuth from "../middleware/auth-check";
 import login from "./routeChild/login";
 import company from "./routeChild/company";
 import module from "./routeChild/module";
+import programs from "./routeChild/programs";
 import screenButton from "./routeChild/screen-button";
 import partner from "./routeChild/partner";
 import buttons from "./routeChild/buttons";
@@ -21,6 +22,7 @@ export default [
     ...login,
     ...company,
     ...module,
+    ...programs,
     ...workflow,
     ...folder,
     ...hotField,

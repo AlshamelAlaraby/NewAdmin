@@ -39,7 +39,7 @@ class Screen extends Model
 
     public function ModuleScreen()
     {
-        return $this->belongsTo(ProjectProgramModule::class);
+        return $this->belongsTo(ProjectProgramModule::class,'module_screen_id');
     }
 
     /*** return relation with Helpfiles */

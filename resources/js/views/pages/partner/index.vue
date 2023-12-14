@@ -16,9 +16,9 @@ import Swal from "sweetalert2";
 import loader from "../../../components/loader";
 import { dynamicSortString, dynamicSortNumber } from "../../../helper/tableSort";
 import {formatDateOnly, formatDateTime} from "../../../helper/startDate";
-import {arabicValue,englishValue} from "../../../helper/langTransform";
 import DatePicker from "vue2-datepicker";
 import Multiselect from "vue-multiselect";
+import add_programs_and_modules_to_company from './add_programs_and_modules_to_company.vue';
 
 /**
  * Advanced Table component
@@ -36,6 +36,7 @@ export default {
     ErrorMessage,
     DatePicker,
     Multiselect,
+    add_programs_and_modules_to_company,
   },
   data() {
     return {
@@ -43,6 +44,11 @@ export default {
       search: "",
       debounce: {},
       partnersPagination: {},
+      new_company: {
+        name: "",
+        name_e: "",
+        id:0
+      },
       partners: [],
       enabled3: true,
       isLoader: false,
@@ -102,34 +108,7 @@ export default {
             is_active: 'active',
             contact_person: '',
         },
-      createProgram: {
-            out_site: "",
-            allowed_employee: "",
-            company_id: null,
-            module_id: null,
-            allowed_users_no: "",
-            start_date: null,
-            end_date: null,
-            custom_date_start: new Date(),
-            custom_date_end: null,
-            document_types: [],
-            is_web: 1,
-          status: 1
-        },
-      editProgram: {
-            out_site: "",
-            allowed_employee: "",
-            company_id: null,
-            module_id: null,
-            allowed_users_no: "",
-            start_date: null,
-            end_date: null,
-            custom_date_start: new Date(),
-            custom_date_end: null,
-            document_types: [],
-            is_web: 1,
-          status: 1
-        },
+
       setting: {
         name: true,
         name_e: true,
@@ -162,7 +141,6 @@ export default {
       is_disabledProgram: false,
       menus: [],
       modules: [],
-      document_types: [],
       companies: [],
         companyModules: []
     };
@@ -240,30 +218,7 @@ export default {
         is_active: { required },
         contact_person : {}
     },
-    createProgram: {
-          company_id: { required, integer },
-          module_id: { required, integer },
-          allowed_users_no: { required, integer },
-          out_site: { required },
-          allowed_employee: { required },
-          start_date: { required },
-          end_date: {},
-          document_types: {},
-          is_web: {},
-          status: {}
-      },
-    editProgram: {
-          company_id: { required, integer },
-          module_id: { required, integer },
-          allowed_users_no: { required, integer },
-          out_site: { required },
-          allowed_employee: { required },
-          start_date: { required },
-          end_date: {},
-          document_types: {},
-          is_web: {},
-          status: {}
-      },
+
   },
   watch: {
     /**
@@ -498,7 +453,6 @@ export default {
         country_code: "",
         is_active: "active",
       };
-      this.resetFormProgram();
       this.resetFormCom();
       this.$nextTick(() => {
         this.$v.$reset();
@@ -520,7 +474,6 @@ export default {
         mobile_no: "",
         is_active: "active",
       };
-      this.resetFormProgram();
       this.resetFormCom();
       this.$nextTick(() => {
         this.$v.$reset();
@@ -714,22 +667,6 @@ export default {
               }
               this.enabled3 = true;
           },100);
-      },
-      arabicValue(txt){
-          this.create.name = arabicValue(txt);
-          this.edit.name = arabicValue(txt);
-      } ,
-      englishValue(txt){
-          this.create.name_e = englishValue(txt);
-          this.edit.name_e = englishValue(txt);
-      },
-      arabicValueCompany(txt) {
-          this.createCompany.name = arabicValue(txt);
-          this.editCompany.name = arabicValue(txt);
-      },
-      englishValueCompany(txt) {
-          this.createCompany.name_e = englishValue(txt);
-          this.editCompany.name_e = englishValue(txt);
       },
       changePhoto() {
           document.getElementById("uploadImageCreate").click();
@@ -949,6 +886,9 @@ export default {
                   .then((res) => {
                       this.is_disabledCom = true;
                       this.company_id = res.data.data.id;
+                      this.new_company['id'] = res.data.data.id
+                      this.new_company['name'] = this.createCompany.name
+                      this.new_company['name_e'] = this.createCompany.name_e
                       setTimeout(() => {
                           Swal.fire({
                               icon: "success",
@@ -961,7 +901,6 @@ export default {
                           this.getDataCompany();
                       }else {
                           this.getAllModules();
-                          this.docType();
                       }
                   })
                   .catch((err) => {
@@ -1031,20 +970,7 @@ export default {
                   });
           }
       },
-      start_date(e) {
-          if (e) {
-              this.createProgram.start_date = formatDateTime(e);
-          } else {
-              this.createProgram.start_date = null;
-          }
-      },
-      end_date(e) {
-          if (e) {
-              this.createProgram.end_date = formatDateTime(e);
-          } else {
-              this.createProgram.end_date = null;
-          }
-      },
+
       async getAllModules(id) {
           await adminApi
               .get(`/project-program-modules/all-program-modules`)
@@ -1059,94 +985,9 @@ export default {
                   });
               });
       },
-      async docType() {
-          await adminApi
-              .get(`/document-type`)
-              .then((res) => {
-                  let l = res.data;
-                  this.document_types = l.data;
-              })
-              .catch((err) => {
-                  Swal.fire({
-                      icon: "error",
-                      title: `${this.$t("general.Error")}`,
-                      text: `${this.$t("general.Thereisanerrorinthesystem")}`,
-                  });
-              });
-      },
-      resetFormProgram (type = null) {
-          this.createProgram = {
-              out_site: "",
-              allowed_employee: "",
 
-              company_id: this.companies.map(el => el.id), ///Alaa Get company_id
-              module_id: "",
-              allowed_users_no: "",
-              start_date: formatDateTime(new Date()),
-              end_date: null,
-              custom_date_start: new Date(),
-              custom_date_end: null,
-              document_types: [],
-              is_web: 1,
-              status: 1
-          };
-          this.$nextTick(() => {
-              this.$v.$reset();
-          });
-          this.is_disabledProgram = false;
-          if(type == 'edit'){
-              this.getAllModules();
-              this.docType();
-          }
-      },
-      AddSubmitProgram(type = null) {
-        if(type != 'edit'){
-            this.createProgram.company_id = this.company_id;
-        }
-          this.$v.createProgram.$touch();
 
-          if (this.$v.createProgram.$invalid) {
-              return;
-          } else {
-              this.isLoader = true;
-              this.errors = {};
 
-              adminApi
-                  .post(`/company-project-program-modules`, {
-                      ...this.createProgram,
-                      module_id: undefined,
-                      project_program_module_id: this.createProgram.module_id,
-                  })
-                  .then((res) => {
-                      this.is_disabledProgram = true;
-                      setTimeout(() => {
-                          Swal.fire({
-                              icon: "success",
-                              text: `${this.$t("general.Addedsuccessfully")}`,
-                              showConfirmButton: false,
-                              timer: 1500,
-                          });
-                      }, 500);
-                      if(type == 'edit'){
-                          this.getDataProgram();
-                      }
-                  })
-                  .catch((err) => {
-                      if (err.response.data) {
-                          this.errors = err.response.data.errors;
-                      } else {
-                          Swal.fire({
-                              icon: "error",
-                              title: `${this.$t("general.Error")}`,
-                              text: `${this.$t("general.Thereisanerrorinthesystem")}`,
-                          });
-                      }
-                  })
-                  .finally(() => {
-                      this.isLoader = false;
-                  });
-          }
-      },
       getDataCompany() {
           this.isLoader = true;
 
@@ -1242,190 +1083,8 @@ export default {
                   this.isLoader = false;
               });
       },
-      async resetModalProgramEdit(id) {
-          let companyModule = this.companyModules.find((e) => id == e.id);
-          await this.getAllModules();
-          await this.docType();
-          this.editProgram.company_id = companyModule.company.id;
-          this.editProgram.module_id = companyModule.project_program_module.id;
-          this.editProgram.allowed_users_no = companyModule.allowed_users_no;
-          this.editProgram.out_site = companyModule.out_site;
-          this.editProgram.allowed_employee = companyModule.allowed_employee;
-          this.editProgram.custom_date_start = new Date(companyModule.start_date);
-          this.editProgram.is_web = companyModule.is_web;
-          this.editProgram.status = companyModule.status;
-          this.editProgram.custom_date_end = companyModule.end_date
-              ? new Date(companyModule.end_date)
-              : null;
-          this.editProgram.start_date = formatDateTime(companyModule.start_date);
-          this.editProgram.end_date = companyModule.end_date
-              ? formatDateTime(companyModule.end_date)
-              : null;
-          let types = [];
-          companyModule.document_types.forEach((e) => types.push(e.id));
-          this.editProgram.document_types = types ?? [];
-      },
-      resetModalHiddenProgramEdit() {
-          this.editProgram = {
-              out_site: "",
-              allowed_employee: "",
 
-              company_id: "",
-              module_id: "",
-              allowed_users_no: "",
-              start_date: null,
-              end_date: null,
-              custom_date_start: null,
-              custom_date_end: null,
-              document_types: [],
-              is_web: 1,
-              status: 1
-          };
-          this.errors = {};
-          this.modules = [];
-          this.document_types = [];
-      },
-      editSubmitProgram(id) {
-          this.$v.editProgram.$touch();
 
-          if (this.$v.editProgram.$invalid) {
-              return;
-          } else {
-              this.isLoader = true;
-              this.errors = {};
-              adminApi
-                  .put(`/company-project-program-modules/${id}`, {
-                      ...this.editProgram,
-                      module_id: undefined,
-                      project_program_module_id: this.editProgram.module_id,
-                  })
-                  .then((res) => {
-                      setTimeout(() => {
-                          Swal.fire({
-                              icon: "success",
-                              text: `${this.$t("general.Editsuccessfully")}`,
-                              showConfirmButton: false,
-                              timer: 1500,
-                          });
-                      }, 500);
-                      this.getDataProgram();
-                  })
-                  .catch((err) => {
-                      if (err.response.data) {
-                          this.errors = err.response.data.errors;
-                      } else {
-                          Swal.fire({
-                              icon: "error",
-                              title: `${this.$t("general.Error")}`,
-                              text: `${this.$t("general.Thereisanerrorinthesystem")}`,
-                          });
-                      }
-                  })
-                  .finally(() => {
-                      this.isLoader = false;
-                  });
-          }
-      },
-      deleteCompanyModule(id, index) {
-          if (Array.isArray(id)) {
-              Swal.fire({
-                  title: `${this.$t("general.Areyousure")}`,
-                  text: `${this.$t("general.Youwontbeabletoreverthis")}`,
-                  type: "warning",
-                  showCancelButton: true,
-                  confirmButtonText: `${this.$t("general.Yesdeleteit")}`,
-                  cancelButtonText: `${this.$t("general.Nocancel")}`,
-                  confirmButtonClass: "btn btn-success mt-2",
-                  cancelButtonClass: "btn btn-danger ml-2 mt-2",
-                  buttonsStyling: false,
-              }).then((result) => {
-                  if (result.value) {
-                      this.isLoader = true;
-                      adminApi
-                          .post(`/company-project-program-modules/bulk-delete`, { ids: id })
-                          .then((res) => {
-                              this.checkAll = [];
-                              this.getData();
-                              Swal.fire({
-                                  icon: "success",
-                                  title: `${this.$t("general.Deleted")}`,
-                                  text: `${this.$t("general.Yourrowhasbeendeleted")}`,
-                                  showConfirmButton: false,
-                                  timer: 1500,
-                              });
-                          })
-                          .catch((err) => {
-                              if (err.response.status == 400) {
-                                  Swal.fire({
-                                      icon: "error",
-                                      title: `${this.$t("general.Error")}`,
-                                      text: `${this.$t("general.CantDeleteRelation")}`,
-                                  });
-                                  this.getDataProgram();
-                              } else {
-                                  Swal.fire({
-                                      icon: "error",
-                                      title: `${this.$t("general.Error")}`,
-                                      text: `${this.$t("general.Thereisanerrorinthesystem")}`,
-                                  });
-                              }
-                          })
-                          .finally(() => {
-                              this.isLoader = false;
-                          });
-                  }
-              });
-          } else {
-              Swal.fire({
-                  title: `${this.$t("general.Areyousure")}`,
-                  text: `${this.$t("general.Youwontbeabletoreverthis")}`,
-                  type: "warning",
-                  showCancelButton: true,
-                  confirmButtonText: `${this.$t("general.Yesdeleteit")}`,
-                  cancelButtonText: `${this.$t("general.Nocancel")}`,
-                  confirmButtonClass: "btn btn-success mt-2",
-                  cancelButtonClass: "btn btn-danger ml-2 mt-2",
-                  buttonsStyling: false,
-              }).then((result) => {
-                  if (result.value) {
-                      this.isLoader = true;
-
-                      adminApi
-                          .delete(`/company-project-program-modules/${id}`)
-                          .then((res) => {
-                              this.checkAll = [];
-                              this.getDataProgram();
-                              Swal.fire({
-                                  icon: "success",
-                                  title: `${this.$t("general.Deleted")}`,
-                                  text: `${this.$t("general.Yourrowhasbeendeleted")}`,
-                                  showConfirmButton: false,
-                                  timer: 1500,
-                              });
-                          })
-
-                          .catch((err) => {
-                              if (err.response.status == 400) {
-                                  Swal.fire({
-                                      icon: "error",
-                                      title: `${this.$t("general.Error")}`,
-                                      text: `${this.$t("general.CantDeleteRelation")}`,
-                                  });
-                              } else {
-                                  Swal.fire({
-                                      icon: "error",
-                                      title: `${this.$t("general.Error")}`,
-                                      text: `${this.$t("general.Thereisanerrorinthesystem")}`,
-                                  });
-                              }
-                          })
-                          .finally(() => {
-                              this.isLoader = false;
-                          });
-                  }
-              });
-          }
-      },
       deletecompany(id, index) {
           if (Array.isArray(id)) {
               Swal.fire({
@@ -1782,7 +1441,6 @@ export default {
                           'is-invalid': $v.create.name.$error || errors.name,
                           'is-valid': !$v.create.name.$invalid && !errors.name,
                         }"
-                                          @keyup="arabicValue(create.name)"
                                           id="field-1"
                                       />
                                       <div v-if="!$v.create.name.minLength" class="invalid-feedback">
@@ -1821,7 +1479,6 @@ export default {
                           'is-invalid': $v.create.name_e.$error || errors.name_e,
                           'is-valid': !$v.create.name_e.$invalid && !errors.name_e,
                         }"
-                                          @keyup="englishValue(create.name_e)"
                                           id="field-2"
                                       />
                                       <div v-if="!$v.create.name_e.minLength" class="invalid-feedback">
@@ -2074,7 +1731,6 @@ export default {
                                     'is-valid':
                                       !$v.createCompany.name.$invalid && !errors.name,
                                   }"
-                                                  @keyup="arabicValueCompany(createCompany.name)"
                                               />
                                               <div
                                                   v-if="!$v.createCompany.name.minLength"
@@ -2118,7 +1774,6 @@ export default {
                                       !$v.createCompany.name_e.$invalid &&
                                       !errors.name_e,
                                   }"
-                                                  @keyup="englishValueCompany(createCompany.name_e)"
                                                   id="field-2"
                                               />
                                               <div
@@ -2653,290 +2308,7 @@ export default {
                           </div>
                       </b-tab>
                       <b-tab :title="$t('general.program')" :disabled="!company_id">
-                          <div class="mb-2 d-flex justify-content-end">
-                              <b-button
-                                  variant="success"
-                                  :disabled="!is_disabledProgram"
-                                  @click.prevent="resetFormProgram"
-                                  type="button"
-                                  :class="[
-                                      'font-weight-bold px-2',
-                                      is_disabledProgram ? 'mx-2' : '',
-                                    ]"
-                              >
-                                  {{ $t("general.AddNewRecord") }}
-                              </b-button>
-                              <template v-if="!is_disabledProgram">
-                                  <b-button
-                                      variant="success"
-                                      type="button"
-                                      class="mx-1 font-weight-bold px-3"
-                                      v-if="!isLoader"
-                                      @click.prevent="AddSubmitProgram"
-                                  >
-                                      {{ $t("general.Save") }}
-                                  </b-button>
-
-                                  <b-button
-                                      variant="success"
-                                      class="mx-1"
-                                      disabled
-                                      v-else
-                                  >
-                                      <b-spinner small></b-spinner>
-                                      <span class="sr-only"
-                                      >{{ $t("login.Loading") }}...</span
-                                      >
-                                  </b-button>
-                              </template>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-4">
-                                  <div class="form-group">
-                                      <label class="control-label">
-                                          {{ $t("module.module") }}
-                                          <span class="text-danger">*</span>
-                                      </label>
-                                      <multiselect
-                                          v-model="$v.createProgram.module_id.$model"
-                                          :options="modules.map((type) => type.id)"
-                                          :custom-label="
-                          (opt) => modules.find((x) => x.id == opt) ?
-                            $i18n.locale == 'ar'
-                              ? `${
-                                  modules.find((x) => x.id == opt).parent.name
-                                }|${modules.find((x) => x.id == opt).name}`
-                              : `${
-                                  modules.find((x) => x.id == opt).parent.name_e
-                                }|${modules.find((x) => x.id == opt).name_e}`: null
-                        "
-                                      >
-                                      </multiselect>
-                                      <div
-                                          v-if="!$v.createProgram.module_id.required"
-                                          class="invalid-feedback"
-                                      >
-                                          {{ $t("general.fieldIsRequired") }}
-                                      </div>
-                                      <template v-if="errors.module_id">
-                                          <ErrorMessage
-                                              v-for="(errorMessage, index) in errors.name"
-                                              :key="index"
-                                          >{{ errorMessage }}
-                                          </ErrorMessage>
-                                      </template>
-                                  </div>
-                              </div>
-                              <div class="col-md-4">
-                                  <div class="form-group">
-                                      <label class="control-label">
-                                          {{ $t("general.document_types") }}
-                                          <span class="text-danger">*</span>
-                                      </label>
-                                      <multiselect
-                                          :multiple="true"
-                                          v-model="$v.createProgram.document_types.$model"
-                                          :options="document_types.map((type) => type.id)"
-                                          :custom-label="
-                          (opt) => document_types.find((x) => x.id == opt)?
-                            $i18n.locale == 'ar'
-                              ? document_types.find((x) => x.id == opt).name
-                              : document_types.find((x) => x.id == opt).name_e: null
-                        "
-                                      >
-                                      </multiselect>
-                                      <template v-if="errors.document_types">
-                                          <ErrorMessage
-                                              v-for="(errorMessage, index) in errors.document_types"
-                                              :key="index"
-                                          >{{ errorMessage }}</ErrorMessage
-                                          >
-                                      </template>
-                                  </div>
-                              </div>
-                              <div class="col-md-4">
-                                  <div class="form-group">
-                                      <label class="control-label">
-                                          {{ $t("general.allowed_users_no") }}
-                                          <span class="text-danger">*</span>
-                                      </label>
-                                      <input
-                                          type="number"
-                                          class="form-control"
-                                          v-model.trim="$v.createProgram.allowed_users_no.$model"
-                                          :class="{
-                          'is-invalid':
-                            $v.createProgram.allowed_users_no.$error ||
-                            errors.allowed_users_no,
-                          'is-valid':
-                            !$v.createProgram.allowed_users_no.$invalid &&
-                            !errors.allowed_users_no,
-                        }"
-                                      />
-                                      <template v-if="errors.allowed_users_no">
-                                          <ErrorMessage
-                                              v-for="(
-                            errorMessage, index
-                          ) in errors.allowed_users_no"
-                                              :key="index"
-                                          >{{ errorMessage }}</ErrorMessage
-                                          >
-                                      </template>
-                                  </div>
-                              </div>
-                              <div class="col-md-4">
-                                  <div class="form-group">
-                                      <label class="control-label">
-                                          {{ $t("general.allowed_employee") }}
-                                          <span class="text-danger">*</span>
-                                      </label>
-                                      <input
-                                          type="number"
-                                          class="form-control"
-                                          v-model.trim="$v.createProgram.allowed_employee.$model"
-                                          :class="{
-                          'is-invalid':
-                            $v.createProgram.allowed_employee.$error ||
-                            errors.allowed_employee,
-                          'is-valid':
-                            !$v.createProgram.allowed_employee.$invalid &&
-                            !errors.allowed_employee,
-                        }"
-                                      />
-                                      <template v-if="errors.allowed_employee">
-                                          <ErrorMessage
-                                              v-for="(
-                            errorMessage, index
-                          ) in errors.allowed_employee"
-                                              :key="index"
-                                          >{{ errorMessage }}</ErrorMessage
-                                          >
-                                      </template>
-                                  </div>
-                              </div>
-                              <div class="col-md-4">
-                                  <div class="form-group">
-                                      <label class="control-label">
-                                          {{ $t("general.out_site") }}
-                                          <span class="text-danger">*</span>
-                                      </label>
-                                      <input
-                                          type="number"
-                                          class="form-control"
-                                          v-model.trim="$v.createProgram.out_site.$model"
-                                          :class="{
-                          'is-invalid':
-                            $v.createProgram.out_site.$error || errors.out_site,
-                          'is-valid':
-                            !$v.createProgram.out_site.$invalid && !errors.out_site,
-                        }"
-                                      />
-                                      <template v-if="errors.out_site">
-                                          <ErrorMessage
-                                              v-for="(errorMessage, index) in errors.out_site"
-                                              :key="index"
-                                          >{{ errorMessage }}</ErrorMessage
-                                          >
-                                      </template>
-                                  </div>
-                              </div>
-                              <div class="col-md-4">
-                                  <div class="form-group">
-                                      <label class="control-label">
-                                          {{ $t("general.startDate") }}
-                                          <span class="text-danger">*</span>
-                                      </label>
-                                      <date-picker
-                                          v-model="createProgram.custom_date_start"
-                                          type="datetime"
-                                          :default-value="createProgram.custom_date_start"
-                                          @change="start_date"
-                                          confirm
-                                      ></date-picker>
-                                      <div
-                                          v-if="!$v.createProgram.start_date.required"
-                                          class="invalid-feedback"
-                                      >
-                                          {{ $t("general.fieldIsRequired") }}
-                                      </div>
-                                      <template v-if="errors.start_date">
-                                          <ErrorMessage
-                                              v-for="(errorMessage, index) in errors.start_date"
-                                              :key="index"
-                                          >{{ errorMessage }}
-                                          </ErrorMessage>
-                                      </template>
-                                  </div>
-                              </div>
-                              <div class="col-md-4">
-                                  <div class="form-group">
-                                      <label class="control-label">
-                                          {{ $t("general.endDate") }}
-                                          <span class="text-danger">*</span>
-                                      </label>
-                                      <date-picker
-                                          v-model="createProgram.custom_date_end"
-                                          type="datetime"
-                                          @change="end_date"
-                                          confirm
-                                      ></date-picker>
-                                      <template v-if="errors.end_date">
-                                          <ErrorMessage
-                                              v-for="(errorMessage, index) in errors.end_date"
-                                              :key="index"
-                                          >{{ errorMessage }}
-                                          </ErrorMessage>
-                                      </template>
-                                  </div>
-                              </div>
-                              <div class="col-md-4">
-                                  <div class="form-group">
-                                      <label class="mr-2">
-                                          Is Web ?
-                                          <span class="text-danger">*</span>
-                                      </label>
-                                      <b-form-group :class="{
-                        'is-invalid':
-                          $v.createProgram.is_web.$error || errors.is_web,
-                        'is-valid':
-                          !$v.createProgram.is_web.$invalid && !errors.is_web,
-                      }">
-                                          <b-form-radio class="d-inline-block" v-model="$v.createProgram.is_web.$model"
-                                                        name="some-radios" value="1">{{ $t("general.Active") }}
-                                          </b-form-radio>
-                                          <b-form-radio class="d-inline-block m-1" v-model="$v.createProgram.is_web.$model"
-                                                        name="some-radios" value="0">{{ $t("general.Inactive") }}
-                                          </b-form-radio>
-                                      </b-form-group>
-                                      <template v-if="errors.is_web">
-                                          <ErrorMessage v-for="(errorMessage, index) in errors.is_web" :key="index">{{
-                                                  errorMessage }}
-                                          </ErrorMessage>
-                                      </template>
-                                  </div>
-                              </div>
-                              <div class="col-md-4">
-                                  <div class="form-group">
-                                      <label class="mr-2">
-                                          {{ $t('general.Status') }}
-                                          <span class="text-danger">*</span>
-                                      </label>
-                                      <b-form-group>
-                                          <b-form-radio class="d-inline-block" v-model="$v.createProgram.status.$model"
-                                                        name="some-radios-status-create" value="1">{{ $t("general.Active") }}
-                                          </b-form-radio>
-                                          <b-form-radio class="d-inline-block m-1" v-model="$v.createProgram.status.$model"
-                                                        name="some-radios-status-create" value="0">{{ $t("general.Inactive") }}
-                                          </b-form-radio>
-                                      </b-form-group>
-                                      <template v-if="errors.status">
-                                          <ErrorMessage v-for="(errorMessage, index) in errors.status" :key="index">{{
-                                                  errorMessage }}
-                                          </ErrorMessage>
-                                      </template>
-                                  </div>
-                              </div>
-                          </div>
+                        <add_programs_and_modules_to_company :companies="[new_company]"/>
                       </b-tab>
                   </b-tabs>
               </form>
@@ -3165,7 +2537,6 @@ export default {
                                     'is-invalid': $v.edit.name.$error || errors.name,
                                     'is-valid': !$v.edit.name.$invalid && !errors.name,
                                   }"
-                                                    @keyup="arabicValue(edit.name)"
                                                     id="edit-1"
                                                 />
                                                 <div
@@ -3214,7 +2585,6 @@ export default {
                                     'is-valid':
                                       !$v.edit.name_e.$invalid && !errors.name_e,
                                   }"
-                                                    @keyup="englishValue(edit.name_e)"
                                                     id="edit-2"
                                                 />
                                                 <div
@@ -3696,7 +3066,6 @@ export default {
                                               !$v.editCompany.name.$invalid &&
                                               !errors.name,
                                           }"
-                                                                                            @keyup="arabicValueCompany(editCompany.name)"
                                                                                             id="edit-1"
                                                                                         />
                                                                                         <div
@@ -3757,7 +3126,6 @@ export default {
                                                                                                   !$v.editCompany.name_e.$invalid &&
                                                                                                   !errors.name_e,
                                                                                               }"
-                                                                                            @keyup="englishValueCompany(editCompany.name_e)"
                                                                                             id="editCompany-2"
                                                                                         />
                                                                                         <div
@@ -4393,656 +3761,8 @@ export default {
                                         </table>
                                     </div>
                                 </b-tab>
-                                <b-tab :title="$t('general.program')" :disabled="!(companies.length > 0)" @click="getDataProgram">
-                                    <div
-                                        class="row justify-content-between align-items-center mb-2 px-1"
-                                    >
-                                        <div class="col-md-3 d-flex align-items-center mb-1 mb-xl-0">
-                                            <b-button
-                                                v-b-modal.create_module
-                                                variant="primary"
-                                                class="btn-sm mx-1 font-weight-bold"
-                                            >
-                                                {{ $t("general.Create") }}
-                                                <i class="fas fa-plus"></i>
-                                            </b-button>
-                                        </div>
-                                        <div
-                                            class="col-xs-10 col-md-9 col-lg-7 d-flex align-items-center justify-content-end"
-                                        ></div>
-                                    </div>
-                                    <!-- start .table-responsive-->
-                                    <div
-                                        class="table-responsive mb-3 custom-table-theme position-relative"
-                                    >
-                                        <!--       start loader       -->
-                                        <loader size="large" v-if="isLoader" />
-                                        <!--       end loader       -->
-
-                                        <table
-                                            class="table table-borderless table-centered m-0"
-                                        >
-                                            <thead>
-                                            <tr>
-                                                <th>
-                                                    <div class="d-flex justify-content-center">
-                                                        <span>{{ $t("company.company") }}</span>
-                                                        <div class="arrow-sort">
-                                                            <i
-                                                                class="fas fa-arrow-up"
-                                                                @click="
-                              companyModules.sort(sortString('company_id'))
-                            "
-                                                            ></i>
-                                                            <i
-                                                                class="fas fa-arrow-down"
-                                                                @click="
-                              companyModules.sort(sortString('-company_id'))
-                            "
-                                                            ></i>
-                                                        </div>
-                                                    </div>
-                                                </th>
-                                                <th>
-                                                    <div class="d-flex justify-content-center">
-                                                        <span>{{ $t("module.module") }}</span>
-                                                        <div class="arrow-sort">
-                                                            <i
-                                                                class="fas fa-arrow-up"
-                                                                @click="
-                              companyModules.sort(sortString('module_id'))
-                            "
-                                                            ></i>
-                                                            <i
-                                                                class="fas fa-arrow-down"
-                                                                @click="
-                              companyModules.sort(sortString('-module_id'))
-                            "
-                                                            ></i>
-                                                        </div>
-                                                    </div>
-                                                </th>
-                                                <th>
-                                                    <div class="d-flex justify-content-center">
-                                                        <span>{{ $t("general.allowed_users_no") }}</span>
-                                                        <div class="arrow-sort">
-                                                            <i
-                                                                class="fas fa-arrow-up"
-                                                                @click="
-                              companyModules.sort(
-                                sortString('allowed_users_no')
-                              )
-                            "
-                                                            ></i>
-                                                            <i
-                                                                class="fas fa-arrow-down"
-                                                                @click="
-                              companyModules.sort(
-                                sortString('-allowed_users_no')
-                              )
-                            "
-                                                            ></i>
-                                                        </div>
-                                                    </div>
-                                                </th>
-                                                <th>
-                                                    <div class="d-flex justify-content-center">
-                                                        <span>{{ $t("general.allowed_employee") }}</span>
-                                                        <div class="arrow-sort">
-                                                            <i
-                                                                class="fas fa-arrow-up"
-                                                                @click="
-                              companyModules.sort(
-                                sortString('allowed_users_no')
-                              )
-                            "
-                                                            ></i>
-                                                            <i
-                                                                class="fas fa-arrow-down"
-                                                                @click="
-                              companyModules.sort(
-                                sortString('-allowed_users_no')
-                              )
-                            "
-                                                            ></i>
-                                                        </div>
-                                                    </div>
-                                                </th>
-                                                <th>
-                                                    <div class="d-flex justify-content-center">
-                                                        <span>{{ $t("general.out_site") }}</span>
-                                                        <div class="arrow-sort">
-                                                            <i
-                                                                class="fas fa-arrow-up"
-                                                                @click="
-                              companyModules.sort(
-                                sortString('allowed_users_no')
-                              )
-                            "
-                                                            ></i>
-                                                            <i
-                                                                class="fas fa-arrow-down"
-                                                                @click="
-                              companyModules.sort(
-                                sortString('-allowed_users_no')
-                              )
-                            "
-                                                            ></i>
-                                                        </div>
-                                                    </div>
-                                                </th>
-                                                <th>
-                                                    <div class="d-flex justify-content-center">
-                                                        <span>{{ $t("general.startDate") }}</span>
-                                                        <div class="arrow-sort">
-                                                            <i
-                                                                class="fas fa-arrow-up"
-                                                                @click="companyModules.sort(SortDate('start_date'))"
-                                                            ></i>
-                                                            <i
-                                                                class="fas fa-arrow-down"
-                                                                @click="
-                              companyModules.sort(SortDate('-start_date'))
-                            "
-                                                            ></i>
-                                                        </div>
-                                                    </div>
-                                                </th>
-                                                <th>
-                                                    <div class="d-flex justify-content-center">
-                                                        <span>{{ $t("general.endDate") }}</span>
-                                                        <div class="arrow-sort">
-                                                            <i
-                                                                class="fas fa-arrow-up"
-                                                                @click="
-                              companyModules.sortString(SortDate('end_date'))
-                            "
-                                                            ></i>
-                                                            <i
-                                                                class="fas fa-arrow-down"
-                                                                @click="
-                              companyModules.sortString(SortDate('-end_date'))
-                            "
-                                                            ></i>
-                                                        </div>
-                                                    </div>
-                                                </th>
-                                                 <th>
-                                                    <div class="d-flex justify-content-center">
-                                                       <th v-if="editProgram.status">{{ $t("general.Status") }}</th>
-                   
-                    
-                                                    </div>
-                                                </th>
-                                                <th v-if="enabled3" class="do-not-print">
-                                                    {{ $t("general.Action") }}
-                                                </th>
-                                            </tr>
-                                            </thead>
-                                            <tbody v-if="companyModules.length > 0">
-                                            <tr
-                                                v-for="(mod, index) in companyModules"
-                                                :key="mod.id"
-                                                class="body-tr-custom"
-                                            >
-                                                <td>
-                                                    <template v-if="mod.company">
-                                                        {{
-                                                            $i18n.locale == "ar"
-                                                                ? mod.company.name
-                                                                : mod.company.name_e
-                                                        }}
-                                                    </template>
-                                                </td>
-                                                <td>
-                                                    <template v-if="mod.project_program_module">
-                                                        {{
-                                                            $i18n.locale == "ar"
-                                                                ? mod.project_program_module.name
-                                                                : mod.project_program_module.name_e
-                                                        }}
-                                                    </template>
-                                                </td>
-                                                <td>
-                                                    {{ mod.allowed_users_no }}
-                                                </td>
-                                                <td>
-                                                    {{ mod.allowed_employee }}
-                                                </td>
-                                                <td>
-                                                    {{ mod.out_site }}
-                                                </td>
-                                                <td>
-                                                    {{ formatDate(mod.start_date) }}
-                                                </td>
-                                                <td>
-                                                    {{ mod.end_date ? formatDate(mod.end_date) : null }}
-                                                </td>
-                                                  <td v-if="editProgram.status">
-                                                    <span
-                                                        :class="[
-                                                        mod.status == 1
-                                                            ? 'bg-soft-success text-success'
-                                                            : 'bg-soft-danger  text-danger',
-                                                        'badge',
-                                                        ]"
-                                                    >
-                                                        {{
-                                                        mod.status == 1
-                                                            ? `${$t("general.Active")}`
-                                                            : `${$t("general.Inactive")}`
-                                                        }}
-                                                    </span>
-                                                    </td>
-                                                <td v-if="enabled3" class="do-not-print">
-                                                    <div class="btn-group">
-                                                        <button
-                                                            type="button"
-                                                            class="btn btn-sm dropdown-toggle dropdown-coustom"
-                                                            data-toggle="dropdown"
-                                                            aria-expanded="false"
-                                                        >
-                                                            {{ $t("general.commands") }}
-                                                            <i class="fas fa-angle-down"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-custom">
-                                                            <a
-                                                                class="dropdown-item"
-                                                                href="#"
-                                                                @click="$bvModal.show(`modal-edit-program-${mod.id}`)"
-                                                            >
-                                                                <div
-                                                                    class="d-flex justify-content-between align-items-center text-black"
-                                                                >
-                                                                    <span>{{ $t("general.edit") }}</span>
-                                                                    <i
-                                                                        class="mdi mdi-square-edit-outline text-info"
-                                                                    ></i>
-                                                                </div>
-                                                            </a>
-                                                            <a
-                                                                class="dropdown-item text-black"
-                                                                href="#"
-                                                                @click.prevent="deleteCompanyModule(mod.id)"
-                                                            >
-                                                                <div
-                                                                    class="d-flex justify-content-between align-items-center text-black"
-                                                                >
-                                                                    <span>{{ $t("general.delete") }}</span>
-                                                                    <i class="fas fa-times text-danger"></i>
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                    <!--  edit   -->
-                                                    <b-modal
-                                                        :id="`modal-edit-program-${mod.id}`"
-                                                        :title="$t('menuitems.Workflow.text')"
-                                                        title-class="font-18"
-                                                        body-class="p-4"
-                                                        :ref="`edit-${mod.id}`"
-                                                        :hide-footer="true"
-                                                        @show="resetModalProgramEdit(mod.id)"
-                                                        @hidden="resetModalHiddenProgramEdit(mod.id)"
-                                                    >
-                                                        <form>
-                                                            <div class="mb-3 d-flex justify-content-end">
-                                                                <!-- Emulate built in modal footer ok and cancel button actions -->
-
-                                                                <b-button
-                                                                    variant="success"
-                                                                    type="button"
-                                                                    class="mx-1"
-                                                                    v-if="!isLoader"
-                                                                    @click.prevent="editSubmitProgram(mod.id)"
-                                                                >
-                                                                    {{ $t("general.Add") }}
-                                                                </b-button>
-
-                                                                <b-button
-                                                                    variant="success"
-                                                                    class="mx-1"
-                                                                    disabled
-                                                                    v-else
-                                                                >
-                                                                    <b-spinner small></b-spinner>
-                                                                    <span class="sr-only"
-                                                                    >{{ $t("login.Loading") }}...</span
-                                                                    >
-                                                                </b-button>
-
-                                                                <b-button
-                                                                    variant="danger"
-                                                                    type="button"
-                                                                    @click.prevent="
-                                $bvModal.hide(`modal-edit-program-${mod.id}`)
-                              "
-                                                                >
-                                                                    {{ $t("general.Cancel") }}
-                                                                </b-button>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">
-                                                                            {{ $t("company.company") }}
-                                                                            <span class="text-danger">*</span>
-                                                                        </label>
-                                                                        <multiselect
-                                                                            v-model="$v.editProgram.company_id.$model"
-                                                                            :options="companies.map((type) => type.id)"
-                                                                            :custom-label="
-                                    (opt) =>
-                                      $i18n.locale == 'ar'
-                                        ? companies.find((x) => x.id == opt)
-                                            .name
-                                        : companies.find((x) => x.id == opt)
-                                            .name_e
-                                  "
-                                                                        >
-                                                                        </multiselect>
-                                                                        <div
-                                                                            v-if="!$v.editProgram.company_id.required"
-                                                                            class="invalid-feedback"
-                                                                        >
-                                                                            {{ $t("general.fieldIsRequired") }}
-                                                                        </div>
-                                                                        <template v-if="errors.company_id">
-                                                                            <ErrorMessage
-                                                                                v-for="(errorMessage, index) in errors.name"
-                                                                                :key="index"
-                                                                            >{{ errorMessage }}</ErrorMessage
-                                                                            >
-                                                                        </template>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">
-                                                                            {{ $t("module.module") }}
-                                                                            <span class="text-danger">*</span>
-                                                                        </label>
-                                                                        <multiselect
-                                                                            v-model="$v.editProgram.module_id.$model"
-                                                                            :options="modules.map((type) => type.id)"
-                                                                            :custom-label="
-                                    (opt) =>modules.find((x) => x.id == opt)?
-                                      $i18n.locale == 'ar'
-                                        ? `${
-                                            modules.find((x) => x.id == opt)
-                                              .parent.name
-                                          }|${
-                                            modules.find((x) => x.id == opt)
-                                              .name
-                                          }`
-                                        : `${
-                                            modules.find((x) => x.id == opt)
-                                              .parent.name_e
-                                          }|${
-                                            modules.find((x) => x.id == opt)
-                                              .name_e
-                                          }`: null
-                                  "
-                                                                        >
-                                                                        </multiselect>
-                                                                        <div
-                                                                            v-if="!$v.editProgram.module_id.required"
-                                                                            class="invalid-feedback"
-                                                                        >
-                                                                            {{ $t("general.fieldIsRequired") }}
-                                                                        </div>
-                                                                        <template v-if="errors.module_id">
-                                                                            <ErrorMessage
-                                                                                v-for="(errorMessage, index) in errors.name"
-                                                                                :key="index"
-                                                                            >{{ errorMessage }}</ErrorMessage
-                                                                            >
-                                                                        </template>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">
-                                                                            {{ $t("general.document_types") }}
-                                                                            <span class="text-danger">*</span>
-                                                                        </label>
-                                                                        <multiselect
-                                                                            :multiple="true"
-                                                                            v-model="$v.editProgram.document_types.$model"
-                                                                            :options="
-                                    document_types.map((type) => type.id)
-                                  "
-                                                                            :custom-label="
-                                    (opt) => document_types.find((x) => x.id == opt)?
-                                      $i18n.locale == 'ar'
-                                        ? document_types.find(
-                                            (x) => x.id == opt
-                                          ).name
-                                        : document_types.find(
-                                            (x) => x.id == opt
-                                          ).name_e: null
-                                  "
-                                                                        >
-                                                                        </multiselect>
-                                                                        <template v-if="errors.document_types">
-                                                                            <ErrorMessage
-                                                                                v-for="(
-                                      errorMessage, index
-                                    ) in errors.document_types"
-                                                                                :key="index"
-                                                                            >{{ errorMessage }}</ErrorMessage
-                                                                            >
-                                                                        </template>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">
-                                                                            {{ $t("general.allowed_users_no") }}
-                                                                            <span class="text-danger">*</span>
-                                                                        </label>
-                                                                        <input
-                                                                            type="number"
-                                                                            class="form-control"
-                                                                            v-model.trim="$v.editProgram.allowed_users_no.$model"
-                                                                            :class="{
-                                    'is-invalid':
-                                      $v.editProgram.allowed_users_no.$error ||
-                                      errors.allowed_users_no,
-                                    'is-valid':
-                                      !$v.editProgram.allowed_users_no.$invalid &&
-                                      !errors.allowed_users_no,
-                                  }"
-                                                                        />
-                                                                        <template v-if="errors.allowed_users_no">
-                                                                            <ErrorMessage
-                                                                                v-for="(
-                                      errorMessage, index
-                                    ) in errors.allowed_users_no"
-                                                                                :key="index"
-                                                                            >{{ errorMessage }}</ErrorMessage
-                                                                            >
-                                                                        </template>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">
-                                                                            {{ $t("general.allowed_employee") }}
-                                                                            <span class="text-danger">*</span>
-                                                                        </label>
-                                                                        <input
-                                                                            type="number"
-                                                                            class="form-control"
-                                                                            v-model.trim="$v.editProgram.allowed_employee.$model"
-                                                                            :class="{
-                                    'is-invalid':
-                                      $v.editProgram.allowed_employee.$error ||
-                                      errors.allowed_employee,
-                                    'is-valid':
-                                      !$v.editProgram.allowed_employee.$invalid &&
-                                      !errors.allowed_employee,
-                                  }"
-                                                                        />
-                                                                        <template v-if="errors.allowed_employee">
-                                                                            <ErrorMessage
-                                                                                v-for="(
-                                      errorMessage, index
-                                    ) in errors.allowed_employee"
-                                                                                :key="index"
-                                                                            >{{ errorMessage }}</ErrorMessage
-                                                                            >
-                                                                        </template>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">
-                                                                            {{ $t("general.out_site") }}
-                                                                            <span class="text-danger">*</span>
-                                                                        </label>
-                                                                        <input
-                                                                            type="number"
-                                                                            class="form-control"
-                                                                            v-model.trim="$v.editProgram.out_site.$model"
-                                                                            :class="{
-                                    'is-invalid':
-                                      $v.editProgram.out_site.$error ||
-                                      errors.out_site,
-                                    'is-valid':
-                                      !$v.editProgram.out_site.$invalid &&
-                                      !errors.out_site,
-                                  }"
-                                                                        />
-                                                                        <template v-if="errors.out_site">
-                                                                            <ErrorMessage
-                                                                                v-for="(
-                                      errorMessage, index
-                                    ) in errors.out_site"
-                                                                                :key="index"
-                                                                            >{{ errorMessage }}</ErrorMessage
-                                                                            >
-                                                                        </template>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">
-                                                                            {{ $t("general.startDate") }}
-                                                                            <span class="text-danger">*</span>
-                                                                        </label>
-                                                                        <date-picker
-                                                                            v-model="editProgram.custom_date_start"
-                                                                            type="datetime"
-                                                                            :default-value="editProgram.custom_date_start"
-                                                                            @change="start_date"
-                                                                            confirm
-                                                                        ></date-picker>
-                                                                        <div
-                                                                            v-if="!$v.editProgram.start_date.required"
-                                                                            class="invalid-feedback"
-                                                                        >
-                                                                            {{ $t("general.fieldIsRequired") }}
-                                                                        </div>
-                                                                        <template v-if="errors.start_date">
-                                                                            <ErrorMessage
-                                                                                v-for="(
-                                      errorMessage, index
-                                    ) in errors.start_date"
-                                                                                :key="index"
-                                                                            >{{ errorMessage }}</ErrorMessage
-                                                                            >
-                                                                        </template>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">
-                                                                            {{ $t("general.endDate") }}
-                                                                            <span class="text-danger">*</span>
-                                                                        </label>
-                                                                        <date-picker
-                                                                            v-model="editProgram.custom_date_end"
-                                                                            type="datetime"
-                                                                            @change="end_date"
-                                                                            confirm
-                                                                        ></date-picker>
-                                                                        <template v-if="errors.end_date">
-                                                                            <ErrorMessage
-                                                                                v-for="(
-                                      errorMessage, index
-                                    ) in errors.end_date"
-                                                                                :key="index"
-                                                                            >{{ errorMessage }}</ErrorMessage
-                                                                            >
-                                                                        </template>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label class="mr-2">
-                                                                            Is Web ?
-                                                                            <span class="text-danger">*</span>
-                                                                        </label>
-                                                                        <b-form-group :class="{
-                                            'is-invalid':
-                                              $v.editProgram.is_web.$error || errors.is_web,
-                                            'is-valid':
-                                              !$v.editProgram.is_web.$invalid && !errors.is_web,
-                                          }">
-                                                                            <b-form-radio class="d-inline-block" v-model="$v.editProgram.is_web.$model"
-                                                                                          name="some-radios-editpro" value="1">{{ $t("general.Active") }}
-                                                                            </b-form-radio>
-                                                                            <b-form-radio class="d-inline-block m-1" v-model="$v.editProgram.is_web.$model"
-                                                                                          name="some-radios-editpro" value="0">{{ $t("general.Inactive") }}
-                                                                            </b-form-radio>
-                                                                        </b-form-group>
-                                                                        <template v-if="errors.is_web">
-                                                                            <ErrorMessage v-for="(errorMessage, index) in errors.is_web" :key="index">{{
-                                                                                    errorMessage }}
-                                                                            </ErrorMessage>
-                                                                        </template>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group">
-                                                                        <label class="mr-2">
-                                                                            {{ $t('general.Status') }}
-                                                                            <span class="text-danger">*</span>
-                                                                        </label>
-                                                                        <b-form-group>
-                                                                            <b-form-radio class="d-inline-block" v-model="$v.editProgram.status.$model"
-                                                                                          name="some-radios-status-edit" value="1">{{ $t("general.Active") }}
-                                                                            </b-form-radio>
-                                                                            <b-form-radio class="d-inline-block m-1" v-model="$v.editProgram.status.$model"
-                                                                                          name="some-radios-status-edit" value="0">{{ $t("general.Inactive") }}
-                                                                            </b-form-radio>
-                                                                        </b-form-group>
-                                                                        <template v-if="errors.status">
-                                                                            <ErrorMessage v-for="(errorMessage, index) in errors.status" :key="index">{{
-                                                                                    errorMessage }}
-                                                                            </ErrorMessage>
-                                                                        </template>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </b-modal>
-                                                    <!--  /edit   -->
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                            <tbody v-else>
-                                             <tr>
-                                                <th class="text-center" colspan="7">
-                                                    {{ $t("general.notDataFound") }}
-                                                </th>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!-- end .table-responsive-->
+                                <b-tab :title="$t('general.program')" :disabled="!(companies.length > 0)">
+                                    <add_programs_and_modules_to_company :companies="companies"/>
                                 </b-tab>
                           </b-tabs>
                         </form>
@@ -5152,7 +3872,6 @@ export default {
                                     'is-valid':
                                       !$v.createCompany.name.$invalid && !errors.name,
                                   }"
-                                                          @keyup="arabicValueCompany(createCompany.name)"
                                                       />
                                                       <div
                                                           v-if="!$v.createCompany.name.minLength"
@@ -5196,7 +3915,6 @@ export default {
                                       !$v.createCompany.name_e.$invalid &&
                                       !errors.name_e,
                                   }"
-                                                          @keyup="englishValueCompany(createCompany.name_e)"
                                                           id="field-2"
                                                       />
                                                       <div
@@ -5489,50 +4207,7 @@ export default {
                                                       </template>
                                                   </div>
                                               </div>
-                                              <!-- <div class="col-md-6">
-                                                <div class="form-group">
-                                                  <label for="field-10" class="control-label">
-                                                    {{ $t("general.companysystempath") }}
-                                                    <span class="text-danger">*</span>
-                                                  </label>
-                                                  <input
-                                                    type="url"
-                                                    class="form-control"
-                                                    v-model.number="$v.createCompany.url.$model"
-                                                    :class="{
-                                                      'is-invalid': $v.createCompany.url.$error || errors.url,
-                                                      'is-valid': !$v.createCompany.url.$invalid && !errors.url,
-                                                    }"
-                                                    id="field-10"
-                                                  />
-                                                  <div
-                                                    v-if="!$v.createCompany.url.minLength"
-                                                    class="invalid-feedback"
-                                                  >
-                                                    {{ $t("general.Itmustbeatleast") }}
-                                                    {{ $v.createCompany.url.$params.minLength.min }}
-                                                    {{ $t("general.letters") }}
-                                                  </div>
-                                                  <div
-                                                    v-if="!$v.createCompany.url.maxLength"
-                                                    class="invalid-feedback"
-                                                  >
-                                                    {{ $t("general.Itmustbeatmost") }}
-                                                    {{ $v.createCompany.url.$params.maxLength.max }}
-                                                    {{ $t("general.letters") }}
-                                                  </div>
-                                                  <div v-if="!$v.createCompany.url.url" class="invalid-feedback">
-                                                    {{ $t("general.Itmustbeyourlink") }}
-                                                  </div>
-                                                  <template v-if="errors.url">
-                                                    <ErrorMessage
-                                                      v-for="(errorMessage, index) in errors.url"
-                                                      :key="index"
-                                                      >{{ errorMessage }}</ErrorMessage
-                                                    >
-                                                  </template>
-                                                </div>
-                                              </div> -->
+
                                               <div class="col-md-6">
                                                   <div class="form-group">
                                                       <label
@@ -5738,338 +4413,6 @@ export default {
                   </form>
               </b-modal>
               <!--  /create  company -->
-
-              <!--  create program -->
-              <b-modal
-                  id="create_module"
-                  :title="$t('menuitems.Workflow.text')"
-                  title-class="font-18"
-                  body-class="p-4"
-                  :hide-footer="true"
-                  @show="resetFormProgram('edit')"
-              >
-                  <form>
-                      <div class="mb-3 d-flex justify-content-end">
-                          <b-button
-                              variant="success"
-                              :disabled="!is_disabledCom"
-                              @click.prevent="resetFormProgram"
-                              type="button"
-                              :class="[
-                      'font-weight-bold px-2',
-                      !is_disabledCom ? '' : 'mx-2',
-                    ]"
-                          >
-                              {{ $t("general.AddNewRecord") }}
-                          </b-button>
-                          <!-- Emulate built in modal footer ok and cancel button actions -->
-                          <template v-if="!is_disabledCom">
-                              <b-button
-                                  variant="success"
-                                  type="button"
-                                  class="mx-1"
-                                  v-if="!isLoader"
-                                  @click.prevent="AddSubmitProgram('edit')"
-                              >
-                                  {{ $t("general.Add") }}
-                              </b-button>
-
-                              <b-button variant="success" class="mx-1" disabled v-else>
-                                  <b-spinner small></b-spinner>
-                                  <span class="sr-only">{{ $t("login.Loading") }}...</span>
-                              </b-button>
-                          </template>
-
-                          <b-button
-                              variant="danger"
-                              type="button"
-                              @click.prevent="$bvModal.hide(`create_module`)"
-                          >
-                              {{ $t("general.Cancel") }}
-                          </b-button>
-                      </div>
-                      <div class="row">
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label class="control-label">
-                                      {{ $t("company.company") }}
-                                      <span class="text-danger">*</span>
-                                  </label>
-                                  <multiselect
-                                      v-model="$v.createProgram.company_id.$model"
-                                      :options="companies.map((type) => type.id)"
-                                      :custom-label="
-                          (opt) =>
-                            $i18n.locale == 'ar'
-                              ? companies.find((x) => x.id == opt).name
-                              : companies.find((x) => x.id == opt).name_e
-                        "
-                                  >
-                                  </multiselect>
-                                  <div
-                                      v-if="!$v.createProgram.company_id.required"
-                                      class="invalid-feedback"
-                                  >
-                                      {{ $t("general.fieldIsRequired") }}
-                                  </div>
-                                  <template v-if="errors.company_id">
-                                      <ErrorMessage
-                                          v-for="(errorMessage, index) in errors.name"
-                                          :key="index"
-                                      >{{ errorMessage }}
-                                      </ErrorMessage>
-                                  </template>
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label class="control-label">
-                                      {{ $t("module.module") }}
-                                      <span class="text-danger">*</span>
-                                  </label>
-                                  <multiselect
-                                      v-model="$v.createProgram.module_id.$model"
-                                      :options="modules.map((type) => type.id)"
-                                      :custom-label="
-                          (opt) =>
-                            $i18n.locale == 'ar'
-                              ? `${
-                                  modules.find((x) => x.id == opt).parent.name
-                                }|${modules.find((x) => x.id == opt).name}`
-                              : `${
-                                  modules.find((x) => x.id == opt).parent.name_e
-                                }|${modules.find((x) => x.id == opt).name_e}`
-                        "
-                                  >
-                                  </multiselect>
-                                  <div
-                                      v-if="!$v.createProgram.module_id.required"
-                                      class="invalid-feedback"
-                                  >
-                                      {{ $t("general.fieldIsRequired") }}
-                                  </div>
-                                  <template v-if="errors.module_id">
-                                      <ErrorMessage
-                                          v-for="(errorMessage, index) in errors.name"
-                                          :key="index"
-                                      >{{ errorMessage }}
-                                      </ErrorMessage>
-                                  </template>
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label class="control-label">
-                                      {{ $t("general.document_types") }}
-                                      <span class="text-danger">*</span>
-                                  </label>
-                                  <multiselect
-                                      :multiple="true"
-                                      v-model="$v.createProgram.document_types.$model"
-                                      :options="document_types.map((type) => type.id)"
-                                      :custom-label="
-                          (opt) =>
-                            $i18n.locale == 'ar'
-                              ? document_types.find((x) => x.id == opt).name
-                              : document_types.find((x) => x.id == opt).name_e
-                        "
-                                  >
-                                  </multiselect>
-                                  <template v-if="errors.document_types">
-                                      <ErrorMessage
-                                          v-for="(errorMessage, index) in errors.document_types"
-                                          :key="index"
-                                      >{{ errorMessage }}</ErrorMessage
-                                      >
-                                  </template>
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label class="control-label">
-                                      {{ $t("general.allowed_users_no") }}
-                                      <span class="text-danger">*</span>
-                                  </label>
-                                  <input
-                                      type="number"
-                                      class="form-control"
-                                      v-model.trim="$v.createProgram.allowed_users_no.$model"
-                                      :class="{
-                          'is-invalid':
-                            $v.createProgram.allowed_users_no.$error ||
-                            errors.allowed_users_no,
-                          'is-valid':
-                            !$v.createProgram.allowed_users_no.$invalid &&
-                            !errors.allowed_users_no,
-                        }"
-                                  />
-                                  <template v-if="errors.allowed_users_no">
-                                      <ErrorMessage
-                                          v-for="(
-                            errorMessage, index
-                          ) in errors.allowed_users_no"
-                                          :key="index"
-                                      >{{ errorMessage }}</ErrorMessage
-                                      >
-                                  </template>
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label class="control-label">
-                                      {{ $t("general.allowed_employee") }}
-                                      <span class="text-danger">*</span>
-                                  </label>
-                                  <input
-                                      type="number"
-                                      class="form-control"
-                                      v-model.trim="$v.createProgram.allowed_employee.$model"
-                                      :class="{
-                          'is-invalid':
-                            $v.createProgram.allowed_employee.$error ||
-                            errors.allowed_employee,
-                          'is-valid':
-                            !$v.createProgram.allowed_employee.$invalid &&
-                            !errors.allowed_employee,
-                        }"
-                                  />
-                                  <template v-if="errors.allowed_employee">
-                                      <ErrorMessage
-                                          v-for="(
-                            errorMessage, index
-                          ) in errors.allowed_employee"
-                                          :key="index"
-                                      >{{ errorMessage }}</ErrorMessage
-                                      >
-                                  </template>
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label class="control-label">
-                                      {{ $t("general.out_site") }}
-                                      <span class="text-danger">*</span>
-                                  </label>
-                                  <input
-                                      type="number"
-                                      class="form-control"
-                                      v-model.trim="$v.createProgram.out_site.$model"
-                                      :class="{
-                          'is-invalid':
-                            $v.createProgram.out_site.$error || errors.out_site,
-                          'is-valid':
-                            !$v.createProgram.out_site.$invalid && !errors.out_site,
-                        }"
-                                  />
-                                  <template v-if="errors.out_site">
-                                      <ErrorMessage
-                                          v-for="(errorMessage, index) in errors.out_site"
-                                          :key="index"
-                                      >{{ errorMessage }}</ErrorMessage
-                                      >
-                                  </template>
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label class="control-label">
-                                      {{ $t("general.startDate") }}
-                                      <span class="text-danger">*</span>
-                                  </label>
-                                  <date-picker
-                                      v-model="createProgram.custom_date_start"
-                                      type="datetime"
-                                      :default-value="createProgram.custom_date_start"
-                                      @change="start_date"
-                                      confirm
-                                  ></date-picker>
-                                  <div
-                                      v-if="!$v.createProgram.start_date.required"
-                                      class="invalid-feedback"
-                                  >
-                                      {{ $t("general.fieldIsRequired") }}
-                                  </div>
-                                  <template v-if="errors.start_date">
-                                      <ErrorMessage
-                                          v-for="(errorMessage, index) in errors.start_date"
-                                          :key="index"
-                                      >{{ errorMessage }}
-                                      </ErrorMessage>
-                                  </template>
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label class="control-label">
-                                      {{ $t("general.endDate") }}
-                                      <span class="text-danger">*</span>
-                                  </label>
-                                  <date-picker
-                                      v-model="createProgram.custom_date_end"
-                                      type="datetime"
-                                      @change="end_date"
-                                      confirm
-                                  ></date-picker>
-                                  <template v-if="errors.end_date">
-                                      <ErrorMessage
-                                          v-for="(errorMessage, index) in errors.end_date"
-                                          :key="index"
-                                      >{{ errorMessage }}
-                                      </ErrorMessage>
-                                  </template>
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label class="mr-2">
-                                      Is Web ?
-                                      <span class="text-danger">*</span>
-                                  </label>
-                                  <b-form-group :class="{
-                        'is-invalid':
-                          $v.createProgram.is_web.$error || errors.is_web,
-                        'is-valid':
-                          !$v.createProgram.is_web.$invalid && !errors.is_web,
-                      }">
-                                      <b-form-radio class="d-inline-block" v-model="$v.createProgram.is_web.$model"
-                                                    name="some-radios" value="1">{{ $t("general.Active") }}
-                                      </b-form-radio>
-                                      <b-form-radio class="d-inline-block m-1" v-model="$v.createProgram.is_web.$model"
-                                                    name="some-radios" value="0">{{ $t("general.Inactive") }}
-                                      </b-form-radio>
-                                  </b-form-group>
-                                  <template v-if="errors.is_web">
-                                      <ErrorMessage v-for="(errorMessage, index) in errors.is_web" :key="index">{{
-                                              errorMessage }}
-                                      </ErrorMessage>
-                                  </template>
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label class="mr-2">
-                                      {{ $t('general.Status') }}
-                                      <span class="text-danger">*</span>
-                                  </label>
-                                  <b-form-group>
-                                      <b-form-radio class="d-inline-block" v-model="$v.createProgram.status.$model"
-                                                    name="some-radios-status-create" value="1">{{ $t("general.Active") }}
-                                      </b-form-radio>
-                                      <b-form-radio class="d-inline-block m-1" v-model="$v.createProgram.status.$model"
-                                                    name="some-radios-status-create" value="0">{{ $t("general.Inactive") }}
-                                      </b-form-radio>
-                                  </b-form-group>
-                                  <template v-if="errors.status">
-                                      <ErrorMessage v-for="(errorMessage, index) in errors.status" :key="index">{{
-                                              errorMessage }}
-                                      </ErrorMessage>
-                                  </template>
-                              </div>
-                          </div>
-                      </div>
-                  </form>
-              </b-modal>
-              <!--  /create program  -->
 
             <!-- end .table-responsive-->
           </div>

@@ -13,7 +13,7 @@ interface ProjectProgramModuleInterface
 
     public function update($request, $id);
 
-    public function delete($id);
+    public function delete($request);
 
     public function logs($id);
 
@@ -27,6 +27,7 @@ interface ProjectProgramModuleInterface
 
     public function createProgramChildren($request);
 
+
     public function allProgramModuleId($request);
 
     public function companyProjectProgramModules($name_company);
@@ -36,4 +37,13 @@ interface ProjectProgramModuleInterface
     // public function getScreensFromModule($module_id);
 
     public function DropDown($request);
+
+
+    public function createNewMenuItem($request);
+    public function editTreeItem($request);
+
+    public function getChildrenInsideModule($module);
+
+    //return all dashboards
+    public function module_dashboards($request);
 }

@@ -37,7 +37,14 @@ class ScreenRepository implements ScreenRepositoryInterface
         }
 
         if ($request->per_page) {
-            return ['data' => $models->paginate($request->per_page), 'paginate' => true];
+            $data = $models->paginate($request->per_page);
+
+            //return the selected screen from dropdown when append screen to tree menu
+            if($request->selected_screen_id){
+                $selected_screen_in_dropdown = $this->model->where('id',$request->selected_screen_id)->get()->merge($data->items());
+                $data->setCollection($selected_screen_in_dropdown);
+            }
+            return ['data' => $data, 'paginate' => true];
         } else {
             return ['data' => $models->get(), 'paginate' => false];
         }

@@ -5,18 +5,19 @@ namespace App\Models;
 use App\Traits\LogTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProjectProgramModule extends Model
 {
-    use HasFactory, LogTrait;
+    use HasFactory, LogTrait,SoftDeletes;
 
     protected $guarded = ['id'];
     protected $table = 'project_program_modules';
     protected $hidden = ['pivot'];
     protected $appends = ["haveChildren", 'company_id', 'is_web', 'status'];
-    protected $casts = [
-        'is_active' => 'App\Enums\IsActive',
-    ];
+    // protected $casts = [
+    //     'is_active' => 'App\Enums\IsActive',
+    // ];
 
     // public function getCompaniesAttribute()
     // {
@@ -28,6 +29,11 @@ class ProjectProgramModule extends Model
     public function parent()
     {
         return $this->belongsTo(ProjectProgramModule::class, 'parent_id', 'id');
+    }
+
+    public function menu()
+    {
+        return $this->hasMany(ModuleMenu::class, 'module_id');
     }
 
     /*** return relation  with  Childrens */
@@ -48,11 +54,17 @@ class ProjectProgramModule extends Model
         return $this->hasMany(ProgramFolder::class, 'project_program_module_id', 'id');
     }
 
-    /*** return relation  with  Companies */
+    /*** return relation modules  with  Companies  */
     public function companies()
     {
-        return $this->belongsToMany(Company::class, 'company_project_program_modules', 'project_program_module_id', 'company_id')->withPivot('is_web', 'status');
+        return $this->belongsToMany(Company::class, 'company_project_program_modules', 'project_program_module_id', 'company_id')->withPivot('is_web', 'status')->whereNull('company_project_program_modules.deleted_at');
     }
+
+    public function companies_programs()
+    {
+        return $this->belongsToMany(Company::class, 'companies_programs', 'program_id', 'company_id')->withPivot(['id'])->whereNull('companies_programs.deleted_at');
+    }
+
 
     /*** return  relation  with   ScreenAttributes */
     public function screenAttributes()
@@ -121,6 +133,16 @@ class ProjectProgramModule extends Model
             if ($request->search) {
                 $q->where('name', 'like', '%' . $request->search . '%');
                 $q->orWhere('name_e', 'like', '%' . $request->search . '%');
+                $q->orWhereRelation('menu',function($q) use($request){
+                    $q->where('name', 'like', '%' . $request->search . '%');
+                    $q->orWhere('name_e', 'like', '%' . $request->search . '%');
+                    $q->orWhereRelation('page',function($q) use($request){
+                        $q->where('title', 'like', '%' . $request->search . '%');
+                        $q->orWhere('title_e', 'like', '%' . $request->search . '%');
+                    });
+
+                });
+                $q->orWhere('name_e', 'like', '%' . $request->search . '%');
             }
 
             if ($request->name) {
@@ -136,5 +158,8 @@ class ProjectProgramModule extends Model
             }
         });
     }
+
+
+
 
 }

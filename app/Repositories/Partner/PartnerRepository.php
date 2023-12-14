@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Partner;
 
+use App\Models\ModuleMenu;
 use App\Models\Partner;
 use App\Models\UserSettingScreen;
 use App\Traits\ApiResponser;
@@ -13,9 +14,10 @@ class PartnerRepository implements PartnerRepositoryInterface
 
     use ApiResponser;
     private $model;
-    public function __construct(Partner $model)
+    public function __construct(Partner $model,private ModuleMenu $module_menu)
     {
         $this->model = $model;
+        $this->module_menu = $module_menu;
 
     }
 
@@ -64,6 +66,38 @@ class PartnerRepository implements PartnerRepositoryInterface
     public function logs($id)
     {
         return $this->model->find($id)->activities()->orderBy('created_at', 'DESC')->get();
+    }
+
+
+    public function getChildrenInsideModule($module){
+        $menu = $this->module_menu->with(['page','page.ModuleScreen','childrens' => function ($q) {$q->orderBy('sort');}])->where('module_id',$module->id)->whereNull('folder_id')->orderBy('sort')->get();
+        $childrens = $this->arrangeMenu($menu);
+        return $childrens ;
+
+    }
+
+
+    protected function arrangeMenu($menu)
+    {
+        $arrangedMenu = [];
+
+        foreach ($menu as $item) {
+            $children = $item->childrens->load(['page','page.ModuleScreen','childrens'=> function ($q) {$q->orderBy('sort');}])->sortBy('sort');
+
+            if ($children->isNotEmpty()) {
+                $item->childrens = $this->arrangeMenu($children);
+            }
+
+            $arrangedMenu[] = $item;
+        }
+
+        return $arrangedMenu;
+    }
+
+
+    public function get_programs_and_modules_for_company($company)
+    {
+        return $company->programs()->select('project_program_modules.id','project_program_modules.icon','project_program_modules.name','project_program_modules.name_e','companies_programs.id as company_program_id')->get();
     }
 
 }

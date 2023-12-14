@@ -3,9 +3,9 @@ import Cookies from "js-cookie";
 
 
 const adminApi = axios.create({
-    baseURL: `${process.env.MIX_APP_URL}api/`
+    baseURL: `${process.env.MIX_APP_URL}/api/`
 });
-
+//${process.env.MIX_APP_URL}
 adminApi.interceptors.request.use(
     function(config) {
         config.headers['lang'] = localStorage.getItem("lang") || 'ar';

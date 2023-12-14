@@ -17,6 +17,12 @@ interface PartnerRepositoryInterface
 
     public function delete($id);
 
+    //for sidebar menu
+    public function getChildrenInsideModule($module);
+
+    //for topbar programs and modules
+    public function get_programs_and_modules_for_company($module);
+
 
 
 

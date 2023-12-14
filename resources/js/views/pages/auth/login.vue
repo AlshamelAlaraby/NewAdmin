@@ -40,6 +40,7 @@ export default {
       // Try to log the user in with the username
       // and password they provided.
       tryToLogIn() {
+
           // stop here if form is invalid
           this.$v.$touch();
 
@@ -49,6 +50,7 @@ export default {
               this.submitted = true;
               this.isError = false;
               const {email,password} = this;
+
               adminApi.post(`/auth/login`,{email,password})
                   .then((res) => {
                       let l =res.data.data;
@@ -62,6 +64,7 @@ export default {
                   })
                   .catch((err) => {
                       this.isError = true;
+                      console.log(err)
                   }).finally(() => {
                       this.submitted = false;
                   });

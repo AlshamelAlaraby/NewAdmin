@@ -74,22 +74,31 @@ Route::group(['prefix' => 'project-program-modules'], function () {
 
         Route::get('/get-drop-down', 'DropDown');
 
-        Route::get('/', 'all')->name('project-program-modules.index');
-
         Route::get('all-company-program/{name_company}', 'getCompanyProjectProgramModules');
         Route::get('find-company-program/{company_id}', 'findProgramModulesCompanyId');
         Route::get('all-program-modules', 'allProgramModuleId');
-        Route::get('/root-nodes', 'getRootNodes')->name('project-program-modules.root-nodes');
-        Route::get('/child-nodes/{parentId}', 'getChildNodes')->name('project-program-modules.child-nodes');
+        // Route::get('/root-nodes', 'getRootNodes')->name('project-program-modules.root-nodes');
+        // Route::get('/child-nodes/{parentId}', 'getChildNodes')->name('project-program-modules.child-nodes');
+
         Route::get('logs/{id}', 'logs')->name('project-program-modules.logs');
+        Route::get('module_dashboards', 'module_dashboards');
+
         Route::get('/{id}', 'find');
+
         Route::post('/', 'create')->name('project-program-modules.create');
+
         Route::put('/{id}', 'update')->name('project-program-modules.update');
-        Route::delete('/{id}', 'delete')->name('modules.destroy');
         Route::post('/company', 'addModuleToCompany')->name('project-program-modules.company.add');
         Route::get('/{module_id}/company/{company_id}', 'removeModuleFromCompany')->name('project-program-modules.company.remove');
         Route::post('bulk-delete', 'bulkDelete');
-        Route::post('create-program-children', 'createProgramChildren');
+        // Route::post('create-program-children', 'createProgramChildren');
+
+        Route::get('/', 'all')->name('project-program-modules.index');
+        Route::get('/get_children_inside_module/{projectProgramModule}', 'getChildrenInsideModule');
+        Route::post('create-new-menu-item', 'createNewMenuItem');
+        Route::post('edit_tree_item', 'editTreeItem');
+        Route::post('/delete_tree_item', 'delete')->name('modules.destroy');
+
     });
 });
 
@@ -112,6 +121,8 @@ Route::group(['prefix' => 'partners'], function () {
         Route::post('/screen-setting', 'screenSetting')->name('partners.screenSetting');
         Route::get('/get-screen-setting/{user_id}/{screen_id}', 'getScreenSetting')->name('partners.getScreenSetting');
         Route::post('/login', 'login');
+        Route::get('/get_children_inside_module_for_partner_sidebar_menu/{projectProgramModule}', 'getChildrenInsideModuleForPartnerSideBarMenu');
+        Route::get('/get_programs_and_modules_for_company/{company}', 'get_programs_and_modules_for_company');
         Route::post('bulk-delete', 'bulkDelete');
     });
 });
@@ -147,8 +158,7 @@ Route::group(['prefix' => 'screens'], function () {
 
 Route::group(['prefix' => 'module-screens'], function () {
     Route::controller(ModuleScreenController::class)->group(function () {
-        Route::get('/', 'all')->name('screens.index');
-
+        Route::get('/', 'all');
     });
 });
 
@@ -157,11 +167,13 @@ Route::group(['prefix' => 'company-project-program-modules'], function () {
     Route::controller(CompanyProjectProgramModuleController::class)->group(function () {
         Route::get('/', 'all')->name('company_project_program_modules.index');
         Route::get('/{id}', 'find');
+        Route::get('get_programs_and_modules_for_company/{company}', 'get_programs_and_modules_for_company');
         Route::post('/', 'store')->name('company_project_program_modules.store');
         Route::put('/{id}', 'update')->name('company_project_program_modules.update');
         Route::delete('/{id}', 'delete')->name('company_project_program_modules.destroy');
         Route::get('logs/{id}', 'logs')->name('company_project_program_modules.logs');
         Route::post('bulk-delete', 'bulkDelete');
+        Route::post('attach_or_detach_companies_with_programs', 'attach_or_detach_companies_with_programs');
 
     });
 });

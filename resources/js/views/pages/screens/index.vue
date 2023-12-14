@@ -56,7 +56,9 @@ export default {
       Tooltip: "",
       mouseEnter: "",
       create: {
+        name: "",
         name_e: "",
+        middleware: "",
         title: "",
         title_e: "",
         serial_id: "",
@@ -64,12 +66,15 @@ export default {
         search: "",
         middleware_url: "",
         is_implementor: 0,
+        is_short_cut: 0,
         is_add_on: 0,
         sort: 0,
         module_screen_id: null
       },
       edit: {
+        name: "",
         name_e: "",
+        middleware: "",
         title: "",
         title_e: "",
         serial_id: "",
@@ -77,18 +82,20 @@ export default {
         search: "",
           middleware_url: "",
         is_implementor: 0,
+        is_short_cut: 0,
           is_add_on: 0,
         sort: 0,
         module_screen_id: null
       },
       setting: {
+        name: true,
         name_e: true,
         title: true,
         title_e: true,
         sub_menu_id: true,
         // serial_id: true,
       },
-      filterSetting: [ "name_e", "title", "title_e"],
+      filterSetting: ["name", "name_e", "title", "title_e"],
       errors: {},
       english: "",
       isCheckAll: false,
@@ -103,22 +110,28 @@ export default {
   },
   validations: {
     create: {
+      name: { required, minLength: minLength(3), maxLength: maxLength(100) },
       name_e: { required, minLength: minLength(3), maxLength: maxLength(100) },
+      middleware: { required, minLength: minLength(3), maxLength: maxLength(100) },
       title: { required, minLength: minLength(3), maxLength: maxLength(100) },
       title_e: { required, minLength: minLength(3), maxLength: maxLength(100) },
       sub_menu_id: {  },
         middleware_url: { required },
       is_implementor: {},
+      is_short_cut: {},
       module_screen_id: {},
         is_add_on: {}
     },
     edit: {
+      name: { required, minLength: minLength(3), maxLength: maxLength(100) },
       name_e: { required, minLength: minLength(3), maxLength: maxLength(100) },
+      middleware: { required, minLength: minLength(3), maxLength: maxLength(100) },
       title: { required, minLength: minLength(3), maxLength: maxLength(100) },
       title_e: { required, minLength: minLength(3), maxLength: maxLength(100) },
       sub_menu_id: {  },
         middleware_url: { required },
       is_implementor: {},
+      is_short_cut: {},
       module_screen_id: {},
         is_add_on: {}
     },
@@ -545,7 +558,8 @@ export default {
     resetModalHidden() {
       this.create = {
         name: "",
-          middleware_url: "",
+        middleware_url: "",
+        middleware: "",
         name_e: "",
         title: "",
         title_e: "",
@@ -579,12 +593,14 @@ export default {
       this.create = {
         name: "",
         name_e: "",
+        middleware: "",
         title: "",
         title_e: "",
         serial_id: "",
         sub_menu_id: null,
           middleware_url: "",
         is_implementor: 0,
+        is_short_cut: 0,
           is_add_on: 0,
         sort: 0,
         module_screen_id: null
@@ -602,12 +618,14 @@ export default {
       this.create = {
         name: "",
         name_e: "",
+        middleware: "",
         title: "",
         title_e: "",
         serial_id: "",
         sub_menu_id: null,
           middleware_url: "",
         is_implementor: 0,
+        is_short_cut: 0,
           is_add_on: 0,
         sort: 0,
         module_screen_id: null
@@ -760,19 +778,20 @@ export default {
         });
     },
     async getSubMenus() {
-      await adminApi
-        .get(`/sub-menus`)
-        .then((res) => {
-          let l = res.data.data;
-          this.subMenus = l;
-        })
-        .catch((err) => {
-          Swal.fire({
-            icon: "error",
-            title: `${this.$t("general.Error")}`,
-            text: `${this.$t("general.Thereisanerrorinthesystem")}`,
-          });
-        });
+        this.subMenus = []
+    //   await adminApi
+    //     .get(`/sub-menus`)
+    //     .then((res) => {
+    //       let l = res.data.data;
+    //       this.subMenus = l;
+    //     })
+    //     .catch((err) => {
+    //       Swal.fire({
+    //         icon: "error",
+    //         title: `${this.$t("general.Error")}`,
+    //         text: `${this.$t("general.Thereisanerrorinthesystem")}`,
+    //       });
+    //     });
     },
     async getModule() {
           await adminApi
@@ -802,6 +821,7 @@ export default {
       this.getModule();
       this.edit.name = module.name;
       this.edit.name_e = module.name_e;
+      this.edit.middleware = module.middleware;
       this.edit.title = module.title;
       this.edit.title_e = module.title_e;
       this.edit.serial_id = module.serial_id;
@@ -811,6 +831,7 @@ export default {
       this.screen_id = module.id;
       this.edit.module_screen_id = module.module_screen_id;
       this.edit.is_implementor = module.is_implementor;
+      this.edit.is_short_cut = module.is_short_cut;
       await this.getScreenDocumentTypes();
       await this.getScreenButtons();
       this.errors = {};
@@ -823,12 +844,14 @@ export default {
       this.edit = {
         name: "",
         name_e: "",
+        middleware: "",
         title: "",
         title_e: "",
         serial_id: "",
         sub_menu_id: null,
           middleware_url: "",
         is_implementor: 0,
+        is_short_cut: 0,
           is_add_on: 0,
         module_screen_id: null,
         sort: 0,
@@ -1047,9 +1070,9 @@ export default {
                     <b-form-checkbox v-model="setting.title_e" class="mb-1">
                       {{ $t("general.title_en") }}
                     </b-form-checkbox>
-                    <b-form-checkbox v-model="setting.sub_menu_id" class="mb-1">
+                    <!-- <b-form-checkbox v-model="setting.sub_menu_id" class="mb-1">
                       {{ $t("general.Module") }}
-                    </b-form-checkbox>
+                    </b-form-checkbox> -->
                     <div class="d-flex justify-content-end">
                       <a
                         href="javascript:void(0)"
@@ -1173,64 +1196,107 @@ export default {
                       <b-tab :title="$t('general.DataEntry')" active>
                         <div class="row">
                           <div class="col-8">
-                            <!--                                    <div class="col-md-6 position-relative">-->
-                            <!--                                        <div class="form-group">-->
-                            <!--                                            <label class="my-1 mr-2" >{{ $t('general.serial') }}</label>-->
-                            <!--                                            <multiselect-->
-                            <!--                                                v-model="create.serial_id"-->
-                            <!--                                                :options="serials.map(type => type.id)"-->
-                            <!--                                                :custom-label="opt => $i18n.locale ? serials.find(x => x.id == opt).name : serials.find(x => x.id == opt).name_e">-->
-                            <!--                                            </multiselect>-->
 
-                            <!--                                            <template v-if="errors.serial_id">-->
-                            <!--                                                <ErrorMessage v-for="(errorMessage,index) in errors.serial_id" :key="index">{{ errorMessage }}</ErrorMessage>-->
-                            <!--                                            </template>-->
-
-                            <!--                                        </div>-->
-                            <!--                                    </div>-->
-                            <!--                                    <div class="col-md-6"></div>-->
                             <div class="row">
-                              <!-- <div class="col-md-12 position-relative">
+
+                              <div class="col-md-6 direction">
                                 <div class="form-group">
-                                  <label class="my-1 mr-2">{{
-                                    $t("general.subMenu")
-                                  }}</label>
-                                  <multiselect
-                                    v-model="create.sub_menu_id"
-                                    :options="subMenus.map((type) => type.id)"
-                                    :custom-label="
-                                      (opt) =>
-                                        $i18n.locale == 'ar'
-                                          ? subMenus.find((x) => x.id == opt)
-                                              .name
-                                          : subMenus.find((x) => x.id == opt)
-                                              .name_e
-                                    "
-                                    :class="{
-                                      'is-invalid':
-                                        $v.create.sub_menu_id.$error ||
-                                        errors.sub_menu_id,
-                                    }"
-                                  >
-                                  </multiselect>
+                                  <label for="field-1" class="control-label">
+                                    {{ $t("general.Name") }}
+                                    <span class="text-danger">*</span>
+                                  </label>
+                                  <div dir="rtl">
+                                    <input
+                                      type="text"
+                                      class="form-control arabicInput"
+                                      v-model="$v.create.name.$model"
+                                      :class="{
+                                        'is-invalid':
+                                          $v.create.name.$error ||
+                                          errors.name,
+                                        'is-valid':
+                                          !$v.create.name.$invalid &&
+                                          !errors.name,
+                                      }"
+                                        />
+                                  </div>
                                   <div
-                                    v-if="!$v.create.sub_menu_id.required"
+                                    v-if="!$v.create.name.minLength"
                                     class="invalid-feedback"
                                   >
-                                    {{ $t("general.fieldIsRequired") }}
+                                    {{ $t("general.Itmustbeatleast") }}
+                                    {{ $v.create.name.$params.minLength.min }}
+                                    {{ $t("general.letters") }}
                                   </div>
-
-                                  <template v-if="errors.sub_menu_id">
+                                  <div
+                                    v-if="!$v.create.name.maxLength"
+                                    class="invalid-feedback"
+                                  >
+                                    {{ $t("general.Itmustbeatmost") }}
+                                    {{ $v.create.name.$params.maxLength.max }}
+                                    {{ $t("general.letters") }}
+                                  </div>
+                                  <template v-if="errors.name">
                                     <ErrorMessage
                                       v-for="(
                                         errorMessage, index
-                                      ) in errors.sub_menu_id"
+                                      ) in errors.name"
                                       :key="index"
-                                      >{{ errorMessage }}</ErrorMessage
-                                    >
+                                      >{{ errorMessage }}
+                                    </ErrorMessage>
                                   </template>
                                 </div>
-                              </div> -->
+                              </div>
+
+                              <div class="col-md-6 direction">
+                                <div class="form-group">
+                                  <label for="field-1" class="control-label">
+                                    {{ $t("general.Name_en") }}
+                                    <span class="text-danger">*</span>
+                                  </label>
+                                  <div dir="rtl">
+                                    <input
+                                      type="text"
+                                      class="form-control arabicInput"
+                                      v-model="$v.create.name_e.$model"
+                                      :class="{
+                                        'is-invalid':
+                                          $v.create.name_e.$error ||
+                                          errors.name_e,
+                                        'is-valid':
+                                          !$v.create.name_e.$invalid &&
+                                          !errors.name_e,
+                                      }"
+                                        />
+                                  </div>
+                                  <div
+                                    v-if="!$v.create.name_e.minLength"
+                                    class="invalid-feedback"
+                                  >
+                                    {{ $t("general.Itmustbeatleast") }}
+                                    {{ $v.create.name_e.$params.minLength.min }}
+                                    {{ $t("general.letters") }}
+                                  </div>
+                                  <div
+                                    v-if="!$v.create.name_e.maxLength"
+                                    class="invalid-feedback"
+                                  >
+                                    {{ $t("general.Itmustbeatmost") }}
+                                    {{ $v.create.name_e.$params.maxLength.max }}
+                                    {{ $t("general.letters") }}
+                                  </div>
+                                  <template v-if="errors.name_e">
+                                    <ErrorMessage
+                                      v-for="(
+                                        errorMessage, index
+                                      ) in errors.name_e"
+                                      :key="index"
+                                      >{{ errorMessage }}
+                                    </ErrorMessage>
+                                  </template>
+                                </div>
+                              </div>
+
                               <div class="col-md-6 direction">
                                 <div class="form-group">
                                   <label for="field-1" class="control-label">
@@ -1250,8 +1316,7 @@ export default {
                                           !$v.create.title.$invalid &&
                                           !errors.title,
                                       }"
-                                      @keyup="arabicValueTitle(create.title)"
-                                    />
+                                        />
                                   </div>
                                   <div
                                     v-if="!$v.create.title.minLength"
@@ -1299,7 +1364,6 @@ export default {
                                           !$v.create.title_e.$invalid &&
                                           !errors.title_e,
                                       }"
-                                      @keyup="englishValueTitle(create.title_e)"
                                     />
                                   </div>
                                   <div
@@ -1343,40 +1407,40 @@ export default {
                                             <input
                                                 type="text"
                                                 class="form-control englishInput"
-                                                v-model="$v.create.name_e.$model"
+                                                v-model="$v.create.middleware.$model"
                                                 :class="{
                                         'is-invalid':
-                                          $v.create.name_e.$error ||
-                                          errors.name_e,
+                                          $v.create.middleware.$error ||
+                                          errors.middleware,
                                         'is-valid':
-                                          !$v.create.name_e.$invalid &&
-                                          !errors.name_e,
+                                          !$v.create.middleware.$invalid &&
+                                          !errors.middleware,
                                       }"
-                                                @keyup="englishValue(create.name_e)"
+
                                                 id="field-2"
                                             />
                                         </div>
                                         <div
-                                            v-if="!$v.create.name_e.minLength"
+                                            v-if="!$v.create.middleware.minLength"
                                             class="invalid-feedback"
                                         >
                                             {{ $t("general.Itmustbeatleast") }}
-                                            {{ $v.create.name_e.$params.minLength.min }}
+                                            {{ $v.create.middleware.$params.minLength.min }}
                                             {{ $t("general.letters") }}
                                         </div>
                                         <div
-                                            v-if="!$v.create.name_e.maxLength"
+                                            v-if="!$v.create.middleware.maxLength"
                                             class="invalid-feedback"
                                         >
                                             {{ $t("general.Itmustbeatmost") }}
-                                            {{ $v.create.name_e.$params.maxLength.max }}
+                                            {{ $v.create.middleware.$params.maxLength.max }}
                                             {{ $t("general.letters") }}
                                         </div>
-                                        <template v-if="errors.name_e">
+                                        <template v-if="errors.middleware">
                                             <ErrorMessage
                                                 v-for="(
                                         errorMessage, index
-                                      ) in errors.name_e"
+                                      ) in errors.middleware"
                                                 :key="index"
                                             >{{ errorMessage }}
                                             </ErrorMessage>
@@ -1418,33 +1482,7 @@ export default {
                                   </template>
                                 </div>
                               </div>
-<!--
-                              <div class="col-md-6">
-                                <div class="form-group">
-                                  <label for="field-2" class="control-label">
-                                    {{ $t("general.IdSort") }}
-                                  </label>
-                                  <div>
-                                    <input
-                                      type="number"
-                                      class="form-control"
-                                      data-create="2"
-                                      v-model="create.sort"
-                                      id="field-2"
-                                    />
-                                  </div>
-                                  <template v-if="errors.sort">
-                                    <ErrorMessage
-                                      v-for="(
-                                        errorMessage, index
-                                      ) in errors.sort"
-                                      :key="index"
-                                      >{{ $t(errorMessage) }}
-                                    </ErrorMessage>
-                                  </template>
-                                </div>
-                              </div>
--->
+
                               <div class="col-md-6">
                                     <div class="form-group position-relative">
                                         <label class="control-label">
@@ -1467,6 +1505,48 @@ export default {
                                         </template>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                <div class="form-group">
+                                  <label class="mr-2 mb-2">
+                                    {{ $t("general.Is Short Cut") }}
+                                    <span class="text-danger">*</span>
+                                  </label>
+                                  <b-form-group
+                                    :class="{
+                                      'is-invalid':
+                                        $v.create.is_short_cut.$error ||
+                                        errors.is_short_cut,
+                                      'is-valid':
+                                        !$v.create.is_short_cut.$invalid &&
+                                        !errors.is_short_cut,
+                                    }"
+                                  >
+                                    <b-form-radio
+                                      class="d-inline-block"
+                                      v-model="$v.create.is_short_cut.$model"
+                                      name="some-radios_is_short_cut"
+                                      :value="1"
+                                      >{{ $t("general.Yes") }}</b-form-radio
+                                    >
+                                    <b-form-radio
+                                      class="d-inline-block m-1"
+                                      v-model="$v.create.is_short_cut.$model"
+                                      name="some-radios_is_short_cut"
+                                      :value="0"
+                                      >{{ $t("general.No") }}</b-form-radio
+                                    >
+                                  </b-form-group>
+                                  <template v-if="errors.is_short_cut">
+                                    <ErrorMessage
+                                      v-for="(
+                                        errorMessage, index
+                                      ) in errors.is_short_cut"
+                                      :key="index"
+                                      >{{ $t(errorMessage) }}
+                                    </ErrorMessage>
+                                  </template>
+                                </div>
+                              </div>
                               <div class="col-md-6">
                                 <div class="form-group">
                                   <label class="mr-2 mb-2">
@@ -1509,6 +1589,7 @@ export default {
                                   </template>
                                 </div>
                               </div>
+
                               <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="mr-2 mb-2">
@@ -1761,8 +1842,7 @@ export default {
                         </div>
                         <!-- end .table-responsive-->
                       </b-tab>
-                      <!-- <b-tab :disabled="!screen_id" :title="$t('general.DocumentType')">
-                                                                              </b-tab> -->
+
                     </b-tabs>
                   </div>
                 </div>
@@ -1800,24 +1880,9 @@ export default {
                         />
                       </div>
                     </th>
-                    <th v-if="setting.name_e">
+                    <th v-if="setting.name">
                       <div class="d-flex justify-content-center">
-                        <span>{{ $t("general.middleware") }}</span>
-                        <div class="arrow-sort">
-                          <i
-                            class="fas fa-arrow-up"
-                            @click="screens.sort(sortString('name_e'))"
-                          ></i>
-                          <i
-                            class="fas fa-arrow-down"
-                            @click="screens.sort(sortString('-name_e'))"
-                          ></i>
-                        </div>
-                      </div>
-                    </th>
-                    <th v-if="setting.title">
-                      <div class="d-flex justify-content-center">
-                        <span>{{ $t("general.title") }}</span>
+                        <span>{{ $t("general.Name") }}</span>
                         <div class="arrow-sort">
                           <i
                             class="fas fa-arrow-up"
@@ -1830,9 +1895,9 @@ export default {
                         </div>
                       </div>
                     </th>
-                    <th v-if="setting.title_e">
+                    <th v-if="setting.name_e">
                       <div class="d-flex justify-content-center">
-                        <span>{{ $t("general.title_en") }}</span>
+                        <span>{{ $t("general.Name_en") }}</span>
                         <div class="arrow-sort">
                           <i
                             class="fas fa-arrow-up"
@@ -1845,11 +1910,56 @@ export default {
                         </div>
                       </div>
                     </th>
+                    <th v-if="setting.middleware">
+                      <div class="d-flex justify-content-center">
+                        <span>{{ $t("general.middleware") }}</span>
+                        <div class="arrow-sort">
+                          <i
+                            class="fas fa-arrow-up"
+                            @click="screens.sort(sortString('middleware'))"
+                          ></i>
+                          <i
+                            class="fas fa-arrow-down"
+                            @click="screens.sort(sortString('-middleware'))"
+                          ></i>
+                        </div>
+                      </div>
+                    </th>
+                    <th v-if="setting.title">
+                      <div class="d-flex justify-content-center">
+                        <span>{{ $t("general.title") }}</span>
+                        <div class="arrow-sort">
+                          <i
+                            class="fas fa-arrow-up"
+                            @click="screens.sort(sortString('title'))"
+                          ></i>
+                          <i
+                            class="fas fa-arrow-down"
+                            @click="screens.sort(sortString('-title'))"
+                          ></i>
+                        </div>
+                      </div>
+                    </th>
+                    <th v-if="setting.title_e">
+                      <div class="d-flex justify-content-center">
+                        <span>{{ $t("general.title_en") }}</span>
+                        <div class="arrow-sort">
+                          <i
+                            class="fas fa-arrow-up"
+                            @click="screens.sort(sortString('title_e'))"
+                          ></i>
+                          <i
+                            class="fas fa-arrow-down"
+                            @click="screens.sort(sortString('-title_e'))"
+                          ></i>
+                        </div>
+                      </div>
+                    </th>
                     <th v-if="setting.sub_menu_id">
                           <div class="d-flex justify-content-center">
                               <span>{{ $t("module.module") }}</span>
                           </div>
-                      </th>
+                    </th>
                     <th v-if="enabled3" class="do-not-print">
                       {{ $t("general.Action") }}
                     </th>
@@ -1880,8 +1990,14 @@ export default {
                         />
                       </div>
                     </td>
+                    <td v-if="setting.name">
+                      <h5 class="m-0 font-weight-normal">{{ data.name }}</h5>
+                    </td>
                     <td v-if="setting.name_e">
                       <h5 class="m-0 font-weight-normal">{{ data.name_e }}</h5>
+                    </td>
+                    <td v-if="setting.middleware">
+                      <h5 class="m-0 font-weight-normal">{{ data.middleware }}</h5>
                     </td>
                     <td v-if="setting.title">
                       <h5 class="m-0 font-weight-normal">{{ data.title }}</h5>
@@ -1997,75 +2113,104 @@ export default {
                                   <div class="row">
                                     <div class="col-8">
                                       <div class="row">
-                                        <!--                                                    <div class="col-md-6">-->
-                                        <!--                                                        <div class="form-group">-->
-                                        <!--                                                            <label class="my-1 mr-2" >{{ $t('general.serial') }}</label>-->
-                                        <!--                                                            <multiselect-->
-                                        <!--                                                                v-model="edit.serial_id"-->
-                                        <!--                                                                :options="serials.map(type => type.id)"-->
-                                        <!--                                                                :custom-label="opt => $i18n.locale ? serials.find(x => x.id == opt).name : serials.find(x => x.id == opt).name_e">-->
-                                        <!--                                                            </multiselect>-->
 
-                                        <!--                                                            <template v-if="errors.serial_id">-->
-                                        <!--                                                                <ErrorMessage v-for="(errorMessage,index) in errors.serial_id" :key="index">{{ errorMessage }}</ErrorMessage>-->
-                                        <!--                                                            </template>-->
+                                        <div class="col-md-6 direction">
+                                <div class="form-group">
+                                  <label for="field-1" class="control-label">
+                                    {{ $t("general.Name") }}
+                                    <span class="text-danger">*</span>
+                                  </label>
+                                  <div dir="rtl">
+                                    <input
+                                      type="text"
+                                      class="form-control arabicInput"
+                                      v-model="$v.edit.name.$model"
+                                      :class="{
+                                        'is-invalid':
+                                          $v.edit.name.$error ||
+                                          errors.name,
+                                        'is-valid':
+                                          !$v.edit.name.$invalid &&
+                                          !errors.name,
+                                      }"
+                                        />
+                                  </div>
+                                  <div
+                                    v-if="!$v.edit.name.minLength"
+                                    class="invalid-feedback"
+                                  >
+                                    {{ $t("general.Itmustbeatleast") }}
+                                    {{ $v.edit.name.$params.minLength.min }}
+                                    {{ $t("general.letters") }}
+                                  </div>
+                                  <div
+                                    v-if="!$v.edit.name.maxLength"
+                                    class="invalid-feedback"
+                                  >
+                                    {{ $t("general.Itmustbeatmost") }}
+                                    {{ $v.edit.name.$params.maxLength.max }}
+                                    {{ $t("general.letters") }}
+                                  </div>
+                                  <template v-if="errors.name">
+                                    <ErrorMessage
+                                      v-for="(
+                                        errorMessage, index
+                                      ) in errors.name"
+                                      :key="index"
+                                      >{{ errorMessage }}
+                                    </ErrorMessage>
+                                  </template>
+                                </div>
+                              </div>
 
-                                        <!--                                                        </div>-->
-                                        <!--                                                    </div>-->
-                                        <!--
-                                                                                                                                                            <div class="col-md-6"></div>-->
-
-                                        <!-- <div
-                                          class="col-md-12 position-relative"
-                                        >
-                                          <div class="form-group">
-                                            <label class="my-1 mr-2">{{
-                                              $t("general.subMenu")
-                                            }}</label>
-                                            <multiselect
-                                              v-model="edit.sub_menu_id"
-                                              :options="
-                                                subMenus.map((type) => type.id)
-                                              "
-                                              :custom-label="
-                                                (opt) =>
-                                                  $i18n.locale == 'ar'
-                                                    ? subMenus.find(
-                                                        (x) => x.id == opt
-                                                      ).name
-                                                    : subMenus.find(
-                                                        (x) => x.id == opt
-                                                      ).name_e
-                                              "
-                                              :class="{
-                                                'is-invalid':
-                                                  $v.edit.sub_menu_id.$error ||
-                                                  errors.sub_menu_id,
-                                              }"
-                                            >
-                                            </multiselect>
-                                            <div
-                                              v-if="
-                                                !$v.edit.sub_menu_id.required
-                                              "
-                                              class="invalid-feedback"
-                                            >
-                                              {{
-                                                $t("general.fieldIsRequired")
-                                              }}
-                                            </div>
-
-                                            <template v-if="errors.sub_menu_id">
-                                              <ErrorMessage
-                                                v-for="(
-                                                  errorMessage, index
-                                                ) in errors.sub_menu_id"
-                                                :key="index"
-                                                >{{ errorMessage }}
-                                              </ErrorMessage>
-                                            </template>
-                                          </div>
-                                        </div> -->
+                              <div class="col-md-6 direction">
+                                <div class="form-group">
+                                  <label for="field-1" class="control-label">
+                                    {{ $t("general.Name_en") }}
+                                    <span class="text-danger">*</span>
+                                  </label>
+                                  <div dir="rtl">
+                                    <input
+                                      type="text"
+                                      class="form-control arabicInput"
+                                      v-model="$v.edit.name_e.$model"
+                                      :class="{
+                                        'is-invalid':
+                                          $v.edit.name_e.$error ||
+                                          errors.name_e,
+                                        'is-valid':
+                                          !$v.edit.name_e.$invalid &&
+                                          !errors.name_e,
+                                      }"
+                                        />
+                                  </div>
+                                  <div
+                                    v-if="!$v.edit.name_e.minLength"
+                                    class="invalid-feedback"
+                                  >
+                                    {{ $t("general.Itmustbeatleast") }}
+                                    {{ $v.edit.name_e.$params.minLength.min }}
+                                    {{ $t("general.letters") }}
+                                  </div>
+                                  <div
+                                    v-if="!$v.edit.name_e.maxLength"
+                                    class="invalid-feedback"
+                                  >
+                                    {{ $t("general.Itmustbeatmost") }}
+                                    {{ $v.edit.name_e.$params.maxLength.max }}
+                                    {{ $t("general.letters") }}
+                                  </div>
+                                  <template v-if="errors.name_e">
+                                    <ErrorMessage
+                                      v-for="(
+                                        errorMessage, index
+                                      ) in errors.name_e"
+                                      :key="index"
+                                      >{{ errorMessage }}
+                                    </ErrorMessage>
+                                  </template>
+                                </div>
+                              </div>
                                         <div class="col-md-6">
                                           <div class="form-group">
                                             <label
@@ -2088,9 +2233,7 @@ export default {
                                                     !$v.edit.title.$invalid &&
                                                     !errors.title,
                                                 }"
-                                                @keyup="
-                                                  arabicValueTitle(edit.title)
-                                                "
+
                                               />
                                             </div>
                                             <div
@@ -2150,11 +2293,7 @@ export default {
                                                     !$v.edit.title_e.$invalid &&
                                                     !errors.title_e,
                                                 }"
-                                                @keyup="
-                                                  englishValueTitle(
-                                                    edit.title_e
-                                                  )
-                                                "
+
                                               />
                                             </div>
                                             <div
@@ -2205,50 +2344,48 @@ export default {
                                                       <input
                                                           type="text"
                                                           class="form-control englishInput"
-                                                          v-model="$v.edit.name_e.$model"
+                                                          v-model="$v.edit.middleware.$model"
                                                           :class="{
                                                   'is-invalid':
-                                                    $v.edit.name_e.$error ||
-                                                    errors.name_e,
+                                                    $v.edit.middleware.$error ||
+                                                    errors.middleware,
                                                   'is-valid':
-                                                    !$v.edit.name_e.$invalid &&
-                                                    !errors.name_e,
+                                                    !$v.edit.middleware.$invalid &&
+                                                    !errors.middleware,
                                                 }"
-                                                          @keyup="
-                                                  englishValue(edit.name_e)
-                                                "
+
                                                           id="field-u-2"
                                                       />
                                                   </div>
                                                   <div
-                                                      v-if="!$v.edit.name_e.minLength"
+                                                      v-if="!$v.edit.middleware.minLength"
                                                       class="invalid-feedback"
                                                   >
                                                       {{
                                                           $t("general.Itmustbeatleast")
                                                       }}
                                                       {{
-                                                          $v.edit.name_e.$params.minLength
+                                                          $v.edit.middleware.$params.minLength
                                                               .min
                                                       }}
                                                       {{ $t("general.letters") }}
                                                   </div>
                                                   <div
-                                                      v-if="!$v.edit.name_e.maxLength"
+                                                      v-if="!$v.edit.middleware.maxLength"
                                                       class="invalid-feedback"
                                                   >
                                                       {{ $t("general.Itmustbeatmost") }}
                                                       {{
-                                                          $v.edit.name_e.$params.maxLength
+                                                          $v.edit.middleware.$params.maxLength
                                                               .max
                                                       }}
                                                       {{ $t("general.letters") }}
                                                   </div>
-                                                  <template v-if="errors.name_e">
+                                                  <template v-if="errors.middleware">
                                                       <ErrorMessage
                                                           v-for="(
                                                   errorMessage, index
-                                                ) in errors.name_e"
+                                                ) in errors.middleware"
                                                           :key="index"
                                                       >{{ errorMessage }}
                                                       </ErrorMessage>
@@ -2299,40 +2436,7 @@ export default {
                                             </template>
                                           </div>
                                         </div>
-<!--
-                                        <div class="col-md-6">
-                                          <div class="form-group">
-                                            <label
-                                              for="field-2"
-                                              class="control-label"
-                                            >
-                                              {{ $t("general.IdSort") }}
-                                            </label>
-                                            <div>
-                                              <input
-                                                type="number"
-                                                class="form-control"
-                                                data-create="2"
-                                                v-model="edit.sort"
-                                                id="field-2"
-                                              />
-                                              <template
-                                                v-if="errors.sort"
-                                              >
-                                                <ErrorMessage
-                                                  v-for="(
-                                                    errorMessage, index
-                                                  ) in errors.sort"
-                                                  :key="index"
-                                                  >{{
-                                                    errorMessage
-                                                  }}</ErrorMessage
-                                                >
-                                              </template>
-                                            </div>
-                                          </div>
-                                        </div>
--->
+
                                         <div class="col-md-6">
                                               <div class="form-group position-relative">
                                                   <label class="control-label">
@@ -2355,6 +2459,60 @@ export default {
                                                   </template>
                                               </div>
                                           </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <label class="mr-2 mb-2">
+                                              {{ $t("general.Is Short Cut") }}
+                                              <span class="text-danger">*</span>
+                                            </label>
+                                            <b-form-group
+                                              :class="{
+                                                'is-invalid':
+                                                  $v.edit.is_short_cut
+                                                    .$error ||
+                                                  errors.is_short_cut,
+                                                'is-valid':
+                                                  !$v.edit.is_short_cut
+                                                    .$invalid &&
+                                                  !errors.is_short_cut,
+                                              }"
+                                            >
+                                              <b-form-radio
+                                                class="d-inline-block"
+                                                v-model="
+                                                  $v.edit.is_short_cut.$model
+                                                "
+                                                name="some-radiosradios_is_short_cut"
+                                                :value="1"
+                                                >{{
+                                                  $t("general.Yes")
+                                                }}</b-form-radio
+                                              >
+                                              <b-form-radio
+                                                class="d-inline-block m-1"
+                                                v-model="
+                                                  $v.edit.is_short_cut.$model
+                                                "
+                                                name="some-radios_is_short_cut"
+                                                :value="0"
+                                                >{{
+                                                  $t("general.No")
+                                                }}</b-form-radio
+                                              >
+                                            </b-form-group>
+                                            <template
+                                              v-if="errors.is_short_cut"
+                                            >
+                                              <ErrorMessage
+                                                v-for="(
+                                                  errorMessage, index
+                                                ) in errors.is_short_cut"
+                                                :key="index"
+                                                >{{ $t(errorMessage) }}
+                                              </ErrorMessage>
+                                            </template>
+                                          </div>
+                                        </div>
                                         <div class="col-md-6">
                                           <div class="form-group">
                                             <label class="mr-2 mb-2">

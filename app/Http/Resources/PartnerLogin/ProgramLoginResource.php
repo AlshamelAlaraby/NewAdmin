@@ -28,7 +28,7 @@ class ProgramLoginResource extends JsonResource
             'is_menu_collapsed' => $this->is_menu_collapsed,
             "children" => ProjectProgramModuleChildrenResource::collection($this->children),
             "Parent" => new ParentProgramLoginResource($this->parent),
-            "programFolders" => programFoldersLoginResource::collection($this->programFolders),
+            // "programFolders" => programFoldersLoginResource::collection($this->programFolders),
 
         ];
     }

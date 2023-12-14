@@ -115,3 +115,10 @@ File: Main Css File (Default Demo)
 }
 
 @import "custom/custom-style";
+
+.active_select{
+    background:#000;
+}
+.active_select * {
+    color: #e81a1a;
+}

@@ -8,6 +8,7 @@ use App\Http\Requests\Screen\CompanyScreensRequest;
 use App\Http\Requests\Screen\CreateSubMenuScreenRequest;
 use App\Http\Requests\Screen\ScreenRequest;
 use App\Http\Requests\CreateCompanyScreenMenuRequest;
+use App\Http\Requests\Screen\UpdateScreenRequest;
 use App\Http\Resources\Screen\CompanyScreensResource;
 use App\Http\Resources\Screen\ScreenResource;
 use App\Models\Screen;
@@ -58,7 +59,7 @@ class ScreenController extends ResponseController
     }
 
 
-    public function update(ScreenRequest $request, $id)
+    public function update(UpdateScreenRequest $request, $id)
     {
         $model = $this->repository->find($id);
         if (!$model) {

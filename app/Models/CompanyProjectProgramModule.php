@@ -4,11 +4,12 @@ namespace App\Models;
 
 use App\Traits\LogTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
 
 class CompanyProjectProgramModule extends Model
 {
-    use LogTrait;
+    use LogTrait,SoftDeletes;
 
     protected $guarded = ['id'];
     protected $table = "company_project_program_modules";

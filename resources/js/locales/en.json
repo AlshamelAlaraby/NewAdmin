@@ -179,7 +179,7 @@
             "text": "Navigation"
         },
         "module": {
-            "text": "Program"
+            "text": "Modules"
         },
         "screen_button": {
             "text": "Screen Buttons"
@@ -427,7 +427,22 @@
         }
     },
     "general": {
+        "Add inside":"Add inside",
+        "Add Folder":"Add Folder",
+        "Add Page":"Add Page",
+        "Module Tree":"Module Tree",
+        "Is Short Cut":"Is Short Cut",
+        "Update":"Update",
+        "Filter Icons":"Filter Icons",
+        "Programs":"Programs",
+        "Dashboard":"Dashboard",
         "icon":"Icon",
+        "Program Tree":"Program Tree",
+        "Add Program":"Add Program",
+        "Create New Program":"Create New Program",
+        "Update Module":"Update Module",
+        "Create New Module": "Create New Module",
+        "Add Module": "Add Module",
         "screen":"Screen",
         "isImplementor":"Is implementor",
         "subMenuTable":"Sub menu table",

@@ -2,6 +2,7 @@
 
 namespace App\Repositories\CompanyProjectProgramModule;
 
+use App\Models\CompaniesProgram;
 use App\Models\CompanyProjectProgramModule;
 use App\Models\Menu;
 use Illuminate\Support\Facades\DB;
@@ -36,13 +37,6 @@ class CompanyProjectProgramModuleRepository implements CompanyProjectProgramModu
 
     public function create($request)
     {
-        // DB::transaction(function () use ($request) {
-        //     $model = $this->model->create($request);
-        //     if( isset($request['document_types']) ){
-        //         $model->documentTypes()->attach($request['document_types']);
-        //     }
-        // });
-
 
         return DB::transaction(function () use ($request) {
             $model = $this->model->create($request);
@@ -77,6 +71,24 @@ class CompanyProjectProgramModuleRepository implements CompanyProjectProgramModu
     {
         return $this->model->find($id)->activities()->orderBy('created_at', 'DESC')->get();
     }
+
+    public function attach_or_detach_companies_with_programs($request)
+    {
+        if($request->action == 'attach'){
+            CompaniesProgram::create(['program_id' => $request->program_id , 'company_id' => $request->company_id]);
+        }else{
+            $company_program = CompaniesProgram::where('program_id' , $request->program_id)->where('company_id' , $request->company_id)->first();
+            $company_program->modules()->delete();
+            $company_program->delete();
+        }
+    }
+
+    public function get_programs_and_modules_for_company($company)
+    {
+        return $company->programs()->select('project_program_modules.id','project_program_modules.icon','project_program_modules.name','project_program_modules.name_e','companies_programs.id as company_program_id')->get();
+    }
+
+
 
 
 

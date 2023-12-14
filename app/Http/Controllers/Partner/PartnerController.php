@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Partner\PartnerRequest;
 use App\Http\Resources\Company\CompanyResource;
+use App\Http\Resources\CompanyProjectProgramModule\ProgramsWithCompanyProjectProgramModuleResource;
 use App\Http\Resources\Log\LogResource;
 use App\Http\Resources\Partner\PartnerResource;
 use App\Models\Company;
+use App\Models\ProjectProgramModule;
 use App\Repositories\Partner\PartnerRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -100,6 +102,7 @@ class PartnerController extends Controller
 
     public function login(LoginRequest $request)
     {
+
         if (!Auth::guard('partner')->attempt($request->only("email", "password"))) {
             return responseJson(422, 'Email Or Password is wrong!');
         }
@@ -148,4 +151,18 @@ class PartnerController extends Controller
         }
         return responseJson(200, '', CompanyResource::collection($company));
     }
+
+    public function getChildrenInsideModuleForPartnerSideBarMenu(ProjectProgramModule $projectProgramModule)
+    {
+        return responseJson(200, 'success', $this->repository->getChildrenInsideModule($projectProgramModule));
+    }
+
+
+    public function get_programs_and_modules_for_company(Company $company)
+    {
+        $data = $this->repository->get_programs_and_modules_for_company($company);
+
+        return responseJson(200, 'success',ProgramsWithCompanyProjectProgramModuleResource::collection($data));
+    }
+
 }
